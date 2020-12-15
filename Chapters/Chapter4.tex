@@ -1,4 +1,4 @@
-\chapter{Deep Graph Networks} \label{ch:dgn} 
+\chapter{Deep Graph Networks} \label{ch:dgn}
 
 The \gls{rnn} and \gls{recnn} models presented in Chapter \ref{ch:deep-learning-structures} share the idea that the state transition function is applied locally and recursively on the structure to compute the state vectors. Extending it to arbitrary graphs (which can have cycles) would require to apply the state transition function recursively to the neighbors of a vertex. However, this approach is not applicable to general graphs. In fact, the presence of cycles creates \emph{mutual dependencies}, which are difficult to model recursively and may lead to infinite loops when computing the states of vertices in parallel. While this issue can be overcome by resorting to canonization techniques that provide an ordering between the vertices, it is not feasible in many practical cases. \glspl{dgn} are a class of \glspl{nn} which can process arbitrary graphs, even in presence of cycles. The solution adopted by \glspl{dgn} to the problem of modelling mutual dependencies is to update the state of the vertices according to an \emph{iterative} scheme. Specifically, the hidden state of a vertex is updated as a function of the hidden state of the same vertex at the previous iteration. Given a graph $G$ with vertex features $\Vector{X}_G = \Set{\Elem{x}{v} \mid v \in \Cal{V}_G}$, the state transition function computed by a \gls{dgn}, applied locally to each vertex of $G$, has the following form:
 \begin{align*}
@@ -37,12 +37,12 @@ Constructive approaches are a special case of feed-forward models, in which trai
 \section{Building Blocks of Deep Graph Networks}
 \glspl{dgn} are built from several architectural components, which we cover in detail in this section. In short, a \gls{dgn} can be decomposed into a collection of layers that process the graph structure, and a downstream predictor (either a classifier or a regressor) that computes a task-dependent output. The whole network is trained in an end-to-end fashion. In this section, we focus on the former components, the ones whose role is to carry out the processing of an input graph.
 
-\subsection{Graph Convolutional Layers} 
+\subsection{Graph Convolutional Layers}
 A \gls{gcl} is essentially a neural network layer that performs message passing. The term \quotes{convolutional} is used to remark that the local processing performed by the state transition function is a generalization of the convolutional layer for images to graph domains with variable-size neighborhoods. Given a graph $G$ with $n$ nodes, and its node attributes $\Vector{X}_G = \Set{\Elem{x}{v} \mid v \in \Cal{V}_G}$, one general formulation of a \gls{gcl} is the following:
-\begin{align*}
-\Elem{h}{v}^{\ell} = \Fun{U}^{\ell} \Paren{\Elem{h}{v}^{\ell-1},\ \Fun{A}(\Set{\Fun{T}^{\ell}(\Elem{h}{u}^{\ell-1}) \mid u \in \mathcal{N}(v)} )}, \; \forall v \in \Cal{V}_G,
-\label{eq:simple-aggregation}
-\end{align*}
+\begin{align}
+    \label{eq:simple-aggregation}
+    \Elem{h}{v}^{\ell} = \Fun{U}^{\ell} \Paren{\Elem{h}{v}^{\ell-1},\ \Fun{A}(\Set{\Fun{T}^{\ell}(\Elem{h}{u}^{\ell-1}) \mid u \in \mathcal{N}(v)} )}, \; \forall v \in \Cal{V}_G,
+\end{align}
 where $\Elem{h}{v}^{\ell} \in \Real^{h^\ell}$ is the hidden state of the node at layer $\ell$, $\Elem{h}{v}^{\ell-1} \in \Real^{h^{\ell-1}}$ is the hidden state of the node at the previous layer $\ell-1$, and by convention $\Elem{h}{v}^{0} = \Elem{x}{v}$. Notice that the neighborhood function $\Cal{N}$ is also implicitly passed as input of the layer, so that the connectivity of each node is known. We can identify three key functions in the above formulation:
 \begin{itemize}
     \item $\Fun{T}^\ell: \Real^{h^{\ell-1}} \shortrightarrow \Real^u$ is a layer-wise \emph{transform} function that applies some transformation to the hidden states of neighbors of node $v$ at layer $\ell-1$, mapping them to some arbitrary vector space $\Real^u$;
@@ -51,8 +51,8 @@ where $\Elem{h}{v}^{\ell} \in \Real^{h^\ell}$ is the hidden state of the node at
 \end{itemize}
 The usage of a permutation invariant function to compute the state of the neighbors is crucial, as it allows to acquire information from nearby nodes in a non-positional fashion, which is often the case with real-world graphs. From this general formulation, several implementations can be realized. As an example, we report the well-known formulation in \cite{?}, corresponding to the \gls{gcn} model:
 \begin{align}
-\Elem{h}{v}^{\ell} = \sigma\Paren{\Matrix{W}^{\Transpose}_{\ell} \sum_{u \in \Cal{N}(v)} \Matrix{\tilde{L}}_{uv}\Elem{h}{v}^{\ell-1}}, \; \forall v \in \Cal{V}_G,
-\label{eq:convolutional}
+    \label{eq:convolutional}
+    \Elem{h}{v}^{\ell} = \sigma\Paren{\Matrix{W}^{\Transpose}_{\ell} \sum_{u \in \Cal{N}(v)} \Matrix{\tilde{L}}_{uv}\Elem{h}{v}^{\ell-1}}, \; \forall v \in \Cal{V}_G,
 \end{align}
 where, assuming $\Elem{h}{v}^{\ell-1} \in \Real^{h^{\ell}}$ for simplicity, $\Matrix{W}_{\ell} \in \Real^{h^{\ell} \times h^{\ell}}$ is a layer-wise weight matrix, $\Matrix{\tilde{L}}_{uv}$ is the entry of the symmetric normalized graph Laplacian $\Matrix{\tilde{L}}$ related to nodes $u$ and $v$, and:
 \begin{align}
@@ -69,7 +69,7 @@ The generic \gls{gcl} can be rewritten in matrix form as some variation of the f
 $$\Matrix{H}_{\ell} = \Fun{GCL}(\Matrix{A}, \Matrix{H}_{\ell-1}) = g\Paren{\Matrix{A}\Matrix{H}_{\ell-1}\Matrix{W}_{\ell}} \in \Real^{n \times h^{\ell}},$$
 where $g$ is a generic activation function, $\Matrix{A} \in \Real^{n \times n}$ is the adjacency matrix of the graph, $\Matrix{H}_{\ell-1} \in \Real^{n \times h}$ are the hidden states computed at layer $\ell-1$ where by convention $\Matrix{H}_0 = \Matrix{X}_G \in \Real^{n \times d}$ is the matrix of node features, and $\Matrix{W}_{\ell} \in \Real^{h^{\ell-1} \times h^{\ell}}$ is the matrix of trainable layer-wise weights. Here, the adjacency matrix substitutes the neighborhood function $\Cal{N}$, and the node adjacency is inferred by its rows and columns. With this formulation, the \gls{gcl} can be vectorized, which allows to run the state computation in fast hardware such as \glspl{gpu}.
 
-\paragraph{Handling Edges} 
+\paragraph{Handling Edges}
 In certain tasks, including information about the edge features to the message passing algorithm can be beneficial to performances. Here, we describe how this can be achieved, focusing on the case where the edge features are discrete values out of a set of $k$ possible choices. Specifically, given a graph $G$, we assume a set of edge features of the form $\Vector{e}_G = \Set{\Elem{e}{u,v} \in \Cal{C} \mid (u, v) \in \Cal{E}_G}$, with $\Cal{C} = \Set{c_i}_{i=1}^k$. To account for different edge types, two modifications to the message passing algorithm are required. One is to replace the standard neighborhood function in the aggregation function with the following \emph{edge-aware} neighborhood function of a node $v$:
 $$\Cal{N}_c(v) = \Set{u \in \Cal{N}(v) \mid \Elem{e}{u, v} = c},$$
 which selects only neighbors of $v$ with edge type $c$. The other modification requires to change the update function for handling the different edge types. Taking again the \gls{gcn} implementation as an example, Eq. \ref{eq:update} is modified as follows:
@@ -102,7 +102,7 @@ Node sampling is a technique used when learning on large graphs to ensure comput
     \label{fig:sampling}
 \end{figure*}
 
-\subsection{Readout Layers} 
+\subsection{Readout Layers}
 As we have seen, the application of $L$ \gls{dgn} layers to a graph $G$ yields $L$ hidden states per node, each one composed with a progressively broad context. In node classification or regression tasks, these are combined by a \emph{hidden state readout} function to obtain a unique hidden state to use as input of the output function, which emits a prediction for every node. Specifically, a hidden state readout function $\Fun{R'}$ computes a \keyword{node representation} (or \keyword{node embeddings}) $\Elem{h}{v}^*$ for each node as follows:
 $$\Elem{h}{v}^* = \Fun{R'}(\Set{\Elem{h}{v}^{\ell}}_{\ell=1}^L),\;  \forall v \in \Cal{v}_G. $$
 Notice that, when aggregating hidden states, one can exploit the fact that the number of layers is fixed beforehand in feed-forward \gls{dgn} architectures, and that the hidden states are ordered depth-wise. Thus, the aggregation need not to be permutation-invariant. Usual choices of $\Fun{R'}$ include concatenation, weighted average (where the mixing weights can also be learned), \gls{rnn}s, or just selecting the hidden state at the last layer. The node representations are then fed to an output layer or downstream network, which computes node-wise outputs:
@@ -116,7 +116,7 @@ where $\Elem{o}{v} \in \Real^y$ and $g_{\mathrm{out}}$ can be any arbitrarily co
 \end{figure*}
 In graph classification or regression tasks, the node representations computed by a node readout function are aggregated once more by a \emph{graph readout} function, to compute a \keyword{graph representation} (or \keyword{graph embedding}) $\Vector{h}_G$, \ie a vector representing the entire graph. Differently from the hidden state readout, the readout function must necessarily be permutation-invariant, since there are no guarantees about the number of graph nodes. Specifically, a graph readout function $\Fun{R}$ computes the embedding of graph $G$ as follows:
 $$\Vector{h}_G = \Fun{R}(\Set{\Elem{h}{v}^* \mid v \in \Cal{v}_G)}.$$
-Typical readouts for \glspl{dgn} include simple functions such sum, mean, max, or more complex aggregators such as deep sets models \cite{?}. Finally, the graph embedding is fed to an output layer or a downstream network to compute the associated output: 
+Typical readouts for \glspl{dgn} include simple functions such sum, mean, max, or more complex aggregators such as deep sets models \cite{?}. Finally, the graph embedding is fed to an output layer or a downstream network to compute the associated output:
 $$\Vector{o} = g_{\mathrm{out}}(\Vector{h}_G).$$
 \begin{figure*}[h!]
     \centering
@@ -134,7 +134,7 @@ where $\Fun{DGN}_e$ and $\Fun{DGN}_p$ is a stack of graph convolutional layers. 
     \Matrix{H}^{\ell} &= \Matrix{S}_{\ell-1}^{\Transpose}\Matrix{Z}_{\ell-1} \in \Real^{k \times h}\\
     \Matrix{A}_{\ell} &= \Matrix{S}_{\ell-1}^{\Transpose}\Matrix{A}_{\ell-1}\Matrix{S}_{\ell-1} \in \Real^{k \times k}
 \end{align*}
-where $\Matrix{A}^0 = \Matrix{A}$ and $\Matrix{H}^0 = \Matrix{X}_G$. Thus, after applying the DiffPool layer, the size of the graph is reduced progressively from $n$ to $k$ nodes. 
+where $\Matrix{A}^0 = \Matrix{A}$ and $\Matrix{H}^0 = \Matrix{X}_G$. Thus, after applying the DiffPool layer, the size of the graph is reduced progressively from $n$ to $k$ nodes.
 
 \begin{figure*}[h!]
     \centering
@@ -168,7 +168,7 @@ All  graph  datasets  are  publicly  available \cite{?}  and  represent  a  rele
     \item D\&D \cite{?} is a graph dataset in which nodes are amino acids, and there is an edge between two nodes if they are they are neighbors in the amino-acid sequence or in 3D space. The task is a binary classification one, where the objective is to determine whether a graph represents an enzyme or non-enzyme;
     \item PROTEINS \cite{?} is a subset of D\&D where the largest graphs have been removed;
     \item NCI1 \cite{?} is a dataset made of chemical compounds screened for ability to suppress or inhibit the growth of a panel of human tumor cell lines. The task is a binary classification one, where the objective is to determine if a chemical compound acts as suppressor or inhibitor;
-    \item ENZYMES \cite{?} is a dataset of enzymes from the BRENDA enzyme database \cite{?}. In this case, the task is to correctly assign each enzyme to one out of 6 Enzyme Commission (EC) numbers. 
+    \item ENZYMES \cite{?} is a dataset of enzymes from the BRENDA enzyme database \cite{?}. In this case, the task is to correctly assign each enzyme to one out of 6 Enzyme Commission (EC) numbers.
 \end{itemize}
 All As regards datasets containing social graphs, we use the following:
 \begin{itemize}
@@ -180,18 +180,18 @@ All node features are discrete (we shall refer to them as node labels equivalent
 \input{Tables/Chapter4/comparison-datasets}
 
 \subsection{Architectures}
-In total, we choose five different \gls{dgn} architectures. The high-level structure of the \gls{dgn} comprises an input layer, a stack of one or more \glspl{gcl}, a readout layer and a final MLP classifier, which maps the graph embedding to the dataset-dependent output. Following, we describe in detail the kinds of \gls{gcl} used by the \glspl{dgn}, and the specific hyper-parameters optimized for each of them. 
+In total, we choose five different \gls{dgn} architectures. The high-level structure of the \gls{dgn} comprises an input layer, a stack of one or more \glspl{gcl}, a readout layer and a final MLP classifier, which maps the graph embedding to the dataset-dependent output. Following, we describe in detail the kinds of \gls{gcl} used by the \glspl{dgn}, and the specific hyper-parameters optimized for each of them.
 
 \paragraph{Graph Isomorphism Network} The \gls{gin} convolutional layer, proposed by \cite{?}, is implemented as follows:
 $$\Elem{h}{v}^{\ell} = \Fun{MLP}^{\ell} \Paren{(1 + \epsilon^{\ell})\,\Elem{h}{v}^{\ell-1} + \sum_{u \in \Cal{N}(v)} \Elem{h}{u}^{\ell-1}},$$
 where $\epsilon \in \Real$ is a trainable parameter, and MLP is a neural network with 2 hidden layers, each one consisting of a linear transformation, followed by a BatchNorm layer and a \gls{relu} non-linearity. The first layer of the \gls{dgn} is not a \gls{gcl}, but a graph readout that sums the node features, and passes them through an MLP identical to the one just described. The graph embedding obtained by this layer is then summed to the graph embeddings computed by the \glspl{gcl}. For this architecture, we choose the following hyper-parameters: number of layers, size of the hidden state at each layer, and type of readout function (for the first non-convolutional layer as well).
 
-\paragraph{GraphSAGE} 
+\paragraph{GraphSAGE}
 The Graph SAmple and aggreGatE (GraphSAGE) convolutional layer, proposed by \cite{?}, is implemented as follows:
 $$\Elem{h}{v}^{\ell} = \sigma\Paren{\Matrix{W}^{\Transpose}_{\ell}\Elem{h}{u}^{\ell-1} + \frac{1}{|\Cal{N}(v)|} \Matrix{U}^{\Transpose}_{\ell} \sum_{u \in \Cal{N}(v)} \Elem{h}{u}^{\ell-1}}.$$
 Notice that the original formulation also implements a form of node sampling, since it is applied to large graphs. Here, since the size of the graph we deal with is manageable, we do not implement node sampling.
 
-\paragraph{GraphSAGE + DiffPool} 
+\paragraph{GraphSAGE + DiffPool}
 In order to have a representative \gls{dgn} with pooling, we tested a variant of GraphSAGE, where a DiffPool layer is added to the network after every GraphSAGE convolution. Internally, the DiffPool layer is implemented as in Section \ref{sec:pooling}, where $\Fun{DGN}_e$ and $\Fun{DGN}_p$ are a stack of 3 GraphSAGE layers respectively. Thus, one DiffPool layer requires to compute 6 graph convolutions. The number of clusters $k$ is deterministic, and is obtained as $\alpha M$, where $M$ is the maximum number of nodes among the graphs in the dataset, and $\alpha$ is a coarsening factor which is 0.1 if only one DiffPool layer is applied, and 0.25 otherwise.
 
 \paragraph{ECC}
@@ -214,7 +214,7 @@ where $\Fun{MLP}_1$ is a linear layer plus a \gls{relu} non-linearity, and $\Fun
 
 \subsection{Experimental Setup}\label{sec:comparison-exp-setup}
 In all our experiments, we use classification accuracy (\ie the percentage of correctly classified graphs out of the total number of predictions) as performance metric.
-Our evaluation pipeline consists in an outer $10$-fold CV for model assessment, and an inner holdout technique with a 90\%/10\% training/validation split for model selection. After \emph{each} model selection, we train the winning model three times on the whole training fold, holding out a random fraction (10\%) of the data to perform early stopping. We do this in order to contrast the effect of unfavorable random weight initialization on test performances. The final score for each test fold is obtained as the average of these three runs. Importantly, all data splits have been precomputed, so that models are selected and evaluated on the same data partitions; this guarantees consistency in the evaluation. For the same reason, we also stratify all the class labels, so that the classes proportions are preserved inside each $10$-fold split, as well as in the internal holdout splits. With respect to the general \gls{dgn} architecture, we optimize learning rate and early stopping patience for every considered \gls{dgn}. All models are trained with the Adam \cite{?} optimizer with learning rate decay. 
+Our evaluation pipeline consists in an outer $10$-fold CV for model assessment, and an inner holdout technique with a 90\%/10\% training/validation split for model selection. After \emph{each} model selection, we train the winning model three times on the whole training fold, holding out a random fraction (10\%) of the data to perform early stopping. We do this in order to contrast the effect of unfavorable random weight initialization on test performances. The final score for each test fold is obtained as the average of these three runs. Importantly, all data splits have been precomputed, so that models are selected and evaluated on the same data partitions; this guarantees consistency in the evaluation. For the same reason, we also stratify all the class labels, so that the classes proportions are preserved inside each $10$-fold split, as well as in the internal holdout splits. With respect to the general \gls{dgn} architecture, we optimize learning rate and early stopping patience for every considered \gls{dgn}. All models are trained with the Adam \cite{?} optimizer with learning rate decay.
 
 \paragraph{Hyper-Parameters}
 For all the \gls{dgn} architectures, we tune the size of the hidden state of the convolutional layers and the number of layers. We keep the number of configurations roughly equal across all the tested models. The baselines are composed of a single layer, hence we only tune the hidden size. Besides architecture-specific hyper-parameters, we also tune others that are shared across all models, related to the training procedure. Specifically, for each model under evaluation, we optimize learning rate and learning rate decay. For GIN, we also optimize batch size. For the two baselines, we also optimize the L2 regularization factor. To be consistent with the literature, we implement early stopping with patience parameter $s$, where training stops if $s$ epochs have passed without improvement on the validation set. A high value of $s$ can favor model selection by making it less sensitive to fluctuations in the validation score at the cost of additional computation. The patience hyper-parameter is optimized for all the considered models. A table showing the complete grid of hyper-parameters we used for each \gls{dgn} under evaluation is reported in Appendix \ref{AppendixA}.
