@@ -1,0 +1,23 @@
+\begin{tikzpicture}[declare function={sigma(\x)=1/(1+exp(-\x));
+sigmap(\x)=sigma(\x)*(1-sigma(\x));}]
+\begin{axis}%
+[
+    % grid=major,     
+    xmin=-6,
+    xmax=6,
+    axis x line=bottom,
+    ytick={-1,-.5,0,.5,1},
+    ymax=1.1,
+    axis y line=middle,
+    samples=200,
+    domain=-6:6,
+    width=\textwidth,
+    height=.6\textwidth,
+    scale only axis=true,
+    %legend style={at={(.4,.9)}}  
+]
+    \addplot[mark=none]   (x,{sigma(x)});
+    \addplot[dashed,mark=none]   (x,{sigmap(x)});
+    %\legend{$\sigma(x)$,$\sigma'(x)$}
+\end{axis}
+\end{tikzpicture}

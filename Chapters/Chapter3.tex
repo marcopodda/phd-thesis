@@ -1,0 +1,247 @@
+\chapter{Deep Learning in Structured Domains} \label{ch:deep-learning-structures}
+A \keyword{structured domain} is a data domain whose elements are formed by a set of atomic \emph{entities}, and the \emph{relations} between them. Structured data is common in several fields, such as biology, chemistry, finance, social networks, and many more. Typical examples are sequences such as time-series data, or graphs representing molecular structures. One distinctive characteristic of structured data is that it has \keyword{variable size}, meaning that the number of entities composing the datum is not fixed in general. This constitutes a serious limitation for traditional \gls{ml} models, which are designed to work with \quotes{flat} data, \ie collections of fixed-size vectors. In principle, they can be adapted to work with variable-sized data by incorporating the structure of the data to the input vectors as additional features. While useful to some extent, this approach requires to decide \apriori which features are needed to solve a task. This, in turn, requires a level of domain expertise that is not always available for many interesting problems. In contrast, \glspl{nn} (and Deep Learning models more so) are able to learn which features are useful to solve a task adaptively from data, without the need of feature engineering. Thus, the general idea is to provide the structured data directly as an input to the network, which automatically learns the needed features and the task, guided by the learning process. In this chapter, we present a class of \glspl{nn} that are able to handle variable-sized inputs for learning in structured domains.
+
+\section{Graphs}\label{sec:graphs}
+The elements of structured domains can be described in a compact and convenient notation using the general formalism of \keyword{graphs}. Informally, a graph is a collection of \emph{vertices} (the entities) connected through a collection of \emph{edges} (the relations). In literature, vertices are sometimes called \emph{nodes}, while edges are also referred to as \emph{arcs} or \emph{links}. Formally, a graph with $n$ vertices a pair
+$$G =\langle \Cal{V}_G, \Cal{E}_G \rangle,$$
+where $\Cal{V}_G = \Set{v_1, v_2, \ldots, v_n}$ is its set of vertices, and $\Cal{E}_G = \{\{u, v\} \mid u, v \in \Cal{V}_G\}$ is its set of edges. In a graph, $\Cal{E}_G$  specifies the graph \emph{structure}, that is, the way vertices and edges are interconnected. Notice that the pair $\Set{u,v}$ is unordered: in this case, the graph is called \keyword{undirected}. Figure \ref{fig:undirected-graph} shows a visual representation of an undirected graph.
+Given an edge $\Set{u, v} \in \Cal{E}_G$, $u$ and $v$ are called its \emph{endpoints}, and are said to be \emph{adjacent}. Alternatively, we say that $\Set{u, v}$ is \emph{incident} to $u$ and $v$. Edges of the form $\Set{v,v}$ that connect a vertex to itself are called \emph{self-loops}.
+\begin{figure*}
+    \begin{subfigure}[b]{0.38\linewidth}
+        \centering
+        \resizebox{.8\textwidth}{!}{\input{Figures/Chapter3/01a-undirected-graph.tex}}
+        \caption{An undirected graph.}
+        \label{fig:undirected-graph}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\linewidth}
+        \centering
+        \resizebox{.8\textwidth}{!}{\input{Figures/Chapter3/01b-directed-graph.tex}}
+        \caption{A directed graph.}
+        \label{fig:directed-graph}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.25\linewidth}
+        \centering
+        \resizebox{.9\textwidth}{!}{\input{Figures/Chapter3/01c-bipartite-graph.tex}}
+        \caption{A bipartite graph.}
+        \label{fig:bipartite-graph}
+    \end{subfigure}
+    \caption{Three examples of graphs.}
+\end{figure*}
+Graphs where it is possible to have more than one edge between a pair of vertices are called \emph{multigraphs}. In this work, we restrict ourselves to the case where there is at most one possible edge between two vertices.
+
+\paragraph{Directed Graphs}
+A \keyword{directed graph} is one where he edges are ordered pairs of vertices, or equivalently one where $\Cal{E}_G \subseteq \Cal{V}_G \times \Cal{V}_G$. A directed edge is written as $(u, v)$, meaning that it goes from vertex $u$ to vertex $v$. An example of directed graph is shown in Figure \ref{fig:directed-graph}. Given a directed graph $G$ and one of its vertices $v$, the set of all vertices from which an edge reaches $v$ is called \emph{predecessors} set, and is defined as $\Cal{P}(v) = \{u \in \Cal{V} \mid (u,v) \in \Cal{E}\}$. The cardinality of the predecessors set is called the \emph{in-degree} of the vertex, and we indicate it as $\Fun{degree}_{in}(v)$. Analogously, the set of all vertices reached by an edge from $v$ is called the \emph{successors} set, and is defined as $\Cal{s}(v) = \{u \in \Cal{V}_G \mid (v,u) \in \Cal{E}_G\}$. Its cardinality is called the \emph{out-degree} of the vertex, and indicated as $\Fun{degree}_{out}(v)$. The \emph{neighborhood} (or \emph{adjacency set}) of a vertex $v$ is the union of the predecessors and successors sets: $\Cal{N}(v) = \Cal{P}(v) \bigcup \Cal{s}(v)$. Alternatively, one can view the neighborhood as a function $\Cal{N}: \Cal{V}_G \shortrightarrow 2^{\Cal{V}_G}$ from vertices to sets of vertices. The cardinality of the neighborhood is called the \keyword{degree} of the vertex, indicated as $\Fun{degree}(v)$.  In this work, we consider all graphs directed unless otherwise specified. Undirected graphs are thus implicitly transformed into directed graphs with the same vertices, where the set of edges contains the edges $(v,u)$ and $(u,v)$ if and only if $\{u,v\}$ is an edge of the undirected graph.
+
+\paragraph{Bipartite Graphs}
+A graph $G$ is called \keyword{bipartite} if we can split $\Cal{V}_G$ in two disjoint subsets $\Cal{V}_G^{+}$ and $\Cal{V}_G^{-}$, such that $(u, v) \in \Cal{E}_G$ if and only if either $u \in \Cal{V}_G^{+}$ and $v \in \Cal{V}_G^{-}$, or $v \in \Cal{V}_G^{+}$ and $u \in \Cal{V}_G^{-}$. Figure \ref{fig:bipartite-graph} shows an example of bipartite graph, where
+$\Cal{V}_G^{+} = \Set{v_1, v_2, v_3}$ and $\Cal{V}_G^{-} = \Set{v_4, v_5, v_6}$.
+
+\paragraph{Walks, Paths, and Cycles}
+Let $G$ be a graph. A \emph{walk} of length $l$ is any sequence of $l$ vertices $\Seq{v_1, v_2, \ldots, v_l}$, where each pair of consecutive vertices is adjacent, \ie $\Seq{v_i, v_{i+1}} \in \Cal{E}_G$, $\forall i= 1, \ldots, i-1$. A \emph{path} of length $l$ from vertex $u$ to vertex $v$ is a walk such that $v_1 = u$ and $v_l = v$, where each vertex appears exactly once in the sequence. If, given two vertices $u, v \in \Cal{V}_G$ such that $u \neq v$, there exists a path between them, we say they are \emph{connected}, or that $v$ is reachable from $u$. Otherwise, we say they are \emph{disconnected}, or that $v$ is unreachable from $u$. A graph is called \emph{connected} if every vertex is connected to any other vertex (ignoring the direction of the edges); otherwise it is called \emph{disconnected}. A \emph{cycle}, or \emph{loop}, of length $l$ is a walk where $v_1 = v_l$, and all the other vertices appear once in the sequence. Graphs that do not contain cycles are called \emph{acyclic}. 
+
+\paragraph{Trees and Sequences}
+A graph $T$ is called a \keyword{tree} if its set of edges defines a \emph{partial order} over the set of vertices, implying that it is also connected and acyclic. The vertices of a tree are called \emph{nodes}. Given an edge $(u, v) \in \Cal{E}_T$, we call $u$ the \emph{parent} of $v$ and $v$ the \emph{child} of $u$. The set of children of a node $v$ is indicated with the notation $\Fun{ch}(v)$. In a tree, every node has exactly one parent, with the exception of a node called \emph{root} or \emph{supersource}, which has no parent node. A tree is \emph{positional} if we can distinguish among the children of a node, \ie if there exist a consistent ordering between them. Trees have a recursive structure: every node $v \in \Cal{V}_T$ is itself the root of a tree, called \emph{sub-tree of T rooted at v}, and indicated as $S(v)$. If $S(v)$ contains only $v$, $v$ is called a \emph{leaf}. Trees encode \emph{hierarchical} relationships among nodes; an example of tree with five nodes is shown in Figure \ref{fig:tree}. 
+
+A graph $S$ with $n$ vertices is called a \emph{sequential graph}, or \keyword{sequence} of length $n$, if its set of edges defines a \emph{total order} over the set of vertices, which allows us to represent the set of vertices in an ordered fashion as $\Cal{V}_S = (v_1, v_2, \ldots, v_n)$. In a sequence, the vertices are usually called \emph{elements}. A sequence can be viewed as a special case of tree with only one leaf. Sequences are useful to encode \emph{sequential} relationships among elements; Figure \ref{fig:sequence} shows an example of a sequence of four elements. 
+\begin{figure*}
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \resizebox{.8\textwidth}{!}{\input{Figures/Chapter3/02a-sequence.tex}}
+        \caption{A sequence.}
+        \label{fig:sequence}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \resizebox{.8\textwidth}{!}{\input{Figures/Chapter3/02b-tree.tex}}
+        \caption{A Tree.}
+        \label{fig:tree}
+    \end{subfigure}
+    % \begin{subfigure}[b]{0.32\linewidth}
+    %     \centering
+    %     \resizebox{.8\textwidth}{!}{\input{Figures/Chapter2/dpag.tex}}
+    %     \caption{A DPAG.}
+    %     \label{fig:dpag}
+    % \end{subfigure}
+    \caption{Special classes of graphs.}
+\end{figure*}
+
+\paragraph{Subgraphs and Induced Subgraphs} A \keyword{subgraph}
+$H = \langle \Cal{V}_H, \Cal{E}_H \rangle$ of a graph $G$ is any graph for which $\Cal{V}_H \subseteq \Cal{V}_G$ and  $\Cal{E}_H \subseteq \Cal{E}_G$. If $\Cal{V}_H$ contains only vertices that are endpoints in $\Cal{E}_H$, the resulting subgraph is called \keyword{induced subgraph}, or the subgraph induced by $\Cal{V}_H$ in $G$. 
+
+\subsection{Attributed Graphs} \label{sec:attr-graphs}
+Real-world instances of graphs usually carry out other information besides structure, generally attached to their vertices or edges. As an example, consider the graph representation of a molecule, in which vertices are usually annotated with an atom type, and edges are annotated with a chemical bond type. Given a graph $G$ with $n$ vertices and $m$ edges, we define the associated graph with additional information content, and we call it an \keyword{attributed graph}, as a triplet:
+$$\langle G, \psi, \zeta \rangle,$$
+where $\psi: \Cal{V}_G \rightarrow \Real^d$ is a mapping from the space of vertices to a space of $d$-dimensional \emph{vertex features}, and $\zeta: \Cal{E}_G \rightarrow \Real^{e}$, is a mapping from the space of edges to a space of $e$-dimensional \emph{edge features}. The values of these features can be either discrete (in which case the features are called \emph{labels} and encoded as one-hot vectors) or continuous vectors. Sometimes, we omit to define $\psi$ and $\zeta$ explicitly, and provide the vertex and edge features directly as sets, \eg $\Vector{x}_G = \Set{\Elem{x}{v} \in \Real^d \mid v \in \Cal{V}_G}$ for the vertex features, and $\Vector{e}_G = \Set{\Elem{e}{u,v} \in \Real^e \mid (u, v) \in \Cal{E}_G}$ for the edge features.
+If some ordering of the vertices and edges is assumed, we can represent equivalently $\psi$ as a matrix $\Matrix{x}_G \in \Real^{n \times d}$ where the $i$-th row contains the vertex features of the $i$-th vertex; analogously, we can define $\zeta$ as a matrix of edge features $\Matrix{E}_G \in \Real^{m \times e}$.
+
+\subsection{Isomorphisms, Automorphisms, and Canonization} \label{sec:isomorphisms}
+An \keyword{isomorphism} between two graphs $G$ and $H$ is a bijection $\phi: \Cal{V}_G \rightarrow \Cal{V}_H$ such that $(u,v) \in \Cal{E}_G$ if and only if $(\phi(u),\phi(v)) \in \Cal{E}_H$. Intuitively, graph isomorphism formalizes the notion of \emph{structural equivalence} between graphs, in the sense that two isomorphic graphs are structurally equivalent, regardless of the information they contain. Figure \ref{fig:isomorphism} shows two isomorphic graphs and their corresponding $\phi$ bijection. An \keyword{automorphism} $\pi: \Cal{V}_G \rightarrow \Cal{V}_G$ is an isomorphism between $G$ and itself. Since $\pi$ is essentially a permutation of the vertex set, it follows that a graph always has at most $n!$ possible automorphisms. Intuitively, and similarly to graph isomorphism, graph automorphisms convey the notion that the structure of a graph is invariant to permutation of the vertices and edges. An automorphism $\pi$ on an example graph is shown
+in Figure \ref{fig:automorphism}. Related to isomorphisms and automorphisms is the problem of \keyword{graph canonization}, where a canonical ordering (or form) of the graph vertices is sought, such that every graph $H$ isomorph to a given graph $G$ has the same canonical form. As we shall see, (approximate) graph canonization plays a role in the usage of graph within practical contexts; conversely, many techniques described in this work try to avoid representing graphs in canonical form, in favor of permutation-invariant representations.
+
+\begin{figure*}
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \resizebox{.9\textwidth}{!}{\input{Figures/Chapter3/03a-isomorphism.tex}}
+        \caption{Isomorphism.}
+        \label{fig:isomorphism}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \resizebox{.9\textwidth}{!}{\input{Figures/Chapter3/03b-automorphism.tex}}
+        \caption{Automorphism.}
+        \label{fig:automorphism}
+    \end{subfigure}
+    \caption{An example of isomorphism and automorphism.}
+\end{figure*}
+
+\subsection{Graphs as Matrices} \label{sec:adj-matrix}
+One compact way to represent the structure of a graph is through its  \keyword{adjacency matrix}. Given a graph $G$ with $n$ vertices and $m$ edges, the entries of its corresponding  adjacency matrix $\Matrix{A} \in \mathbb{R}^{n \times n}$ are defined as follows:
+\[
+\Matrix{A}_{ij} =
+    \begin{cases}
+        1  & \text{if } (v_i, v_j) \in \Cal{E}_G \\
+        0  & \text{otherwise.}
+    \end{cases}
+\]
+Note that the diagonal entries $\Matrix{A}_{ii}$ of the adjacency matrix specify the presence  (or absence) of self-loops. Another interesting property of the adjacency matrix is that  it is symmetric for undirected graphs, which implies $\Matrix{A}_{ij} = \Matrix{A}_{ji},$ $\forall i, j = 1, \ldots, n$. Adjacency matrices make some calculations of graph properties particularly convenient: for example, the in-degree and out-degree of a vertex $v_j \in G$
+can be obtained by performing row-wise and column-wise sums on $\Matrix{A}$:
+$$
+\Fun{degree}_{in}(v_j) = \sum_{i=1}^n \Matrix{A}_{ji} \quad \quad \Fun{degree}_{out}(v_j) = \sum_{i=1}^n \Matrix{A}_{ij}.
+$$
+Adjacency matrices are also useful to understand concepts such as graph automorphisms: in fact, an automorphism of $G$ corresponds to a permutation of the columns or rows of the adjacency matrix (but not both). Other useful matrices to represent properties graphs are the \emph{Laplacian matrix} $\Matrix{L} \in \Real^{n \times n} = \Matrix{D} - \Matrix{A}$, and the \emph{symmetric normalized Laplacian matrix} $\Matrix{\tilde{L}} \in \Real^{n \times n} = \Matrix{I} - \Matrix{D}^{-\frac{1}{2}}\Matrix{A}\Matrix{D}^{-\frac{1}{2}}$. In both definitions, the matrix  $\Matrix{D} \in \Real^{n \times n}$ is the \emph{degree matrix}, where all entries are zero except the diagonal entries, for which $\Matrix{D}_{ii} = \Fun{degree}(v_i)$. These matrices provide information about the graph connectivity through their eigenvalues and eigenvectors.
+
+\section{The Adaptive Processing of Structured Data}
+The processing of structured data for learning purposes is carried out by a \keyword{structural transduction}, namely a function $\Transduction: \Cal{x} \shortrightarrow \Cal{y}$ where $\Cal{X}$ and $\Cal{Y}$ are structured domains. When the structural transduction is implemented by a (deep) \gls{nn}, it is \emph{adaptive}, \ie it is learned from data. A structural transduction can be decomposed as $\Transduction = \Transduction_{\Fun{enc}} \circ \Transduction_{\Fun{out}}$, where:
+\begin{itemize}
+    \item $\Transduction_{\Fun{enc}}$ is called \emph{encoding function} or \emph{state transition function} that is applied separately to each element of the structure. The output of the encoding function is a structure isomorphic to that in input, where the elements are now \keyword{state vectors}. Intuitively, a state vector encodes the information of the element and of the elements it depends on;
+    \item $\Transduction_{\Fun{out}}$ is called \emph{output function}, which computes an output from the state vectors.
+\end{itemize}
+The output function of the structural transduction is task-dependent. Considering a supervised setting and a generic graph dataset $\Data_n$ consisting of $n$ training pairs, we distinguish two learning problems:
+\begin{itemize}
+    \item in \emph{structure-to-structure} tasks, the dataset has the form $\Data_n = \Set{(\Vector{x}_G^{(i)}, \Vector{y}_H^{(i)})}_{i=1}^n$, and the output function maps each element of the structured datum to an output. More specifically, a training pair is defined as $\Cal{S} = (\Vector{x}_G, \Vector{y}_H)$, where $\Vector{x}_G = \Set{\Elem{x}{v} \mid v \in \Cal{V}_G}$ and $\Vector{y}_H = \Set{\Elem{y}{\phi(v)} \mid v \in \Cal{V}_{G}}$, with $G$ isomorphic to $H$ under a bijection $\phi$. The \gls{mle} objective function minimized in these tasks is the following:
+    $$\argmin_{\Param} \frac{1}{n} \sum_{\Cal{S} \in \Data_n} - \log p_{\Param}(\Vector{y}_H \given \Vector{x}_G) = \frac{1}{n}\sum_{\Cal{S} \in \Data_n} \sum_{v \in \Cal{V}_G} - \log p_{\Param}(\Elem{y}{\phi(v)} \given \Elem{x}{v}),$$
+    where $p_{\Param}$ is a neural network with parameters $\Param$ that learns an approximation of the true conditional.
+    \item in \emph{structure-to-element} tasks, the dataset has the form $\Data_n = \Set{(\Vector{x}_G^{(i)}, \Vector{y}^{(i)})}_{i=1}^n$, and the output function maps the whole structure to a single output vector (or scalar). More specifically, a training pair is defined as $\Cal{S} = (\Vector{x}_G, \Vector{y})$, where $\Vector{y} \in \Real^y$. The \gls{mle} objective function minimized in these tasks is the following:
+    $$\argmin_{\Param} \frac{1}{n} \sum_{\Cal{S} \in \Data_n} - \log p_{\Param}(\Vector{y} \given \Vector{x}_G).$$
+    To learn structure-to-element tasks, the output function must compress the states of each element of the structure into a global output vector representing the entire structure, which is compared to the target $\Vector{y}$. To do so, there are several strategies; in general, one could pick a single state vector as a representative for the whole structure, or compute a summary of the entire structure using all the available state vectors. The function that implements the latter strategy is usually termed \keyword{readout}. 
+\end{itemize}
+
+As anticipated, one important issue that structural transductions need to address is how to deal with variable-sized inputs. The solution is to apply the same state transition function (that is, with the same adaptive parameters) \emph{locally} to every element in the structure, rather than to apply it one time to the overall structure. This process is similar to the localized processing of images performed by \glspl{cnn} \cite{?}, which works by considering a single pixel at a time, and combining it with some finite set of nearby pixels. This local property of the structural transduction is often referred to as \emph{stationarity}. An interesting byproduct of using stationary transductions is that they require a smaller number of parameters with respect to non-stationary ones, since the network weights are shared across the structure. At the same time, using stationary transductions also requires additional mechanisms to learn from the global structure of the datum (such as readouts in the case of structure-to-element tasks), rather than only locally.
+
+In the following sections, we present three specific \gls{nn} architectures that implement transductions over structured data: recurrent neural networks, which process data represented as sequences; recursive neural networks, which process hierarchical data such as trees; and deep graph networks, which process general graphs.
+
+\section{Recurrent Neural Networks}\label{sec:rnns}
+A \gls{rnn} is a \gls{nn} architecture able to process sequences. Let $S$ be a sequence of length $m$ whose set of elements is $\Cal{V}_S = (v_1, v_2, \ldots, v_m)$, and let $S_{\Vector{x}} = \Seq{\Elem{x}{1}, \Elem{x}{2}, \ldots, \Elem{x}{m}}$ be its element features. Here, we slightly abuse the notation $\Elem{h}{v_t}$ in favor of $\Elem{h}{t}$ since sequence elements are ordered. The state transition function of a \gls{rnn}, applied locally to each sequence element, has the following general form:
+\begin{align*}
+    \Elem{h}{t} &= \Transduction_{\Fun{enc}}(\Elem{x}{t}, \Elem{h}{t-1}),
+\end{align*}
+where $\Elem{h}{t} \in \Real^h$ is a state vector, also known as \keyword{hidden state}. The calculation of the hidden state performed by the state transition function $\Transduction_{\Fun{enc}}$ is \emph{recursive}: to compute a hidden state for the $t$-th element of the sequence, the hidden state of the previous element must be known in advance. Thus, the state computation is a sequential process, where the input sequence is traversed in order one element at a time, and the hidden state is updated as a function of the current sequence element and the hidden state at the previous step. To avoid infinite recursion, the hidden state is initialized with a vector $\Elem{h}{0}$. As the sequence is traversed, the hidden state maintains a \emph{memory} of the past elements of the sequence. The presence of a memory mechanism makes \glspl{rnn} very powerful: in fact, it has been proved that finite-size \glspl{rnn} can compute any function computable with a Turing machine \cite{?}. As with \glspl{cnn}, the development of \glspl{rnn} started in the early '90s, and they have recently been rediscovered within the \gls{dl} framework after their success, especially in \gls{nlp}-related tasks.
+
+\subsection{Training}
+Given a sequence $S$ with features $S_{\Vector{x}}$, the original implementation of the state transition function of a \gls{rnn} is defined as follows\footnote{For the rest of this chapter, biases are omitted for readability.}:
+\begin{align*}
+    \Elem{h}{t} &= \Fun{tanh}\Paren{\Matrix{W}^{\Transpose}\Elem{x}{t} + \Matrix{U}^{\Transpose}\Elem{h}{t-1}},\; \forall t=1, \ldots, m.
+\end{align*}
+The above is also called \keyword{recurrent layer}. The weight matrices $\Matrix{W} \in \Real^{d \times h}$ and $\Matrix{U} \in \Real^{h \times h}$, are shared among the sequence elements according to the stationarity property. For this reason, it is often said that the network is \emph{unrolled} over the sequence. In structure-to-structure tasks, once the states of the elements are calculated, an element-wise output is computed as:
+\begin{align*}
+    \Elem{o}{t} = g_{\mathrm{out}}(\Elem{h}{t}),\; \forall t=1, \ldots, m,
+\end{align*}
+where $g_{\mathrm{out}}$ can be any neural network such as one simple output layer or a more complex downstream network. Similarly, in structure-to-element tasks, a single output is computed from the last hidden state of the sequence:
+\begin{align*}
+    \Vector{o} = g_{\mathrm{out}}(\Elem{h}{m}).
+\end{align*}
+Figure \ref{fig:rnn-unfold} shows a \gls{rnn} in compact form, as well as unrolled over a sequence of length $m$ for a structure-to-structure task. The error of the network during training is computed by comparing the output of the network for each sequence element $\Elem{o}{t}$ to the corresponding sequence element $\Elem{y}{t}$ in the target sequence with the loss function $\Loss$, which is summed up over all the elements in the sequence. Notice that it is possible to stack multiple recurrent layers and create deep \glspl{rnn} by feeding the hidden state produced the recurrent layer to a subsequent recurrent layer, other than to the next step of the recurrence. In this cases, the output is computed after the last recurrent layer.
+\begin{figure*}[h!]
+    \begin{subfigure}[b]{0.4\linewidth}
+        \centering
+        \resizebox{.6\textwidth}{!}{\input{Figures/Chapter3/04a-rnn.tex}}
+        \caption{}
+        \label{fig:rnn}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.59\linewidth}
+        \centering
+        \resizebox{.8\textwidth}{!}{\input{Figures/Chapter3/04b-rnn-unfold.tex}}
+        \caption{}
+        \label{fig:rnn-unfold}
+    \end{subfigure}
+    \caption{(A): An example of recurrent neural network that can learn a structure-to-structure task. (B): the same network unfolded over a training pair of sequences of length $m$.}
+    \label{fig:rnn-example}
+\end{figure*}
+\glspl{rnn} can be also adapted to learn structure-to-structure distributions of the kind $p(S'_\Vector{y} \given S_\Vector{x})$, where $S'$ and $S$ are not isomorphic, \ie when the lengths of the input and target sequence do not match. The usual way to proceed in this case is to use two \glspl{rnn}: one acts as an encoder, computing a fixed-size representation of the input $S_\Vector{x}$ (for example, its last hidden state as seen above); the other acts as a decoder of the target sequence $S'_\Vector{y}$, conditioned on the input representation. The conditioning is achieved by initializing the hidden state of the decoder \gls{rnn} with the encoding of the input computed by the encoder \gls{rnn}. These types of architectures are called \gls{s2s} models.
+
+\glspl{rnn} are usually trained with \gls{bptt}, a variant of vanilla backpropagation that propagates the gradient both from the output layer to the recurrent layer, and backwards along the sequence elements. One \gls{bptt} update requires $O(mb)$ computation, where $m$ is the sequence length and $b$ is the size of the mini-batch given to the optimizer. This can become computationally inconvenient for long sequences, and can lead to instabilities like gradient vanishing. Thus, in practical settings, faster \gls{bptt} variants are often used, such as truncated \gls{bptt} \cite{?}. 
+
+\subsection{Gated Recurrent Neural Networks}
+Vanilla \glspl{rnn} struggle to learn with long sequences. This issue has been documented several times in the literature (see \eg \cite{?}), and is mostly due to the gradient vanishing or exploding problems. While gradient exploding can be dealt with gradient clipping, gradient vanishing is more hard to tackle. Several workarounds have been proposed to overcome such limitation; the most adopted in practical settings exploits a form of information \emph{gating}. Specifically, gating mechanisms in \glspl{rnn} are used to control the information flow inside the recurrent layer. In particular, it might be useful for the network to \emph{forget} useless information, or to \emph{reset} the hidden state when some kind of knowledge has already been processed. Gated mechanisms fulfill this purpose adaptively, driven by data. The most used \gls{rnn} variant that implements gating mechanisms is the \gls{lstm}.
+An \gls{lstm} is composed of a \emph{cell} $\Vector{c} \in \Real^h$, an \emph{input gate} $\Vector{i} \in \Real^h$, a \emph{forget gate} $\Vector{f} \in \Real^h$, and an \emph{output gate} $\Vector{g} \in \Real^h$. Assuming an input sequence element $\Elem{x}{t} \in \Real^d$, the hidden state $\Elem{h}{t} \in \Real^h$ of a \gls{lstm} is computed as follows:
+\begin{align*}
+    \Elem{f}{t} &= \sigma\Paren{\Matrix{W}_{1}^{\Transpose}\Elem{x}{t} + \Matrix{U}_{1}^{\Transpose}\Elem{h}{t-1}}\\
+    \Elem{i}{t} &= \sigma\Paren{\Matrix{W}_{2}^{\Transpose}\Elem{x}{t} + \Matrix{U}_{2}^{\Transpose}\Elem{h}{t-1}}\\
+    \Elem{g}{t} &= \sigma\Paren{\Matrix{W}_{3}^{\Transpose}\Elem{x}{t} + \Matrix{U}_{3}^{\Transpose}\Elem{h}{t-1}}\\
+    \tilde{\Vector{c}}_{(t)} &= \Fun{tanh}\Paren{\Matrix{W}_{4}^{\Transpose}\Elem{x}{t} + \Matrix{U}_{4}^{\Transpose}\Elem{h}{t-1}}\\
+    \Elem{c}{t} &= \Elem{f}{t} \odot \Elem{c}{t-1} + \Elem{i}{t} \odot \tilde{\Vector{c}}_{(t)}\\
+    \Elem{h}{t} &= \Elem{g}{t} \odot \Fun{tanh}(\Elem{c}{t}),
+\end{align*}
+where $\odot$ is the Hadamard (element-wise) product between matrices. Notice that the weight matrices $\Matrix{W}_i \in \Real^{d \times h}$ and $\Matrix{U}_i \in \Real^{h \times h}$ with $i=1, \ldots, 4$ are all different. In short, the input gate controls how much of the input is kept, the forget gate controls how much information about previous elements is kept, and the output gate controls how much of the two should be used to compute the hidden state. While powerful, a single \gls{lstm} requires eight weight matrices; thus, it is computationally expensive to train. The \gls{gru} gating mechanism is a lightweight alternative to \gls{lstm} which uses less parameters, though it is slightly less powerful \cite{?}. A \gls{gru} uses two gates, an \emph{update} gate $\Vector{u} \in \Real^h$ and a \emph{reset} gate $\Vector{r} \in \Real^h$, and computes the hidden state as follows:
+\begin{align*}
+    \Elem{u}{t} &= \sigma\Paren{\Matrix{W}_{1}^{\Transpose}\Elem{x}{t} + \Matrix{U}_{1}^{\Transpose}\Elem{h}{t-1}}\\
+    \Elem{r}{t} &= \sigma\Paren{\Matrix{W}_{2}^{\Transpose}\Elem{x}{t} + \Matrix{U}_{2}^{\Transpose}\Elem{h}{t-1}}\\
+    \tilde{\Vector{h}}_{(t)} &= \Fun{tanh}\Paren{\Matrix{W}_{3}^{\Transpose}\Elem{x}{t} + \Matrix{U}_{3}^{\Transpose}(\Elem{r}{t} \odot \Elem{h}{t-1})}\\
+    \Elem{h}{t} &= (\boldsymbol{1} - \Elem{u}{t}) \odot \Elem{h}{t-1} + \Elem{u}{t} \odot \tilde{\Vector{h}}_{(t)},
+\end{align*}
+where $\boldsymbol{1} \in \Real^h$ is a vector of all ones. In practice, the reset gate controls how much information from previous sequence elements should be kept, and the hidden state is computed as a convex combination of this quantity and the previous hidden state, controlled by the update gate. 
+
+\subsection{Recurrent Neural Networks as Autoregressive Models}
+\glspl{rnn} can be used as autoregressive generators of sequences. In fact, a probability distribution over sequences admits a decomposition as a product of probability distributions over sequence elements, conditioned on the previous elements. More specifically, given a random variable $X = (x_1, x_2, \ldots)$ over sequences, where $x_i$ are random variables over the sequence elements, the following decomposition:
+$$p(X) = \prod_i p(x_{i} \given x_{<i})$$
+can be approximated autoregressively by an \gls{rnn} trained on a dataset of sequences $\Data_n = \Set{\Vector{x}_G^{(i)}}_{i=1}^n$. Figure \ref{fig:auto-regressive} shows how the training can be achieved. In words, at a given step, the output of the network is fed as input to the next step of the recurrence, and the loss of the network is calculated between the output and the expected input sequence element. If target information is available, \ie if the dataset of sequences has the form $\Data_n = \Set{(\Vector{x}_G^{(i)}, \Vector{y}_H^{(i)})}_{i=1}^n$, a different training strategy, called \emph{teacher forcing} \cite{?}, is also possible. With teacher forcing, the target information is used for the loss calculation and given as input to the next step of the recurrence (instead of the output of the network), as shown in Figure \ref{fig:teacher-forcing}. Both strategies have advantages and disadvantages: teacher forcing learns faster initially, but does not expose the network to its own errors, thus it can be less precise at generation time. Often, a combination of the two is used. 
+\begin{figure*}[h!]
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \resizebox{.9\textwidth}{!}{\input{Figures/Chapter3/05a-auto-regressive}}
+        \caption{}
+        \label{fig:auto-regressive}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\linewidth}
+        \centering
+        \resizebox{.9\textwidth}{!}{\input{Figures/Chapter3/05b-teacher-forcing.tex}}
+        \caption{}
+        \label{fig:teacher-forcing}
+    \end{subfigure}
+    \caption{An example of training a recurrent neural network for learning an auto-regressive distribution. (A): standard training procedure. (B): training with teacher forcing.}
+    \label{fig:rnn-auto-regressive}
+\end{figure*}
+Once the network is trained, novel sequences can be generated according to the following scheme:
+\begin{itemize}
+    \item start the generation process feeding the initial hidden state $\Elem{h}{0}$ and a \emph{start of sequence} token $\SOS$ as input to the network;
+    \item the output $\Elem{o}{1}$ of the network is a distribution over sequence elements. Sample a new sequence element $\Elem{\tilde{x}}{1} \sim \Elem{o}{1}$;
+    \item feed the updated hidden state $\Elem{h}{1}$ and the sampled element $\Elem{\tilde{x}}{1}$ as input to the network, and repeat the whole process until an \emph{end of sequence} token $\EOS$ is sampled;
+    \item the generated sequence is $\tilde{S} = \Seq{\Elem{\tilde{x}}{1}, \Elem{\tilde{x}}{2}, \ldots}$.
+\end{itemize}
+
+\section{Recursive Neural Networks}
+A \gls{recnn} is a \gls{nn} architecture that can adaptively process hierarchical data. Using trees as an example, let $T$ be a tree whose set of nodes is $\Cal{V}_T = \Set{v_1, v_2, \ldots, v_m}$, and let $T_{\Vector{x}} = \Set{\Elem{x}{v} \in \Real^d \mid v \in \Cal{V}_T}$ be its set node of features. The state transition function of a \gls{recnn}, applied locally to each node, is the following:
+\begin{align*}
+    \Elem{h}{v} &= \Transduction_{\Fun{enc}}(\Elem{x}{v}, \Elem{h}{S(v)}), \; \forall v \in \Cal{V}_T
+\end{align*}
+where $\Elem{h}{S(v)} \in \Real^h$ is the hidden state of the sub-tree rooted at $v$. As with \glspl{rnn}, the state transition function $\Transduction_{\Fun{enc}}$ is recursive, but this time the recursion is defined over the tree structure. Specifically, to compute the hidden state of a node, the hidden state of all its children must be known in advance. The state computation starts at the leaves of the tree (where the state is initialized beforehand to make the recursion well-defined), and proceeds bottom-up until the root node is reached.
+The development of \glspl{recnn} started in the middle '90s \cite{?}, with the introduction of the notion of generalized recursive neuron \cite{?} and the development of a general framework for learning with tree-structured data \cite{?}, which was later extended to more expressive classes of structures such as \glspl{dag} and \glspl{dpag}. Since then, they have applied fruitfully in several fields, including among others cheminformatics \cite{?}, sentiment analysis \cite{?} and scene parsing \cite{?}. Interestingly, \glspl{recnn} are also backed up by strong theoretical results, which support the generality of the structural transduction and characterize the kind of functions they can learn. Specifically, universal approximation theorems showing that \glspl{recnn} can approximate arbitrarily well any function from labeled trees to real values \cite{?}, and from labelled \glspl{dpag} to real values \cite{?} have been proved.
+
+\subsection{Training}
+Using the binary tree of Figure \ref{fig:tree} and a structure-to-element task as an example, one possible implementation of the state transition function of a \gls{recnn} is the following:
+\begin{align*}
+    \Elem{h}{v} &= g\Paren{\Matrix{W}^{\Transpose}\Elem{x}{v} + \Matrix{U}_\Fun{l}^{\Transpose}\Elem{h}{\Fun{l}(v)} + \Matrix{U}_\Fun{r}^{\Transpose}\Elem{h}{\Fun{r}(v)}},\; \forall v \in \Cal{v}_{T}.
+\end{align*} 
+In the above formula, $g$ can be any hidden activation function, and $\Matrix{w} \in \Real^{d \times h}$, $\Matrix{u}_\Fun{l}$, and $\Matrix{u}_\Fun{r} \in \Real^{h \times h}$, are weight matrices shared across the structure. Notice that the two weight matrices on the node children are positional, meaning that they are applied to a certain node according to its position. In the example case of a binary tree, the two functions $\Fun{l}(v)$ and $\Fun{r}(v)$ select the left and right child of a node $v$, respectively, if they exist. Figure \ref{fig:recnn} shows the unfolded \gls{recnn} over the tree, where the final output of the entire structure is obtained using the hidden state of the root node $v_1$ as:
+$$\Vector{o} = g_{\mathrm{out}}\Paren{\Elem{h}{v_1}},$$
+where $\Vector{o} \in \Real^y$ is the output of the network and $g_{\mathrm{out}}$ can be any downstream network such as a simple output layer, or a more complex neural network. For structure-to-structure tasks, the output is calculated node-wise as follows:
+$$\Elem{o}{v} = g_{\mathrm{out}}\Paren{\Elem{h}{v}},\; \forall v \in \Cal{v}_{T}.$$
+Notably, the order by which the hidden states need to be calculated (the numbers at the left of the hidden states in the figure) must be respected to ensure that the recursive process is well-defined. The states of nodes with the same ordering can be calculated in parallel according to the tree structure, which makes \glspl{recnn} more efficient than \glspl{rnn} when compared on structures with the same number of elements.
+\begin{figure*}[h!]
+    \centering
+    \resizebox{.5\textwidth}{!}{\input{Figures/Chapter3/06-recnn}}
+    \caption{A recursive neural network unfolded over the tree of Figure \ref{fig:tree} for a structure-to-element task. The number at the left of the hidden states indicates the order in which they are calculated. The black boxes represent \quotes{null} state vectors used to initialize the process at the leaves.}
+    \label{fig:recnn}
+\end{figure*}
+More in general, \glspl{recnn} are analogous to \glspl{rnn} as to how they can be trained with \gls{mle}, and as what kinds of conditional distributions they can learn (even though in practical cases the structure-to-element scenario is more common).
+

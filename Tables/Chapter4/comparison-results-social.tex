@@ -1,0 +1,31 @@
+\begin{table}[h!]
+\scriptsize
+\renewcommand{\arraystretch}{1.1}
+%\setlength{\tabcolsep}{10pt}
+\centering
+\caption{Results on social datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold. OOR means Out of Resources, either time ($>$ 72 hours for a single training) or GPU memory. }
+\label{tab:social-results}
+\begin{tabular}{llccccc}
+\toprule
+     & & \textbf{IMDB-B} & \textbf{IMDB-M} & \textbf{REDDIT-B} & \textbf{REDDIT-5K} & \textbf{COLLAB}\\
+    \midrule
+\multirow{6}{*}{\rotatebox[origin=c]{90}{\textsc{No Features}}}
+& Baseline & $50.7 \pm 2.4 $ &  $36.1 \pm 3.0 $ &  $72.1 \pm 7.8 $ &  $35.1 \pm 1.4 $ &  $55.0 \pm 1.9 $   \\
+& DGCNN & $53.3 \pm 5.0 $ &  $38.6 \pm 2.2 $ &  $77.1 \pm 2.9 $ &  $35.7 \pm 1.8 $ &  $57.4 \pm 1.9 $   \\
+& DiffPool & $68.3 \pm 6.1 $ &  $45.1 \pm 3.2 $ &  $76.6 \pm 2.4 $ &  $34.6 \pm 2.0 $ &  $67.7 \pm 1.9 $   \\
+& ECC & $67.8 \pm 4.8 $ &  $44.8 \pm 3.1 $ &   OOR &   OOR &   OOR   \\
+& GIN & $66.8 \pm 3.9 $ &  $42.2 \pm 4.6 $ &  $\mathbf{87.0} \pm 4.4 $ &  $\mathbf{53.8} \pm 5.9 $ &  $\mathbf{75.9} \pm 1.9 $   \\
+& GraphSAGE & $\mathbf{69.9}\pm 4.6 $ &  $\mathbf{47.2}\pm 3.6 $ &  $86.1 \pm 2.0 $ &  $49.9 \pm 1.7 $ &  $71.6 \pm 1.5 $   \\
+
+\midrule
+\multirow{6}{*}{\rotatebox[origin=c]{90}{\textsc{With Degree}}}
+& Baseline & $70.8 \pm 5.0 $ &  $\mathbf{49.1} \pm 3.5 $ &  $82.2 \pm 3.0 $ &  $52.2 \pm 1.5 $ &  $70.2 \pm 1.5 $   \\
+& DGCNN & $69.2 \pm 3.0 $ &  $45.6 \pm 3.4 $ &  $87.8 \pm 2.5 $ &  $49.2 \pm 1.2 $ &  $71.2 \pm 1.9 $   \\
+& DiffPool & $68.4 \pm 3.3 $ &  $45.6 \pm 3.4 $ &  $89.1 \pm 1.6 $ &  $53.8 \pm 1.4 $ &  $68.9 \pm 2.0 $   \\
+& ECC & $67.7 \pm 2.8 $ &  $43.5 \pm 3.1 $ &   OOR &   OOR &   OOR   \\
+& GIN & $\mathbf{71.2} \pm 3.9 $ &  $48.5 \pm 3.3 $ &  $\mathbf{89.9} \pm 1.9 $ &  $\mathbf{56.1} \pm 1.7 $ &  $\mathbf{75.6} \pm 2.3 $   \\
+& GraphSAGE & $68.8 \pm 4.5 $ &  $47.6 \pm 3.5 $ &  $84.3 \pm 1.9 $ &  $50.0 \pm 1.3 $ &  $73.9 \pm 1.7 $   \\
+\bottomrule
+\end{tabular}
+\label{tab:comparison-results-social}
+\end{table}

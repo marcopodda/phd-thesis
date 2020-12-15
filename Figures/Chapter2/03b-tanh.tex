@@ -1,0 +1,23 @@
+\begin{tikzpicture}[declare function={tanhp(\x)=1-tanh(\x)^2;}]
+\begin{axis}%
+[
+    % grid=major,     
+    xmin=-4.1,
+    xmax=4.1,
+    axis x line=middle,
+    ytick={-1,0,1},
+    ymax=1.1,
+    ymin=-1.1,
+    axis y line=middle,
+    samples=200,
+    domain=-4:4,
+    width=\textwidth,
+    height=.8\textwidth,
+    scale only axis=true,
+    %legend style={at={(.3,.9)}}      
+]
+    \addplot[mark=none]   (x,{tanh(\x)});
+    \addplot[dashed,mark=none]   (x,{tanhp(\x)});
+    %\legend{$\Fun{tanh}(x)$,$\Fun{tanh}'(x)$}
+\end{axis}
+\end{tikzpicture}

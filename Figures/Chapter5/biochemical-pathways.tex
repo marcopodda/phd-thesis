@@ -1,0 +1,36 @@
+\begin{figure}
+\begin{subfigure}[b]{0.49\linewidth}
+    \[\def\arraystretch{1.2}
+    \begin{array}{ccl}
+      \mbox{Reaction } & \mbox{ Modifiers } & \mbox{ Kinetics}\\
+      \hline
+      A + B \rightarrow 2B &      & r1 = k_1AB\\
+      B \rightarrow A      &      & r2 = k_2B\\
+      C + D \rightarrow E  & A    & r3 = k_3CDA\\
+      E \rightarrow F      &      & r4 = k_4E\\
+      F \rightarrow E      &      & r5 = k_5F\\
+      G \rightarrow H      & F    & r6 = \frac{k_6G}{1+2 F}\\
+      H \rightarrow G      &      & r7 = k_7H\\
+    \end{array}
+    \]
+\caption{Reactions}\label{subfig:example-reactions}
+\end{subfigure}
+%
+\begin{subfigure}[b]{0.49\linewidth}
+\[\def\arraystretch{1.2}
+\begin{array}{l}
+    \frac{dA}{dt} = -k_1AB + k_2B\\
+    \frac{dB}{dt} = k_1AB - k_2B\\
+    \frac{dC}{dt} = -k_3CDA\\
+    \frac{dD}{dt} = -k_3CDA\\
+    \frac{dE}{dt} = k_3CDA - k_4E + k_5F\\
+    \frac{dF}{dt} = k_4E - k_5F\\
+    \frac{dG}{dt} = -\frac{k_6G}{1+2 F} + k_7H\\
+    \frac{dH}{dt} = \frac{k_6G}{1+2 F} - k_7H
+\end{array}
+\]
+\caption{ODEs}\label{subfig:example-odes}
+\end{subfigure}
+%
+\caption{An example of biochemical pathway. (A): list of reactions with information on modifiers and kinetic formulas. (B): the corresponding system of ODEs.}\label{fig:example-pathway}
+\end{figure}

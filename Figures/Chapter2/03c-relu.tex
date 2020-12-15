@@ -1,0 +1,29 @@
+\begin{tikzpicture}[declare function={
+    relu(\x)=max(0,\x);
+    relup(\x)=(\x<0) * (0) + (\x>0) * (1);
+}]
+\begin{axis}%
+[
+    % grid=major,     
+    xmin=-2.1,
+    xmax=2.1,
+    xtick={-2,0,2},
+    axis x line=bottom,
+    ytick={0,1,2},
+    ymax=2.2,
+    axis y line=middle,
+    samples=200,
+    domain=-2:2,
+    width=\textwidth,
+    height=.6\textwidth,
+    scale only axis=true,
+    %legend style={at={(.4,.9)}}     
+]
+    \addplot[mark=none]   (x,{relu(\x)});
+    \foreach \xStart/\xEnd  in {-2/-0.001, 0.001/2} {
+        \addplot[domain=\xStart:\xEnd,dashed] {relup(x)};
+    }
+    %\addplot[red,dashed,mark=none]   (x,{relup(x)});
+    %\legend{$\Fun{ReLU}(x)$,$\Fun{ReLU}'(x)$}
+\end{axis}
+\end{tikzpicture}

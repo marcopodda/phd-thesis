@@ -1,0 +1,22 @@
+\begin{table}[h!]
+
+\footnotesize
+\renewcommand\arraystretch{1.1}
+\caption{The table displays the median number of selcted layers in relation to the addition of node degrees as input features on all social datasets. 1 indicates that an uninformative feature is used as node label.}
+\begin{center}
+\begin{tabular}{lcccccccccc}
+\cmidrule{2-11}
+          & \multicolumn{2}{c}{\textbf{IMDB-B}} & \multicolumn{2}{c}{\textbf{IMDB-M}} & \multicolumn{2}{c}{\textbf{REDDIT-B}} & \multicolumn{2}{c}{\textbf{REDDIT-M}} & \multicolumn{2}{c}{\textbf{COLLAB}} \\
+          \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+          & \textbf{1}           & \textbf{DEG} & \textbf{1}           & \textbf{DEG} & \textbf{1}           & \textbf{DEG} & \textbf{1}           & \textbf{DEG} & \textbf{1}           & \textbf{DEG}          \\
+          \midrule
+DGCNN     & 3           & 3            & 3.5          & 3           & 4          & 3            & 3          & 2            & 4           & 2            \\
+DiffPool  & 1           & 2            & 2            & 1           & 2          & 2            & 2          & 1            & 2           & 1.5          \\
+ECC       & 1           & 2            & 1            & 1           & -          & -            & -          & -            & -           & -            \\
+GIN       & 3           & 2            & 4            & 2           & 4          & 4            & 4          & 3            & 4           & 4            \\
+GraphSAGE & 4           & 3            & 5            & 4           & 3          & 4            & 3          & 5            & 3           & 5\\           
+\bottomrule
+\end{tabular}
+\end{center}
+\label{tab:effect-of-degree}
+\end{table}

@@ -1,0 +1,172 @@
+\usepackage{bookmark}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+
+\newcommand{\atoc}[1]{\addtocontents{toc}{#1\par}}
+
+% ---- TEXT STYLES ----
+\def\mathsc#1{\text{\textsc{#1}}}
+\def\mathbs#1{\text{\boldmath\ensuremath{#1}}}
+\def\EMPH#1{\textbf{\emph{\boldmath #1}}}
+\def\quotes#1{``#1''}
+\def\Cal#1{\ensuremath{\mathcal{\uppercase{#1}}}}
+\def\BoldGreek#1{\ensuremath{\boldsymbol{#1}}}
+\def\keyword#1{\textbf{#1}}
+\def\Thead#1{\textbf{#1}}
+
+% ---- SYMBOLS ----
+\let\eps\varepsilon 
+
+\def\Real{\mathbb{R}}
+\def\Integer{\mathbb{Z}}
+\def\Natural{\mathbb{N}}
+\def\Complex{\mathbb{C}}
+\def\Rational{\mathbb{Q}}
+\def\Graphs{\mathbb{G}}
+\def\Data{\mathbb{D}}
+\def\HypSpace{\Cal{H}_{\Omega}}
+\def\PData{p_{\mathrm{data}}}
+\def\PDataset{p_{\Data_n}}
+\def\Transduction{\mathbbmss{T}}
+\def\Multiset{\mathbb{M}}
+\def\Loss{\mathcal{L}}
+
+\def\SOS{\ensuremath{\mathtt{\Tuple{SOS}}}}
+\def\EOS{\ensuremath{\mathtt{\Tuple{EOS}}}}
+\def\PAD{\ensuremath{\mathtt{\Tuple{PAD}}}}
+
+\def\Tensor#1{\ensuremath{\mathsf{\uppercase{#1}}}}
+\def\Matrix#1{\ensuremath{\mathbf{\uppercase{#1}}}}
+\def\Vector#1{\ensuremath{\mathbf{\lowercase{#1}}}}
+\def\Transpose{\mathsf{T}}
+\def\Pattern#1#2{#1^{(#2)}}
+\def\VPattern#1#2{\Vector{#1}^{(#2)}}
+\def\Fun#1{\ensuremath{\mathrm{#1}}}
+\def\Param{\BoldGreek{\theta}}
+\def\Elem#1#2{\Vector{#1}_{[#2]}}
+
+% ---- OPERATORS (requires amsmath) ----
+\def\given{\,|\,}
+\def\Normal#1#2{\mathbbmss{N}(#1,#2)}
+\def\Expect{\operatorname{\mathbb{E}}}
+\def\Op#1{\operatorname{#1}}
+\def\argmax{\operatornamewithlimits{arg\,max}}
+\def\argmin{\operatornamewithlimits{arg\,min}}
+
+% --- Darts and fences ---
+% less nice replacements for stmaryrd characters
+\@ifundefined{shortrightarrow}{\let\shortrightarrow\rightarrow}{}
+\@ifundefined{shortleftarrow}{\let\shortleftarrow\leftarrow}{}
+\@ifundefined{shortuparrow}{\let\shortuparrow\uparrow}{}
+\@ifundefined{shortdownarrow}{\let\shortdownarrow\downarrow}{}
+
+% --- Cheap displaystyle operators ---
+\def\Frac#1#2{{\displaystyle\frac{#1}{#2}}}
+\def\Sum{\sum\limits}
+\def\Prod{\prod\limits}
+\def\Union{\,\bigcup\limits\,}
+\def\Inter{\,\bigcap\limits\,}
+\def\Lor{\bigvee\limits}
+\def\Land{\bigwedge\limits}
+\def\Lim{\lim\limits}
+\def\Max{\max\limits}
+\def\Min{\min\limits}
+\def\Child{\Fun{ch}}
+
+% ---- DELIMITER PAIRS ----
+\def\floor#1{\lfloor #1 \rfloor}
+\def\ceil#1{\lceil #1 \rceil}
+\def\seq#1{( #1 )}
+\def\abs#1{\mathopen| #1 \mathclose|}
+\def\norm#1{\mathopen\| #1 \mathclose\|}
+\def\defeq{\stackrel{\text{def}}{=}}
+
+% --- Self-scaling delmiter pairs ---
+\def\Floor#1{\left\lfloor #1 \right\rfloor}
+\def\Ceil#1{\left\lceil #1 \right\rceil}
+\def\Seq#1{\left( #1 \right)}
+\def\Set#1{\{ #1 \}}
+\def\Abs#1{\left| #1 \right|}
+\def\Norm#1{\left\| #1 \right\|}
+\def\Brack#1{\left[ #1 \right]}
+\def\Paren#1{\left( #1 \right)}
+\def\Tuple#1{\langle #1 \rangle}
+
+% ---- LATIN ----
+\def\etal{\textit{et~al.}}			% and others
+\def\ie{\textit{i.e.~}}			% that is
+\def\eg{\textit{e.g.~}}			% for example
+\def\vitae{vit\ae{}}
+\def\apriori{\emph{a~priori~}}
+\def\aposteriori{\emph{a~posteriori~}}
+\def\adhoc{\emh{ad-hoc~}}
+\def\defacto{\emph{de~facto~}}
+
+% ---- FRENCH ----
+\def\naive{na\"{\i}ve}
+
+% ---- PROPER NAMES (because I'm lazy) ----
+\def\Benes{Bene\v{s}}		% ...network
+\def\Bezier{B\'ezier}		% ...spline/curve/surface
+\def\Bjorner{Bj\"orner}
+\def\Bochis{Bochi\c{s}}		% Daciana
+\def\Boruvka{Bor\.uvka}		% ...'s MST algorithm
+\def\Bragger{Br\"agger}
+\def\Bronnimann{Br\"onnimann}   
+\def\Herve{Herv\'e}
+\def\Bruckner{Br\"uckner}
+\def\Caratheodory{Carath\'eodory}	% Constantin
+\def\Chvatal{Chv\'atal}         
+\def\Vasek{Va\v{s}ek}
+\def\Joao{Jo\~ao}	% Compa
+\def\Cortes{Cort\'es}		% Carmen
+\def\Dujmovic{Dujmovi\'c}	% Vida
+\def\Fredo{Fr\'edo}	% Durand
+\def\Erdos{Erd\H{o}s}           
+\def\Pal{P\'al}
+\def\Frechet{Fr\'echet}
+\def\Furedi{F\"uredi}           
+\def\Zoltan{Zolt\'an}
+\def\Grobner{Gr\"obner}		% ... basis
+\def\Grunbaum{Gr\"unbaum}	% Branko
+\def\Hanoi{Hano\"\i}		% Tower of...
+\def\Jarnik{Jarn\a'{\i}k}	% ...'s (`Prim's') MST algorithm
+\def\Komlos{Koml\'os}
+\def\Kovari{K\"ov\'ari}
+\def\Lovasz{Lov\'asz}           
+\def\Laszlo{L\'aszl\'o}
+\def\Matousek{Matou\v{s}ek}     
+\def\Jiri{Ji\v{r}\'\i}
+\def\Mnev{Mn\"ev}
+\def\Mobius{M\"obius}		% ... strip/transformation/function
+\def\Mucke{M\"ucke}		% Ernst
+\def\ODunliang{\'O'D\'unliang}
+\def\Oleinik{Ole\u{\i}nik}
+\def\Janos{J\'anos}     % Pach
+\def\Palasti{Pal\'asti}
+\def\Belen{Bel\'en}	% Palop
+\def\Petrovskii{Petrovski\u{\i}}
+\def\Pinar{P\i nar}		% Ali
+\def\Plucker{Pl\"ucker}		% ... coordinates
+\def\Poincare{Poincar\'e}	% ... duality/halfplane
+\def\Gunter{G\"unter}   % Rote, Ziegler
+\def\Sacristan{Sacrist\'an}	% Vera
+\def\Saskin{\v{S}a\v{s}kin}
+\def\Schomer{Sch\"omer}
+\def\Schonhardt{Sch\"onhardt}	% ... polyhedron
+\def\Sos{S\'os}
+\def\Stackel{St\"ackel}		% Paul
+\def\Szekely{Sz\'ekely}
+\def\Szemeredi{Szemer\'edi}
+\def\Toth{T\'{o}th}		% Geza
+\def\Turan{Tur\'an}
+\def\Ungor{\"Ung\"or}		% Alper
+\def\Voronoi{Vorono\"i}		
