@@ -8,6 +8,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Background}{63}{section.118}}
 \newlabel{sect:background}{{5.2}{63}{Background}{section.118}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Pathway Petri Nets}{63}{subsection.119}}
+\newlabel{sec:ppn}{{5.2.1}{63}{Pathway Petri Nets}{subsection.119}{}}
 \newlabel{subfig:example-reactions}{{5.1a}{64}{Reactions\relax }{figure.caption.120}{}}
 \newlabel{sub@subfig:example-reactions}{{a}{64}{Reactions\relax }{figure.caption.120}{}}
 \newlabel{subfig:example-odes}{{5.1b}{64}{ODEs\relax }{figure.caption.120}{}}
@@ -41,24 +42,56 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces A representation of the node and edge feature vectors of the induced subgraph shown in Figure \ref  {subfig:subgraph3}. Each node is represented as a 3-dimensional binary vector, where 1 is indicated with dark grey and 0 with white. To avoid visual cluttering, we only show one example of edge feature vector per edge type (the column vectors inside the dashed circles).\relax }}{71}{figure.caption.134}}
 \newlabel{fig:pathway-graph-features}{{5.6}{71}{A representation of the node and edge feature vectors of the induced subgraph shown in Figure \ref {subfig:subgraph3}. Each node is represented as a 3-dimensional binary vector, where 1 is indicated with dark grey and 0 with white. To avoid visual cluttering, we only show one example of edge feature vector per edge type (the column vectors inside the dashed circles).\relax }{figure.caption.134}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}Experiments}{71}{section.135}}
+\newlabel{sec:pathway-experiments}{{5.4}{71}{Experiments}{section.135}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Model Architecture.\relax }}{72}{figure.caption.136}}
+\newlabel{fig:architecture}{{5.7}{72}{Model Architecture.\relax }{figure.caption.136}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}E1 Setup}{73}{subsection.137}}
+\@writefile{toc}{\contentsline {paragraph}{Evaluation Metrics}{74}{section*.139}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}E2 Setup}{74}{subsection.140}}
+\@writefile{toc}{\contentsline {paragraph}{Evaluation Metrics}{74}{section*.141}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces An example of ROC curve. The dashed line is the ROC curve of a random classifier.\relax }}{75}{figure.caption.142}}
+\newlabel{fig:roc}{{5.8}{75}{An example of ROC curve. The dashed line is the ROC curve of a random classifier.\relax }{figure.caption.142}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Results}{76}{section.146}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Results on the E1 Experiment}{76}{subsection.147}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Results of the 5-fold CV evaluation of different \gls {dgn} architectures on the \textbf  {E1} experiment, as explained in Section \ref  {sec:pathway-experiments}. The suffix ``-vanilla'' indicates that the corresponding graph convolutional layer does not handle different edge contributions.\relax }}{77}{table.caption.148}}
+\newlabel{tab:e1-results}{{5.1}{77}{Results of the 5-fold CV evaluation of different \gls {dgn} architectures on the \textbf {E1} experiment, as explained in Section \ref {sec:pathway-experiments}. The suffix \quotes {-vanilla} indicates that the corresponding graph convolutional layer does not handle different edge contributions.\relax }{table.caption.148}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces The effect of the number of \gls {dgn} layers to the performances of the models.\relax }}{77}{figure.caption.149}}
+\newlabel{fig:e1-layering}{{5.9}{77}{The effect of the number of \gls {dgn} layers to the performances of the models.\relax }{figure.caption.149}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Results on the E2 Experiments}{77}{subsection.150}}
+\newlabel{sec:e2-results}{{5.5.2}{77}{Results on the E2 Experiments}{subsection.150}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Results of the 5-fold CV evaluation on various performance metrics. We report the global results (on the last row) as well as the results stratified by number of nodes per subgraph. For each stratification, we also report the related support (\textit  {i.e.~}the average number of graphs in the strata).\relax }}{78}{table.caption.151}}
+\newlabel{tab:e2-results}{{5.2}{78}{Results of the 5-fold CV evaluation on various performance metrics. We report the global results (on the last row) as well as the results stratified by number of nodes per subgraph. For each stratification, we also report the related support (\ie the average number of graphs in the strata).\relax }{table.caption.151}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces ROC curves for each of the five test folds. The black dashed line shows the performance of a baseline (``Null'') classifier that always predicts one class.\relax }}{79}{figure.caption.152}}
+\newlabel{fig:e2-roc-curve}{{5.10}{79}{ROC curves for each of the five test folds. The black dashed line shows the performance of a baseline (\quotes {Null}) classifier that always predicts one class.\relax }{figure.caption.152}{}}
+\newlabel{fig:e2-rolling-acc}{{5.11a}{79}{\relax }{figure.caption.153}{}}
+\newlabel{sub@fig:e2-rolling-acc}{{a}{79}{\relax }{figure.caption.153}{}}
+\newlabel{fig:e2-conf-matrix}{{5.11b}{79}{\relax }{figure.caption.153}{}}
+\newlabel{sub@fig:e2-conf-matrix}{{b}{79}{\relax }{figure.caption.153}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}) Rolling mean accuracy (with a window of size 20), averaged over the 5 test folds, showing an increasing trend in performance as the number of graph nodes grows. ({\relax \fontsize  {8}{9.5}\selectfont  B}) Confusion Matrix of the predictions computed by the model. Each entry of the matrix is the average of the corresponding entries in the five different confusion matrices of the test folds.\relax }}{79}{figure.caption.153}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Use Case on Synthetic Data}{80}{subsection.154}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}) Robustness values computed by numerical simulation of the ODEs in Figure \ref  {fig:example-pathway}. Input molecules with initial concentration equal to 0 are omitted. Output molecules with identical robustness values are merged. ({\relax \fontsize  {8}{9.5}\selectfont  B}) Probabilities of robustness obtained from the model for some relevant input/output combinations.\relax }}{80}{table.caption.155}}
+\newlabel{tab:uc1-odes}{{5.3a}{80}{\relax }{table.caption.155}{}}
+\newlabel{sub@tab:uc1-odes}{{a}{80}{\relax }{table.caption.155}{}}
+\newlabel{tab:uc1-predictions}{{5.3b}{80}{\relax }{table.caption.155}{}}
+\newlabel{sub@tab:uc1-predictions}{{b}{80}{\relax }{table.caption.155}{}}
 \@setckpt{Chapters/Chapter5}{
-\setcounter{page}{72}
+\setcounter{page}{82}
 \setcounter{equation}{0}
-\setcounter{enumi}{0}
+\setcounter{enumi}{3}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{4}
+\setcounter{footnote}{5}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{2}
 \setcounter{chapter}{5}
-\setcounter{section}{4}
-\setcounter{subsection}{0}
+\setcounter{section}{5}
+\setcounter{subsection}{3}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{6}
-\setcounter{table}{0}
+\setcounter{figure}{11}
+\setcounter{table}{3}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}
 \setcounter{ContinuedFloat}{0}
@@ -173,14 +206,14 @@
 \setcounter{bbx:relatedtotal}{0}
 \setcounter{parentequation}{0}
 \setcounter{su@anzahl}{0}
-\setcounter{Item}{0}
-\setcounter{Hfootnote}{9}
+\setcounter{Item}{3}
+\setcounter{Hfootnote}{10}
 \setcounter{bookmark@seq@number}{0}
-\setcounter{subfigure}{0}
-\setcounter{subtable}{0}
+\setcounter{subfigure}{2}
+\setcounter{subtable}{2}
 \setcounter{theorem}{0}
 \setcounter{corollary}{0}
 \setcounter{lemma}{0}
 \setcounter{definition}{0}
-\setcounter{section@level}{1}
+\setcounter{section@level}{2}
 }

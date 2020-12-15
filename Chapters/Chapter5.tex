@@ -20,14 +20,14 @@ To our knowledge, this is the first work that addresses the problem of predictin
 \section{Background}\label{sect:background}
 In this section, we provide the necessary formal background to understand the modeling of biochemical pathways with Petri nets, and the dynamical property of concentration robustness.
 
-\subsection{Pathway Petri Nets}
+\subsection{Pathway Petri Nets}\label{sec:ppn}
 Biochemical pathways are essentially sets of chemical reactions of the form:
 \[
 c_1 S_1 + c_2 S_2 + \ldots
 \xrightarrow{k}
 c_1' P_1 + c_2' P_2 \ldots,
 \]
-where $S_i,P_i$ are molecules (\emph{reactants} and \emph{products}, respectively), $c_i, c_i' \in \Natural$ are \emph{stoichiometric coefficients} expressing the multiplicities of reactants and products involved in the reaction, and $k \in \Real_{\geq 0}$ is the \emph{kinetic constant}, used to compute the reaction rate according to standard chemical kinetic laws such as the law of mass action. Besides reactants and products, the reactions of a biochemical pathway often include in their description other molecules, called \emph{modifiers}. These are not consumed nor produced by the reaction, but act either as \emph{promoters} or as \emph{inhibitors}, meaning that they can increase or decrease the reaction rate, respectively. Although these molecules are not listed among reactants and products, they do have a role in the kinetic formula, which no longer follows the mass action principle in this case. For example, in the SBML language \citep{?}, a standard XML-based modeling language for biochemical pathways, reactions can be associated with a number of modifiers, whose concentration is used in the kinetic formula of the reaction. In Figure \ref{subfig:example-reactions} we show a table describing the set of reactions describing a biochemical pathway (first column), some of which include a modifier (second column), namely $A$ for the third reaction, and $F$ for the sixth. Each reaction is associated with its kinetic formula (third column), that, for simplicity, we reference through an alias of the form $ri$ with $i = 1, \ldots, 7$. Using the kinetic formulas of the two reactions with modifiers as an example, it is clear that $A$ acts as a promoter (meaning that the reaction rate is proportional to the concentration of $A$) and that $F$ acts as inhibitor (meaning that the reaction rate is inversely proportional to the concentration of $F$). Kinetic formulas can then be used to construct a system of \glspl{ode} as shown in Fig. \ref{subfig:example-odes}.
+where $S_i,P_i$ are molecules (\emph{reactants} and \emph{products}, respectively), $c_i, c_i' \in \Natural$ are \emph{stoichiometric coefficients} expressing the multiplicities of reactants and products involved in the reaction, and $k \in \Real_{\geq 0}$ is the \emph{kinetic constant}, used to compute the reaction rate according to standard chemical kinetic laws such as the law of mass action. Besides reactants and products, the reactions of a biochemical pathway often include in their description other molecules, called \emph{modifiers}. These are not consumed nor produced by the reaction, but act either as \emph{promoters} or as \emph{inhibitors}, meaning that they can increase or decrease the reaction rate, respectively. Although these molecules are not listed among reactants and products, they do have a role in the kinetic formula, which no longer follows the mass action principle in this case. For example, in the SBML language \citep{?}, a standard XML-based modeling language for biochemical pathways, reactions can be associated with a number of modifiers, whose concentration is used in the kinetic formula of the reaction. In Figure \ref{subfig:example-reactions} we show a table describing the set of reactions describing a biochemical pathway (first column), some of which include a modifier (second column), namely $A$ for the third reaction, and $F$ for the sixth. Each reaction is associated with its kinetic formula (third column), that, for simplicity, we reference through an alias of the form $\mathsf{r}i$ with $i = 1, \ldots, 7$. Using the kinetic formulas of the two reactions with modifiers as an example, it is clear that $A$ acts as a promoter (meaning that the reaction rate is proportional to the concentration of $A$) and that $F$ acts as inhibitor (meaning that the reaction rate is inversely proportional to the concentration of $F$). Kinetic formulas can then be used to construct a system of \glspl{ode} as shown in Figure \ref{subfig:example-odes}.
 
 \input{Figures/Chapter5/biochemical-pathways}
 
@@ -94,7 +94,7 @@ The assessment of robustness usually requires to perform exhaustive numerical si
 Here, we provide details about how the raw biological pathways have been converted into the dataset of graphs on which the \gls{dgn} has been trained.
 
 \subsection{Subgraphs Extraction}\label{sec:subgraphs-extraction}
-As explained in Section \ref{sect:robustness}, concentration robustness is defined in terms of pathway, and a pair of input and output molecules. However, for a fixed choice of input and output, not all the nodes in a pathway graph contribute to the assessment, but only a specific subset corresponding to an induced subgraph. Given a pathway graph $G$ and an input/output node pair $\mathsf{I}, \mathsf{O} \in \Cal{V}_G^{\Fun{mol}}$ with $\mathsf{I} \neq \mathsf{O}$, we call this subgraph the \emph{subgraph of G induced by the input/output pair} ($\mathsf{I}, \mathsf{O}$). In practice, this induced subgraph allows to focus on the graph portion that is relevant for the assessment of the property, by removing the nodes irrelevant for its computation. Before delving into details, let us first introduce a helper data structure which we call \keyword{enriched pathway graph}. Given a pathway graph $G$, its enriched version $G'$ is defined as follows: initially, $\Cal{V}_{G'}=\Cal{V}_G$, $\Cal{E}_{G'}=\Cal{E}_G$. Then, for every standard edge $(u, v) \in \Cal{E}_{G}^{\Fun{std}}$ where $u \in \Cal{V}_{G}^{\Fun{mol}}$ and $v \in \Cal{E}_{G}^{\Fun{rx}}$, we update the standard edges of $G'$ with a reverse standard edge $(v,u)$, setting $\Cal{E}_{G'}^{\Fun{std}} = \Cal{E}_{G'}^{\Fun{std}} \Union (v, u)$. Note that we do not reverse neither standard edges from reactions to molecules, nor promotion and inhibition edges. The enriched pathway graph obtained from the pathway graph of Figure \ref{fig:pathway-graph} is shown in Figure \ref{fig:pathway-graph-enriched}, where the additional edges are drawn in solid black. Such graph represents influence relationships between molecules and reactions. The reversed edges encode the fact that a perturbation in the reaction rates determines a variation in the reactants consumption. Hence, the enriched pathway graph essentially corresponds to the \emph{influence graph} that could be computed from the Jacobian matrix containing the partial derivatives of the system of ODEs associated to the pathway \cite{?}.
+As explained in Section \ref{sec:robustness}, concentration robustness is defined in terms of pathway, and a pair of input and output molecules. However, for a fixed choice of input and output, not all the nodes in a pathway graph contribute to the assessment, but only a specific subset corresponding to an induced subgraph. Given a pathway graph $G$ and an input/output node pair $\mathsf{I}, \mathsf{O} \in \Cal{V}_G^{\Fun{mol}}$ with $\mathsf{I} \neq \mathsf{O}$, we call this subgraph the \emph{subgraph of G induced by the input/output pair} ($\mathsf{I}, \mathsf{O}$). In practice, this induced subgraph allows to focus on the graph portion that is relevant for the assessment of the property, by removing the nodes irrelevant for its computation. Before delving into details, let us first introduce a helper data structure which we call \keyword{enriched pathway graph}. Given a pathway graph $G$, its enriched version $G'$ is defined as follows: initially, $\Cal{V}_{G'}=\Cal{V}_G$, $\Cal{E}_{G'}=\Cal{E}_G$. Then, for every standard edge $(u, v) \in \Cal{E}_{G}^{\Fun{std}}$ where $u \in \Cal{V}_{G}^{\Fun{mol}}$ and $v \in \Cal{E}_{G}^{\Fun{rx}}$, we update the standard edges of $G'$ with a reverse standard edge $(v,u)$, setting $\Cal{E}_{G'}^{\Fun{std}} = \Cal{E}_{G'}^{\Fun{std}} \Union (v, u)$. Note that we do not reverse neither standard edges from reactions to molecules, nor promotion and inhibition edges. The enriched pathway graph obtained from the pathway graph of Figure \ref{fig:pathway-graph} is shown in Figure \ref{fig:pathway-graph-enriched}, where the additional edges are drawn in solid black. Such graph represents influence relationships between molecules and reactions. The reversed edges encode the fact that a perturbation in the reaction rates determines a variation in the reactants consumption. Hence, the enriched pathway graph essentially corresponds to the \emph{influence graph} that could be computed from the Jacobian matrix containing the partial derivatives of the system of ODEs associated to the pathway \cite{?}.
 \begin{figure*}[h!]
     \centering
     \resizebox{.6\textwidth}{!}{\input{Figures/Chapter5/pathway-graph-enriched}}
@@ -130,8 +130,7 @@ The robustness values used to label the induced subgraphs are computed following
 \]
 
 \subsection{Data Preprocessing}\label{subsec:data-collection}
-Our initial data collection consisted of 706 SBML models of biochemical pathways, downloaded from the BioModels database \cite{?}. Specifically, the data correspond to the complete set of manually curated models present in the database at the time we started the construction of the dataset\footnote{May 2019.}. We removed empty models (not containing any node) and discarded duplicates, reducing the number of SBML models to 484. These models were first transformed into \glspl{ppn} representations and saved in DOT format\footnote{The DOT graph description language specification, available at: \url{https://graphviz.gitlab.io/_pages/doc/info/lang.html}}. For the translation of the SMBL models into \glspl{ppn}, we developed a Python script that, for each reaction in the SMBL model extracts reactants, products and modifiers. Furthermore, it also checks the kinetic formula in order to determine whether each modifier is either promoter or an inhibitor. After converting each \gls{ppn} into a pathway graph, we derived a collection $\Cal{G} = \Set{G_i}_{i=1}^{484}$ of pathway graphs.
-Each of these pathway graphs has been transformed into a set containing one induced subgraph for every possible input/output combination of pathway graph nodes representing molecules, according to the procedure detailed in Section \ref{sec:subgraphs-extraction}. For each induced subgraph, the associated robustness has been calculated as explained in Section \ref{sec:robustness-computation}. The result of this preprocessing is a training dataset:
+Our initial data collection consisted of 706 SBML models of biochemical pathways, downloaded from the BioModels database \cite{?}. Specifically, the data correspond to the complete set of manually curated models present in the database at the time we started the construction of the dataset\footnote{May 2019.}. We removed empty models (not containing any node) and discarded duplicates, reducing the number of SBML models to 484. These models were first transformed into \glspl{ppn} representations and saved in DOT format\footnote{The DOT graph description language specification, available at: \url{https://graphviz.gitlab.io/_pages/doc/info/lang.html}}. For the translation of the SMBL models into \glspl{ppn}, we developed a Python script that, for each reaction in the SMBL model extracts reactants, products and modifiers. Furthermore, it also checks the kinetic formula in order to determine whether each modifier is either promoter or an inhibitor. With the conversion of each \gls{ppn} into a pathway graph, we obtained a collection $\Cal{G} = \Set{G_i}_{i=1}^{484}$ of pathway graphs. Each of these pathway graphs has been transformed into a set containing one induced subgraph (whose size does not exceed 100 nodes, for computational reasons) for every possible input/output combination of pathway graph nodes representing molecules, according to the procedure detailed in Section \ref{sec:subgraphs-extraction}. For each induced subgraph, the associated robustness has been calculated as explained in Section \ref{sec:robustness-computation}. The result of this preprocessing is a training dataset:
 $$\mathbb{G} = \bigcup\limits_{G \in \Cal{G}} \Set{(S_{\mathsf{I},\mathsf{O}}, \overline{r}_{{\mathsf{I},\mathsf{O}}}) \mid \forall (\mathsf{I},\mathsf{O}) \in \Cal{V}_{G}^{\Fun{mol}}},$$
 where $\overline{r}_{\mathsf{I}, \mathsf{O}} = \mathbb{I}[r_{\mathsf{I}, \mathsf{O}} > 0.5]$ are robustness indicators used as the labels for the associated binary classification task. The total number of subgraphs in the preprocessed dataset is 44928.
 
@@ -160,7 +159,7 @@ Similarly, for each subgraph edge, we encode its edge type as a one-hot vector o
     \Elem{e}{u, v, 2} = \mathbb{I}[(u,v) \in \Cal{E}_{G}^{\Fun{pro}}], \quad
     \Elem{e}{u, v, 3} = \mathbb{I}[(u,v) \in \Cal{E}_{G}^{\Fun{inh}}],
 \end{align*}
-where $\mathbb{I}$ is the indicator function, and the notation $\Elem{e}{u, v, i}$ identifies the $i$-th component of the edge feature vector $\Elem{e}{u, v}$. Figure \ref{fig:pathway-graph-features} shows the induced subgraph of Figure \ref{subfig:subgraph3} with the corresponding feature vectors in place of its nodes and edges.
+where $\mathbb{I}$ is the indicator function, and the notation $\Elem{e}{u, v, i}$ identifies the $i$-th component of the edge feature vector $\Elem{e}{u, v}$. In practice, the edge features encode the edge type as a one-hot vector. Figure \ref{fig:pathway-graph-features} shows the induced subgraph of Figure \ref{subfig:subgraph3} with the corresponding feature vectors in place of its nodes and edges.
 \begin{figure*}[h!]
     \centering
     \resizebox{.8\textwidth}{!}{\input{Figures/Chapter5/pathway-graph-features}}
@@ -168,4 +167,149 @@ where $\mathbb{I}$ is the indicator function, and the notation $\Elem{e}{u, v, i
     \label{fig:pathway-graph-features}
 \end{figure*}
 
-\section{Experiments}
+\section{Experiments}\label{sec:pathway-experiments}
+In this section, we provide all the necessary details concerning our experimental procedures. In particular, we describe the architecture of the \gls{dgn} in detail, and discuss the assessment protocol by which we evaluated the proposed model on the predictive task.
+
+The proposed \gls{dgn} architecture for robustness prediction, shown at a high level in Figure \ref{fig:architecture}, consists in a series of $L$ graph convolutional layers, followed by a node readout that aggregates the hidden states at each layer into node representations by concatenation, a graph readout that aggregates the node representations into a graph representation, and a downstream \gls{mlp} classifier which uses the graph representation to compute a probability of whether the graph is robust or not.
+\begin{figure*}[h!]
+    \centering
+    \resizebox{.95\textwidth}{!}{\input{Figures/Chapter5/architecture}}
+    \caption{Model Architecture.}
+    \label{fig:architecture}
+\end{figure*}
+Some hyper-parameters of the network are fixed before-hand: the downstream MLP used for classification has two hidden layers of size 128 and 64, respectively, interleaved by ReLU non-linearities. As output layer, since our interest is to compute robustness probabilities, we used a sigmoid function that maps its input to the $(0, 1)$ range. All models are trained with \gls{mle} using \gls{sgd}, by minimizing the \gls{bce} loss function as usual in binary classification tasks. For the minimization, we used the Adam optimizer, with a learning rate of 0.001 and scheduled learning rate annealing with a shrinking factor of 0.6 every 50 epochs. To prevent overfitting, we use two strategies: the hidden layers are regularized via Dropout, with drop probability of 0.1; and we used early stopping with a maximum number of epochs of 500, and patience parameter of 100 epochs.
+
+Since this is the first time \glspl{dgn} are applied to this task, we also report a baseline, which is simply a model that always predict the most frequent class (robust, in this case). Its purpose is to serve as reference point to understand whether the task is being learned to some extent or not.
+
+Our experiments are divided in two sequential phases. The experimental protocol is detailed at a high level as follows:
+\begin{itemize}
+    \item in a first phase, which we abbreviate as \textbf{E1}, we performed model assessment on a smaller dataset of induced subgraphs. The rationale of this phase is to get a sense of which architectural choices, \eg with respect to the type of \gls{gcl}, are most promising to carry out the full-fledged evaluation on the entire dataset;
+    \item in the second phase, termed \textbf{E2}, we perform a final evaluation of the architecture on the full dataset, fixing some architectural components guided by the results obtained in \textbf{E1}.
+\end{itemize}
+In both experiments, the evaluation procedure consists of an external 5-fold \gls{cv} for model evaluation, with an internal hold-out split of 90\% training and 10\% validation for model selection. After a set of hyper-parameters is selected by the inner model selection, the winning configuration is trained and evaluated 3 times in the corresponding test fold, to mitigate the effect of random initialization. The score of the model for that fold is given by the average of these 3 trials. Following, we detail about the hyper-parameters and the evaluation metrics used in both experiments.
+
+\subsection{E1 Setup}
+As explained before, the first evaluation of the model is carried out a subset of induced subgraphs, speficially those with number of nodes $<= 40$. This resulted in a dataset with a total of 7036 induced subgraphs, which we term $\mathbb{G}_{\Fun{small}}$. In this phase, we evaluate the model selecting among the following hyper-parameters:
+\begin{itemize}
+    \item number of \gls{gcl} layers $L$, choosing between 1 and 8;
+    \item hidden state size $h$, which once chosen remains fixed across all the $L$ layers, choosing between 128 and 64;
+    \item type of \gls{gcl};
+    \item whether the \gls{gcl} handles the contribution of the different edge types or not;
+    \item type of graph readout function, choosing between sum, mean and max.
+\end{itemize}
+Specifically to the third point, we evaluate the following \gls{gcl} variants:
+\begin{itemize}
+    \item Graph Convolutional Network (GCN), as described in Section \ref{sec:graph-conv-layers};
+    \item Graph Isomorphism Network (GIN), as described in Section \ref{sec:comparison-architectures};
+    \item Weifeiler Lehman Graph Convolution (WLGCN), \ie the \gls{gcl} layer presented in \cite{?}, whose implementation is the following:
+    $$\Elem{h}{v}^{\ell} = \Fun{ReLU}\Paren{\Matrix{W}_{\ell}^{\Transpose} \Elem{h}{v}^{\ell-1} + \Matrix{U}_{\ell}^{\Transpose} \sum_{u \in \Cal{N}(v)} e_{uv}\, \Elem{h}{u}^{\ell-1}},$$
+    where $e_{uv} \in \Real$ is a learned scalar that weighs the connections between the current node and its neighbors.
+\end{itemize}
+For each considered \gls{gcl}, we evaluate a vanilla variant, which does not take into account the different edge types, as well as an edge-aware variant as described in Section \ref{sec:graph-conv-layers}, using three different weight matrices (one for each edge type) for the neighborhood aggregation. More specifically, given an induced subgraph $G$\footnote{For consistency, we slightly change notation and refer to induced subgraphs with the letter $G$ instead of $S$ from now on.} and one of its nodes $v \in \Cal{V}_G$, the edge-aware neighborhood function used to select neighbors of a certain type is the following:
+$$\Cal{N}_c(v) = \Set{u \in \Cal{N}(v) \mid \mathbb{I}[ (u,v) \in \Cal{E}_{G}^c]},$$
+where $c \in \Cal{C} = \Set{\Fun{std}, \Fun{pro}, \Fun{inh}}$.
+
+\paragraph{Evaluation Metrics} As performances metric, we used accuracy on the predictions, defined as usual as the number of correct predictions out of the total number of predictions. We remark that the model outputs probabilities; hence, we round the prediction to the nearest integer (which is either 0 or 1) to compute a \quotes{hard} prediction, which is used in the accuracy calculations. Formally, if: \begin{itemize}
+    \item $TP$ is the number of true positives, \ie the number of correctly predicted robust subgraphs;
+    \item $TN$ is the number of true negatives, \ie the number of correctly predicted not robust subgraphs;
+    \item $FP$ is the number of false positive, \ie the number of subgraphs wrongly predicted as robust;
+    \item $FN$ is the number of false negatives, \ie the number of subgraphs wrongly predicted as not robust,
+\end{itemize}
+the accuracy is defined as:
+$$ \Fun{ACC} = \frac{TP + TN}{TP + TN + FP + FN}.$$
+
+\subsection{E2 Setup}
+In the second experiment, we fix the \gls{gcl} (and the fact that it handles edge types or not) to the one that obtains the best evaluation score in \textbf{E1}.
+The other hyper-parameters evaluated are the same as in \textbf{E1}, though the selection is now performed on the full dataset $\mathbb{G}$.
+
+\paragraph{Evaluation Metrics} In this experiments, there is a high imbalance in favor of the positive class ($\approx 90\%$) with respect to the negative class in the dataset, which is not so dramatic for the small dataset ($\approx 70\%$ in favor of the positive class). When the disproportion is so high, in fact, the accuracy can be misleading. Thus, besides accuracy, we evaluate the performances of the model using other metrics related to the accuracy such as:
+\begin{itemize}
+    \item Sensitivity, also known as True Positive Rate (TPR), defined as $\Frac{TP}{TP + FN}$, which intuitively measures how good is the classifier to detect the positive (robust) class;
+    \item Specificity, defined as $\Frac{TN}{TN + FP}$, which intuitively measures how good is the classifier to detect the negative (not robust) class.
+\end{itemize}
+Another metric we evaluated, which is not related to the accuracy, is the Area under the Receiver Operating Characteristics curve (AUROC), which quantifies the ability of the classifier to discriminate between negative and positive examples. The AUROC is computed as the integral of a ROC curve, which measures how the TPR and the False Positive Rate $\Fun{FPR} = 1 - \Fun{TPR}$ vary as one moves a threshold parameter $\beta$. It is drawn as a curve plot where the x-axis represents the false positive rate, and the y-axis represents the true positive rate, both with values between 0 and 1. A point of the curve has thus coordinates ($\Fun{FPR}(\beta), \Fun{TPR}(\beta))$, for a fixed value of $\beta$, with point (0; 0) being associated with $\beta = 1$ and point (1; 1) being associated with $\beta = 0$. The point (0; 1) is the optimum of the curve, since the false positive rate is minimized and the true positive rate is maximized. An example of ROC curve is shown in Figure \ref{fig:roc}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.8\textwidth]{Figures/Chapter5/roc}
+    \caption{An example of ROC curve. The dashed line is the ROC curve of a random classifier.}
+    \label{fig:roc}
+\end{figure}
+To illustrate the behavior of the curve, it is useful to consider three extreme cases:
+\begin{enumerate}
+\item for a perfect classifier, which makes no errors, the curve goes from point $(0;0)$, to point $(1;0)$, to point $(1;1)$;
+\item for a completely random classifier, which whatever the threshold always produces the same number of false positives and true positives, the curve created is the line segment bounded by the points $(0;0)$ and $\,(1;1)$;
+\item no reasonable classifier is assumed to produce a ROC curve whose points are located under the $(0;0)$, $\,(1;1)$ segment.
+\end{enumerate}
+An AUROC value of 0.5 describes a completely random classifier (since it is equal to the area of the triangle described by the extreme case 2), while an AUROC of 1 describes a perfect classifier (since it is equal to the area of the square described by the extreme case 1). Good classifiers have an AUROC score generally equal or higher than 0.8. Besides being a metric independent of class proportions, the AUROC also offers a probabilistic interpretation of its value, since it is equals to the probability that the classifier will rank a randomly chosen positive example higher than a randomly chosen negative example. For an extensive survey of ROC curves, see for example \cite{?}.
+
+\section{Results}
+Here, we present the results obtained on the two experiments, \textbf{E1} and \textbf{E2}. Subsequently, we present an analysis of the performances obtained by the model on two use cases: one on synthetic data, and one on a real-world pathway.
+
+\subsection{Results on the E1 Experiment}
+Table \ref{tab:e1-results} shows the average accuracy on the 5 test folds obtained by each of the examined architectures on the \textbf{E1} experiment. Even though these results are obtained on a dataset approximately 15\% the size of the original one (consisting of 7036 induced subgraphs), we can already make some interesting observations about the task and the models:
+\begin{itemize}
+    \item the task can be learned, as evidenced by the gap between the baseline and all the examined models, which is approximately 13\% on average. This result verifies our initial assumption that it is indeed possible to predict robustness using only pathway structure;
+    \item the comparison between the various \glspl{gcl} highlights the fact that there is no clear winner between the three tested architectures, which obtain very similar results when assessed on the same experimental conditions (\ie all models with/withour edge handling capabilities);
+    \item as expected, adding edge handling to the \glspl{gcl} is beneficial to improve performances. On average, the models obtain a 1.8\% improvement in accuracy when edge handling is used.
+\end{itemize}
+
+\input{Tables/Chapter5/e1-results.tex}
+
+In a second experiment, we assess whether depth (intendended as number of \gls{dgn} layers) is a good inductive for this task.To do so, we perform a \posthoc study the validation scores, to see how they relate to number of \gls{dgn} layers. Specifically, for each model, and for each number of layers from 1 to 8, we compute the average validation score obtained by all hyper-parameters configurations with an identical number of layers. Note that, although validation accuracy is in general an over-estimate of the true accuracy, the relative difference in performance as the number of layers change stays proportional independently of which specific data is used. In other words, we are not interested in the score by itself, but rather to the trend (increase or decrease) in performance in relation to the number of \gls{dgn} layers. Figure \ref{fig:e1-layering} clearly shows that, in all cases, increasing the number of layers improves accuracy, up to a certain depth (around 4-5 layers on average) where performances start to plateau. This provides evidence that depth is a good inductive bias for \glspl{dgn} on this task, up to some extent.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.8\textwidth]{Figures/Chapter5/e1-layering}
+    \caption{The effect of the number of \gls{dgn} layers to the performances of the models.}
+    \label{fig:e1-layering}
+\end{figure}
+
+\subsection{Results on the E2 Experiments}\label{sec:e2-results}
+For the second round of experiments, we fix the \gls{gcl} to the \gls{gcn} model with edge-handling capabilities, since it is the model that obtains the highest accuracy in \textbf{E1}.
+The results of our experiments are reported in Table \ref{tab:e2-results}, where we average the computed metrics across the 5 test folds as usual.
+\input{Tables/Chapter5/e2-results.tex}
+In this case, we stratify the performances by number of nodes, in order to also analyze the model performances in relation to the size of the input subgraph. From the results, one can immediately see, by looking at the last row, how the model accurately predicts robustness better than all models tested in the \textbf{E1} phase by a large margin: this is probably caused by the largest size of the dataset, which usually results in major improvements with any \gls{ml} model, and in particular with \gls{dl} models. Specifically, we report an overall accuracy of $0.913 \pm 0.003$, as well as an AUROC of $0.948 \pm 0.004$. The model shows very high sensitivity ($0.965 \pm 0.006$) but a low specificity in comparison ($0.646 \pm 0.042$); this indicates that it is \quotes{harder} for the model to predict induced subgraphs that are not robust. This effect is a probable consequence of the class misproportion between negative and positive examples, which is around 86\% in favor of the positive class for this data sample. One result that is consistent across all measurements are the the very narrow standard deviations of the estimates, which indicate stable predictions regardless of the specific folds on which they are computed. To display this trend visually, we plot in Figure \ref{fig:e2-rolling-acc} the ROC curves obtained on the 5 test folds. Their similarity strongly indicates that the model performances are consistent across different test samples.
+\begin{figure}
+    \centering
+    \includegraphics[width=.65\textwidth]{Figures/Chapter5/e2-roc-curve.eps}
+    \caption{ROC curves for each of the five test folds. The black dashed line shows the performance of a baseline (\quotes{Null}) classifier that always predicts one class.}\label{fig:e2-roc-curve}
+\end{figure}
+The results of Table \ref{tab:e2-results} show a good performance of the model under the several stratifications tested. In particular, it performs better when dealing on subgraphs with 21-80 nodes, reaching an average in that strata AUROC of over 0.955. To better visualize this trend, we plot in Figure \ref{fig:e2-roc-curve} the rolling accuracy of the model, using a window size of 20, and averaging across the 5 test folds as usual. The plot clearly shows the improvement in accuracy as the number of nodes increases. Interestingly, when the size of the graph exceeds 80 nodes, the model performances start to decrease. This might be a consequence of the smaller sample sizes of subgraph with 81-100 nodes which occur in the dataset 3 times less on average than subgraphs with 21-80 nodes. The same trend can be noticed for smaller subgraphs, with up to 20 nodes. Finally, Figure \ref{fig:e2-conf-matrix} shows the confusion matrix of the predictions computed by the model, where the entries are the averages computed across the five test folds. In the plot, we can visualize the good performances of the model as regards the number of correctly predicted subgraphs (on the diagonal) with respect to the cases where the model makes wrong predictions. Looking at the anti-diagonal the confusion matrix, we can also see that the model has a higher rate of false positives than false negative. Again, this is expected behaviour due to class misproportion in the dataset.
+\begin{figure}[h!]
+    \begin{subfigure}[b]{0.48\linewidth}
+    \centering
+        \includegraphics[height=130px]{Figures/Chapter5/e2-rolling-acc.eps}
+        \subcaption{}\label{fig:e2-rolling-acc}
+    \end{subfigure}
+    %
+    \begin{subfigure}[b]{0.48\linewidth}
+        \centering
+        \includegraphics[height=130px]{Figures/Chapter5/e2-conf-matrix.eps}
+        \subcaption{}\label{fig:e2-conf-matrix}
+    \end{subfigure}
+    \caption{({\scriptsize A}) Rolling mean accuracy (with a window of size 20), averaged over the 5 test folds, showing an increasing trend in performance as the number of graph nodes grows. ({\scriptsize B}) Confusion Matrix of the predictions computed by the model. Each entry of the matrix is the average of the corresponding entries in the five different confusion matrices of the test folds.}
+\end{figure}
+
+\subsection{Use Case on Synthetic Data}
+The lower prediction accuracy in the case of small graphs (1-10 nodes) can be put into perspective, in light of the fact the fact we trained the model with subgraphs in which kinetic, stoichiometric and initial concentration parameters have been omitted (as explained in Section \ref{sec:ppn}). In general, the smaller the graph, the higher the influence on its dynamics these parameters exert. As an example, let us consider the synthetic example of biochemical pathway introduced in Figure \ref{fig:example-pathway} and the corresponding pathway graph of Figure \ref{fig:pathway-graph}. Let us now consider the following kinetic and initial concentration (marking) parameters:
+\begin{gather*}
+  k1 = 1.0 \quad
+  k3 = 0.01 \quad
+  k5 = 0.01 \quad
+  k7 = 0.3  \quad
+  k2 = 5.0  \quad
+  k4 = 0.1  \quad
+  k6 = 5.0 \\
+  m_0(A) = 50\quad
+  m_0(B) = 50\quad
+  m_0(C) = 100\quad
+  m_0(D) = 100\\
+  m_0(E) = 0\quad
+  m_0(F) = 0\quad
+  m_0(G) = 100\quad
+  m_0(H) = 0.
+\end{gather*}
+We used these parameters to simulate the ODEs of Figure \ref{subfig:example-odes}, calculating the corresponding robustness by varying the initial concentration of each molecule in the interval $[-20\%,+20\%]$. The robustness values obtained with the simulations are displayed in Table \ref{tab:uc1-odes}. Analogously, in Table \ref{tab:uc1-predictions} we list the average and standard deviations obtained by the 5 different models evaluated in Section \ref{sec:e2-results} (one trained on the respective CV fold), when tasked to predict the robustness probabilities of some input/output pairs of interest.
+\input{Tables/Chapter5/uc1}
+We remark that values in these two tables are not directly comparable: those in Table \ref{tab:uc1-odes} are exact robustness values, while those in Table \ref{tab:uc1-predictions} are probabilities of the robustness values to be greater than 0.5. In this specific case, the prediction turns out to be accurate in the case of input/output pairs corresponding to big induced subgraphs. This happens in the cases of the input/output pairs $A/F$ and $A/H$, whose induced subgraphs are among the largest ones. In contrast, the prediction is incorrect for $C/F$: in this case, the models predicts a small robustness probability, while the simulations give 0.99. We observe that the robustness value of this input/output combination is sensitive to the perturbation of parameters that have been discarded when constructing the dataset. In particular, if the initial (omitted) concentration of $C$ was $80$ instead of $100$, the robustness value of the pair $C/F$ would become $0.5$ rather than $0.99$. Another case when the model prediction is wrong is that of the pair The prediction turns out to be wrong also in the case of input $B/A$. In this case, the probability given by the network is under $0.50$, which contrasts to a value of $1$ obtained by the ODEs simulation. Even in this case, we notice that the parameters that have been omitted in the dataset might have a strong influence on the robustness, such as kinetic formulas and the multiplicity of the edge directed to node $B$. Finally, in the case of the pair $G/H$, the prediction gives a small probability of robustness and indeed the actual measured value is borderline ($0.50$). More in general, we observe that smaller subgraphs are less frequent than medium-sized subgraphs in the dataset. Thus, it is possible that the model has learned to be more accurate on the latter subgraphs (to maximize the accuracy), at the expense of making more errors when predicting the former.

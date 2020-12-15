@@ -1,0 +1,25 @@
+\begin{table}[h!]
+    \caption{Results of the 5-fold CV evaluation on various performance metrics. We report the global results (on the last row) as well as the results stratified by number of nodes per subgraph. For each stratification, we also report the related support (\ie the average number of graphs in the strata).}\label{tab:e2-results}
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\tabcolsep}{0.7em}
+    \begin{tabular}{lccccc}
+      \toprule
+      \Thead{Strata} & \Thead{Support} & \Thead{Accuracy} & \Thead{Sensitivity} & \Thead{Specificity} & \Thead{AUROC} \\
+      \midrule
+         1-10  & $243 \pm 19$ & $0.729\pm0.020$ & $0.851\pm0.073$ & $0.526\pm0.113$ & $0.820\pm0.034$\\
+        11-20  & $711 \pm 30$ & $0.843\pm0.006$ & $0.919\pm0.021$ & $0.629\pm0.050$ & $0.892\pm0.008$\\
+        21-30  & $526 \pm 19$ & $0.921\pm0.008$ & $0.969\pm0.010$ & $0.740\pm0.052$ & $0.954\pm0.015$\\
+        31-40  & $967 \pm 27$ & $0.889\pm0.012$ & $0.937\pm0.005$ & $0.757\pm0.040$ & $0.950\pm0.009$\\
+        41-50  & $1512 \pm 21$ & $0.928\pm0.004$ & $0.970\pm0.008$ & $0.635\pm0.064$ & $0.944\pm0.011$\\
+        51-60  & $1679 \pm 28$ & $0.921\pm0.004$ & $0.971\pm0.006$ & $0.588\pm0.038$ & $0.950\pm0.005$\\
+        61-70  & $1439 \pm 23$ & $0.947\pm0.005$ & $0.982\pm0.006$ & $0.644\pm0.058$ & $0.967\pm0.005$\\
+        71-80  & $1159 \pm 28$ & $0.941\pm0.006$ & $0.980\pm0.010$ & $0.712\pm0.087$ & $0.972\pm0.007$\\
+        81-90  & $372 \pm 20$ & $0.957\pm0.008$ & $0.998\pm0.002$ & $0.037\pm0.075$ & $0.925\pm0.010$\\
+        91-100 & $378 \pm 14$ & $0.850\pm0.017$ & $0.964\pm0.024$ & $0.536\pm0.061$ & $0.888\pm0.026$\\
+        \midrule
+        \textbf{Overall} & $\mathbf{8985}\pm1$ & $\mathbf{0.913}\pm0.003$ & $\mathbf{0.965}\pm0.006$ & $\mathbf{0.646}\pm0.042$ & $\mathbf{0.948}\pm0.004$\\
+      \bottomrule
+    \end{tabular}
+\end{table}

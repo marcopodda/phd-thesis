@@ -37,7 +37,7 @@ Constructive approaches are a special case of feed-forward models, in which trai
 \section{Building Blocks of Deep Graph Networks}
 \glspl{dgn} are built from several architectural components, which we cover in detail in this section. In short, a \gls{dgn} can be decomposed into a collection of layers that process the graph structure, and a downstream predictor (either a classifier or a regressor) that computes a task-dependent output. The whole network is trained in an end-to-end fashion. In this section, we focus on the former components, the ones whose role is to carry out the processing of an input graph.
 
-\subsection{Graph Convolutional Layers}
+\subsection{Graph Convolutional Layers}\label{sec:graph-conv-layers}
 A \gls{gcl} is essentially a neural network layer that performs message passing. The term \quotes{convolutional} is used to remark that the local processing performed by the state transition function is a generalization of the convolutional layer for images to graph domains with variable-size neighborhoods. Given a graph $G$ with $n$ nodes, and its node attributes $\Vector{X}_G = \Set{\Elem{x}{v} \mid v \in \Cal{V}_G}$, one general formulation of a \gls{gcl} is the following:
 \begin{align}
     \label{eq:simple-aggregation}
@@ -71,7 +71,7 @@ where $g$ is a generic activation function, $\Matrix{A} \in \Real^{n \times n}$ 
 
 \paragraph{Handling Edges}
 In certain tasks, including information about the edge features to the message passing algorithm can be beneficial to performances. Here, we describe how this can be achieved, focusing on the case where the edge features are discrete values out of a set of $k$ possible choices. Specifically, given a graph $G$, we assume a set of edge features of the form $\Vector{e}_G = \Set{\Elem{e}{u,v} \in \Cal{C} \mid (u, v) \in \Cal{E}_G}$, with $\Cal{C} = \Set{c_i}_{i=1}^k$. To account for different edge types, two modifications to the message passing algorithm are required. One is to replace the standard neighborhood function in the aggregation function with the following \emph{edge-aware} neighborhood function of a node $v$:
-$$\Cal{N}_c(v) = \Set{u \in \Cal{N}(v) \mid \Elem{e}{u, v} = c},$$
+$$\Cal{N}_c(v) = \Set{u \in \Cal{N}(v) \mid \mathbb{I}[\Elem{e}{u, v} = c]},$$
 which selects only neighbors of $v$ with edge type $c$. The other modification requires to change the update function for handling the different edge types. Taking again the \gls{gcn} implementation as an example, Eq. \ref{eq:update} is modified as follows:
 \begin{align*}
     \Fun{U}^{\ell}(\Elem{h}{v}^{\ell-1}, \Elem{n}{v}^{\ell}) = \sigma\Paren{\sum_{c \in \Cal{C}} \Matrix{W}^{\Transpose}_{c,\ell} \Elem{n}{v}^{\ell}},
@@ -179,7 +179,7 @@ All As regards datasets containing social graphs, we use the following:
 All node features are discrete (we shall refer to them as node labels equivalently). The only exception is the ENZYMES dataset, which also has an additional 18 continuous features. The social datasets do not have node features. In this case, we use either an uninformative label for all nodes, or the node degree. Specifically, social datasets are used to understand whether the models are able to learn structural features on their own or not. The statistics of the datasets, which include number of graphs, number of target classes, average number of nodes per graph, average number of nodes per graph, and number of node labels (if any) are reported in Table \ref{tab:comparison-datasets}.
 \input{Tables/Chapter4/comparison-datasets}
 
-\subsection{Architectures}
+\subsection{Architectures}\label{sec:comparison-architectures}
 In total, we choose five different \gls{dgn} architectures. The high-level structure of the \gls{dgn} comprises an input layer, a stack of one or more \glspl{gcl}, a readout layer and a final MLP classifier, which maps the graph embedding to the dataset-dependent output. Following, we describe in detail the kinds of \gls{gcl} used by the \glspl{dgn}, and the specific hyper-parameters optimized for each of them.
 
 \paragraph{Graph Isomorphism Network} The \gls{gin} convolutional layer, proposed by \cite{?}, is implemented as follows:

@@ -1,0 +1,36 @@
+\begin{table}[h!]
+    % \scriptsize
+    \centering
+    \caption{({\scriptsize A}) Robustness values computed by numerical simulation of the ODEs in Figure \ref{fig:example-pathway}. Input molecules with initial concentration equal to 0 are omitted. Output molecules with identical robustness values are merged. ({\scriptsize B}) Probabilities of robustness obtained from the model for some relevant input/output combinations.}
+    \begin{subtable}[b]{.59\linewidth}
+      \centering
+        \begin{tabular}{cccccc}
+            \toprule
+            \multirow{2}{*}{\textbf{Input}} & \multicolumn{5}{c}{\textbf{Output}}\\
+             & \Thead{A} & \Thead{B} & \Thead{C/D} & \Thead{E/F} & \Thead{G/H}\\
+            \midrule
+              \textbf{A} & 1.00 & 0.73 & 0.99 & 1.00  & 1.00  \\
+              \textbf{B} & 1.00 & 0.73 & 0.99 & 1.00  & 1.00  \\
+              \textbf{C} & 1.00 & 1.00  & 0.00  & 0.99 & 0.99 \\
+              \textbf{D} & 1.00 & 1.00  & 0.00  & 0.99 & 0.99 \\
+              \textbf{G} & 1.00 & 1.00  & 1.00  & 1.00  & 0.50  \\
+            \bottomrule
+        \end{tabular}
+        \caption{}\label{tab:uc1-odes}
+    \end{subtable}%
+    \begin{subtable}[b]{.39\linewidth}
+        \centering
+        \begin{tabular}{cc}
+            \toprule
+            \Thead{In/Out} & \Thead{Probability}\\
+            \midrule
+                $B/A$ & $0.3798 \pm 0.12$\\
+                $A/F$ & $0.7254 \pm 0.18$\\
+                $A/H$ & $0.8835 \pm 0.05$\\
+                $C/F$ & $0.0793 \pm 0.11$\\
+                $G/H$ & $0.2351 \pm 0.01$\\
+            \bottomrule
+        \end{tabular}
+        \caption{}\label{tab:uc1-predictions}
+    \end{subtable}
+\end{table}

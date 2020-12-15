@@ -1,0 +1,22 @@
+
+\begin{table}[h!]
+    \renewcommand\arraystretch{1.1}
+    \caption{Results of the 5-fold CV evaluation of different \gls{dgn} architectures on the \textbf{E1} experiment, as explained in Section \ref{sec:pathway-experiments}. The suffix \quotes{-vanilla} indicates that the corresponding graph convolutional layer does not handle different edge contributions.}\label{tab:e1-results}
+    \centering
+    \begin{tabular}{lc}
+        \toprule
+            \Thead{Model}&  \Thead{Test Accuracy}\\
+        \midrule
+            Baseline & $0.7322\pm0.0000$\\
+        \midrule
+            GCN-vanilla & $0.8573\pm0.0087$ \\
+            GIN-vanilla & $0.8567\pm0.0137$\\
+            WLGCN-vanilla & $0.8624\pm0.0088$\\
+        \midrule
+            GCN & $0.8692\pm0.0140$\\
+            GIN & $0.8684\pm0.0078$\\
+            WLGCN & $0.8687\pm0.0117$\\
+        \bottomrule
+    \end{tabular}
+
+\end{table}
