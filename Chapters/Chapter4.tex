@@ -71,7 +71,7 @@ where $g$ is a generic activation function, $\Matrix{A} \in \Real^{n \times n}$ 
 
 \paragraph{Handling Edges} 
 In certain tasks, including information about the edge features to the message passing algorithm can be beneficial to performances. Here, we describe how this can be achieved, focusing on the case where the edge features are discrete values out of a set of $k$ possible choices. Specifically, given a graph $G$, we assume a set of edge features of the form $\Vector{e}_G = \Set{\Elem{e}{u,v} \in \Cal{C} \mid (u, v) \in \Cal{E}_G}$, with $\Cal{C} = \Set{c_i}_{i=1}^k$. To account for different edge types, two modifications to the message passing algorithm are required. One is to replace the standard neighborhood function in the aggregation function with the following \emph{edge-aware} neighborhood function of a node $v$:
-$$\Cal{N}_c(v) = \Set{u \in \Cal{N}(v) \mid \Elem{e}{u, v} = c},$$
+$$\Cal{N}_c(v) = \Set{u \in \Cal{N}(v) \mid \mathbb{I}[\Elem{e}{u, v} = c]},$$
 which selects only neighbors of $v$ with edge type $c$. The other modification requires to change the update function for handling the different edge types. Taking again the \gls{gcn} implementation as an example, Eq. \ref{eq:update} is modified as follows:
 \begin{align*}
     \Fun{U}^{\ell}(\Elem{h}{v}^{\ell-1}, \Elem{n}{v}^{\ell}) = \sigma\Paren{\sum_{c \in \Cal{C}} \Matrix{W}^{\Transpose}_{c,\ell} \Elem{n}{v}^{\ell}},
