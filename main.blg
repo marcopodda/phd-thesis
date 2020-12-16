@@ -1,17 +1,20 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[26] biber:313> INFO - === Tue Dec 15, 2020, 21:16:41
-[53] Biber.pm:371> INFO - Reading 'main.bcf'
-[110] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
-[120] Biber.pm:3981> INFO - Processing section 0
-[133] Biber.pm:4154> INFO - Looking for bibtex format file 'example.bib' for section 0
-[143] bibtex.pm:1468> INFO - LaTeX decoding ...
-[148] bibtex.pm:1294> INFO - Found BibTeX data source 'example.bib'
-[155] Utils.pm:169> WARN - I didn't find a database entry for '?' (section 0)
-[167] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[167] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[167] Biber.pm:3809> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[167] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[169] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[170] bbl.pm:720> INFO - Output to main.bbl
-[171] Biber.pm:110> INFO - WARNINGS: 1
+[25] biber:313> INFO - === Wed Dec 16, 2020, 13:43:18
+[54] Biber.pm:371> INFO - Reading 'main.bcf'
+[108] Biber.pm:857> INFO - Found 110 citekeys in bib section 0
+[122] Biber.pm:3981> INFO - Processing section 0
+[134] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[153] bibtex.pm:1468> INFO - LaTeX decoding ...
+[442] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
+[520] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
+[1082] Utils.pm:169> WARN - I didn't find a database entry for 'BioModels2010' (section 0)
+[1082] Utils.pm:169> WARN - I didn't find a database entry for '?' (section 0)
+[1083] Utils.pm:169> WARN - I didn't find a database entry for 'funahashi2003celldesigners' (section 0)
+[1228] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1229] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1229] Biber.pm:3809> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1229] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[1339] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1493] bbl.pm:720> INFO - Output to main.bbl
+[1494] Biber.pm:110> INFO - WARNINGS: 4

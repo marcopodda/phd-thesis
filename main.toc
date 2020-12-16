@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {2.2.2}Overfitting}{8}{subsection.12}
 \contentsline {subsection}{\numberline {2.2.3}Regularization}{8}{subsection.13}
 \contentsline {section}{\numberline {2.3}Model Evaluation}{9}{section.15}
-\contentsline {subsection}{\numberline {2.3.1}Model Selection}{9}{subsection.16}
+\contentsline {subsection}{\numberline {2.3.1}Model Selection}{10}{subsection.16}
 \contentsline {section}{\numberline {2.4}Neural Networks}{10}{section.17}
 \contentsline {subsection}{\numberline {2.4.1}Training}{13}{subsection.21}
 \contentsline {subsection}{\numberline {2.4.2}Loss Functions}{13}{subsection.22}
@@ -22,14 +22,14 @@
 \contentsline {subsection}{\numberline {2.4.3}Regularization}{16}{subsection.26}
 \contentsline {paragraph}{Penalized Loss Function}{16}{section*.27}
 \contentsline {paragraph}{Early Stopping}{16}{section*.28}
-\contentsline {paragraph}{Dropout}{16}{section*.29}
+\contentsline {paragraph}{Dropout}{17}{section*.29}
 \contentsline {section}{\numberline {2.5}Auto-Encoders}{17}{section.30}
 \contentsline {subsection}{\numberline {2.5.1}Regularized Auto-Encoders}{18}{subsection.32}
 \contentsline {section}{\numberline {2.6}Deep Learning}{19}{section.34}
 \contentsline {subsection}{\numberline {2.6.1}Convolutional Neural Networks}{20}{subsection.35}
 \contentsline {section}{\numberline {2.7}Deep Generative Models}{21}{section.36}
 \contentsline {subsection}{\numberline {2.7.1}Autoregressive Models}{22}{subsection.37}
-\contentsline {subsection}{\numberline {2.7.2}Variational Auto-Encoders}{22}{subsection.38}
+\contentsline {subsection}{\numberline {2.7.2}Variational Auto-Encoders}{23}{subsection.38}
 \contentsline {chapter}{\numberline {3}Deep Learning in Structured Domains}{25}{chapter.40}
 \contentsline {section}{\numberline {3.1}Graphs}{25}{section.41}
 \contentsline {paragraph}{Directed Graphs}{26}{section*.43}
@@ -59,22 +59,22 @@
 \contentsline {paragraph}{Node Attention}{46}{section*.80}
 \contentsline {paragraph}{Node Sampling}{47}{section*.82}
 \contentsline {subsection}{\numberline {4.2.2}Readout Layers}{48}{subsection.84}
-\contentsline {subsection}{\numberline {4.2.3}Graph Pooling Layers}{50}{subsection.87}
+\contentsline {subsection}{\numberline {4.2.3}Graph Pooling Layers}{49}{subsection.87}
 \contentsline {subsection}{\numberline {4.2.4}Regularization}{51}{subsection.89}
 \contentsline {section}{\numberline {4.3}The Evaluation of Deep Graph Networks}{51}{section.92}
 \contentsline {subsection}{\numberline {4.3.1}Datasets}{52}{subsection.93}
-\contentsline {subsection}{\numberline {4.3.2}Architectures}{53}{subsection.95}
+\contentsline {subsection}{\numberline {4.3.2}Architectures}{54}{subsection.95}
 \contentsline {paragraph}{Graph Isomorphism Network}{54}{section*.96}
 \contentsline {paragraph}{GraphSAGE}{54}{section*.97}
 \contentsline {paragraph}{GraphSAGE + DiffPool}{54}{section*.98}
-\contentsline {paragraph}{ECC}{54}{section*.99}
+\contentsline {paragraph}{ECC}{55}{section*.99}
 \contentsline {paragraph}{DGCNN}{55}{section*.100}
 \contentsline {subsection}{\numberline {4.3.3}Baselines}{55}{subsection.101}
 \contentsline {subsection}{\numberline {4.3.4}Experimental Setup}{56}{subsection.102}
 \contentsline {paragraph}{Hyper-Parameters}{56}{section*.103}
-\contentsline {paragraph}{Computational Considerations}{56}{section*.104}
+\contentsline {paragraph}{Computational Considerations}{57}{section*.104}
 \contentsline {subsection}{\numberline {4.3.5}Results}{57}{subsection.105}
-\contentsline {paragraph}{The Importance of Baselines}{57}{section*.107}
+\contentsline {paragraph}{The Importance of Baselines}{58}{section*.107}
 \contentsline {paragraph}{The Effect of Node Degree}{58}{section*.109}
 \contentsline {paragraph}{Comparison with Published Results}{59}{section*.111}
 \contentsline {subsection}{\numberline {4.3.6}Conclusions}{59}{subsection.114}
@@ -96,7 +96,10 @@
 \contentsline {section}{\numberline {5.5}Results}{76}{section.146}
 \contentsline {subsection}{\numberline {5.5.1}Results on the E1 Experiment}{76}{subsection.147}
 \contentsline {subsection}{\numberline {5.5.2}Results on the E2 Experiments}{77}{subsection.150}
-\contentsline {subsection}{\numberline {5.5.3}Use Case on Synthetic Data}{80}{subsection.154}
-\contentsline {part}{III\hspace {1em}Deep Generative Learning on Graphs with Applications to Computational Chemistry}{83}{part.156}
-\contentsline {chapter}{\numberline {A}Frequently Asked Questions}{85}{appendix.157}
-\contentsline {section}{\numberline {A.1}How do I change the colors of links?}{85}{section.158}
+\contentsline {subsection}{\numberline {5.5.3}Application on Synthetic Data}{80}{subsection.154}
+\contentsline {subsection}{\numberline {5.5.4}Application on a model of the EGF Pathway}{81}{subsection.156}
+\contentsline {section}{\numberline {5.6}Conclusion and Further Work}{82}{section.158}
+\contentsline {part}{III\hspace {1em}Deep Generative Learning on Graphs with Applications to Computational Chemistry}{85}{part.159}
+\contentsline {chapter}{\numberline {A}Frequently Asked Questions}{87}{appendix.160}
+\contentsline {section}{\numberline {A.1}How do I change the colors of links?}{87}{section.161}
+\contentsline {chapter}{Bibliography}{89}{appendix*.162}

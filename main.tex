@@ -41,11 +41,13 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
+% \DeclareUnicodeCharacter{0302}{*************************************}
+
 %\usepackage{mathpazo} % Use the Palatino font by default
 
 \usepackage[backend=biber,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
-\addbibresource{example.bib} % The filename of the bibliography
+\addbibresource{bibliography.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
@@ -323,7 +325,7 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-% \printbibliography[heading=bibintoc]
+\printbibliography[heading=bibintoc]
 
 %----------------------------------------------------------------------------------------
 
