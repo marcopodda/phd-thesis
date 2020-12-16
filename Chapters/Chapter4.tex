@@ -142,7 +142,7 @@ where $\Matrix{A}^0 = \Matrix{A}$ and $\Matrix{H}^0 = \Matrix{X}_G$. Thus, after
     \caption{A visual example of a graph pooling layer.}
     \label{fig:pooling}
 \end{figure*}
-Topological pooling uses not-differentiable methods which leverage the global structure of the graph, and the communities beneath it. cluster the nodes according to well known graph theory tools, such as spectral clustering \citep{vonluxburg2007tutorialspectralclustering}.
+Topological pooling, on the other hand,  uses not-differentiable methods which leverage the global structure of the graph, and the communities beneath it. These methods work by grouping nodes according to well known graph theory tools, such as spectral clustering (see \eg \citet{vonluxburg2007tutorialspectralclustering, dhillon2007weightedgraphcuts}).
 
 \subsection{Regularization}
 \glspl{dgn} are trained with regular losses, such as \gls{ce} for classification and \gls{mse} for regression. Besides standard regularization techniques, the objective function is often regularized through unsupervised loss functions, which impose priors on which kinds of
@@ -168,7 +168,7 @@ All  graph  datasets  are  publicly  available \citep{kersting2016benchmark}  an
     \item D\&D \citep{dobson2003dd} is a graph dataset in which nodes are amino acids, and there is an edge between two nodes if they are they are neighbors in the amino-acid sequence or in 3D space. The task is a binary classification one, where the objective is to determine whether a graph represents an enzyme or non-enzyme;
     \item PROTEINS \citep{borgwardt2005proteins} is a subset of D\&D where the largest graphs have been removed;
     \item NCI1 \citep{wale2008nci1} is a dataset made of chemical compounds screened for ability to suppress or inhibit the growth of a panel of human tumor cell lines. The task is a binary classification one, where the objective is to determine if a chemical compound acts as suppressor or inhibitor;
-    \item ENZYMES is a dataset of enzymes from the BRENDA enzyme database \citep{schomburg2004enzymes}. In this case, the task is to correctly assign each enzyme to one out of 6 Enzyme Commission (EC) numbers.
+    \item ENZYMES is a dataset of enzymes taken from the BRENDA enzyme database \citep{schomburg2004enzymes}. In this case, the task is to correctly assign each enzyme to one out of 6 Enzyme Commission (EC) numbers.
 \end{itemize}
 As regards datasets containing social graphs, we use the following:
 \begin{itemize}
@@ -182,12 +182,12 @@ All node features are discrete (we shall refer to them as node labels equivalent
 \subsection{Architectures}\label{sec:comparison-architectures}
 In total, we choose five different \gls{dgn} architectures. The high-level structure of the \gls{dgn} comprises an input layer, a stack of one or more \glspl{gcl}, a readout layer and a final MLP classifier, which maps the graph embedding to the dataset-dependent output. Following, we describe in detail the kinds of \gls{gcl} used by the \glspl{dgn}, and the specific hyper-parameters optimized for each of them.
 
-\paragraph{Graph Isomorphism Network} The \gls{gin} convolutional layer \citep{xu2019gin} is implemented as follows:
+\paragraph{Graph Isomorphism Network} The \gls{gin} convolutional layer by \cite{xu2019gin} is implemented as follows:
 $$\Elem{h}{v}^{\ell} = \Fun{MLP}^{\ell} \Paren{(1 + \epsilon^{\ell})\,\Elem{h}{v}^{\ell-1} + \sum_{u \in \Cal{N}(v)} \Elem{h}{u}^{\ell-1}},$$
 where $\epsilon \in \Real$ is a trainable parameter, and MLP is a neural network with 2 hidden layers, each one consisting of a linear transformation, followed by a BatchNorm layer and a \gls{relu} non-linearity. The first layer of the \gls{dgn} is not a \gls{gcl}, but a graph readout that sums the node features, and passes them through an MLP identical to the one just described. The graph embedding obtained by this layer is then summed to the graph embeddings computed by the \glspl{gcl}. For this architecture, we choose the following hyper-parameters: number of layers, size of the hidden state at each layer, and type of readout function (for the first non-convolutional layer as well).
 
 \paragraph{GraphSAGE}
-The Graph SAmple and aggreGatE (GraphSAGE) convolutional layer \citep{hamilton2017graphsage} is implemented as follows:
+The Graph SAmple and aggreGatE (GraphSAGE) layer by \cite{hamilton2017graphsage} is implemented as follows:
 $$\Elem{h}{v}^{\ell} = \sigma\Paren{\Matrix{W}^{\Transpose}_{\ell}\Elem{h}{u}^{\ell-1} + \frac{1}{|\Cal{N}(v)|} \Matrix{U}^{\Transpose}_{\ell} \sum_{u \in \Cal{N}(v)} \Elem{h}{u}^{\ell-1}}.$$
 Notice that the original formulation also implements a form of node sampling, since it is applied to large graphs. Here, since the size of the graph we deal with is manageable, we do not implement node sampling.
 
@@ -195,7 +195,7 @@ Notice that the original formulation also implements a form of node sampling, si
 In order to have a representative \gls{dgn} with pooling, we tested a variant of GraphSAGE, where a DiffPool layer is added to the network after every GraphSAGE convolution. Internally, the DiffPool layer is implemented as in Section \ref{sec:pooling}, where $\Fun{DGN}_e$ and $\Fun{DGN}_p$ are a stack of 3 GraphSAGE layers respectively. Thus, one DiffPool layer requires to compute 6 graph convolutions. The number of clusters $k$ is deterministic, and is obtained as $\alpha M$, where $M$ is the maximum number of nodes among the graphs in the dataset, and $\alpha$ is a coarsening factor which is 0.1 if only one DiffPool layer is applied, and 0.25 otherwise.
 
 \paragraph{ECC}
-The Edge-Conditioned Convolutional layer \citep{simonovsky2017ecc}, is implemented as follows:
+The Edge-Conditioned Convolutional layer by \cite{simonovsky2017ecc} is implemented as follows:
 $$\Elem{h}{v}^{\ell} = \sigma\Paren{ \frac{1}{|\Cal{N}(v)|}\sum_{u \in \Cal{N}(v)} \Fun{MLP}^{\ell}(\Vector{e}_{uv})^{\Transpose} \mathbf{h}_u^{\ell-1}},$$
 where MLP is a neural network that computes a weight between the hidden state of the current node $\Elem{h}{v}^{\ell-1}$ and its generic neighbor $\Elem{h}{u}^{\ell-1}$, using the edge feature vector as input, composed of one hidden layer with ReLU non-linearities and a subsequent linear output layer. Each convolutional layer of the corresponding \gls{dgn} is composed of a stack of three ECC layers.
 

@@ -707,6 +707,48 @@
       \field{pages}{303\bibrangedash 314}
       \range{pages}{12}
     \endentry
+    \entry{dhillon2007weightedgraphcuts}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=913edd1ed6d39dab27744f7c19b0b18e}{%
+           family={Dhillon},
+           familyi={D\bibinitperiod},
+           given={Inderjit\bibnamedelima S},
+           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=23190fca8f894ea31e1e29e3e5cf1ac2}{%
+           family={Guan},
+           familyi={G\bibinitperiod},
+           given={Yuqiang},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e24b01c6124a3bb04d49303b7ec58d29}{%
+           family={Kulis},
+           familyi={K\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e1051bb3aa5b60540dd7fe521e2aca96}
+      \strng{fullhash}{e1051bb3aa5b60540dd7fe521e2aca96}
+      \strng{bibnamehash}{e1051bb3aa5b60540dd7fe521e2aca96}
+      \strng{authorbibnamehash}{e1051bb3aa5b60540dd7fe521e2aca96}
+      \strng{authornamehash}{e1051bb3aa5b60540dd7fe521e2aca96}
+      \strng{authorfullhash}{e1051bb3aa5b60540dd7fe521e2aca96}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{note}{Publisher: IEEE}
+      \field{number}{11}
+      \field{title}{Weighted graph cuts without eigenvectors a multilevel approach}
+      \field{volume}{29}
+      \field{year}{2007}
+      \field{pages}{1944\bibrangedash 1957}
+      \range{pages}{14}
+    \endentry
     \entry{dobson2003dd}{article}{}
       \name{author}{2}{}{%
         {{uniquename=0,uniquepart=base,hash=22010303ef52dcfdeaad9f1beed962a6}{%
@@ -895,6 +937,56 @@
       \field{year}{1998}
       \field{pages}{768\bibrangedash 86}
       \range{pages}{19}
+    \endentry
+    \entry{funahashi2003celldesigner}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=0bed4665c803a01b482c7663fdcc1695}{%
+           family={Funahashi},
+           familyi={F\bibinitperiod},
+           given={Akira},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=bf48a7bd6bcbe6b5f829775d663176ec}{%
+           family={Morohashi},
+           familyi={M\bibinitperiod},
+           given={Mineo},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=ccbec67ed2a448309bfd4a1cec5e10c8}{%
+           family={Kitano},
+           familyi={K\bibinitperiod},
+           given={Hiroaki},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=6006674e7753f6cdf4a63494eb1e391a}{%
+           family={Tanimura},
+           familyi={T\bibinitperiod},
+           given={Naoki},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{467addb27035451bd4c463415fc0fe00}
+      \strng{fullhash}{58473fd5ce89d17553d086cbb3bad48b}
+      \strng{bibnamehash}{467addb27035451bd4c463415fc0fe00}
+      \strng{authorbibnamehash}{467addb27035451bd4c463415fc0fe00}
+      \strng{authornamehash}{467addb27035451bd4c463415fc0fe00}
+      \strng{authorfullhash}{58473fd5ce89d17553d086cbb3bad48b}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biosilico}
+      \field{number}{5}
+      \field{title}{CellDesigner: a process diagram editor for gene-regulatory and biochemical networks}
+      \field{volume}{1}
+      \field{year}{2003}
+      \field{pages}{159\bibrangedash 162}
+      \range{pages}{4}
     \endentry
     \entry{gallicchio2010graphesn}{inproceedings}{}
       \name{author}{2}{}{%
@@ -2446,6 +2538,113 @@
       \field{year}{1998}
       \field{pages}{9\bibrangedash 50}
       \range{pages}{42}
+    \endentry
+    \entry{li2010biomodels}{article}{}
+      \name{author}{14}{}{%
+        {{uniquename=1,uniquepart=given,hash=02821a48003406ef06e1ee4dfa9fca52}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod},
+           givenun=1}}%
+        {{uniquename=0,uniquepart=base,hash=c917ae5835b2f4106162cdedae8641e8}{%
+           family={Donizelli},
+           familyi={D\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c9a1d4a9d6b7041a27739b4f6b4af4dd}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b09337374a4790887fad56738995b107}{%
+           family={Dharuri},
+           familyi={D\bibinitperiod},
+           given={Harish},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=776bd07becff688d6e79e34b349b79c5}{%
+           family={Endler},
+           familyi={E\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0477ba9a22dd87910ffd309a936d5edd}{%
+           family={Chelliah},
+           familyi={C\bibinitperiod},
+           given={Vijayalakshmi},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=da32ce59ebe295c8c0c7b1e010237b74}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Lu},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=dcd7d7e09e2b0137734760a01a214411}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Enuo},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a72c85c444f797f57bca30b226fe134e}{%
+           family={Henry},
+           familyi={H\bibinitperiod},
+           given={Arnaud},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0c4d5698c3dfffebb9178d4192b800be}{%
+           family={Stefan},
+           familyi={S\bibinitperiod},
+           given={Melanie\bibnamedelima I.},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=29cd8bcfa2e527b7c965019372e4617b}{%
+           family={Snoep},
+           familyi={S\bibinitperiod},
+           given={Jacky\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=46f3e48d5c3a1410b18eadac8585468d}{%
+           family={Hucka},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a70b8f1bbbf8d4eaa56db0fdb67dfd3d}{%
+           family={Le\bibnamedelima Nov{è}re},
+           familyi={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=9a89fb7307e376e2405be195ad459f01}{%
+           family={Laibe},
+           familyi={L\bibinitperiod},
+           given={Camille},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b8c9f21c9efafcc3cd58a13d256a3db5}
+      \strng{fullhash}{85774a0688470e4cda81be575908ab91}
+      \strng{bibnamehash}{b8c9f21c9efafcc3cd58a13d256a3db5}
+      \strng{authorbibnamehash}{b8c9f21c9efafcc3cd58a13d256a3db5}
+      \strng{authornamehash}{b8c9f21c9efafcc3cd58a13d256a3db5}
+      \strng{authorfullhash}{85774a0688470e4cda81be575908ab91}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{BMC Systems Biology}
+      \field{month}{6}
+      \field{title}{{BioModels Database: An enhanced, curated and annotated resource for published quantitative kinetic models.}}
+      \field{volume}{4}
+      \field{year}{2010}
+      \field{pages}{92}
+      \range{pages}{1}
     \endentry
     \entry{li2018deeperinsightgraphconvsemisupervised}{inproceedings}{}
       \name{author}{3}{}{%
@@ -4711,9 +4910,6 @@
       \range{pages}{11}
     \endentry
   \enddatalist
-  \missing{?}
-  \missing{BioModels2010}
-  \missing{funahashi2003celldesigners}
 \endrefsection
 \endinput
 
