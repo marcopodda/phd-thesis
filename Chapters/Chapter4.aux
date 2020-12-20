@@ -1,72 +1,72 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Deep Graph Networks}{41}{chapter.65}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Deep Graph Networks}{43}{chapter.68}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:dgn}{{4}{41}{Deep Graph Networks}{chapter.65}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Contextual Processing of Graph Information}{42}{section.66}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Recursive Approaches}{42}{subsection.68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Context diffusion through message passing. Directed edges represent messages (\textit  {e.g.~}from node $u$ to $v$ at iteration $\ell =2$). Dashed arrows represent the implicit contextual information received by a node (in dark grey) through the messages from its neighbors (in light grey). Focusing on node $v$, its context at iteration $\ell =2$ is composed all the dark grey nodes (including $v$ itself).\relax }}{43}{figure.caption.67}}
-\newlabel{fig:context-diffusion}{{4.1}{43}{Context diffusion through message passing. Directed edges represent messages (\eg from node $u$ to $v$ at iteration $\ell =2$). Dashed arrows represent the implicit contextual information received by a node (in dark grey) through the messages from its neighbors (in light grey). Focusing on node $v$, its context at iteration $\ell =2$ is composed all the dark grey nodes (including $v$ itself).\relax }{figure.caption.67}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Feed-Forward Approaches}{43}{subsection.69}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Constructive Approaches}{44}{subsection.70}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Building Blocks of Deep Graph Networks}{44}{section.71}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Graph Convolutional Layers}{44}{subsection.72}}
-\newlabel{sec:graph-conv-layers}{{4.2.1}{44}{Graph Convolutional Layers}{subsection.72}{}}
-\newlabel{eq:simple-aggregation}{{4.1}{44}{Graph Convolutional Layers}{equation.73}{}}
-\newlabel{eq:convolutional}{{4.2}{45}{Graph Convolutional Layers}{equation.75}{}}
-\newlabel{eq:transform}{{4.3}{45}{Graph Convolutional Layers}{equation.76}{}}
-\newlabel{eq:aggregate}{{4.4}{45}{Graph Convolutional Layers}{equation.77}{}}
-\newlabel{eq:update}{{4.5}{45}{Graph Convolutional Layers}{equation.78}{}}
-\@writefile{toc}{\contentsline {paragraph}{Handling Edges}{46}{section*.79}}
-\@writefile{toc}{\contentsline {paragraph}{Node Attention}{46}{section*.80}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of node attention. Note that edge thickness is not related to the strength of the connection between node $v$ (in dark grey) and its neighbors (in light grey), but it represents the degree of similarity between the node states, quantified in a probabilistic sense by the attention score. Dashed edges connect nodes that are not involved in the attention score computation.\relax }}{47}{figure.caption.81}}
-\newlabel{fig:attention}{{4.2}{47}{An example of node attention. Note that edge thickness is not related to the strength of the connection between node $v$ (in dark grey) and its neighbors (in light grey), but it represents the degree of similarity between the node states, quantified in a probabilistic sense by the attention score. Dashed edges connect nodes that are not involved in the attention score computation.\relax }{figure.caption.81}{}}
-\@writefile{toc}{\contentsline {paragraph}{Node Sampling}{47}{section*.82}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of node sampling. We focus on a node $v$ (in dark grey), and its neighbors (in light grey). Dashed edges connect nodes that are not involved in the neighborhood aggregation; notice how nodes $u_1$ and $u_2$ are excluded from the neighborhood aggregation, even though they are effectively neighbors of $v$.\relax }}{48}{figure.caption.83}}
-\newlabel{fig:sampling}{{4.3}{48}{An example of node sampling. We focus on a node $v$ (in dark grey), and its neighbors (in light grey). Dashed edges connect nodes that are not involved in the neighborhood aggregation; notice how nodes $u_1$ and $u_2$ are excluded from the neighborhood aggregation, even though they are effectively neighbors of $v$.\relax }{figure.caption.83}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Readout Layers}{48}{subsection.84}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces The role of hidden state readout function in a node classification/regression task. Here, we focus on a single node $\ensuremath  {\mathbf  {\lowercase {h}}}_{[v]}^{\ell }$, where we drop the subscripts to avoid visual cluttering. Grey nodes replace the $[v]$ subscript. The hidden state readout function creates a node representation $\ensuremath  {\mathbf  {\lowercase {h}}}_{[v]}^{*}$ by combining its three hidden states (one for each layer). Successively, the node representation is turned into an output by an output layer, and compared by the loss function to the same node $\ensuremath  {\mathbf  {\lowercase {y}}}_{[v]}$ in the isomorphic target graph. This operation is repeated for every node in the graph.\relax }}{49}{figure.caption.85}}
-\newlabel{fig:node-readout}{{4.4}{49}{The role of hidden state readout function in a node classification/regression task. Here, we focus on a single node $\Elem {h}{v}^{\ell }$, where we drop the subscripts to avoid visual cluttering. Grey nodes replace the $[v]$ subscript. The hidden state readout function creates a node representation $\Elem {h}{v}^{*}$ by combining its three hidden states (one for each layer). Successively, the node representation is turned into an output by an output layer, and compared by the loss function to the same node $\Elem {y}{v}$ in the isomorphic target graph. This operation is repeated for every node in the graph.\relax }{figure.caption.85}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Graph Pooling Layers}{49}{subsection.87}}
-\newlabel{sec:pooling}{{4.2.3}{49}{Graph Pooling Layers}{subsection.87}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces A graph readout on an example graph for a graph classification/regression task. Here, we assume the node representations $\ensuremath  {\mathbf  {\lowercase {h}}}_{[v]}^{*}$ have already been obtained by a node readout (not shown).\relax }}{50}{figure.caption.86}}
-\newlabel{fig:graph-readout}{{4.5}{50}{A graph readout on an example graph for a graph classification/regression task. Here, we assume the node representations $\Elem {h}{v}^{*}$ have already been obtained by a node readout (not shown).\relax }{figure.caption.86}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces A visual example of a graph pooling layer.\relax }}{51}{figure.caption.88}}
-\newlabel{fig:pooling}{{4.6}{51}{A visual example of a graph pooling layer.\relax }{figure.caption.88}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Regularization}{51}{subsection.89}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}The Evaluation of Deep Graph Networks}{51}{section.92}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Datasets}{52}{subsection.93}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Dataset Statistics. Note that, when node labels are not present, we either assigned the same feature of 1 or the degree to all nodes in the dataset.\relax }}{53}{table.caption.94}}
-\newlabel{tab:comparison-datasets}{{4.1}{53}{Dataset Statistics. Note that, when node labels are not present, we either assigned the same feature of 1 or the degree to all nodes in the dataset.\relax }{table.caption.94}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Architectures}{54}{subsection.95}}
-\newlabel{sec:comparison-architectures}{{4.3.2}{54}{Architectures}{subsection.95}{}}
-\@writefile{toc}{\contentsline {paragraph}{Graph Isomorphism Network}{54}{section*.96}}
-\@writefile{toc}{\contentsline {paragraph}{GraphSAGE}{54}{section*.97}}
-\@writefile{toc}{\contentsline {paragraph}{GraphSAGE + DiffPool}{54}{section*.98}}
-\@writefile{toc}{\contentsline {paragraph}{ECC}{55}{section*.99}}
-\@writefile{toc}{\contentsline {paragraph}{DGCNN}{55}{section*.100}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Baselines}{55}{subsection.101}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Experimental Setup}{56}{subsection.102}}
-\newlabel{sec:comparison-exp-setup}{{4.3.4}{56}{Experimental Setup}{subsection.102}{}}
-\@writefile{toc}{\contentsline {paragraph}{Hyper-Parameters}{56}{section*.103}}
-\@writefile{toc}{\contentsline {paragraph}{Computational Considerations}{57}{section*.104}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Results}{57}{subsection.105}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Results on chemical datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold.\relax }}{57}{table.caption.106}}
-\newlabel{tab:comparison-results-molecules}{{4.2}{57}{Results on chemical datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold.\relax }{table.caption.106}{}}
-\@writefile{toc}{\contentsline {paragraph}{The Importance of Baselines}{58}{section*.107}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Results on social datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold. OOR means Out of Resources, either time ($>$ 72 hours for a single training) or GPU memory. \relax }}{58}{table.caption.108}}
-\newlabel{tab:social-results}{{4.3}{58}{Results on social datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold. OOR means Out of Resources, either time ($>$ 72 hours for a single training) or GPU memory. \relax }{table.caption.108}{}}
-\newlabel{tab:comparison-results-social}{{4.3}{58}{Results on social datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold. OOR means Out of Resources, either time ($>$ 72 hours for a single training) or GPU memory. \relax }{table.caption.108}{}}
-\@writefile{toc}{\contentsline {paragraph}{The Effect of Node Degree}{58}{section*.109}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces The table displays the median number of selcted layers in relation to the addition of node degrees as input features on all social datasets. 1 indicates that an uninformative feature is used as node label.\relax }}{59}{table.caption.110}}
-\newlabel{tab:effect-of-degree}{{4.4}{59}{The table displays the median number of selcted layers in relation to the addition of node degrees as input features on all social datasets. 1 indicates that an uninformative feature is used as node label.\relax }{table.caption.110}{}}
-\@writefile{toc}{\contentsline {paragraph}{Comparison with Published Results}{59}{section*.111}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.6}Conclusions}{59}{subsection.114}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Results.\relax }}{60}{figure.caption.113}}
-\newlabel{fig:comparison-plot}{{4.7}{60}{Results.\relax }{figure.caption.113}{}}
+\newlabel{ch:dgn}{{4}{43}{Deep Graph Networks}{chapter.68}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Contextual Processing of Graph Information}{44}{section.69}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Recursive Approaches}{44}{subsection.71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Context diffusion through message passing. Directed edges represent messages (\textit  {e.g.~}from node $u$ to $v$ at iteration $\ell =2$). Dashed arrows represent the implicit contextual information received by a node (in dark grey) through the messages from its neighbors (in light grey). Focusing on node $v$, its context at iteration $\ell =2$ is composed all the dark grey nodes (including $v$ itself).\relax }}{45}{figure.caption.70}}
+\newlabel{fig:context-diffusion}{{4.1}{45}{Context diffusion through message passing. Directed edges represent messages (\eg from node $u$ to $v$ at iteration $\ell =2$). Dashed arrows represent the implicit contextual information received by a node (in dark grey) through the messages from its neighbors (in light grey). Focusing on node $v$, its context at iteration $\ell =2$ is composed all the dark grey nodes (including $v$ itself).\relax }{figure.caption.70}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Feed-Forward Approaches}{45}{subsection.72}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Constructive Approaches}{46}{subsection.73}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Building Blocks of Deep Graph Networks}{46}{section.74}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Graph Convolutional Layers}{46}{subsection.75}}
+\newlabel{sec:graph-conv-layers}{{4.2.1}{46}{Graph Convolutional Layers}{subsection.75}{}}
+\newlabel{eq:simple-aggregation}{{4.1}{46}{Graph Convolutional Layers}{equation.76}{}}
+\newlabel{eq:convolutional}{{4.2}{47}{Graph Convolutional Layers}{equation.78}{}}
+\newlabel{eq:transform}{{4.3}{47}{Graph Convolutional Layers}{equation.79}{}}
+\newlabel{eq:aggregate}{{4.4}{47}{Graph Convolutional Layers}{equation.80}{}}
+\newlabel{eq:update}{{4.5}{47}{Graph Convolutional Layers}{equation.81}{}}
+\@writefile{toc}{\contentsline {paragraph}{Handling Edges}{48}{section*.82}}
+\@writefile{toc}{\contentsline {paragraph}{Node Attention}{48}{section*.83}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of node attention. Note that edge thickness is not related to the strength of the connection between node $v$ (in dark grey) and its neighbors (in light grey), but it represents the degree of similarity between the node states, quantified in a probabilistic sense by the attention score. Dashed edges connect nodes that are not involved in the attention score computation.\relax }}{49}{figure.caption.84}}
+\newlabel{fig:attention}{{4.2}{49}{An example of node attention. Note that edge thickness is not related to the strength of the connection between node $v$ (in dark grey) and its neighbors (in light grey), but it represents the degree of similarity between the node states, quantified in a probabilistic sense by the attention score. Dashed edges connect nodes that are not involved in the attention score computation.\relax }{figure.caption.84}{}}
+\@writefile{toc}{\contentsline {paragraph}{Node Sampling}{49}{section*.85}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of node sampling. We focus on a node $v$ (in dark grey), and its neighbors (in light grey). Dashed edges connect nodes that are not involved in the neighborhood aggregation; notice how nodes $u_1$ and $u_2$ are excluded from the neighborhood aggregation, even though they are effectively neighbors of $v$.\relax }}{50}{figure.caption.86}}
+\newlabel{fig:sampling}{{4.3}{50}{An example of node sampling. We focus on a node $v$ (in dark grey), and its neighbors (in light grey). Dashed edges connect nodes that are not involved in the neighborhood aggregation; notice how nodes $u_1$ and $u_2$ are excluded from the neighborhood aggregation, even though they are effectively neighbors of $v$.\relax }{figure.caption.86}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Readout Layers}{50}{subsection.87}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces The role of hidden state readout function in a node classification/regression task. Here, we focus on a single node $\ensuremath  {\boldsymbol  {\lowercase {h}}}_{[v]}^{\ell }$, where we drop the subscripts to avoid visual cluttering. Grey nodes replace the $[v]$ subscript. The hidden state readout function creates a node representation $\ensuremath  {\boldsymbol  {\lowercase {h}}}_{[v]}^{*}$ by combining its three hidden states (one for each layer). Successively, the node representation is turned into an output by an output layer, and compared by the loss function to the same node $\ensuremath  {\boldsymbol  {\lowercase {y}}}_{[v]}$ in the isomorphic target graph. This operation is repeated for every node in the graph.\relax }}{51}{figure.caption.88}}
+\newlabel{fig:node-readout}{{4.4}{51}{The role of hidden state readout function in a node classification/regression task. Here, we focus on a single node $\Elem {h}{v}^{\ell }$, where we drop the subscripts to avoid visual cluttering. Grey nodes replace the $[v]$ subscript. The hidden state readout function creates a node representation $\Elem {h}{v}^{*}$ by combining its three hidden states (one for each layer). Successively, the node representation is turned into an output by an output layer, and compared by the loss function to the same node $\Elem {y}{v}$ in the isomorphic target graph. This operation is repeated for every node in the graph.\relax }{figure.caption.88}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces A graph readout on an example graph for a graph classification/regression task. Here, we assume the node representations $\ensuremath  {\boldsymbol  {\lowercase {h}}}_{[v]}^{*}$ have already been obtained by a node readout (not shown).\relax }}{51}{figure.caption.89}}
+\newlabel{fig:graph-readout}{{4.5}{51}{A graph readout on an example graph for a graph classification/regression task. Here, we assume the node representations $\Elem {h}{v}^{*}$ have already been obtained by a node readout (not shown).\relax }{figure.caption.89}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Graph Pooling Layers}{52}{subsection.90}}
+\newlabel{sec:pooling}{{4.2.3}{52}{Graph Pooling Layers}{subsection.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces A visual example of a graph pooling layer.\relax }}{52}{figure.caption.91}}
+\newlabel{fig:pooling}{{4.6}{52}{A visual example of a graph pooling layer.\relax }{figure.caption.91}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Regularization}{53}{subsection.92}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}The Evaluation of Deep Graph Networks}{53}{section.95}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Datasets}{54}{subsection.96}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Dataset Statistics. Note that, when node labels are not present, we either assigned the same feature of 1 or the degree to all nodes in the dataset.\relax }}{55}{table.caption.97}}
+\newlabel{tab:comparison-datasets}{{4.1}{55}{Dataset Statistics. Note that, when node labels are not present, we either assigned the same feature of 1 or the degree to all nodes in the dataset.\relax }{table.caption.97}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Architectures}{55}{subsection.98}}
+\newlabel{sec:comparison-architectures}{{4.3.2}{55}{Architectures}{subsection.98}{}}
+\@writefile{toc}{\contentsline {paragraph}{Graph Isomorphism Network}{56}{section*.99}}
+\@writefile{toc}{\contentsline {paragraph}{GraphSAGE}{56}{section*.100}}
+\@writefile{toc}{\contentsline {paragraph}{GraphSAGE + DiffPool}{56}{section*.101}}
+\@writefile{toc}{\contentsline {paragraph}{ECC}{56}{section*.102}}
+\@writefile{toc}{\contentsline {paragraph}{DGCNN}{57}{section*.103}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Baselines}{57}{subsection.104}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Experimental Setup}{58}{subsection.105}}
+\newlabel{sec:comparison-exp-setup}{{4.3.4}{58}{Experimental Setup}{subsection.105}{}}
+\@writefile{toc}{\contentsline {paragraph}{Hyper-Parameters}{58}{section*.106}}
+\@writefile{toc}{\contentsline {paragraph}{Computational Considerations}{58}{section*.107}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Results}{59}{subsection.108}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Results on chemical datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold.\relax }}{59}{table.caption.109}}
+\newlabel{tab:comparison-results-molecules}{{4.2}{59}{Results on chemical datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold.\relax }{table.caption.109}{}}
+\@writefile{toc}{\contentsline {paragraph}{The Importance of Baselines}{59}{section*.110}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Results on social datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold. OOR means Out of Resources, either time ($>$ 72 hours for a single training) or GPU memory. \relax }}{60}{table.caption.111}}
+\newlabel{tab:social-results}{{4.3}{60}{Results on social datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold. OOR means Out of Resources, either time ($>$ 72 hours for a single training) or GPU memory. \relax }{table.caption.111}{}}
+\newlabel{tab:comparison-results-social}{{4.3}{60}{Results on social datasets with mean accuracy and standard deviation are reported. Best performances are highlighted in bold. OOR means Out of Resources, either time ($>$ 72 hours for a single training) or GPU memory. \relax }{table.caption.111}{}}
+\@writefile{toc}{\contentsline {paragraph}{The Effect of Node Degree}{60}{section*.112}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces The table displays the median number of selcted layers in relation to the addition of node degrees as input features on all social datasets. 1 indicates that an uninformative feature is used as node label.\relax }}{61}{table.caption.113}}
+\newlabel{tab:effect-of-degree}{{4.4}{61}{The table displays the median number of selcted layers in relation to the addition of node degrees as input features on all social datasets. 1 indicates that an uninformative feature is used as node label.\relax }{table.caption.113}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comparison with Published Results}{61}{section*.114}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.6}Conclusions}{61}{subsection.117}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Results.\relax }}{62}{figure.caption.116}}
+\newlabel{fig:comparison-plot}{{4.7}{62}{Results.\relax }{figure.caption.116}{}}
 \@setckpt{Chapters/Chapter4}{
-\setcounter{page}{61}
+\setcounter{page}{63}
 \setcounter{equation}{6}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -95,8 +95,8 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{108}
-\setcounter{maxnames}{3}
+\setcounter{instcount}{111}
+\setcounter{maxnames}{1}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
 \setcounter{minitems}{1}
@@ -109,7 +109,7 @@
 \setcounter{maxextratitle}{0}
 \setcounter{maxextratitleyear}{0}
 \setcounter{maxextradate}{0}
-\setcounter{maxextraalpha}{0}
+\setcounter{maxextraalpha}{2}
 \setcounter{abbrvpenalty}{50}
 \setcounter{highnamepenalty}{50}
 \setcounter{lownamepenalty}{25}
@@ -186,7 +186,7 @@
 \setcounter{savedoriglanguage}{0}
 \setcounter{pageref}{0}
 \setcounter{savedpageref}{0}
-\setcounter{textcitecount}{0}
+\setcounter{textcitecount}{2}
 \setcounter{textcitetotal}{2}
 \setcounter{textcitemaxnames}{0}
 \setcounter{biburlnumpenalty}{0}

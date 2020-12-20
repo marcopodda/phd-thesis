@@ -1,0 +1,46 @@
+\chapter{Deep Generative Learning on Graphs} % Main chapter title
+\label{ch:deep-generative-learning-graphs}
+
+\section{The Challenges of Graph Generation}
+The problem of generating graph structures from arbitrary graph distributions is arguably harder than their predictive modeling. The main reason for this is that graphs spaces are very large and complex. For example, the size of the space of undirected graphs with $N$ nodes is ${N \choose 2} = \frac{N(N-1)}{2}$, which becomes very large even for graphs with a moderate number of nodes. Thus, trivial approaches such as exhaustive enumeration are generally intractable. Moreover, real-world graph distributions are generally defined over graphs with variable size, which the search space even larger. Besides size, sparsity in another characteristic of graphs spaces: in fact, for many interesting tasks, only very small subsets of the space contain graphs with non-zero probability. This problem calls for the use of adaptive methods, which can be driven by the data to detect regions of high-probability efficiently.
+% Recently, there has been a huge interest of the \gls{dl} community in the development of \glspl{dgm} of graphs. In this chapter, we review some relevant ones, and present an original contribution for learning to generate unlabelled graphs with a deep autoregressive model.
+
+\section{Graph Decoders}
+Recalling from Section \ref{sec:dgm}, the objective of a \gls{dgm} of graphs is to explicitly learn a distribution $p(\Graph{g})$ over graphs, or some parametrized functions that produces samples from it. To do so, we assume access to a dataset of graphs $\mathbb{G} = \Set{\Graph{g}_i}_{i=1}^n$, as well as to some prior $q(\Vector{z})$. Here, we do not make any assumption about the prior: in particular, the latent vectors can be the result of a stochastic process such as a sample from some distribution, as well as, for example, the representations provided by a \gls{dgn}. Based of the generative approach of choice, we have two options:
+\begin{itemize}
+    \item use a latent variable model such as a \gls{vae}. This requires to model the graph distribution as follows:
+    $$p(\Graph{g}) \approx p_{\Param}(\Graph{g}) = \int p_{\Param}(\Graph{g}, \Vector{z})\, d\Vector{z} = \int p_{\Param}(\Graph{g} \given \Vector{z})\, q(\Vector{z})\, d\Vector{z},$$
+    which can be learned with \gls{mle} as usual;
+    \item use an implicit approach such as \glspl{gan}. This requires to learn a mapper from latent space to sample space as follows:
+    $$\Graph{g} = \Generator(\Vector{z}),\; \mathrm{where}\; \Vector{z} \sim q(\Vector{z}).$$
+\end{itemize}
+What the two approaches have in common is the presence of a \keyword{graph decoder} $p_{\Param}(\Graph{g} \given \Vector{z})$ or a \keyword{graph generator} $\Generator(\Vector{z})$, whose purpose is to transform latent vectors into graphs. Hereafter, we refer to both as decoders. Ideally, graph decoders would be permutation invariant; however, this is rarely the case. The major hurdle to devise permutation invariant graph decoders is their computational cost; even though some models do exist \citep{ermon2020scorematching}, they are still too inefficient to be deployed in real world scenarios. Thus, in the following, we assume non-invariance. There are two main paradigms to implement adaptive graph decoders, which we detail in the following.
+
+\subsection{One-shot Decoders}
+This class of graph decoders generates the adjacency matrix $\Matrix{A} \in \Real^{n \times n}$ of the graph at once, for a pre-specified maximum number of nodes $n$. Two possible approaches to do so are the following:
+\begin{itemize}
+    \item given a latent vector $\Vector{z} \sim p(\Vector{z})$, by computing $\Matrix{A} = \sigma(\Fun{MLP}(\Vector{z}))$. In practice, the output of the \gls{mlp} is an $n \times n$ vector of Bernoulli random variables obtained from a sigmoid output layer. Here, the latent variable is a graph representation, either sampled from a probabilistic prior (such the noise source of a \gls{gan} or the encoding distribution of a \gls{vae});
+    \item given a set of $n$ latent vectors represented as a matrix $\Matrix{Z} \in \Real^{n \times z}$, by computing $\Matrix{A} = \sigma(\Matrix{Z}\Matrix{Z}^{\Transpose})$. Here, the sampled latent vectors are node representations, and the entries of the adjacency matrix represent the similarity between them.
+\end{itemize}
+Notice that, in both cases, the output of the decoder is a dense probabilistic adjacency matrix, which needs to be sampled to produce an actual graph. Each entry of the actual adjacency matrix is sampled independently, according to the corresponding Bernoulli distribution estimated by the network. However, sampling is a stochastic operation and hence may break end-to-end differentiability. This is not an issue for \gls{vae}, where sampling occurs in a continuous latent space and can be reparameterized. However, it becomes one in implicit models such as \glspl{gan}, where one must sample a real adjacency matrix from the generator to be able to train the discriminator. To cope with this issue, several techniques can be adopted:
+\begin{itemize}
+    \item use the hard sample during forward propagation, but compute the gradient on the probabilistic matrix; this is known as the \emph{straight-through} gradient estimator \citep{straightthrough};
+    \item reparameterize the sampling process so that the stochasticiy is taken outside of the forward propagation. This can be achieved, for example, using the Gumbel-softmax reparameterization for discrete distributions \citep{janggumbel};
+    \item use reinforcement learning techniques such as the REINFORCE gradients \citep{reinforce}.
+\end{itemize}
+One-shot approaches are usually fast to train and to take samples from. However, they are too simplistic, in that they assume the edges are generated independently (which is usually not the case for real-world graphs). Furthermore, the number of nodes must be pre-specified, which makes them less suited to model variable size graphs.
+
+\subsection{Autoregressive Generators}
+Autoregressive decoders work by assuming that the graphs are generated by some sequential process. Specifically, if $\Seq{s}$ is some random variable over sequences that generate graphs, they decompose the generating distribution as follows:
+$$p(\Graph{g}) \approx p_{\Param}(\Seq{s}) = \int\int p_{\Param}(\Seq{s}, \Vector{z}, \pi)\, d\Vector{z} = \int\int p_{\Param}(\Seq{s} \given \Vector{z}, \pi)\, q(\Vector{z})\, q(\pi)\, d\Vector{z}\, d\pi,$$
+where $\pi$ determines the order among the elements of the sequence, (which is implied by the fact that graphs are permutation-invariant), and generally it is assumed independence between the ordering and the latent vectors. In theory, this approach requires to train the model on every possible permutation of the training sequences, which is generally intractable. Thus, they approximate the generating distribution as follows:
+$$p(\Graph{g}) \approx p_{\Param}(\Seq{s}) = \int p_{\Param}(\Seq{s}_{\pi}, \Vector{z})\, d\Vector{z} = \int p_{\Param}(\Seq{s}_{\pi} \given \Vector{z})\, q(\Vector{z})\, d\Vector{z},$$
+where the order is now fixed beforehand. In practical settings, the ordering of the elements is imposed through Breadth-First (BF) or Depth-First (DF) traversal, whose starting node is decided with some form of graph canonization. The model is learned using autoregressive networks (for example \glspl{rnn}). Different approaches derive from the way the graph is decomposed into a sequence:
+\begin{itemize}
+    \item \emph{node-based} approaches decompose the graph as a sequence of nodes \citep{you2018graphrnn};
+    \item \emph{edge-based} approaches decompose the graph as a sequence of edges, such as our contribution presented in Section \ref{sec:edgebased};
+    \item \emph{action-based} approaches decompose the graph as a sequence of actions on an initially empty graph, such as adding nodes and connecting a new node to the previous graph \citep{li2018learningdeepgmg};
+    \item \emph{motif-based} approaches decompose the graph as a sequence of \emph{motifs}, \ie very small and manageable subgraphs \citep{jin2018jtvae}, which are combined together adaptively.
+\end{itemize}
+A special kind of sequential decomposition for graphs is one applied to molecules. In fact, molecular graphs can be translated with approximated graph canonization into strings of the so-called SMILES language \citep{weininger1988smiles}, where each character represents molecular components such as atoms or chemical bonds.
+The pros and cons of autoregressive decoders are orthogonal to those of one-shot decoders: briefly, they allow to generate variable-sized graphs seamlessly, and they can model dependencies between nodes and edges by means of the autoregressive property. However, they are dependent on the particular order assumed, and the autoregressive sampling process is slower, because the graph is reconstructed in a sequential manner.

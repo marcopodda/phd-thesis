@@ -40,7 +40,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
-      <bcf:value>0</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="multivalued">
       <bcf:key>labelnamespec</bcf:key>
@@ -66,7 +66,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labeldateparts</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="multivalued">
       <bcf:key>labeldatespec</bcf:key>
@@ -95,7 +95,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
@@ -131,7 +131,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nyt</bcf:value>
+      <bcf:value>anyt</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -139,11 +139,11 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>uniquelist</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>uniquename</bcf:key>
-      <bcf:value>2</bcf:value>
+      <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>uniqueprimaryauthor</bcf:key>
@@ -372,8 +372,7 @@
     <bcf:option datatype="boolean">doi</bcf:option>
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
-    <bcf:option datatype="boolean">dashed</bcf:option>
-    <bcf:option datatype="boolean">mergedate</bcf:option>
+    <bcf:option datatype="boolean">subentry</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
     <bcf:option datatype="integer">maxnames</bcf:option>
@@ -1936,144 +1935,161 @@
     <bcf:citekey order="9">haykin2009nnets</bcf:citekey>
     <bcf:citekey order="9">goodfellow2016dl</bcf:citekey>
     <bcf:citekey order="10">rosenblatt1958perceptron</bcf:citekey>
-    <bcf:citekey order="11">glorot2011relu</bcf:citekey>
-    <bcf:citekey order="12">cybenko1998approximationuniversal</bcf:citekey>
-    <bcf:citekey order="13">rumelhart1986backprop</bcf:citekey>
-    <bcf:citekey order="14">lecun1998backprop</bcf:citekey>
-    <bcf:citekey order="15">goodfellow2016dl</bcf:citekey>
+    <bcf:citekey order="11">cybenko1998approximationuniversal</bcf:citekey>
+    <bcf:citekey order="12">wolpert1997freelunchtheorem</bcf:citekey>
+    <bcf:citekey order="13">glorot2011relu</bcf:citekey>
+    <bcf:citekey order="14">rumelhart1986backprop</bcf:citekey>
+    <bcf:citekey order="15">lecun1998backprop</bcf:citekey>
     <bcf:citekey order="16">hastie2009elements</bcf:citekey>
-    <bcf:citekey order="17">prechelt1998earlystopping</bcf:citekey>
-    <bcf:citekey order="18">srivastava2014dropout</bcf:citekey>
-    <bcf:citekey order="19">baldi2012autoenc</bcf:citekey>
-    <bcf:citekey order="20">rifai2011contractiveautoenc</bcf:citekey>
-    <bcf:citekey order="21">vincent2010denoisingautoenc</bcf:citekey>
-    <bcf:citekey order="22">bengio2009deeparch</bcf:citekey>
-    <bcf:citekey order="23">krizhevsky2017imagenet</bcf:citekey>
-    <bcf:citekey order="24">vaswani2017transformer</bcf:citekey>
-    <bcf:citekey order="25">goodfellow2016dl</bcf:citekey>
-    <bcf:citekey order="26">goodfellow2015optimization</bcf:citekey>
-    <bcf:citekey order="26">janocha2017lossfunction</bcf:citekey>
-    <bcf:citekey order="27">kingma2015adam</bcf:citekey>
-    <bcf:citekey order="27">ruder2016overviewsgd</bcf:citekey>
-    <bcf:citekey order="28">glorot2011relu</bcf:citekey>
-    <bcf:citekey order="29">zhang2020gradientclipping</bcf:citekey>
-    <bcf:citekey order="30">ioffe2015batchnorm</bcf:citekey>
-    <bcf:citekey order="31">he2016resnets</bcf:citekey>
-    <bcf:citekey order="32">abadi2016tensorflow</bcf:citekey>
-    <bcf:citekey order="32">paszke2017pytorch</bcf:citekey>
-    <bcf:citekey order="33">lecun1995convolutionalnn</bcf:citekey>
-    <bcf:citekey order="34">krizhevsky2017imagenet</bcf:citekey>
-    <bcf:citekey order="35">goodfellow2016dl</bcf:citekey>
-    <bcf:citekey order="36">neal1992sigmoidbeliefnet</bcf:citekey>
-    <bcf:citekey order="37">rezende2015normalizingflows</bcf:citekey>
-    <bcf:citekey order="38">goodfellow2014gan</bcf:citekey>
-    <bcf:citekey order="39">alain2016genstochasticnet</bcf:citekey>
-    <bcf:citekey order="40">germain2015made</bcf:citekey>
-    <bcf:citekey order="41">vandenoord2016wavenet</bcf:citekey>
-    <bcf:citekey order="42">kingma2014vae</bcf:citekey>
-    <bcf:citekey order="43">bondy1976graph</bcf:citekey>
-    <bcf:citekey order="44">siegelmann1995rnnturing</bcf:citekey>
-    <bcf:citekey order="45">werbos1988backpropthroughtime</bcf:citekey>
-    <bcf:citekey order="46">jaeger2002truncatedbptt</bcf:citekey>
-    <bcf:citekey order="47">bengio1994learninglongtermdependenciesdifficult</bcf:citekey>
-    <bcf:citekey order="48">hochreiter1997lstm</bcf:citekey>
-    <bcf:citekey order="49">cho2014gru</bcf:citekey>
-    <bcf:citekey order="50">gruber2020gruspecificlstm</bcf:citekey>
-    <bcf:citekey order="51">williams1989teacherforcing</bcf:citekey>
-    <bcf:citekey order="52">sperduti1997generalizedneuron</bcf:citekey>
-    <bcf:citekey order="52">frasconi1998general</bcf:citekey>
+    <bcf:citekey order="17">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="18">prechelt1998earlystopping</bcf:citekey>
+    <bcf:citekey order="19">srivastava2014dropout</bcf:citekey>
+    <bcf:citekey order="20">baldi2012autoenc</bcf:citekey>
+    <bcf:citekey order="21">rifai2011contractiveautoenc</bcf:citekey>
+    <bcf:citekey order="22">vincent2010denoisingautoenc</bcf:citekey>
+    <bcf:citekey order="23">bengio2009deeparch</bcf:citekey>
+    <bcf:citekey order="24">krizhevsky2017imagenet</bcf:citekey>
+    <bcf:citekey order="25">vaswani2017transformer</bcf:citekey>
+    <bcf:citekey order="26">goodfellow2016dl</bcf:citekey>
+    <bcf:citekey order="27">goodfellow2015optimization</bcf:citekey>
+    <bcf:citekey order="27">janocha2017lossfunction</bcf:citekey>
+    <bcf:citekey order="28">kingma2015adam</bcf:citekey>
+    <bcf:citekey order="28">ruder2016overviewsgd</bcf:citekey>
+    <bcf:citekey order="29">glorot2011relu</bcf:citekey>
+    <bcf:citekey order="30">zhang2020gradientclipping</bcf:citekey>
+    <bcf:citekey order="31">ioffe2015batchnorm</bcf:citekey>
+    <bcf:citekey order="32">he2016resnets</bcf:citekey>
+    <bcf:citekey order="33">abadi2016tensorflow</bcf:citekey>
+    <bcf:citekey order="33">paszke2017pytorch</bcf:citekey>
+    <bcf:citekey order="34">lecun1995convolutionalnn</bcf:citekey>
+    <bcf:citekey order="35">krizhevsky2017imagenet</bcf:citekey>
+    <bcf:citekey order="36">goodfellow2016dl</bcf:citekey>
+    <bcf:citekey order="37">neal1992sigmoidbeliefnet</bcf:citekey>
+    <bcf:citekey order="38">rezende2015normalizingflows</bcf:citekey>
+    <bcf:citekey order="39">germain2015made</bcf:citekey>
+    <bcf:citekey order="40">vandenoord2016wavenet</bcf:citekey>
+    <bcf:citekey order="41">kingma2014vae</bcf:citekey>
+    <bcf:citekey order="42">mohamed2016implicitgan</bcf:citekey>
+    <bcf:citekey order="43">goodfellow2014gan</bcf:citekey>
+    <bcf:citekey order="44">bondy1976graph</bcf:citekey>
+    <bcf:citekey order="45">siegelmann1995rnnturing</bcf:citekey>
+    <bcf:citekey order="46">werbos1988backpropthroughtime</bcf:citekey>
+    <bcf:citekey order="47">jaeger2002truncatedbptt</bcf:citekey>
+    <bcf:citekey order="48">bengio1994learninglongtermdependenciesdifficult</bcf:citekey>
+    <bcf:citekey order="49">hochreiter1997lstm</bcf:citekey>
+    <bcf:citekey order="50">cho2014gru</bcf:citekey>
+    <bcf:citekey order="51">gruber2020gruspecificlstm</bcf:citekey>
+    <bcf:citekey order="52">williams1989teacherforcing</bcf:citekey>
     <bcf:citekey order="53">sperduti1997generalizedneuron</bcf:citekey>
-    <bcf:citekey order="54">frasconi1998general</bcf:citekey>
-    <bcf:citekey order="55">micheli2007introductionrecnncheminformatics</bcf:citekey>
-    <bcf:citekey order="56">socher2013recnnsentiment</bcf:citekey>
-    <bcf:citekey order="57">socher2011parsingscenes</bcf:citekey>
-    <bcf:citekey order="58">hammer1999recnn</bcf:citekey>
-    <bcf:citekey order="59">hammer2005universal</bcf:citekey>
-    <bcf:citekey order="60">micheli2009nn4g</bcf:citekey>
-    <bcf:citekey order="61">scarselli2009gnn</bcf:citekey>
-    <bcf:citekey order="62">gallicchio2010graphesn</bcf:citekey>
-    <bcf:citekey order="63">gallicchio2020fastdeepgnn</bcf:citekey>
-    <bcf:citekey order="64">li2016gatedgnn</bcf:citekey>
-    <bcf:citekey order="65">scarselli2009gnn</bcf:citekey>
-    <bcf:citekey order="66">macskassy2007classificationnetworkdata</bcf:citekey>
-    <bcf:citekey order="67">micheli2009nn4g</bcf:citekey>
-    <bcf:citekey order="68">bengio1994learninglongtermdependenciesdifficult</bcf:citekey>
-    <bcf:citekey order="68">li2018deeperinsightgraphconvsemisupervised</bcf:citekey>
-    <bcf:citekey order="69">fahlman1990cascor</bcf:citekey>
-    <bcf:citekey order="69">marquez2018deepcascade</bcf:citekey>
-    <bcf:citekey order="69">bianucci2000cascorchemistry</bcf:citekey>
-    <bcf:citekey order="70">micheli2009nn4g</bcf:citekey>
-    <bcf:citekey order="71">bacciu2018contgraphmarkov</bcf:citekey>
-    <bcf:citekey order="72">kipf2017semisupervisedgcn</bcf:citekey>
-    <bcf:citekey order="73">zaheer2017deepsets</bcf:citekey>
-    <bcf:citekey order="74">micheli2009nn4g</bcf:citekey>
-    <bcf:citekey order="74">schlichtkrull2018relationaldatagcn</bcf:citekey>
-    <bcf:citekey order="75">bahdanau2015attention</bcf:citekey>
-    <bcf:citekey order="76">gallicchio2020fastdeepgnn</bcf:citekey>
-    <bcf:citekey order="77">hamilton2017graphsage</bcf:citekey>
-    <bcf:citekey order="78">zaheer2017deepsets</bcf:citekey>
-    <bcf:citekey order="79">ying2018diffpool</bcf:citekey>
-    <bcf:citekey order="80">vonluxburg2007tutorialspectralclustering</bcf:citekey>
-    <bcf:citekey order="80">dhillon2007weightedgraphcuts</bcf:citekey>
-    <bcf:citekey order="81">lipton2018troubling</bcf:citekey>
-    <bcf:citekey order="82">kersting2016benchmark</bcf:citekey>
-    <bcf:citekey order="83">dobson2003dd</bcf:citekey>
-    <bcf:citekey order="84">borgwardt2005proteins</bcf:citekey>
-    <bcf:citekey order="85">wale2008nci1</bcf:citekey>
-    <bcf:citekey order="86">schomburg2004enzymes</bcf:citekey>
-    <bcf:citekey order="87">yanardag2015imdbredditcollab</bcf:citekey>
-    <bcf:citekey order="88">yanardag2015imdbredditcollab</bcf:citekey>
+    <bcf:citekey order="53">frasconi1998general</bcf:citekey>
+    <bcf:citekey order="54">sperduti1997generalizedneuron</bcf:citekey>
+    <bcf:citekey order="55">frasconi1998general</bcf:citekey>
+    <bcf:citekey order="56">micheli2007introductionrecnncheminformatics</bcf:citekey>
+    <bcf:citekey order="57">socher2013recnnsentiment</bcf:citekey>
+    <bcf:citekey order="58">socher2011parsingscenes</bcf:citekey>
+    <bcf:citekey order="59">hammer1999recnn</bcf:citekey>
+    <bcf:citekey order="60">hammer2005universal</bcf:citekey>
+    <bcf:citekey order="61">micheli2009nn4g</bcf:citekey>
+    <bcf:citekey order="62">scarselli2009gnn</bcf:citekey>
+    <bcf:citekey order="63">gallicchio2010graphesn</bcf:citekey>
+    <bcf:citekey order="64">gallicchio2020fastdeepgnn</bcf:citekey>
+    <bcf:citekey order="65">li2016gatedgnn</bcf:citekey>
+    <bcf:citekey order="66">scarselli2009gnn</bcf:citekey>
+    <bcf:citekey order="67">macskassy2007classificationnetworkdata</bcf:citekey>
+    <bcf:citekey order="68">micheli2009nn4g</bcf:citekey>
+    <bcf:citekey order="69">bengio1994learninglongtermdependenciesdifficult</bcf:citekey>
+    <bcf:citekey order="69">li2018deeperinsightgraphconvsemisupervised</bcf:citekey>
+    <bcf:citekey order="70">fahlman1990cascor</bcf:citekey>
+    <bcf:citekey order="70">marquez2018deepcascade</bcf:citekey>
+    <bcf:citekey order="70">bianucci2000cascorchemistry</bcf:citekey>
+    <bcf:citekey order="71">micheli2009nn4g</bcf:citekey>
+    <bcf:citekey order="72">bacciu2018contgraphmarkov</bcf:citekey>
+    <bcf:citekey order="73">kipf2017semisupervisedgcn</bcf:citekey>
+    <bcf:citekey order="74">zaheer2017deepsets</bcf:citekey>
+    <bcf:citekey order="75">micheli2009nn4g</bcf:citekey>
+    <bcf:citekey order="75">schlichtkrull2018relationaldatagcn</bcf:citekey>
+    <bcf:citekey order="76">bahdanau2015attention</bcf:citekey>
+    <bcf:citekey order="77">gallicchio2020fastdeepgnn</bcf:citekey>
+    <bcf:citekey order="78">hamilton2017graphsage</bcf:citekey>
+    <bcf:citekey order="79">zaheer2017deepsets</bcf:citekey>
+    <bcf:citekey order="80">ying2018diffpool</bcf:citekey>
+    <bcf:citekey order="81">vonluxburg2007tutorialspectralclustering</bcf:citekey>
+    <bcf:citekey order="81">dhillon2007weightedgraphcuts</bcf:citekey>
+    <bcf:citekey order="82">vonluxburg2007tutorialspectralclustering</bcf:citekey>
+    <bcf:citekey order="82">dhillon2007weightedgraphcuts</bcf:citekey>
+    <bcf:citekey order="83">lipton2018troubling</bcf:citekey>
+    <bcf:citekey order="84">kersting2016benchmark</bcf:citekey>
+    <bcf:citekey order="85">dobson2003dd</bcf:citekey>
+    <bcf:citekey order="86">borgwardt2005proteins</bcf:citekey>
+    <bcf:citekey order="87">wale2008nci1</bcf:citekey>
+    <bcf:citekey order="88">schomburg2004enzymes</bcf:citekey>
     <bcf:citekey order="89">yanardag2015imdbredditcollab</bcf:citekey>
-    <bcf:citekey order="90">xu2019gin</bcf:citekey>
-    <bcf:citekey order="91">hamilton2017graphsage</bcf:citekey>
-    <bcf:citekey order="92">simonovsky2017ecc</bcf:citekey>
-    <bcf:citekey order="93">zhang2018dgcnn</bcf:citekey>
-    <bcf:citekey order="94">ralaivola2005graphkernels</bcf:citekey>
-    <bcf:citekey order="95">zaheer2017deepsets</bcf:citekey>
-    <bcf:citekey order="96">kingma2015adam</bcf:citekey>
-    <bcf:citekey order="97">vanrossum1965chemical</bcf:citekey>
-    <bcf:citekey order="98">gillespie1977exact</bcf:citekey>
-    <bcf:citekey order="99">karp1994representations</bcf:citekey>
-    <bcf:citekey order="99">reddy1993petri</bcf:citekey>
-    <bcf:citekey order="99">le2009systems</bcf:citekey>
-    <bcf:citekey order="100">kitano2004biological</bcf:citekey>
-    <bcf:citekey order="101">zi2011sensitivity</bcf:citekey>
-    <bcf:citekey order="102">li2010biomodels</bcf:citekey>
-    <bcf:citekey order="103">hucka2018sbml</bcf:citekey>
-    <bcf:citekey order="104">peterson1977petri</bcf:citekey>
-    <bcf:citekey order="105">gilbert2007petri</bcf:citekey>
-    <bcf:citekey order="106">kitano2004biological</bcf:citekey>
-    <bcf:citekey order="107">kitano2007towards</bcf:citekey>
-    <bcf:citekey order="108">rizk2009general</bcf:citekey>
-    <bcf:citekey order="109">larhlimi2011robustness</bcf:citekey>
+    <bcf:citekey order="90">yanardag2015imdbredditcollab</bcf:citekey>
+    <bcf:citekey order="91">yanardag2015imdbredditcollab</bcf:citekey>
+    <bcf:citekey order="92">xu2019gin</bcf:citekey>
+    <bcf:citekey order="93">hamilton2017graphsage</bcf:citekey>
+    <bcf:citekey order="94">simonovsky2017ecc</bcf:citekey>
+    <bcf:citekey order="95">zhang2018dgcnn</bcf:citekey>
+    <bcf:citekey order="96">ralaivola2005graphkernels</bcf:citekey>
+    <bcf:citekey order="97">zaheer2017deepsets</bcf:citekey>
+    <bcf:citekey order="98">kingma2015adam</bcf:citekey>
+    <bcf:citekey order="99">vanrossum1965chemical</bcf:citekey>
+    <bcf:citekey order="100">gillespie1977exact</bcf:citekey>
+    <bcf:citekey order="101">karp1994representations</bcf:citekey>
+    <bcf:citekey order="101">reddy1993petri</bcf:citekey>
+    <bcf:citekey order="101">le2009systems</bcf:citekey>
+    <bcf:citekey order="102">karp1994representations</bcf:citekey>
+    <bcf:citekey order="102">reddy1993petri</bcf:citekey>
+    <bcf:citekey order="102">le2009systems</bcf:citekey>
+    <bcf:citekey order="103">kitano2004biological</bcf:citekey>
+    <bcf:citekey order="104">zi2011sensitivity</bcf:citekey>
+    <bcf:citekey order="105">li2010biomodels</bcf:citekey>
+    <bcf:citekey order="106">hucka2018sbml</bcf:citekey>
+    <bcf:citekey order="107">peterson1977petri</bcf:citekey>
+    <bcf:citekey order="108">gilbert2007petri</bcf:citekey>
+    <bcf:citekey order="109">kitano2004biological</bcf:citekey>
     <bcf:citekey order="110">kitano2007towards</bcf:citekey>
     <bcf:citekey order="111">rizk2009general</bcf:citekey>
-    <bcf:citekey order="112">shinar2010structural</bcf:citekey>
-    <bcf:citekey order="113">nasti2018formalizing</bcf:citekey>
-    <bcf:citekey order="114">zi2011sensitivity</bcf:citekey>
-    <bcf:citekey order="115">rizk2009general</bcf:citekey>
-    <bcf:citekey order="115">iooss2015review</bcf:citekey>
-    <bcf:citekey order="116">shinar2010structural</bcf:citekey>
-    <bcf:citekey order="117">gori2019towards</bcf:citekey>
-    <bcf:citekey order="118">fages2008influencegraph</bcf:citekey>
-    <bcf:citekey order="119">somogyi2015libroadrunner</bcf:citekey>
-    <bcf:citekey order="120">le2006biomodels</bcf:citekey>
-    <bcf:citekey order="121">morris2019weisfeilerlehmangoneural</bcf:citekey>
-    <bcf:citekey order="122">fawcett2006roc</bcf:citekey>
-    <bcf:citekey order="123">sivakumar2011systems</bcf:citekey>
-    <bcf:citekey order="124">funahashi2003celldesigner</bcf:citekey>
-    <bcf:citekey order="125">sivakumar2011systems</bcf:citekey>
+    <bcf:citekey order="112">larhlimi2011robustness</bcf:citekey>
+    <bcf:citekey order="113">kitano2007towards</bcf:citekey>
+    <bcf:citekey order="114">rizk2009general</bcf:citekey>
+    <bcf:citekey order="115">shinar2010structural</bcf:citekey>
+    <bcf:citekey order="116">nasti2018formalizing</bcf:citekey>
+    <bcf:citekey order="117">zi2011sensitivity</bcf:citekey>
+    <bcf:citekey order="118">rizk2009general</bcf:citekey>
+    <bcf:citekey order="118">iooss2015review</bcf:citekey>
+    <bcf:citekey order="119">shinar2010structural</bcf:citekey>
+    <bcf:citekey order="120">gori2019towards</bcf:citekey>
+    <bcf:citekey order="121">fages2008influencegraph</bcf:citekey>
+    <bcf:citekey order="122">somogyi2015libroadrunner</bcf:citekey>
+    <bcf:citekey order="123">le2006biomodels</bcf:citekey>
+    <bcf:citekey order="124">morris2019weisfeilerlehmangoneural</bcf:citekey>
+    <bcf:citekey order="125">fawcett2006roc</bcf:citekey>
     <bcf:citekey order="126">sivakumar2011systems</bcf:citekey>
+    <bcf:citekey order="127">funahashi2003celldesigner</bcf:citekey>
+    <bcf:citekey order="128">sivakumar2011systems</bcf:citekey>
+    <bcf:citekey order="129">sivakumar2011systems</bcf:citekey>
+    <bcf:citekey order="130">ermon2020scorematching</bcf:citekey>
+    <bcf:citekey order="131">straightthrough</bcf:citekey>
+    <bcf:citekey order="132">janggumbel</bcf:citekey>
+    <bcf:citekey order="133">reinforce</bcf:citekey>
+    <bcf:citekey order="134">you2018graphrnn</bcf:citekey>
+    <bcf:citekey order="135">li2018learningdeepgmg</bcf:citekey>
+    <bcf:citekey order="136">jin2018jtvae</bcf:citekey>
+    <bcf:citekey order="137">weininger1988smiles</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nyt">
+  <bcf:sortingtemplate name="anyt">
     <bcf:sort order="1">
       <bcf:sortitem order="1">presort</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="2" final="1">
+    <bcf:sort order="2">
+      <bcf:sortitem order="1">labelalpha</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3" final="1">
       <bcf:sortitem order="1">sortkey</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="3">
+    <bcf:sort order="4">
       <bcf:sortitem order="1">sortname</bcf:sortitem>
       <bcf:sortitem order="2">author</bcf:sortitem>
       <bcf:sortitem order="3">editor</bcf:sortitem>
@@ -2081,24 +2097,24 @@
       <bcf:sortitem order="5">sorttitle</bcf:sortitem>
       <bcf:sortitem order="6">title</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="4">
+    <bcf:sort order="5">
       <bcf:sortitem order="1">sortyear</bcf:sortitem>
       <bcf:sortitem order="2">year</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="5">
+    <bcf:sort order="6">
       <bcf:sortitem order="1">sorttitle</bcf:sortitem>
       <bcf:sortitem order="2">title</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="6">
+    <bcf:sort order="7">
       <bcf:sortitem order="1">volume</bcf:sortitem>
       <bcf:sortitem order="2">0</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nyt/global//global/global"
+                name="anyt/global//global/global"
                 type="entry"
-                sortingtemplatename="nyt"
+                sortingtemplatename="anyt"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"

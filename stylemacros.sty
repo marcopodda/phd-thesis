@@ -12,52 +12,12 @@
 
 \newcommand{\atoc}[1]{\addtocontents{toc}{#1\par}}
 
-% ---- TEXT STYLES ----
-\def\mathsc#1{\text{\textsc{#1}}}
-\def\mathbs#1{\text{\boldmath\ensuremath{#1}}}
-\def\EMPH#1{\textbf{\emph{\boldmath #1}}}
-\def\quotes#1{``#1''}
-\def\Cal#1{\ensuremath{\mathcal{\uppercase{#1}}}}
-\def\BoldGreek#1{\ensuremath{\boldsymbol{#1}}}
-\def\keyword#1{\textbf{#1}}
-\def\Thead#1{\textbf{#1}}
-
-% ---- SYMBOLS ----
-\let\eps\varepsilon
-
-\def\Real{\mathbb{R}}
-\def\Integer{\mathbb{Z}}
-\def\Natural{\mathbb{N}}
-\def\Complex{\mathbb{C}}
-\def\Rational{\mathbb{Q}}
-\def\Graphs{\mathbb{G}}
-\def\Data{\mathbb{D}}
-\def\HypSpace{\Cal{H}_{\Omega}}
-\def\PData{p_{\mathrm{data}}}
-\def\PDataset{p_{\Data_n}}
-\def\Transduction{\mathbbmss{T}}
-\def\Multiset{\mathbb{M}}
-\def\Loss{\mathcal{L}}
-
-\def\SOS{\ensuremath{\mathtt{\Tuple{SOS}}}}
-\def\EOS{\ensuremath{\mathtt{\Tuple{EOS}}}}
-\def\PAD{\ensuremath{\mathtt{\Tuple{PAD}}}}
-
-\def\Tensor#1{\ensuremath{\mathsf{\uppercase{#1}}}}
-\def\Matrix#1{\ensuremath{\mathbf{\uppercase{#1}}}}
-\def\Vector#1{\ensuremath{\mathbf{\lowercase{#1}}}}
-\def\Transpose{\mathsf{T}}
-\def\Pattern#1#2{#1^{(#2)}}
-\def\VPattern#1#2{\Vector{#1}^{(#2)}}
-\def\Fun#1{\ensuremath{\mathrm{#1}}}
-\def\Param{\BoldGreek{\theta}}
-\def\Elem#1#2{\Vector{#1}_{[#2]}}
-
 % ---- OPERATORS (requires amsmath) ----
 \def\given{\,|\,}
+\def\Fun#1{\ensuremath{\mathrm{#1}}}
+\def\Op#1{\operatorname{#1}}
 \def\Normal#1#2{\mathbbmss{N}(#1,#2)}
 \def\Expect{\operatorname{\mathbb{E}}}
-\def\Op#1{\operatorname{#1}}
 \def\argmax{\operatornamewithlimits{arg\,max}}
 \def\argmin{\operatornamewithlimits{arg\,min}}
 
@@ -67,6 +27,111 @@
 \@ifundefined{shortleftarrow}{\let\shortleftarrow\leftarrow}{}
 \@ifundefined{shortuparrow}{\let\shortuparrow\uparrow}{}
 \@ifundefined{shortdownarrow}{\let\shortdownarrow\downarrow}{}
+
+% ---- TEXT STYLES ----
+\def\mathsc#1{\text{\textsc{#1}}}
+\def\mathbs#1{\text{\boldmath\ensuremath{#1}}}
+\def\EMPH#1{\textbf{\emph{\boldmath #1}}}
+\def\quotes#1{``#1''}
+\def\Cal#1{\ensuremath{\mathcal{\uppercase{#1}}}}
+\def\BoldGreek#1{\ensuremath{\boldsymbol{#1}}}
+\def\keyword#1{\textbf{#1}}
+\def\Thead#1{\textbf{#1}}
+\def\Other#1{{\fontfamily{lmtt}\selectfont #1}}
+
+% ---- SYMBOLS ----
+\let\eps\varepsilon
+
+% ---- VECTORS ----
+\def\Tensor#1{\ensuremath{\boldsymbol{\uppercase{#1}}}}
+\def\Matrix#1{\ensuremath{\boldsymbol{\uppercase{#1}}}}
+\def\Vector#1{\ensuremath{\boldsymbol{\lowercase{#1}}}}
+\def\Feature#1#2{\Vector{#1}_{#2}}
+\def\Entry#1#2{\Matrix{#1}_{#2}}
+\def\Pattern#1#2{#1_{(#2)}}
+\def\PatternVector#1#2{\Vector{#1}_{(#2)}}
+
+% ---- NNET -------
+\def\Param{\boldsymbol{\theta}}
+\def\EncParam{\boldsymbol{\psi}}
+\def\DecParam{\boldsymbol{\phi}}
+\def\Network{f_{\Param}}
+\def\Generator{G_{\EncParam}}
+\def\Discriminator{D_{\DecParam}}
+\def\Encoder{q_{\EncParam}}
+\def\Decoder{p_{\DecParam}}
+\def\EncoderNet{\Op{enc}_{\EncParam}}
+\def\DecoderNet{\Op{dec}_{\DecParam}}
+\def\LayerVector#1#2{\Vector{#1}^{(#2)}}
+\def\LayerMatrix#1#2{\Matrix{#1}^{(#2)}}
+\def\sigmoid{\Op{sigmoid}}
+\def\softmax{\Op{softmax}}
+\def\relu{\Op{ReLU}}
+\def\Layer#1#2{#1^{(#2)}}
+\def\GenParam{\EncParam}
+\def\DiscParam{\DecParam}
+
+\def\Transpose{\mathsf{T}}
+% \def\Pattern#1#2{#1^{(#2)}}
+\def\VPattern#1#2{\Vector{#1}^{(#2)}}
+\def\Elem#1#2{\Vector{#1}_{[#2]}}
+
+\def\ZeroVector{\boldsymbol{0}}
+\def\MeanVec{\boldsymbol{\mu}}
+\def\StdVec{\boldsymbol{\sigma}^2}
+
+% ---- GRAPHS -----
+\def\Nodes{\ensuremath{\Cal{V}}}
+\def\Edges{\ensuremath{\Cal{E}}}
+\def\Neigh{\ensuremath{\Cal{N}}}
+\def\Pred{\ensuremath{\Cal{N}_{\shortrightarrow}}}
+\def\Succ{\ensuremath{\Cal{N}_{\shortleftarrow}}}
+
+% ---- DATA SETS ----
+\def\Data{\mathbb{D}}
+\def\Graphs{\mathbb{G}}
+\def\Seqs{\mathbb{S}}
+\def\Trees{\mathbb{T}}
+\def\Real{\mathbb{R}}
+\def\Integer{\mathbb{Z}}
+\def\Natural{\mathbb{N}}
+\def\Complex{\mathbb{C}}
+\def\Rational{\mathbb{Q}}
+
+\def\T#1{\mathtt{#1}}
+\def\S#1{\mathtt{#1}}
+
+\def\Tree{\mathtt{t}}
+\def\Graph#1{\mathtt{#1}}
+\def\Seq#1{\mathtt{#1}}
+
+\def\SF#1{\ensuremath{\mathsf{#1}}}
+
+\def\Subgraph#1#2{\Graph{#1}_{[\Graph{#2}]}}
+\def\Isomorph{\vartheta}
+\def\Path#1#2#3{#1 \xrightarrow[]{#2} #3}
+
+\def\Risk{\mathfrak{R}}
+\def\Complexity{\mathfrak{C}}
+\def\System{\mathfrak{S}}
+\def\Target{\mathfrak{F}}
+\def\Transduction{\mathfrak{T}}
+\def\EncTrans{\Transduction_{\Fun{enc}}}
+\def\OutTrans{\Transduction_{\Fun{out}}}
+
+\def\Indic{\mathbb{I}}
+\def\KLD#1#2{\Fun{KLD}(#1 \;\Vert\; #2)}
+
+\def\HypSpace{\Cal{H}_{\Omega}}
+\def\PData{p_{\mathrm{data}}}
+\def\PDataset{p_{\Data_n}}
+
+\def\Multiset{\mathbb{M}}
+\def\Loss{\mathcal{L}}
+
+\def\SOS{\ensuremath{\mathtt{\Tuple{SOS}}}}
+\def\EOS{\ensuremath{\mathtt{\Tuple{EOS}}}}
+\def\PAD{\ensuremath{\mathtt{\Tuple{PAD}}}}
 
 % --- Cheap displaystyle operators ---
 \def\Frac#1#2{{\displaystyle\frac{#1}{#2}}}
@@ -92,12 +157,11 @@
 % --- Self-scaling delmiter pairs ---
 \def\Floor#1{\left\lfloor #1 \right\rfloor}
 \def\Ceil#1{\left\lceil #1 \right\rceil}
-\def\Seq#1{\left( #1 \right)}
-\def\Set#1{\{ #1 \}}
+\def\Set#1{\left\{ #1 \right\}}
 \def\Abs#1{\left| #1 \right|}
 \def\Norm#1{\left\| #1 \right\|}
 \def\Brack#1{\left[ #1 \right]}
-\def\Paren#1{\left( #1 \right)}
+\def\Par#1{\left( #1 \right)}
 \def\Tuple#1{\langle #1 \rangle}
 
 % ---- LATIN ----
@@ -112,7 +176,7 @@
 \def\defacto{\emph{de~facto~}}
 
 % ---- FRENCH ----
-\def\naive{na\"{\i}ve}
+\def\naive{na\"{\i}ve~}
 
 % ---- PROPER NAMES (because I'm lazy) ----
 \def\Benes{Bene\v{s}}		% ...network

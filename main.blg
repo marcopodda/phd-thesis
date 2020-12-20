@@ -1,18 +1,23 @@
-[4] Config.pm:302> INFO - This is Biber 2.9
-[5] Config.pm:305> INFO - Logfile is 'main.blg'
-[81] biber:313> INFO - === Wed Dec 16, 2020, 14:11:39
-[164] Biber.pm:371> INFO - Reading 'main.bcf'
-[338] Biber.pm:857> INFO - Found 110 citekeys in bib section 0
-[378] Biber.pm:3981> INFO - Processing section 0
-[414] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[457] bibtex.pm:1468> INFO - LaTeX decoding ...
-[1335] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
-[1551] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
-[3000] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
-[3785] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[3786] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[3786] Biber.pm:3809> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[3787] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[4235] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[4635] bbl.pm:720> INFO - Output to main.bbl
-[4636] Biber.pm:110> INFO - WARNINGS: 2
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[32] biber:313> INFO - === Sun Dec 20, 2020, 05:54:33
+[71] Biber.pm:371> INFO - Reading 'main.bcf'
+[162] Biber.pm:857> INFO - Found 119 citekeys in bib section 0
+[180] Biber.pm:3981> INFO - Processing section 0
+[199] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[215] bibtex.pm:1468> INFO - LaTeX decoding ...
+[508] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
+[590] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
+[600] Utils.pm:169> WARN - month field 'April' in entry 'wolpert1997freelunchtheorem' is not an integer - this will probably not sort properly.
+[1031] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
+[1176] Utils.pm:169> WARN - I didn't find a database entry for 'ermon2020scorematching' (section 0)
+[1176] Utils.pm:169> WARN - I didn't find a database entry for 'straightthrough' (section 0)
+[1177] Utils.pm:169> WARN - I didn't find a database entry for 'janggumbel' (section 0)
+[1177] Utils.pm:169> WARN - I didn't find a database entry for 'reinforce' (section 0)
+[1319] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1319] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1319] Biber.pm:3809> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[1319] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[1436] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1504] bbl.pm:720> INFO - Output to main.bbl
+[1505] Biber.pm:110> INFO - WARNINGS: 7

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.24)  16 DEC 2020 14:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.24)  20 DEC 2020 06:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1216,7 +1216,21 @@ Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/mathalfa/mathalfa.sty
+Package: mathalfa 2017/02/23 - 1.09mathalfa (License LPPL) Michael Sharpe
+ (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+)
+\XKV@depth=\count276
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 330.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
+(Font)                  U/stixcal/m/n --> U/stixcal/b/n on input line 331.
+) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2017/12/19 v3.10 programmable bibliographies (PK/JW/AB)
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
@@ -1244,7 +1258,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 ))) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count276
+\lrq@indent=\count277
  (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
@@ -1254,49 +1268,49 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write3
-\integerpart=\count277
-\decimalpart=\count278
+\integerpart=\count278
+\decimalpart=\count279
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count279
-\c@listtotal=\count280
-\c@listcount=\count281
-\c@liststart=\count282
-\c@liststop=\count283
-\c@citecount=\count284
-\c@citetotal=\count285
-\c@multicitecount=\count286
-\c@multicitetotal=\count287
-\c@instcount=\count288
-\c@maxnames=\count289
-\c@minnames=\count290
-\c@maxitems=\count291
-\c@minitems=\count292
-\c@citecounter=\count293
-\c@savedcitecounter=\count294
-\c@uniquelist=\count295
-\c@uniquename=\count296
-\c@refsection=\count297
-\c@refsegment=\count298
-\c@maxextratitle=\count299
-\c@maxextratitleyear=\count300
-\c@maxextradate=\count301
-\c@maxextraalpha=\count302
-\c@abbrvpenalty=\count303
-\c@highnamepenalty=\count304
-\c@lownamepenalty=\count305
-\c@maxparens=\count306
-\c@parenlevel=\count307
-\blx@tempcnta=\count308
-\blx@tempcntb=\count309
-\blx@tempcntc=\count310
-\blx@maxsection=\count311
-\blx@maxsegment@0=\count312
-\blx@notetype=\count313
-\blx@parenlevel@text=\count314
-\blx@parenlevel@foot=\count315
-\blx@sectionciteorder@0=\count316
+\c@tabx@nest=\count280
+\c@listtotal=\count281
+\c@listcount=\count282
+\c@liststart=\count283
+\c@liststop=\count284
+\c@citecount=\count285
+\c@citetotal=\count286
+\c@multicitecount=\count287
+\c@multicitetotal=\count288
+\c@instcount=\count289
+\c@maxnames=\count290
+\c@minnames=\count291
+\c@maxitems=\count292
+\c@minitems=\count293
+\c@citecounter=\count294
+\c@savedcitecounter=\count295
+\c@uniquelist=\count296
+\c@uniquename=\count297
+\c@refsection=\count298
+\c@refsegment=\count299
+\c@maxextratitle=\count300
+\c@maxextratitleyear=\count301
+\c@maxextradate=\count302
+\c@maxextraalpha=\count303
+\c@abbrvpenalty=\count304
+\c@highnamepenalty=\count305
+\c@lownamepenalty=\count306
+\c@maxparens=\count307
+\c@parenlevel=\count308
+\blx@tempcnta=\count309
+\blx@tempcntb=\count310
+\blx@tempcntc=\count311
+\blx@maxsection=\count312
+\blx@maxsegment@0=\count313
+\blx@notetype=\count314
+\blx@parenlevel@text=\count315
+\blx@parenlevel@foot=\count316
+\blx@sectionciteorder@0=\count317
 \labelnumberwidth=\skip60
 \labelalphawidth=\skip61
 \biblabelsep=\skip62
@@ -1307,84 +1321,84 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 \bibhang=\skip67
 \blx@bcfin=\read2
 \blx@bcfout=\write4
-\c@mincomprange=\count317
-\c@maxcomprange=\count318
-\c@mincompwidth=\count319
+\c@mincomprange=\count318
+\c@maxcomprange=\count319
+\c@mincompwidth=\count320
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: ... file 'alphabetic.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count320
-\c@savedafterword=\count321
-\c@annotator=\count322
-\c@savedannotator=\count323
-\c@author=\count324
-\c@savedauthor=\count325
-\c@bookauthor=\count326
-\c@savedbookauthor=\count327
-\c@commentator=\count328
-\c@savedcommentator=\count329
-\c@editor=\count330
-\c@savededitor=\count331
-\c@editora=\count332
-\c@savededitora=\count333
-\c@editorb=\count334
-\c@savededitorb=\count335
-\c@editorc=\count336
-\c@savededitorc=\count337
-\c@foreword=\count338
-\c@savedforeword=\count339
-\c@holder=\count340
-\c@savedholder=\count341
-\c@introduction=\count342
-\c@savedintroduction=\count343
-\c@namea=\count344
-\c@savednamea=\count345
-\c@nameb=\count346
-\c@savednameb=\count347
-\c@namec=\count348
-\c@savednamec=\count349
-\c@translator=\count350
-\c@savedtranslator=\count351
-\c@shortauthor=\count352
-\c@savedshortauthor=\count353
-\c@shorteditor=\count354
-\c@savedshorteditor=\count355
-\c@labelname=\count356
-\c@savedlabelname=\count357
-\c@institution=\count358
-\c@savedinstitution=\count359
-\c@lista=\count360
-\c@savedlista=\count361
-\c@listb=\count362
-\c@savedlistb=\count363
-\c@listc=\count364
-\c@savedlistc=\count365
-\c@listd=\count366
-\c@savedlistd=\count367
-\c@liste=\count368
-\c@savedliste=\count369
-\c@listf=\count370
-\c@savedlistf=\count371
-\c@location=\count372
-\c@savedlocation=\count373
-\c@organization=\count374
-\c@savedorganization=\count375
-\c@origlocation=\count376
-\c@savedoriglocation=\count377
-\c@origpublisher=\count378
-\c@savedorigpublisher=\count379
-\c@publisher=\count380
-\c@savedpublisher=\count381
-\c@language=\count382
-\c@savedlanguage=\count383
-\c@origlanguage=\count384
-\c@savedoriglanguage=\count385
-\c@pageref=\count386
-\c@savedpageref=\count387
+\c@afterword=\count321
+\c@savedafterword=\count322
+\c@annotator=\count323
+\c@savedannotator=\count324
+\c@author=\count325
+\c@savedauthor=\count326
+\c@bookauthor=\count327
+\c@savedbookauthor=\count328
+\c@commentator=\count329
+\c@savedcommentator=\count330
+\c@editor=\count331
+\c@savededitor=\count332
+\c@editora=\count333
+\c@savededitora=\count334
+\c@editorb=\count335
+\c@savededitorb=\count336
+\c@editorc=\count337
+\c@savededitorc=\count338
+\c@foreword=\count339
+\c@savedforeword=\count340
+\c@holder=\count341
+\c@savedholder=\count342
+\c@introduction=\count343
+\c@savedintroduction=\count344
+\c@namea=\count345
+\c@savednamea=\count346
+\c@nameb=\count347
+\c@savednameb=\count348
+\c@namec=\count349
+\c@savednamec=\count350
+\c@translator=\count351
+\c@savedtranslator=\count352
+\c@shortauthor=\count353
+\c@savedshortauthor=\count354
+\c@shorteditor=\count355
+\c@savedshorteditor=\count356
+\c@labelname=\count357
+\c@savedlabelname=\count358
+\c@institution=\count359
+\c@savedinstitution=\count360
+\c@lista=\count361
+\c@savedlista=\count362
+\c@listb=\count363
+\c@savedlistb=\count364
+\c@listc=\count365
+\c@savedlistc=\count366
+\c@listd=\count367
+\c@savedlistd=\count368
+\c@liste=\count369
+\c@savedliste=\count370
+\c@listf=\count371
+\c@savedlistf=\count372
+\c@location=\count373
+\c@savedlocation=\count374
+\c@organization=\count375
+\c@savedorganization=\count376
+\c@origlocation=\count377
+\c@savedoriglocation=\count378
+\c@origpublisher=\count379
+\c@savedorigpublisher=\count380
+\c@publisher=\count381
+\c@savedpublisher=\count382
+\c@language=\count383
+\c@savedlanguage=\count384
+\c@origlanguage=\count385
+\c@savedoriglanguage=\count386
+\c@pageref=\count387
+\c@savedpageref=\count388
 \shorthandwidth=\skip68
 \shortjournalwidth=\skip69
 \shortserieswidth=\skip70
@@ -1400,34 +1414,34 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
-\c@textcitecount=\count388
-\c@textcitetotal=\count389
-\c@textcitemaxnames=\count390
-\c@biburlnumpenalty=\count391
-\c@biburlucpenalty=\count392
-\c@biburllcpenalty=\count393
-\c@smartand=\count394
+\c@textcitecount=\count389
+\c@textcitetotal=\count390
+\c@textcitemaxnames=\count391
+\c@biburlnumpenalty=\count392
+\c@biburlucpenalty=\count393
+\c@biburllcpenalty=\count394
+\c@smartand=\count395
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-natbib.def
 File: blx-natbib.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
 )
-Package biblatex Info: Trying to load bibliography style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
-File: authoryear.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'alphabetic'...
+Package biblatex Info: ... file 'alphabetic.bbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/alphabetic.bbx
+File: alphabetic.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count395
-\c@bbx:relatedtotal=\count396
+\c@bbx:relatedcount=\count396
+\c@bbx:relatedtotal=\count397
 ))
-Package biblatex Info: Trying to load citation style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
-File: authoryear.cbx 2017/12/19 v3.10 biblatex citation style (PK/JW/AB)
+Package biblatex Info: Trying to load citation style 'alphabetic'...
+Package biblatex Info: ... file 'alphabetic.cbx' found.
+ (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/alphabetic.cbx
+File: alphabetic.cbx 2017/12/19 v3.10 biblatex citation style (PK/JW/AB)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -1435,20 +1449,28 @@ Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
-)) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+)
+
+Package biblatex Warning: 'firstinits' option is deprecated.
+(biblatex)                Please use 'giveninits' instead.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
-\csq@reset=\count397
-\csq@gtype=\count398
-\csq@glevel=\count399
-\csq@qlevel=\count400
-\csq@maxlvl=\count401
-\csq@tshold=\count402
-\csq@ltx@everypar=\toks21
+\csq@reset=\count398
+\csq@gtype=\count399
+\csq@glevel=\count400
+\csq@qlevel=\count401
+\csq@maxlvl=\count402
+\csq@tshold=\count403
+\csq@ltx@everypar=\toks23
  (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
 )
@@ -1469,13 +1491,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count403
+\inf@bad=\count404
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count404
-\leftroot@=\count405
+\uproot@=\count405
+\leftroot@=\count406
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count406
-\DOTSCASE@=\count407
+\classnum@=\count407
+\DOTSCASE@=\count408
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -1484,26 +1506,26 @@ LaTeX Info: Redefining \cdots on input line 596.
 \big@size=\dimen182
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count408
-\c@MaxMatrixCols=\count409
+\macc@depth=\count409
+\c@MaxMatrixCols=\count410
 \dotsspace@=\muskip17
-\c@parentequation=\count410
-\dspbrk@lvl=\count411
-\tag@help=\toks22
-\row@=\count412
-\column@=\count413
-\maxfields@=\count414
-\andhelp@=\toks23
+\c@parentequation=\count411
+\dspbrk@lvl=\count412
+\tag@help=\toks24
+\row@=\count413
+\column@=\count414
+\maxfields@=\count415
+\andhelp@=\toks25
 \eqnshift@=\dimen183
 \alignsep@=\dimen184
 \tagshift@=\dimen185
 \tagwidth@=\dimen186
 \totwidth@=\dimen187
 \lineht@=\dimen188
-\@envbody=\toks24
+\@envbody=\toks26
 \multlinegap=\skip75
 \multlinetaggap=\skip76
-\mathdisplay@stack=\toks25
+\mathdisplay@stack=\toks27
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -1516,26 +1538,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks26
-\thm@bodyfont=\toks27
-\thm@headfont=\toks28
-\thm@notefont=\toks29
-\thm@headpunct=\toks30
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
 \thm@preskip=\skip77
 \thm@postskip=\skip78
 \thm@headsep=\skip79
-\dth@everypar=\toks31
+\dth@everypar=\toks33
 ) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2017/11/14 v4.35 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
- (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks32
-\XKV@tempa@toks=\toks33
-)
-\XKV@depth=\count415
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2017/11/14 v2.06 (NLCT)
 \@glsmfirst=\toks34
 \@glsmrest=\toks35
@@ -2936,16 +2950,16 @@ Package glossaries Info: Writing glossary file main.acn on input line 1.
 \c@corollary=\count479
 \c@lemma=\count480
 \c@definition=\count481
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 127.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 127.
-Package hyperref Info: Option `colorlinks' set `true' on input line 127.
-Package hyperref Info: Option `unicode' set `true' on input line 127.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 139.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 139.
+Package hyperref Info: Option `colorlinks' set `true' on input line 139.
+Package hyperref Info: Option `unicode' set `true' on input line 139.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 127.
+Package hyperref Info: Option `breaklinks' set `true' on input line 139.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -2953,25 +2967,25 @@ File: english.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
- (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
+ (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Chapters/Chapter6.aux) (/home/marco/code/phd-thesis/Chapters/Chapter7.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
@@ -3115,13 +3129,13 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package scrlayer Info: Setting magic \footheight to \baselineskip while
-(scrlayer)             \begin{document} on input line 127.
-Package scrbase Info: activating english \abbrevname on input line 127.
-Package scrbase Info: activating english \byname on input line 127.
-Package scrbase Info: activating english \acknowledgementname on input line 127.
-Package scrbase Info: activating english \authorshipname on input line 127.
-Package scrbase Info: activating english \constantsname on input line 127.
-Package scrbase Info: activating english \symbolsname on input line 127.
+(scrlayer)             \begin{document} on input line 139.
+Package scrbase Info: activating english \abbrevname on input line 139.
+Package scrbase Info: activating english \byname on input line 139.
+Package scrbase Info: activating english \acknowledgementname on input line 139.
+Package scrbase Info: activating english \authorshipname on input line 139.
+Package scrbase Info: activating english \constantsname on input line 139.
+Package scrbase Info: activating english \symbolsname on input line 139.
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -3129,11 +3143,40 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
-(/home/marco/code/phd-thesis/main.bbl)
-Package biblatex Info: Reference section=0 on input line 127.
-Package biblatex Info: Reference segment=0 on input line 127.
+(/home/marco/code/phd-thesis/main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                ermon2020scorematching
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                janggumbel
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                reinforce
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                straightthrough
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 139.
+Package biblatex Info: Reference segment=0 on input line 139.
 \AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring ON on input line 127.
+Package hyperref Info: Link coloring ON on input line 139.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -3141,18 +3184,18 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count488
 )
-LaTeX Info: Redefining \ref on input line 127.
-LaTeX Info: Redefining \pageref on input line 127.
-LaTeX Info: Redefining \nameref on input line 127.
+LaTeX Info: Redefining \ref on input line 139.
+LaTeX Info: Redefining \pageref on input line 139.
+LaTeX Info: Redefining \nameref on input line 139.
  ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.15} (current compat level: 1.8).
 
 \c__siunitx_mathsf_int=\count489
-LaTeX Font Info:    Try loading font information for U+msa on input line 127.
+LaTeX Font Info:    Try loading font information for U+msa on input line 139.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 127.
+LaTeX Font Info:    Try loading font information for U+msb on input line 139.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -3171,14 +3214,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 --------------------
  Declaration of Authorship
 --------------------
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 185.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 197.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 197.
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
@@ -3239,68 +3282,98 @@ Chapter 1.
 
  (/home/marco/code/phd-thesis/Chapters/Chapter2.tex
 Chapter 2.
+LaTeX Font Info:    Try loading font information for U+euf on input line 11.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
 1: section
 [5
 
 
-] [6] [7] [8] [9] [10] (/home/marco/code/phd-thesis/Figures/Chapter2/01-neuron.tex) (/home/marco/code/phd-thesis/Figures/Chapter2/02a-layer.tex) (/home/marco/code/phd-thesis/Figures/Chapter2/02b-network.tex)
+]
+Overfull \hbox (0.74484pt too wide) in paragraph at lines 24--25
+\T1/cmr/bx/n/10.95 pothe-ses space\T1/cmr/m/n/10.95 . For-mally, a hy-pothe-ses space is a set of func-tions $\U/stixcal/m/n/10.95 H[] \OT1/cmr/m/n/10.95 = []$
+ []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[6] [7] [8] [9] [10] (/home/marco/code/phd-thesis/Figures/Chapter2/01-neuron.tex
+Overfull \hbox (0.73885pt too wide) in paragraph at lines 46--47
+ []$ 
+ []
 
-[11] (/home/marco/code/phd-thesis/Figures/Chapter2/03a-sigmoid.tex) (/home/marco/code/phd-thesis/Figures/Chapter2/03b-tanh.tex) (/home/marco/code/phd-thesis/Figures/Chapter2/03c-relu.tex) [12] [13]
-LaTeX Font Info:    Try loading font information for U+bbmss on input line 135.
+) (/home/marco/code/phd-thesis/Figures/Chapter2/02a-layer.tex
+Overfull \hbox (5.04785pt too wide) in paragraph at lines 43--44
+ []$ 
+ []
+
+) (/home/marco/code/phd-thesis/Figures/Chapter2/02b-mlp.tex
+Overfull \hbox (16.40912pt too wide) in paragraph at lines 45--46
+ [][]$ 
+ []
+
+
+Overfull \hbox (10.00137pt too wide) in paragraph at lines 52--53
+ [][]$ 
+ []
+
+
+Overfull \hbox (16.40912pt too wide) in paragraph at lines 94--95
+ [][]$ 
+ []
+
+) [11] (/home/marco/code/phd-thesis/Figures/Chapter2/03a-sigmoid.tex) (/home/marco/code/phd-thesis/Figures/Chapter2/03b-tanh.tex) (/home/marco/code/phd-thesis/Figures/Chapter2/03c-relu.tex) [12] [13]
+LaTeX Font Info:    Try loading font information for U+bbmss on input line 140.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbmss.fd
 File: ubbmss.fd 1999/03/15 V 1.2 Font definition for bbmss font - TH
-) [14] [15] [16] (/home/marco/code/phd-thesis/Figures/Chapter2/04-autoencoder.tex)
+) [14] [15] [16] [17] (/home/marco/code/phd-thesis/Figures/Chapter2/04-autoencoder.tex) [18] (/home/marco/code/phd-thesis/Figures/Chapter2/05-denoising-ae.tex) [19] [20] [21] [22] [23] (/home/marco/code/phd-thesis/Figures/Chapter2/06-vae.tex) [24] (/home/marco/code/phd-thesis/Figures/Chapter2/07-gan.tex))
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17] [18] (/home/marco/code/phd-thesis/Figures/Chapter2/05-denoising-ae.tex) [19] [20] [21] [22] [23] (/home/marco/code/phd-thesis/Figures/Chapter2/06-vae.tex)) [24]
+[25] [26]
 \openout2 = `Chapters/Chapter3.aux'.
 
  (/home/marco/code/phd-thesis/Chapters/Chapter3.tex
 Chapter 3.
 (/home/marco/code/phd-thesis/Figures/Chapter3/01a-undirected-graph.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/01b-directed-graph.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/01c-bipartite-graph.tex)
 1: section
-[25
+[27
 
 
 
-] [26] (/home/marco/code/phd-thesis/Figures/Chapter3/02a-sequence.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/02b-tree.tex) [27] (/home/marco/code/phd-thesis/Figures/Chapter3/03a-isomorphism.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/03b-automorphism.tex) [28] [29] [30] [31] (/home/marco/code/phd-thesis/Figures/Chapter3/04a-rnn.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/04b-rnn-unfold.tex)
+] [28] (/home/marco/code/phd-thesis/Figures/Chapter3/02a-sequence.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/02b-tree.tex) [29] (/home/marco/code/phd-thesis/Figures/Chapter3/03a-isomorphism.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/03b-automorphism.tex) [30] [31] [32] [33] (/home/marco/code/phd-thesis/Figures/Chapter3/04a-rnn.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/04b-rnn-unfold.tex)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32] [33] (/home/marco/code/phd-thesis/Figures/Chapter3/05a-auto-regressive.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/05b-teacher-forcing.tex) [34] [35] [36] (/home/marco/code/phd-thesis/Figures/Chapter3/06-recnn.tex)) [37] [38
+[34] [35] (/home/marco/code/phd-thesis/Figures/Chapter3/05a-auto-regressive.tex) (/home/marco/code/phd-thesis/Figures/Chapter3/05b-teacher-forcing.tex) [36] [37] [38] (/home/marco/code/phd-thesis/Figures/Chapter3/06-recnn.tex)) [39] [40
 
 
 ]
 1: section
-[39] [40]
+[41] [42]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (/home/marco/code/phd-thesis/Chapters/Chapter4.tex
 Chapter 4.
 1: section
-[41
+[43
 
 
 ] (/home/marco/code/phd-thesis/Figures/Chapter4/01-context-diffusion.tex)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[42] [43] [44] [45] [46] (/home/marco/code/phd-thesis/Figures/Chapter4/02-attention.tex) [47] (/home/marco/code/phd-thesis/Figures/Chapter4/03-sampling.tex) (/home/marco/code/phd-thesis/Figures/Chapter4/04-node-readout.tex) [48] (/home/marco/code/phd-thesis/Figures/Chapter4/05-graph-readout.tex)
+[44] [45] [46] [47] [48] (/home/marco/code/phd-thesis/Figures/Chapter4/02-attention.tex) [49] (/home/marco/code/phd-thesis/Figures/Chapter4/03-sampling.tex) (/home/marco/code/phd-thesis/Figures/Chapter4/04-node-readout.tex)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[49] (/home/marco/code/phd-thesis/Figures/Chapter4/06-pooling.tex)
+[50] (/home/marco/code/phd-thesis/Figures/Chapter4/05-graph-readout.tex) [51] (/home/marco/code/phd-thesis/Figures/Chapter4/06-pooling.tex) [52] [53] [54] (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-datasets.tex) [55] [56] [57] [58] (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-results-molecules.tex) [59] (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-results-social.tex) (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-degree-effect.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50] [51] [52] (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-datasets.tex) [53] [54] [55] [56] (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-results-molecules.tex) [57] (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-results-social.tex) [58] (/home/marco/code/phd-thesis/Tables/Chapter4/comparison-degree-effect.tex)
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 241.
+)
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 248.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
+) [60]
 Package epstopdf Info: Source file: <Figures/Chapter4/07-comparison-results.eps>
 (epstopdf)                    date: 2020-12-15 01:29:06
 (epstopdf)                    size: 207765 bytes
@@ -3308,26 +3381,26 @@ Package epstopdf Info: Source file: <Figures/Chapter4/07-comparison-results.eps>
 (epstopdf)                    date: 2020-12-15 01:32:41
 (epstopdf)                    size: 34481 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/Chapter4/07-comparison-results-eps-converted-to.pdf Figures/Chapter4/07-comparison-results.eps>
-(epstopdf)             \includegraphics on input line 245.
+(epstopdf)             \includegraphics on input line 252.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter4/07-comparison-results-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter4/07-comparison-results-eps-converted-to.pdf, id=837, 867.24pt x 722.7pt>
+<Figures/Chapter4/07-comparison-results-eps-converted-to.pdf, id=862, 867.24pt x 722.7pt>
 File: Figures/Chapter4/07-comparison-results-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter4/07-comparison-results-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/Chapter4/07-comparison-results-eps-converted-to.pdf  used on input line 245.
+Package pdftex.def Info: Figures/Chapter4/07-comparison-results-eps-converted-to.pdf  used on input line 252.
 (pdftex.def)             Requested size: 404.02908pt x 336.69162pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [59] [60 </home/marco/code/phd-thesis/Figures/Chapter4/07-comparison-results-eps-converted-to.pdf>]
+) [61] [62 </home/marco/code/phd-thesis/Figures/Chapter4/07-comparison-results-eps-converted-to.pdf>]
 \openout2 = `Chapters/Chapter5.aux'.
 
  (/home/marco/code/phd-thesis/Chapters/Chapter5.tex
 Chapter 5.
 1: section
-[61
+[63
 
 
 
@@ -3345,38 +3418,26 @@ Package scrlayer-scrpage Warning: \headheight to low.
 
 Overfull \vbox (14.00374pt too high) has occurred while \output is active []
 
- [62] [63] (/home/marco/code/phd-thesis/Figures/Chapter5/biochemical-pathways.tex
-Overfull \hbox (7.2777pt too wide) detected at line 15
-[]
+ [64] [65] (/home/marco/code/phd-thesis/Figures/Chapter5/biochemical-pathways.tex) [66] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-petri-net.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[67] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-graph.tex) [68] [69] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-graph-enriched.tex) (/home/marco/code/phd-thesis/Figures/Chapter5/subgraph-1.tex) (/home/marco/code/phd-thesis/Figures/Chapter5/subgraph-2.tex) (/home/marco/code/phd-thesis/Figures/Chapter5/subgraph-3.tex)
+Overfull \hbox (0.80513pt too wide) in paragraph at lines 106--123
+[][] [] [] 
  []
 
-) [64] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-petri-net.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[65] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-graph.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[66] [67] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-graph-enriched.tex) (/home/marco/code/phd-thesis/Figures/Chapter5/subgraph-1.tex) (/home/marco/code/phd-thesis/Figures/Chapter5/subgraph-2.tex) (/home/marco/code/phd-thesis/Figures/Chapter5/subgraph-3.tex) [68]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[69] [70] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-graph-features.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-(/home/marco/code/phd-thesis/Figures/Chapter5/architecture.tex) [71] [72] [73] [74]
-<Figures/Chapter5/roc.pdf, id=1071, 578.16pt x 433.62pt>
+[70] [71] [72] (/home/marco/code/phd-thesis/Figures/Chapter5/pathway-graph-features.tex) [73] (/home/marco/code/phd-thesis/Figures/Chapter5/architecture.tex) [74] [75] [76]
+<Figures/Chapter5/roc.pdf, id=1099, 578.16pt x 433.62pt>
 File: Figures/Chapter5/roc.pdf Graphic file (type pdf)
 <use Figures/Chapter5/roc.pdf>
 Package pdftex.def Info: Figures/Chapter5/roc.pdf  used on input line 234.
 (pdftex.def)             Requested size: 323.22449pt x 242.41531pt.
- [75 </home/marco/code/phd-thesis/Figures/Chapter5/roc.pdf>] (/home/marco/code/phd-thesis/Tables/Chapter5/e1-results.tex
+ [77 </home/marco/code/phd-thesis/Figures/Chapter5/roc.pdf>] (/home/marco/code/phd-thesis/Tables/Chapter5/e1-results.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [76]
+) [78]
 Package epstopdf Info: Source file: <Figures/Chapter5/e1-layering.eps>
 (epstopdf)                    date: 2020-12-15 18:21:22
 (epstopdf)                    size: 43985 bytes
@@ -3389,14 +3450,11 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e1-layering-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e1-layering-eps-converted-to.pdf, id=1099, 462.52798pt x 346.89601pt>
+<Figures/Chapter5/e1-layering-eps-converted-to.pdf, id=1127, 462.52798pt x 346.89601pt>
 File: Figures/Chapter5/e1-layering-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e1-layering-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e1-layering-eps-converted-to.pdf  used on input line 263.
 (pdftex.def)             Requested size: 323.22449pt x 242.42856pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 (/home/marco/code/phd-thesis/Tables/Chapter5/e2-results.tex)
 Package epstopdf Info: Source file: <Figures/Chapter5/e2-roc-curve.eps>
 (epstopdf)                    date: 2020-12-15 18:55:41
@@ -3410,7 +3468,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf, id=1102, 462.52798pt x 346.89601pt>
+<Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf, id=1130, 462.52798pt x 346.89601pt>
 File: Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf  used on input line 275.
@@ -3427,7 +3485,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf, id=1106, 219.19893pt x 215.66573pt>
+<Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf, id=1134, 219.19893pt x 215.66573pt>
 File: Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf  used on input line 282.
@@ -3444,7 +3502,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf, id=1107, 235.16858pt x 197.26698pt>
+<Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf, id=1135, 235.16858pt x 197.26698pt>
 File: Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf  used on input line 288.
@@ -3452,82 +3510,112 @@ Package pdftex.def Info: Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf  u
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[77] [78 </home/marco/code/phd-thesis/Figures/Chapter5/e1-layering-eps-converted-to.pdf>]
+[79 </home/marco/code/phd-thesis/Figures/Chapter5/e1-layering-eps-converted-to.pdf>] [80] [81 </home/marco/code/phd-thesis/Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf> </home/marco/code/phd-thesis/Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf> </home/marco/code/phd-thesis/Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf>] (/home/marco/code/phd-thesis/Tables/Chapter5/uc1.tex)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[79 </home/marco/code/phd-thesis/Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf>] (/home/marco/code/phd-thesis/Tables/Chapter5/uc1.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[80 </home/marco/code/phd-thesis/Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf> </home/marco/code/phd-thesis/Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf>]
-<Figures/Chapter5/pathway394.png, id=1299, 516.42938pt x 671.50874pt>
+[82]
+<Figures/Chapter5/pathway394.png, id=1329, 516.42938pt x 671.50874pt>
 File: Figures/Chapter5/pathway394.png Graphic file (type png)
 <use Figures/Chapter5/pathway394.png>
-Package pdftex.def Info: Figures/Chapter5/pathway394.png  used on input line 325.
+Package pdftex.def Info: Figures/Chapter5/pathway394.png  used on input line 326.
 (pdftex.def)             Requested size: 341.43306pt x 443.97588pt.
- [81] [82]) [83] [84 </home/marco/code/phd-thesis/Figures/Chapter5/pathway394.png>]
-1: section
-[85
-
-
-] [86]
-\openout2 = `Appendices/AppendixA.aux'.
-
- (/home/marco/code/phd-thesis/Appendices/AppendixA.tex
-Appendix A.
-)
+ [83] [84]) [85] [86 </home/marco/code/phd-thesis/Figures/Chapter5/pathway394.png>]
 1: section
 [87
 
 
-] [88
+] [88]
+\openout2 = `Chapters/Chapter6.aux'.
+
+ (/home/marco/code/phd-thesis/Chapters/Chapter6.tex
+Chapter 6.
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 5.
+
+1: section
+[89
+
+
+] [90]
+Overfull \hbox (24.51173pt too wide) in paragraph at lines 29--30
+[]\T1/cmr/m/n/10.95 use re-in-force-ment learn-ing tech-niques such as the RE-IN-FORCE gra-di-ents [[]]. 
+ []
+
+
+LaTeX Warning: Reference `sec:edgebased' on page 91 undefined on input line 41.
+
+) [91] [92]
+\openout2 = `Chapters/Chapter7.aux'.
+
+ (/home/marco/code/phd-thesis/Chapters/Chapter7.tex
+Chapter 7.
+)
+1: section
+[93
+
 
 
 ]
-Overfull \hbox (4.80482pt too wide) in paragraph at lines 328--328
-[][]\T1/cmr/m/n/10.95 Bacciu, Da-vide, Fed-erico Errica, and Alessio Micheli (2018). ^^P  Con-tex-tual Graph Markov
- []
+\openout2 = `Appendices/AppendixA.aux'.
 
+ (/home/marco/code/phd-thesis/Appendices/AppendixA.tex [94
+
+
+
+]
+Appendix A.
+)
 1: section
-[89] [90]
-Overfull \hbox (25.13579pt too wide) in paragraph at lines 328--328
-\T1/cmr/m/n/10.95 BPPT, RTRL, EKF and the echo state net-work ap-proach^^Q. In: \T1/cmr/m/it/10.95 GMD-Forschungszentrum
+[95] [96
+
+
+]
+1: section
+[97] [98] [99]
+Overfull \hbox (5.9321pt too wide) in paragraph at lines 342--342
+[]\T1/cmr/m/n/10.95 H. Jaeger. ^^P  Tu-to-rial on train-ing re-cur-rent neu-ral net-works, cov-er-ing BPPT,
  []
 
-[91] [92]
-Overfull \hbox (12.03214pt too wide) in paragraph at lines 328--328
-\T1/cmr/m/it/10.95 tional Con-fer-ence on Ma-chine Learn-ing\T1/cmr/m/n/10.95 . ICML'11, pp. 833^^U840. \T1/cmr/m/sc/10.95 isbn\T1/cmr/m/n/10.95 : 9781450306195. 
+
+Overfull \hbox (33.44421pt too wide) in paragraph at lines 342--342
+\T1/cmr/m/n/10.95 RTRL, EKF and the echo state net-work ap-proach^^Q. In: \T1/cmr/m/it/10.95 GMD-Forschungszentrum
  []
 
-[93] [94]
-Overfull \hbox (0.10481pt too wide) in paragraph at lines 328--328
-\T1/cmr/m/n/10.95 tiable Pool-ing^^Q. In: \T1/cmr/m/it/10.95 Ad-vances in Neu-ral In-for-ma-tion Pro-cess-ing Sys-tems (NeurIPS)\T1/cmr/m/n/10.95 .
+[100] [101] [102] [103]
+Overfull \hbox (5.63852pt too wide) in paragraph at lines 342--342
+\T1/cmr/m/n/10.95 Run-ning Fully Re-cur-rent Neu-ral Net-works^^Q. In: \T1/cmr/m/it/10.95 Neu-ral Com-put. \T1/cmr/m/n/10.95 1.2 (1989),
  []
 
-[95]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 332.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
- (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 332.
+[104] [105]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
+ (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Chapters/Chapter6.aux) (/home/marco/code/phd-thesis/Chapters/Chapter7.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 346.
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64185 strings out of 492982
- 1430461 string characters out of 6134895
- 1952621 words of memory out of 5000000
- 66327 multiletter control sequences out of 15000+600000
- 571881 words of font info for 124 fonts, out of 8000000 for 9000
+ 64212 strings out of 492982
+ 1432520 string characters out of 6134895
+ 1944423 words of memory out of 5000000
+ 66297 multiletter control sequences out of 15000+600000
+ 579080 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,21n,106p,10405b,2934s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/marco/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbmss10.657pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-Output written on /home/marco/code/phd-thesis/main.pdf (111 pages, 1468978 bytes).
+ 73i,21n,106p,10405b,3076s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/marco/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbmss10.657pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
+Output written on /home/marco/code/phd-thesis/main.pdf (121 pages, 1489110 bytes).
 PDF statistics:
- 1891 PDF objects out of 2073 (max. 8388607)
- 1501 compressed objects within 16 object streams
- 384 named destinations out of 1000 (max. 500000)
- 664 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1982 PDF objects out of 2073 (max. 8388607)
+ 1582 compressed objects within 16 object streams
+ 409 named destinations out of 1000 (max. 500000)
+ 704 words of extra memory for PDF output out of 10000 (max. 10000000)
 

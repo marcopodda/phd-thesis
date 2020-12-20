@@ -4,13 +4,13 @@
     \begin{array}{ccl}
       \mbox{Reaction } & \mbox{ Modifiers } & \mbox{ Kinetics}\\
       \hline
-      A + B \rightarrow 2B &      & r1 = k_1AB\\
-      B \rightarrow A      &      & r2 = k_2B\\
-      C + D \rightarrow E  & A    & r3 = k_3CDA\\
-      E \rightarrow F      &      & r4 = k_4E\\
-      F \rightarrow E      &      & r5 = k_5F\\
-      G \rightarrow H      & F    & r6 = \frac{k_6G}{1+2 F}\\
-      H \rightarrow G      &      & r7 = k_7H\\
+      \SF{A} + \SF{B} \rightarrow 2\SF{B} &      & \SF{r}1 = k_1\SF{AB}\\
+      \SF{B} \rightarrow \SF{A}      &      & \SF{r}2 = k_2\SF{B}\\
+      \SF{C} + \SF{D} \rightarrow \SF{E}  & \SF{A}    & \SF{r}3 = k_3\SF{CDA}\\
+      \SF{E} \rightarrow \SF{F}      &      & \SF{r}4 = k_4\SF{E}\\
+      \SF{F} \rightarrow \SF{E}      &      & \SF{r}5 = k_5\SF{F}\\
+      \SF{G} \rightarrow \SF{H}      & \SF{F}    & \SF{r}6 = \frac{k_6\SF{G}}{1+2 \SF{F}}\\
+      \SF{H} \rightarrow \SF{G}      &      & \SF{r}7 = k_7\SF{H}\\
     \end{array}
     \]
 \caption{Reactions}\label{subfig:example-reactions}
@@ -19,18 +19,18 @@
 \begin{subfigure}[b]{0.49\linewidth}
 \[\def\arraystretch{1.2}
 \begin{array}{l}
-    \frac{dA}{dt} = -k_1AB + k_2B\\
-    \frac{dB}{dt} = k_1AB - k_2B\\
-    \frac{dC}{dt} = -k_3CDA\\
-    \frac{dD}{dt} = -k_3CDA\\
-    \frac{dE}{dt} = k_3CDA - k_4E + k_5F\\
-    \frac{dF}{dt} = k_4E - k_5F\\
-    \frac{dG}{dt} = -\frac{k_6G}{1+2 F} + k_7H\\
-    \frac{dH}{dt} = \frac{k_6G}{1+2 F} - k_7H
+    \frac{d\SF{A}}{dt} = -k_1\SF{A}B + k_2\SF{B}\\
+    \frac{d\SF{B}}{dt} = k_1\SF{AB} - k_2\SF{B}\\
+    \frac{d\SF{C}}{dt} = -k_3\SF{CDA}\\
+    \frac{d\SF{D}}{dt} = -k_3\SF{CDA}\\
+    \frac{d\SF{E}}{dt} = k_3\SF{CDA} - k_4\SF{E} + k_5\SF{F}\\
+    \frac{d\SF{F}}{dt} = k_4\SF{E} - k_5\SF{F}\\
+    \frac{d\SF{G}}{dt} = -\frac{k_6\SF{G}}{1+2 \SF{F}} + k_7\SF{H}\\
+    \frac{d\SF{H}}{dt} = \frac{k_6\SF{G}}{1+2 \SF{F}} - k_7\SF{H}
 \end{array}
 \]
 \caption{ODEs}\label{subfig:example-odes}
 \end{subfigure}
 %
-\caption{An example of biochemical pathway. (A): list of reactions with information on modifiers and kinetic formulas. (B): the corresponding system of ODEs.}\label{fig:example-pathway}
+\caption{An example of biochemical pathway. ({\scriptsize A}) list of reactions with information on modifiers and kinetic formulas. ({\scriptsize B}) the corresponding system of ODEs.}\label{fig:example-pathway}
 \end{figure}

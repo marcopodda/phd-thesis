@@ -41,11 +41,23 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
+\usepackage[cal=stix]{mathalfa}
+
 % \DeclareUnicodeCharacter{0302}{*************************************}
 
 %\usepackage{mathpazo} % Use the Palatino font by default
 
-\usepackage[backend=biber,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[
+	backend=biber,
+	maxcitenames=1,
+	style=alphabetic,
+	natbib=true,
+	firstinits=true,
+	url=false,
+	doi=false,
+	eprint=false,
+	isbn=false
+	]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
 \addbibresource{bibliography.bib} % The filename of the bibliography
 
@@ -303,10 +315,12 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \part{Preliminaries}
 \include{Chapters/Chapter2}
 \include{Chapters/Chapter3}
-\part{Deep Learning on Graphs with Applications to Computational Biology}
+\part{Deep Graph Networks Applied to Computational Biology}
 \include{Chapters/Chapter4}
 \include{Chapters/Chapter5}
-\part{Deep Generative Learning on Graphs with Applications to Computational Chemistry}
+\part{Deep Generative Learning on Graphs Applied to Computational Chemistry}
+\include{Chapters/Chapter6}
+\include{Chapters/Chapter7}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
