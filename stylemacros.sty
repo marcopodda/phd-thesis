@@ -38,9 +38,35 @@
 \def\keyword#1{\textbf{#1}}
 \def\Thead#1{\textbf{#1}}
 \def\Other#1{{\fontfamily{lmtt}\selectfont #1}}
+\def\SF#1{\ensuremath{\mathsf{#1}}}
 
 % ---- SYMBOLS ----
 \let\eps\varepsilon
+
+% ---- DATA TYPES ---
+\def\Graph#1{\mathtt{#1}}
+\def\AttrGraph#1{\mathtt{\uppercase{#1}}}
+\def\Tree#1{\mathtt{#1}}
+\def\Seq#1{\mathtt{#1}}
+\def\TrainingSample{\mathbb{T}}
+\def\GeneratedSample{\mathbb{G}}
+\def\ValidSample{\mathbb{V}}
+\def\UniqueSample{\mathbb{U}}
+\def\Prop{\Fun{prop}}
+\def\PropDist{p_{\Prop}}
+
+% ---- DATA SETS ----
+\def\Data{\mathbb{D}}
+\def\Graphs{\mathbb{G}}
+\def\Samples{\mathbb{S}}
+\def\Trees{\mathbb{T}}
+\def\Real{\mathbb{R}}
+\def\Integer{\mathbb{Z}}
+\def\Natural{\mathbb{N}}
+\def\Complex{\mathbb{C}}
+\def\Rational{\mathbb{Q}}
+\def\Indic{\mathbb{I}}
+\def\Multiset{\mathbb{M}}
 
 % ---- VECTORS ----
 \def\Tensor#1{\ensuremath{\boldsymbol{\uppercase{#1}}}}
@@ -56,8 +82,6 @@
 \def\EncParam{\boldsymbol{\psi}}
 \def\DecParam{\boldsymbol{\phi}}
 \def\Network{f_{\Param}}
-\def\Generator{G_{\EncParam}}
-\def\Discriminator{D_{\DecParam}}
 \def\Encoder{q_{\EncParam}}
 \def\Decoder{p_{\DecParam}}
 \def\EncoderNet{\Op{enc}_{\EncParam}}
@@ -70,47 +94,72 @@
 \def\Layer#1#2{#1^{(#2)}}
 \def\GenParam{\EncParam}
 \def\DiscParam{\DecParam}
+\def\Generator{G_{\GenParam}}
+\def\Discriminator{D_{\DiscParam}}
 
+% ---- MATRICES
+\def\Identity{\Matrix{I}}
 \def\Transpose{\mathsf{T}}
-% \def\Pattern#1#2{#1^{(#2)}}
 \def\VPattern#1#2{\Vector{#1}^{(#2)}}
 \def\Elem#1#2{\Vector{#1}_{[#2]}}
 
-\def\ZeroVector{\boldsymbol{0}}
+% ---- VECTORS -----
+\def\Zeros{\boldsymbol{0}}
+\def\Ones{\boldsymbol{1}}
 \def\MeanVec{\boldsymbol{\mu}}
 \def\StdVec{\boldsymbol{\sigma}^2}
 
 % ---- GRAPHS -----
-\def\Nodes{\ensuremath{\Cal{V}}}
-\def\Edges{\ensuremath{\Cal{E}}}
+\def\Nodes#1{\ensuremath{\Cal{V}_{\Graph#1}}}
+\def\Edges#1{\ensuremath{\Cal{E}_{\Graph#1}}}
 \def\Neigh{\ensuremath{\Cal{N}}}
 \def\Pred{\ensuremath{\Cal{N}_{\shortrightarrow}}}
 \def\Succ{\ensuremath{\Cal{N}_{\shortleftarrow}}}
-
-% ---- DATA SETS ----
-\def\Data{\mathbb{D}}
-\def\Graphs{\mathbb{G}}
-\def\Seqs{\mathbb{S}}
-\def\Trees{\mathbb{T}}
-\def\Real{\mathbb{R}}
-\def\Integer{\mathbb{Z}}
-\def\Natural{\mathbb{N}}
-\def\Complex{\mathbb{C}}
-\def\Rational{\mathbb{Q}}
-
-\def\T#1{\mathtt{#1}}
-\def\S#1{\mathtt{#1}}
-
-\def\Tree{\mathtt{t}}
-\def\Graph#1{\mathtt{#1}}
-\def\Seq#1{\mathtt{#1}}
-
-\def\SF#1{\ensuremath{\mathsf{#1}}}
-
+\def\GraphFeatures#1#2{\Vector{#1}_{\Graph{#2}}}
+\def\VectorGraph#1#2{\Tuple{\Vector{#1}_{\Graph{#2}},\Vector{e}_{\Graph{#2}}}}
+\def\MatrixGraph#1#2{\Tuple{\Matrix{#1}_{\Graph{#2}},\Matrix{e}_{\Graph{#2}}}}
+\def\GraphU#1{\mathtt{\uppercase{#1}}}
+\def\PatternGraph#1#2{\GraphU{#1}_{(#2)}}
 \def\Subgraph#1#2{\Graph{#1}_{[\Graph{#2}]}}
 \def\Isomorph{\vartheta}
-\def\Path#1#2#3{#1 \xrightarrow[]{#2} #3}
+\def\Path#1#2#3{#1 \xrightarrow[]{\Graph{#2}} #3}
+\def\StateVector#1#2{\Elem{h}{#1}^{(#2)}}
+\def\GenStateVector#1#2#3{\Elem{#1}{#2}^{(#3)}}
+\def\GraphRepr#1{\Vector{h}_{\Graph{#1}}}
+\def\GraphReadout#1{\Op{R}_{\Graph{#1}}}
 
+% ---- GRAPH MATRICES ----
+\def\AdjMatrix#1{\Matrix{a}_{\Graph{#1}}}
+\def\ProbAdjMatrix#1{\Matrix{\tilde{A}}_{\Graph{#1}}}
+\def\StateMatrix#1{\Matrix{x}_{\Graph{#1}}}
+\def\FeatureMatrix#1{\Matrix{x}_{\Graph{#1}}}
+\def\LaplacianMatrix#1{\Matrix{L}_{\Graph{#1}}}
+\def\NormLaplacianMatrix#1{\Matrix{\tilde{L}}_{\Graph{#1}}}
+\def\DegreeMatrix#1{\Matrix{D}_{\Graph{#1}}}
+\def\LayerAdjMat#1{\Matrix{a}^{(#1)}}
+\def\LayerStateMat#1#2{\Matrix{h}_{\Graph{#1}}^{(#2)}}
+\def\GenGraphLayerMat#1#2{\Matrix{#1}^{(#2)}}
+\def\GraphPattern#1#2{\Pattern{\Graph{#1}}{i}}
+
+% --- ORDERED EDGE SEQUENCES ---
+\def\OElem#1#2{(\SF{#1},\SF{#2})}
+\def\OES#1{\Cal{#1}}
+\def\Start#1{\tau_S(#1)}
+\def\End#1{\tau_E(#1)}
+
+
+% ---- PETRI NETS ----
+\def\MolNodes#1{\Nodes{#1}^{\Fun{mol}}}
+\def\RxNodes#1{\Nodes{#1}^{\Fun{rx}}}
+\def\StdEdges#1{\Edges{#1}^{\Fun{std}}}
+\def\ProEdges#1{\Edges{#1}^{\Fun{pro}}}
+\def\InhEdges#1{\Edges{#1}^{\Fun{inh}}}
+\def\IndSubgraph{\Graph{p}_{\Graph{g}, (v_I,v_O)}}
+\def\Robustness{\overline{r}_{(v_I,v_O)}}
+
+% ---- OTHER
+\def\Loss{\mathcal{L}}
+\def\Indic{\mathbb{I}}
 \def\Risk{\mathfrak{R}}
 \def\Complexity{\mathfrak{C}}
 \def\System{\mathfrak{S}}
@@ -118,20 +167,21 @@
 \def\Transduction{\mathfrak{T}}
 \def\EncTrans{\Transduction_{\Fun{enc}}}
 \def\OutTrans{\Transduction_{\Fun{out}}}
-
-\def\Indic{\mathbb{I}}
-\def\KLD#1#2{\Fun{KLD}(#1 \;\Vert\; #2)}
-
 \def\HypSpace{\Cal{H}_{\Omega}}
 \def\PData{p_{\mathrm{data}}}
 \def\PDataset{p_{\Data_n}}
 
-\def\Multiset{\mathbb{M}}
-\def\Loss{\mathcal{L}}
+% ---- FUNCTIONS
+\def\Indicator#1{\mathbb{I}\Brack{#1}}
+\def\Expectation#1#2{\mathbb{E}_{#1}\Brack{#2}}
+\def\KLD#1#2{\Fun{KLD}(#1 \;\Vert\; #2)}
+\def\EKLD#1#2{\overline{\Fun{KLD}}(#1 \;\Vert\; #2)}
 
-\def\SOS{\ensuremath{\mathtt{\Tuple{SOS}}}}
-\def\EOS{\ensuremath{\mathtt{\Tuple{EOS}}}}
-\def\PAD{\ensuremath{\mathtt{\Tuple{PAD}}}}
+
+% ---- TOKENS ----
+\def\SOS{\ensuremath{\mathtt{\Tuple{S}}}}
+\def\EOS{\ensuremath{\mathtt{\Tuple{E}}}}
+\def\PAD{\ensuremath{\mathtt{\Tuple{P}}}}
 
 % --- Cheap displaystyle operators ---
 \def\Frac#1#2{{\displaystyle\frac{#1}{#2}}}

@@ -1,0 +1,33 @@
+\begin{table}
+    \scriptsize
+    \caption{Results of the effect of node ordering on the performances of our model. The variants considered are random ordering, Breadth-First (BF) random ordering as proposed in \cite{you34}, SMILES ordering (only for molecular datasets), ordering of the proposed approach. Best performances are bolded.}
+    \label{tab:graph-ordering-qualitative}
+    \renewcommand{\arraystretch}{1.2}
+    \makebox[\textwidth]{
+    \begin{tabular}{lccccccc}
+        \toprule
+         \textbf{Dataset} & \textbf{Metric} & \textbf{Random} & \textbf{BF Random} & \textbf{DF Random} & \textbf{DF} & \textbf{SMILES} & \textbf{Ours (BF)}\\
+         \midrule
+          & ADD           & $0.643 \pm 0.094$ & $0.046 \pm 0.008$ & $0.093 \pm 0.012$ & $0.060 \pm 0.006$ & --                           & $\textbf{0.010} \pm 0.004$\\
+          LADDERS & ACC   & $0.340 \pm 0.092$ & $0.031 \pm 0.012$ & $0.036 \pm 0.010$ & $\textbf{0.006} \pm 0.006$ & --                           & $\textbf{0.005} \pm 0.005$\\
+          & AOC           & $2.487 \pm 0.403$ & $0.701 \pm 0.151$ & $1.125 \pm 0.145$ & $0.851 \pm 0.160$ & --                           & $\textbf{0.301} \pm 0.100$\\
+         \midrule
+          & ADD           & $0.038 \pm 0.004$ & $0.041 \pm 0.003$ & $0.054 \pm 0.005$ & $0.044 \pm 0.006$ & --                           & $\textbf{0.017} \pm 0.003$\\
+          COMMUNITY & ACC & $1.090 \pm 0.103$ & $0.614 \pm 0.130$ & $2.496 \pm 0.403$ & $0.533 \pm 0.050$ & --                           & $\textbf{0.093} \pm 0.020$\\
+          & AOC           & $0.403 \pm 0.026$ & $0.102 \pm 0.009$ & $0.186 \pm 0.019$ & $\textbf{0.054} \pm 0.008$ & --                           & $\textbf{0.054} \pm 0.017$\\
+          \midrule
+          & ADD           & $0.272 \pm 0.009$ & $0.114 \pm 0.009$ & $0.076 \pm 0.008$ & $0.060 \pm 0.013$ & --                           & $\textbf{0.022} \pm 0.005$\\
+          EGO & ACC       & $0.506 \pm 0.034$ & $0.283 \pm 0.018$ & $0.219 \pm 0.049$ & $\textbf{0.078} \pm 0.013$ & --                           & $\textbf{0.066} \pm 0.010$\\
+          & AOC           & $0.666 \pm 0.030$ & $0.616 \pm 0.035$ & $0.428 \pm 0.022$ & $0.284 \pm 0.022$ & --                           & $\textbf{0.114} \pm 0.010$\\
+         \midrule
+          & ADD           & $0.118 \pm 0.009$ & $0.103 \pm 0.007$ & $0.129 \pm 0.006$ & $0.028 \pm 0.003$ & $0.048 \pm 0.008$          & $\textbf{0.017} \pm 0.004$\\
+          ENZYMES & ACC   & $1.067 \pm 0.275$ & $0.441 \pm 0.043$ & $0.968 \pm 0.083$ & $\textbf{0.064} \pm 0.014$ & $0.122 \pm 0.022$          & $\textbf{0.054} \pm 0.028$\\
+          & AOC           & $0.550 \pm 0.053$ & $0.210 \pm 0.016$ & $0.438 \pm 0.026$ & $\textbf{0.083} \pm 0.018$ & $\textbf{0.134} \pm 0.021$ & $\textbf{0.106} \pm 0.021$\\
+         \midrule
+          & ADD           & $0.219 \pm 0.009$ & $0.176 \pm 0.007$ & $0.184 \pm 0.006$ & $0.010 \pm 0.011$ & $0.143 \pm 0.009$          & $\textbf{0.059} \pm 0.008$\\
+          PROTEINS & ACC  & $0.817 \pm 0.058$ & $0.670 \pm 0.042$ & $0.925 \pm 0.056$ & $0.171 \pm 0.020$ & $0.402 \pm 0.040$          & $\textbf{0.064} \pm 0.017$\\
+          & AOC           & $0.594 \pm 0.045$ & $0.202 \pm 0.014$ & $0.319 \pm 0.015$ & $0.069 \pm 0.010$ & $0.217 \pm 0.027$          & $\textbf{0.048} \pm 0.008$\\
+         \bottomrule
+
+    \end{tabular}}
+\end{table}

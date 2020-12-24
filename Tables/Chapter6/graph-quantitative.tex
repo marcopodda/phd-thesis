@@ -1,0 +1,42 @@
+\begin{table}[h!]
+    \footnotesize
+    \centering
+    \caption{Results of the quantitative analysis of the generated samples. In the leftmost column, both the metric of interest as well as the sample size (either 1000 or 5000) is specified. Best performances of models based on RNNs are bolded.}
+    \label{tab:graph-quantitative}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lcccccccc}
+        \toprule
+         \textbf{Dataset} & \textbf{Metric} & \textbf{ER} & \textbf{BA} & \textbf{GRU-B} & \textbf{GraphRNN} & \textbf{Ours} \\
+         \midrule
+          & Novelty@1000              & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $0.81$          & $0.99$          & $\mathbf{1.00}$\\
+          & Novelty@5000              & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $0.83$          & $0.99$          & $\mathbf{1.00}$\\
+          LADDERS & Uniqueness@1000   & $0.93$ & $0.68$ & $0.06$          & $\mathbf{0.58}$ & $0.24$\\
+          & Uniqueness@5000           & $0.89$ & $0.51$ & $0.03$          & $\mathbf{0.39}$ & $0.19$\\
+          & Time@5000                 & $<$1s    & 1s       & 6m34s             & 17m16s            & 3m35s\\
+         \midrule
+          & Novelty@1000              & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$\\
+          & Novelty@5000              & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$\\
+          COMMUNITY & Uniqueness@1000 & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$\\
+          & Uniqueness@5000           & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.000}$ & $\mathbf{1.00}$\\
+          & Time@5000                 & 3s       & 5s       & 7m19s             & 52m15s            & 8m49s\\
+         \midrule
+          & Novelty@1000              & $0.82$ & $0.86$ & $0.75$          & $\mathbf{1.00}$ & $0.97$\\
+          & Novelty@5000              & $0.82$ & $0.85$ & $0.7386$          & $\mathbf{1.00}$ & $0.96$\\
+          EGO & Uniqueness@1000       & $0.64$ & $0.71$ & $0.59$          & $\mathbf{1.00}$ & $0.94$\\
+          & Uniqueness@5000           & $0.52$ & $0.64$ & $0.41$          & $\mathbf{1.00}$ & $0.90$\\
+          & Time@5000                 & 1s       & 1s       & 6m06s             & 1h10m14s          & 3m05s\\
+         \midrule
+          & Novelty@1000              & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$          & $0.99$          & $\mathbf{1.00}$\\
+          & Novelty@5000              & $\mathbf{1.00}$ & $\mathbf{1.00}$ & $\mathbf{1.00}$          & $0.98$          & $\mathbf{1.00}$\\
+          ENZYMES & Uniqueness@1000   & $0.99$ & $0.98$ & $0.78$          & $\mathbf{0.99}$ & $0.98$\\
+          & Uniqueness@5000           & $0.99$ & $0.98$ & $0.54$          & $\mathbf{0.97}$ & $0.96$\\
+          & Time@5000                 & 4s       & 3s       & 7m16s             & 52m21s            & 4m46s\\
+        \midrule
+          & Novelty@1000              & $0.99$ & $\mathbf{1.00}$ & $0.91$          & $0.86$          & $\mathbf{0.92}$\\
+          & Novelty@5000              & $0.99$ & $\mathbf{1.00}$ & $0.91$          & $0.84$          & $\mathbf{0.93}$\\
+          PROTEIN & Uniqueness@1000  & $0.97$ & $0.91$ & $0.73$          & $0.89$          & $\mathbf{0.90}$\\
+          & Uniqueness@5000           & $0.95$ & $0.90$ & $0.48$          & $0.82$          & $\mathbf{0.87}$\\
+          & Time@5000                 & $<$1s    & 4s       & 6m22s             & 54m12s            & 3m38s\\
+          \bottomrule
+    \end{tabular}
+\end{table}

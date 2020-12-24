@@ -1,0 +1,33 @@
+\begin{table}[h!]
+    \scriptsize
+    \caption{Results of the qualitative analysis of the generated samples. The three metrics considered are KLDs calculated on Average Degree Distribution (ADD), Average Clustering Coefficient (ACC), and Average Orbit Count (AOD). Best performances are bolded.}
+    \label{tab:graph-qualitative}
+    \renewcommand{\arraystretch}{1.2}
+    \makebox[\textwidth]{
+    \begin{tabular}{lcccccc}
+        \toprule
+         \textbf{Dataset} & \textbf{Metric} & \textbf{ER} & \textbf{BA} & \textbf{GRU-B} & \textbf{GRNN} & \textbf{Ours} \\
+         \midrule
+          & ADD          & $0.634 \pm 0.060$ & $1.009 \pm 0.153$ & $0.627 \pm 0.134$ & $\textbf{0.001} \pm 0.001$ & $\textbf{0.010} \pm 0.004$\\
+         LADDERS & ACC   & $0.215 \pm 0.057$ & $\textbf{0.000} \pm 0.000$ & $\textbf{0.005} \pm 0.006$ & $\textbf{0.001} \pm 0.001$ & $\textbf{0.005} \pm 0.005$\\
+          & AOC          & $1.693 \pm 0.482$ & $1.390 \pm 0.375$ & $1.783 \pm 0.307$ & $0.756 \pm 0.053$ & $\textbf{0.301} \pm 0.100$\\
+         \midrule
+          & ADD          & $1.775 \pm 0.079$ & $0.463 \pm 0.017$ & $0.155 \pm 0.020$ & $0.089 \pm 0.006$ & $\textbf{0.017} \pm 0.003$\\
+         COMMUNITY & ACC & $1.140 \pm 0.211$ & $0.261 \pm 0.015$ & $0.164 \pm 0.022$ & $\textbf{0.099} \pm 0.008$ & $\textbf{0.093} \pm 0.020$\\
+          & AOC          & $3.449 \pm 1.268$ & $2.281 \pm 0.171$ & $2.567 \pm 0.071$ & $\textbf{0.076} \pm 0.006$ & $\textbf{0.054} \pm 0.017$\\
+         \midrule
+          & ADD          & $0.254 \pm 0.016$ & $0.695 \pm 0.036$ & $0.319 \pm 0.006$ & $0.120 \pm 0.039$ & $\textbf{0.022} \pm 0.005$\\
+         EGO & ACC       & $0.733 \pm 0.114$ & $0.522 \pm 0.057$ & $0.901 \pm 0.196$ & $0.331 \pm 0.051$ & $\textbf{0.066} \pm 0.010$\\
+          & AOC          & $\textbf{0.078} \pm 0.010$ & $\textbf{0.094} \pm 0.007$ & $1.180 \pm 0.073$ & $0.424 \pm 0.078$ & $0.114 \pm 0.010$\\
+         \midrule
+          & ADD          & $3.152 \pm 0.155$ & $1.988 \pm 0.086$ & $0.523 \pm 0.035$ & $\textbf{0.016} \pm 0.005$ & $\textbf{0.017} \pm 0.004$\\
+         ENZYMES & ACC   & $2.197 \pm 0.265$ & $1.229 \pm 0.024$ & $0.588 \pm 0.195$ & $\textbf{0.055} \pm 0.012$ & $\textbf{0.054} \pm 0.028$\\
+          & AOC          & $3.973 \pm 0.971$ & $4.074 \pm 0.290$ & $0.964 \pm 0.141$ & $\textbf{0.052} \pm 0.012$ & $0.106 \pm 0.021$\\
+         \midrule
+          & ADD          & $2.307 \pm 0.120$ & $1.910 \pm 0.058$ & $0.485 \pm 0.038$ & $\textbf{0.038} \pm 0.004$ & $0.059 \pm 0.008$\\
+         PROTEINS & ACC  & $1.613 \pm 0.084$ & $1.183 \pm 0.040$ & $0.354 \pm 0.045$ & $\textbf{0.077} \pm 0.014$ & $\textbf{0.064} \pm 0.017$\\
+          & AOC          & $2.638 \pm 0.130$ & $2.598 \pm 0.098$ & $0.620 \pm 0.083$ & $0.101 \pm 0.018$ & $\textbf{0.048} \pm 0.008$\\
+         \bottomrule
+
+    \end{tabular}}
+\end{table}
