@@ -1,0 +1,24 @@
+\begin{table}[h!]
+    \begin{center}
+    \caption{Scores obtained by our model against SMILES-based and graph-based baselines. LFM indicates that the model has been trained with Low-Frequency Masking. Performances of our LFM variant are shown in bold.}\label{tab:aistats-results}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lccccc}
+        \toprule
+        \textbf{Model} & \textbf{Model Family} & \textbf{Dataset} & \textbf{Valid} & \textbf{Novel} & \textbf{Unique}\\
+        \midrule
+        ChemVAE     & SMILES    & ZINC & 0.170 & 0.980 & 0.310\\
+        GrammarVAE  & SMILES    & ZINC & 0.310 & 1.000 & 0.108\\
+        SD-VAE      & SMILES    & ZINC & 0.435 &     - &     -\\
+        GraphVAE    & Graph & ZINC & 0.140 & 1.000 & 0.316\\
+        CGVAE       & Graph & ZINC & 1.000 & 1.000 & 0.998\\
+        NeVAE       & Graph & ZINC & 1.000 & 0.999 & 1.000\\
+        \midrule
+        Ours        & SMILES    & ZINC & 1.000 & 0.992 & 0.460\\
+        \textbf{Ours (LFM)}  & SMILES    & ZINC & \textbf{1.000} & \textbf{0.995} & \textbf{0.998}\\
+        \midrule
+        Ours        & SMILES    & PCBA & 1.000 & 0.981 & 0.108\\
+        \textbf{Ours  (LFM)} & SMILES  & PCBA & \textbf{1.000} & \textbf{0.991} & \textbf{0.972}\\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+    \end{table}

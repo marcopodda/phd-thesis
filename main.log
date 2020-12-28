@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.24)  24 DEC 2020 05:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.24)  28 DEC 2020 19:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2967,7 +2967,11 @@ File: english.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
- (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Chapters/Chapter6.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
+ (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Chapters/Chapter6.aux) (/home/marco/code/phd-thesis/Chapters/Chapter7.aux
+
+LaTeX Warning: Label `fig:samples' multiply defined.
+
+) (/home/marco/code/phd-thesis/Chapters/Chapter8.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
@@ -3147,21 +3151,7 @@ Package biblatex Info: ... file 'main.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                janggumbel
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                straightthrough
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                you34
+(biblatex)                ?
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -3391,7 +3381,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter4/07-comparison-results-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter4/07-comparison-results-eps-converted-to.pdf, id=876, 867.24pt x 722.7pt>
+<Figures/Chapter4/07-comparison-results-eps-converted-to.pdf, id=905, 867.24pt x 722.7pt>
 File: Figures/Chapter4/07-comparison-results-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter4/07-comparison-results-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter4/07-comparison-results-eps-converted-to.pdf  used on input line 252.
@@ -3450,7 +3440,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/roc-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/roc-eps-converted-to.pdf, id=1062, 509.905pt x 404.51125pt>
+<Figures/Chapter5/roc-eps-converted-to.pdf, id=1090, 509.905pt x 404.51125pt>
 File: Figures/Chapter5/roc-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/roc-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/roc-eps-converted-to.pdf  used on input line 234.
@@ -3468,7 +3458,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e1-layering-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e1-layering-eps-converted-to.pdf, id=1087, 462.72874pt x 347.2975pt>
+<Figures/Chapter5/e1-layering-eps-converted-to.pdf, id=1115, 462.72874pt x 347.2975pt>
 File: Figures/Chapter5/e1-layering-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e1-layering-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e1-layering-eps-converted-to.pdf  used on input line 263.
@@ -3486,7 +3476,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf, id=1090, 425.59pt x 319.1925pt>
+<Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf, id=1118, 425.59pt x 319.1925pt>
 File: Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e2-roc-curve-eps-converted-to.pdf  used on input line 275.
@@ -3503,7 +3493,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf, id=1094, 218.8175pt x 215.80624pt>
+<Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf, id=1122, 218.8175pt x 215.80624pt>
 File: Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e2-rolling-acc-eps-converted-to.pdf  used on input line 282.
@@ -3520,7 +3510,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf, id=1095, 234.8775pt x 197.73875pt>
+<Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf, id=1123, 234.8775pt x 197.73875pt>
 File: Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Chapter5/e2-conf-matrix-eps-converted-to.pdf  used on input line 288.
@@ -3533,7 +3523,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [82]
-<Figures/Chapter5/pathway394.png, id=1153, 516.42938pt x 671.50874pt>
+<Figures/Chapter5/pathway394.png, id=1181, 516.42938pt x 671.50874pt>
 File: Figures/Chapter5/pathway394.png Graphic file (type png)
 <use Figures/Chapter5/pathway394.png>
 Package pdftex.def Info: Figures/Chapter5/pathway394.png  used on input line 326.
@@ -3568,11 +3558,7 @@ Overfull \hbox (2.15471pt too wide) in paragraph at lines 230--231
  [][]$ 
  []
 
-)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-(/home/marco/code/phd-thesis/Figures/Chapter6/model-sampling.tex
+) (/home/marco/code/phd-thesis/Figures/Chapter6/model-sampling.tex
 Overfull \hbox (3.06215pt too wide) in paragraph at lines 198--199
  [][]$ 
  []
@@ -3582,19 +3568,15 @@ Overfull \hbox (2.15471pt too wide) in paragraph at lines 230--231
  [][]$ 
  []
 
-)
+) [100] [101] [102] (/home/marco/code/phd-thesis/Figures/Chapter6/graph-ladder.tex) (/home/marco/code/phd-thesis/Figures/Chapter6/graph-community.tex) (/home/marco/code/phd-thesis/Figures/Chapter6/graph-ego.tex) (/home/marco/code/phd-thesis/Tables/Chapter6/generation-datasets.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[100] [101] [102] (/home/marco/code/phd-thesis/Figures/Chapter6/graph-ladder.tex) (/home/marco/code/phd-thesis/Figures/Chapter6/graph-community.tex) (/home/marco/code/phd-thesis/Figures/Chapter6/graph-ego.tex) (/home/marco/code/phd-thesis/Tables/Chapter6/generation-datasets.tex
+) [103] [104] [105] (/home/marco/code/phd-thesis/Tables/Chapter6/graph-quantitative.tex)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [103] [104] (/home/marco/code/phd-thesis/Tables/Chapter6/graph-quantitative.tex) [105] [106] (/home/marco/code/phd-thesis/Tables/Chapter6/graph-quantitative-rank.tex) [107] (/home/marco/code/phd-thesis/Tables/Chapter6/graph-qualitative.tex)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[108] (/home/marco/code/phd-thesis/Tables/Chapter6/graph-qualitative-rank.tex)
+[106] [107] (/home/marco/code/phd-thesis/Tables/Chapter6/graph-quantitative-rank.tex) (/home/marco/code/phd-thesis/Tables/Chapter6/graph-qualitative.tex) [108] [109] (/home/marco/code/phd-thesis/Tables/Chapter6/graph-qualitative-rank.tex)
 Package epstopdf Info: Source file: <Figures/Chapter6/distributions.eps>
 (epstopdf)                    date: 2020-12-24 05:20:14
 (epstopdf)                    size: 18061893 bytes
@@ -3602,15 +3584,15 @@ Package epstopdf Info: Source file: <Figures/Chapter6/distributions.eps>
 (epstopdf)                    date: 2020-12-24 05:25:01
 (epstopdf)                    size: 373973 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/Chapter6/distributions-eps-converted-to.pdf Figures/Chapter6/distributions.eps>
-(epstopdf)             \includegraphics on input line 265.
+(epstopdf)             \includegraphics on input line 267.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter6/distributions-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter6/distributions-eps-converted-to.pdf, id=1376, 650.43pt x 626.34pt>
+<Figures/Chapter6/distributions-eps-converted-to.pdf, id=1409, 650.43pt x 626.34pt>
 File: Figures/Chapter6/distributions-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter6/distributions-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/Chapter6/distributions-eps-converted-to.pdf  used on input line 265.
+Package pdftex.def Info: Figures/Chapter6/distributions-eps-converted-to.pdf  used on input line 267.
 (pdftex.def)             Requested size: 404.02908pt x 389.07224pt.
 Package epstopdf Info: Source file: <Figures/Chapter6/samples.eps>
 (epstopdf)                    date: 2020-12-24 05:19:30
@@ -3619,44 +3601,236 @@ Package epstopdf Info: Source file: <Figures/Chapter6/samples.eps>
 (epstopdf)                    date: 2020-12-24 05:25:22
 (epstopdf)                    size: 313554 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/Chapter6/samples-eps-converted-to.pdf Figures/Chapter6/samples.eps>
-(epstopdf)             \includegraphics on input line 272.
+(epstopdf)             \includegraphics on input line 274.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter6/samples-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter6/samples-eps-converted-to.pdf, id=1378, 432.61626pt x 301.125pt>
+<Figures/Chapter6/samples-eps-converted-to.pdf, id=1411, 432.61626pt x 301.125pt>
 File: Figures/Chapter6/samples-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter6/samples-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/Chapter6/samples-eps-converted-to.pdf  used on input line 272.
+Package pdftex.def Info: Figures/Chapter6/samples-eps-converted-to.pdf  used on input line 274.
 (pdftex.def)             Requested size: 404.02908pt x 281.23799pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[109] [110 </home/marco/code/phd-thesis/Figures/Chapter6/distributions-eps-converted-to.pdf>] [111 </home/marco/code/phd-thesis/Figures/Chapter6/samples-eps-converted-to.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 Package epstopdf Info: Source file: <Figures/Chapter6/loss.eps>
-(epstopdf)                    date: 2020-12-24 05:19:54
-(epstopdf)                    size: 7421180 bytes
+(epstopdf)                    date: 2020-12-24 16:35:26
+(epstopdf)                    size: 7927240 bytes
 (epstopdf)             Output file: <Figures/Chapter6/loss-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-12-24 05:26:16
-(epstopdf)                    size: 448760 bytes
+(epstopdf)                    date: 2020-12-24 16:42:36
+(epstopdf)                    size: 435279 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/Chapter6/loss-eps-converted-to.pdf Figures/Chapter6/loss.eps>
-(epstopdf)             \includegraphics on input line 292.
+(epstopdf)             \includegraphics on input line 284.
 Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter6/loss-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figures/Chapter6/loss-eps-converted-to.pdf, id=1407, 462.72874pt x 347.2975pt>
+<Figures/Chapter6/loss-eps-converted-to.pdf, id=1413, 414.54875pt x 347.2975pt>
 File: Figures/Chapter6/loss-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/Chapter6/loss-eps-converted-to.pdf>
-Package pdftex.def Info: Figures/Chapter6/loss-eps-converted-to.pdf  used on input line 292.
-(pdftex.def)             Requested size: 404.02908pt x 303.24333pt.
+Package pdftex.def Info: Figures/Chapter6/loss-eps-converted-to.pdf  used on input line 284.
+(pdftex.def)             Requested size: 404.02908pt x 338.49446pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(/home/marco/code/phd-thesis/Tables/Chapter6/graph-ordering-qualitative.tex) [112] [113 </home/marco/code/phd-thesis/Figures/Chapter6/loss-eps-converted-to.pdf>] [114]) [115]
+(/home/marco/code/phd-thesis/Tables/Chapter6/graph-ordering-qualitative.tex) [110] [111 </home/marco/code/phd-thesis/Figures/Chapter6/distributions-eps-converted-to.pdf>] [112 </home/marco/code/phd-thesis/Figures/Chapter6/samples-eps-converted-to.pdf>] [113 </home/marco/code/phd-thesis/Figures/Chapter6/loss-eps-converted-to.pdf>]) [114]
+\openout2 = `Chapters/Chapter7.aux'.
+
+ (/home/marco/code/phd-thesis/Chapters/Chapter7.tex
+Chapter 7.
+1: section
+[115
+
+
+
+] [116] [117] [118] [119] [120]
+Overfull \hbox (13.55165pt too wide) in paragraph at lines 79--79
+[]\T1/cmr/bx/n/14.4 A Deep Gen-er-a-tive Model for Fragment-Based Molecule
+ []
+
+
+Overfull \hbox (2.63577pt too wide) in paragraph at lines 84--86
+\T1/cmr/m/n/10.95 Fragments are very-small-weight com-pounds, typ-i-cally com-posed of $\OML/cmm/m/it/10.95 < \OT1/cmr/m/n/10.95 20$ \T1/cmr/m/n/10.95 non-hydrogen
+ []
+
+[121] (/home/marco/code/phd-thesis/Figures/Chapter7/aspirin.tex
+Overfull \hbox (7.14671pt too wide) in paragraph at lines 169--170
+ []$ 
+ []
+
+
+Overfull \hbox (7.14671pt too wide) in paragraph at lines 207--208
+ []$ 
+ []
+
+
+Overfull \hbox (7.14671pt too wide) in paragraph at lines 245--246
+ []$ 
+ []
+
+
+Overfull \hbox (7.14671pt too wide) in paragraph at lines 282--283
+ []$ 
+ []
+
+
+Overfull \hbox (7.14671pt too wide) in paragraph at lines 312--313
+ []$ 
+ []
+
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 328.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Overfull \hbox (6.99994pt too wide) in paragraph at lines 328--329
+ \T1/pcr/m/n/10.95 *CC(=O)C 
+ []
+
+
+Overfull \hbox (0.92497pt too wide) in paragraph at lines 335--336
+ \T1/pcr/m/n/10.95 *O* 
+ []
+
+
+Overfull \hbox (9.42992pt too wide) in paragraph at lines 342--343
+ \T1/pcr/m/n/10.95 *c1ccccc1* 
+ []
+
+
+Overfull \hbox (5.78494pt too wide) in paragraph at lines 349--350
+ \T1/pcr/m/n/10.95 *C(=O)O 
+ []
+
+)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[122] [123] [124] (/home/marco/code/phd-thesis/Figures/Chapter7/model-training.tex
+Overfull \hbox (3.06215pt too wide) in paragraph at lines 143--144
+ [][]$ 
+ []
+
+
+Overfull \hbox (2.15471pt too wide) in paragraph at lines 207--208
+ [][]$ 
+ []
+
+) (/home/marco/code/phd-thesis/Figures/Chapter7/model-generation.tex
+Overfull \hbox (3.06215pt too wide) in paragraph at lines 46--47
+ [][]$ 
+ []
+
+
+Overfull \hbox (2.15471pt too wide) in paragraph at lines 110--111
+ [][]$ 
+ []
+
+)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[125] [126] (/home/marco/code/phd-thesis/Tables/Chapter7/dataset-statistics.tex) [127] (/home/marco/code/phd-thesis/Tables/Chapter7/results.tex)
+Package epstopdf Info: Source file: <Figures/Chapter7/props-zinc.eps>
+(epstopdf)                    date: 2020-12-28 18:35:17
+(epstopdf)                    size: 3461148 bytes
+(epstopdf)             Output file: <Figures/Chapter7/props-zinc-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-12-28 18:41:13
+(epstopdf)                    size: 107825 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/Chapter7/props-zinc-eps-converted-to.pdf Figures/Chapter7/props-zinc.eps>
+(epstopdf)             \includegraphics on input line 187.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter7/props-zinc-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Chapter7/props-zinc-eps-converted-to.pdf, id=1622, 379.4175pt x 168.63pt>
+File: Figures/Chapter7/props-zinc-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/Chapter7/props-zinc-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Chapter7/props-zinc-eps-converted-to.pdf  used on input line 187.
+(pdftex.def)             Requested size: 383.82639pt x 170.59283pt.
+Package epstopdf Info: Source file: <Figures/Chapter7/props-pcba.eps>
+(epstopdf)                    date: 2020-12-28 18:36:04
+(epstopdf)                    size: 3597185 bytes
+(epstopdf)             Output file: <Figures/Chapter7/props-pcba-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-12-28 18:41:36
+(epstopdf)                    size: 105952 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/Chapter7/props-pcba-eps-converted-to.pdf Figures/Chapter7/props-pcba.eps>
+(epstopdf)             \includegraphics on input line 194.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter7/props-pcba-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Chapter7/props-pcba-eps-converted-to.pdf, id=1624, 379.4175pt x 175.65625pt>
+File: Figures/Chapter7/props-pcba-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/Chapter7/props-pcba-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Chapter7/props-pcba-eps-converted-to.pdf  used on input line 194.
+(pdftex.def)             Requested size: 383.82639pt x 177.70087pt.
+Package epstopdf Info: Source file: <Figures/Chapter7/samples.eps>
+(epstopdf)                    date: 2020-12-28 18:36:48
+(epstopdf)                    size: 109932 bytes
+(epstopdf)             Output file: <Figures/Chapter7/samples-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-12-28 18:41:37
+(epstopdf)                    size: 25025 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/Chapter7/samples-eps-converted-to.pdf Figures/Chapter7/samples.eps>
+(epstopdf)             \includegraphics on input line 202.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter7/samples-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Chapter7/samples-eps-converted-to.pdf, id=1625, 1427.3325pt x 991.705pt>
+File: Figures/Chapter7/samples-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/Chapter7/samples-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Chapter7/samples-eps-converted-to.pdf  used on input line 202.
+(pdftex.def)             Requested size: 178.1776pt x 123.79636pt.
+Package epstopdf Info: Source file: <Figures/Chapter7/generated.eps>
+(epstopdf)                    date: 2020-12-28 18:36:46
+(epstopdf)                    size: 115693 bytes
+(epstopdf)             Output file: <Figures/Chapter7/generated-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-12-28 18:43:21
+(epstopdf)                    size: 25926 bytes
+(epstopdf)             Command: <repstopdf --outfile=Figures/Chapter7/generated-eps-converted-to.pdf Figures/Chapter7/generated.eps>
+(epstopdf)             \includegraphics on input line 209.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file /home/marco/code/phd-thesis/Figures/Chapter7/generated-eps-converted-to.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figures/Chapter7/generated-eps-converted-to.pdf, id=1626, 1373.13pt x 950.55125pt>
+File: Figures/Chapter7/generated-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/Chapter7/generated-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/Chapter7/generated-eps-converted-to.pdf  used on input line 209.
+(pdftex.def)             Requested size: 178.1776pt x 123.32942pt.
+) [128]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[129] [130 </home/marco/code/phd-thesis/Figures/Chapter7/props-zinc-eps-converted-to.pdf> </home/marco/code/phd-thesis/Figures/Chapter7/props-pcba-eps-converted-to.pdf> </home/marco/code/phd-thesis/Figures/Chapter7/samples-eps-converted-to.pdf> </home/marco/code/phd-thesis/Figures/Chapter7/generated-eps-converted-to.pdf>]
+1: section
+[131
+
+
+] [132]
+\openout2 = `Chapters/Chapter8.aux'.
+
+ (/home/marco/code/phd-thesis/Chapters/Chapter8.tex
+Chapter 8.
+)
+1: section
+[133
+
+
+]
 \openout2 = `Appendices/AppendixA.aux'.
 
- (/home/marco/code/phd-thesis/Appendices/AppendixA.tex [116
+ (/home/marco/code/phd-thesis/Appendices/AppendixA.tex [134
 
 
 
@@ -3664,63 +3838,73 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Appendix A.
 )
 1: section
-[117] [118
+[135] [136
 
 
 ]
-Overfull \hbox (10.84633pt too wide) in paragraph at lines 342--342
-[]\T1/cmr/m/n/10.95 ^^P  Col-lec-tive dy-nam-ics of 'small-world' net-works^^Q. In: \T1/cmr/m/it/10.95 Na-ture \T1/cmr/m/n/10.95 393.6684 (1998),
- []
-
 1: section
-[119] [120] [121]
+[137] [138] [139] [140]
 
 Package biblatex Warning: No driver for entry type 'arcticle'.
-(biblatex)                Using fallback driver on input line 342.
+(biblatex)                Using fallback driver on input line 344.
 
-[122]
-Overfull \hbox (5.9321pt too wide) in paragraph at lines 342--342
+[141]
+Overfull \hbox (6.99141pt too wide) in paragraph at lines 344--344
 []\T1/cmr/m/n/10.95 H. Jaeger. ^^P  Tu-to-rial on train-ing re-cur-rent neu-ral net-works, cov-er-ing BPPT,
  []
 
 
-Overfull \hbox (33.44421pt too wide) in paragraph at lines 342--342
+Overfull \hbox (34.50352pt too wide) in paragraph at lines 344--344
 \T1/cmr/m/n/10.95 RTRL, EKF and the echo state net-work ap-proach^^Q. In: \T1/cmr/m/it/10.95 GMD-Forschungszentrum
  []
 
-[123] [124]
+
+Overfull \hbox (4.89783pt too wide) in paragraph at lines 344--344
+[]\T1/cmr/m/n/10.95 E. Jang, S. Gu, and B. Poole. ^^P  Cat-e-gor-i-cal reparametriza-tion with gumbel-
+ []
+
+[142] [143] [144]
 
 Package biblatex Warning: No driver for entry type 'inproceendings'.
-(biblatex)                Using fallback driver on input line 342.
+(biblatex)                Using fallback driver on input line 344.
 
-[125] [126]
-Overfull \hbox (5.63852pt too wide) in paragraph at lines 342--342
+[145]
+Overfull \hbox (3.95807pt too wide) in paragraph at lines 344--344
+[]\T1/cmr/m/n/10.95 B. Samanta et al. ^^P  NeVAE: A deep gen-er-a-tive model for molec-u-lar graphs^^Q.
+ []
+
+[146] [147]
+Overfull \hbox (6.69783pt too wide) in paragraph at lines 344--344
 \T1/cmr/m/n/10.95 Run-ning Fully Re-cur-rent Neu-ral Net-works^^Q. In: \T1/cmr/m/it/10.95 Neu-ral Com-put. \T1/cmr/m/n/10.95 1.2 (1989),
  []
 
-[127] [128]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
- (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Chapters/Chapter6.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 346.
+[148] [149]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 348.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 348.
+ (/home/marco/code/phd-thesis/main.aux (/home/marco/code/phd-thesis/Chapters/Chapter1.aux) (/home/marco/code/phd-thesis/Chapters/Chapter2.aux) (/home/marco/code/phd-thesis/Chapters/Chapter3.aux) (/home/marco/code/phd-thesis/Chapters/Chapter4.aux) (/home/marco/code/phd-thesis/Chapters/Chapter5.aux) (/home/marco/code/phd-thesis/Chapters/Chapter6.aux) (/home/marco/code/phd-thesis/Chapters/Chapter7.aux) (/home/marco/code/phd-thesis/Chapters/Chapter8.aux) (/home/marco/code/phd-thesis/Appendices/AppendixA.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 348.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 348.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64582 strings out of 492982
- 1442566 string characters out of 6134895
- 1992890 words of memory out of 5000000
- 66563 multiletter control sequences out of 15000+600000
- 581406 words of font info for 147 fonts, out of 8000000 for 9000
+ 64900 strings out of 492982
+ 1452365 string characters out of 6134895
+ 2035480 words of memory out of 5000000
+ 66746 multiletter control sequences out of 15000+600000
+ 582027 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,21n,106p,10405b,3085s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/marco/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbmss10.657pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb>
-Output written on /home/marco/code/phd-thesis/main.pdf (144 pages, 4790788 bytes).
+ 73i,21n,106p,10405b,3074s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/marco/.texlive2017/texmf-var/fonts/pk/ljfour/public/bbm/bbmss10.657pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfxc0900.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on /home/marco/code/phd-thesis/main.pdf (165 pages, 5107569 bytes).
 PDF statistics:
- 2063 PDF objects out of 2073 (max. 8388607)
- 1797 compressed objects within 18 object streams
- 484 named destinations out of 1000 (max. 500000)
- 775 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2388 PDF objects out of 2487 (max. 8388607)
+ 2084 compressed objects within 21 object streams
+ 578 named destinations out of 1000 (max. 500000)
+ 891 words of extra memory for PDF output out of 10000 (max. 10000000)
 

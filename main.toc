@@ -108,12 +108,24 @@
 \contentsline {section}{\numberline {6.4}Performance Evaluation}{94}{section.170}
 \contentsline {subsection}{\numberline {6.4.1}Quantitative Metrics}{94}{subsection.172}
 \contentsline {subsection}{\numberline {6.4.2}Qualitative Metrics}{95}{subsection.173}
-\contentsline {section}{\numberline {6.5}A Model for Edge-Based Graph Generation}{97}{section.174}
-\contentsline {subsection}{\numberline {6.5.1}Introduction}{97}{subsection.175}
+\contentsline {section}{\numberline {6.5}A Model for Edge-Based Graph Generation}{96}{section.174}
+\contentsline {subsection}{\numberline {6.5.1}Introduction}{96}{subsection.175}
 \contentsline {subsection}{\numberline {6.5.2}Methods}{97}{subsection.176}
 \contentsline {subsection}{\numberline {6.5.3}Experiments}{102}{subsection.186}
-\contentsline {subsection}{\numberline {6.5.4}Results}{105}{subsection.192}
-\contentsline {subsection}{\numberline {6.5.5}Conclusions}{113}{subsection.204}
-\contentsline {chapter}{\numberline {A}Frequently Asked Questions}{117}{appendix.205}
-\contentsline {section}{\numberline {A.1}How do I change the colors of links?}{117}{section.206}
-\contentsline {chapter}{Bibliography}{119}{appendix*.207}
+\contentsline {subsection}{\numberline {6.5.4}Results}{106}{subsection.192}
+\contentsline {subsection}{\numberline {6.5.5}Conclusions}{111}{subsection.204}
+\contentsline {chapter}{\numberline {7}Deep Generative Learning for Drug Discovery}{115}{chapter.205}
+\contentsline {section}{\numberline {7.1}Background}{115}{section.206}
+\contentsline {subsection}{\numberline {7.1.1}Molecules and their representation}{115}{subsection.207}
+\contentsline {subsection}{\numberline {7.1.2}Generative Tasks}{117}{subsection.212}
+\contentsline {subsection}{\numberline {7.1.3}Deep Generative Models of Molecules}{118}{subsection.213}
+\contentsline {subsection}{\numberline {7.1.4}Evaluation of Generative Models of Molecules}{120}{subsection.217}
+\contentsline {section}{\numberline {7.2}A Deep Generative Model for Fragment-Based Molecule Generation}{121}{section.218}
+\contentsline {subsection}{\numberline {7.2.1}Methods}{122}{subsection.220}
+\contentsline {subsection}{\numberline {7.2.2}Experiments}{126}{subsection.229}
+\contentsline {subsection}{\numberline {7.2.3}Results}{128}{subsection.237}
+\contentsline {part}{IV\hspace {1em}Conclusions}{131}{part.242}
+\contentsline {chapter}{\numberline {8}Conclusions, Opportunities and Future Works}{133}{chapter.243}
+\contentsline {chapter}{\numberline {A}Frequently Asked Questions}{135}{appendix.244}
+\contentsline {section}{\numberline {A.1}How do I change the colors of links?}{135}{section.245}
+\contentsline {chapter}{Bibliography}{137}{appendix*.246}
