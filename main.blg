@@ -1,34 +1,34 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
-[1] Config.pm:305> INFO - Logfile is 'main.blg'
-[38] biber:313> INFO - === Mon Dec 28, 2020, 18:43:28
-[84] Biber.pm:371> INFO - Reading 'main.bcf'
-[206] Biber.pm:857> INFO - Found 167 citekeys in bib section 0
-[232] Biber.pm:3981> INFO - Processing section 0
-[251] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[281] bibtex.pm:1468> INFO - LaTeX decoding ...
-[730] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
-[733] Utils.pm:169> WARN - Duplicate entry key: 'bickerton2012qed' in file 'bibliography.bib', skipping ...
-[735] Utils.pm:169> WARN - Duplicate entry key: 'bowman2016sentencescontinuousspace' in file 'bibliography.bib', skipping ...
-[737] Utils.pm:169> WARN - Duplicate entry key: 'degen2008brics' in file 'bibliography.bib', skipping ...
-[739] Utils.pm:169> WARN - Duplicate entry key: 'ertl2009sas' in file 'bibliography.bib', skipping ...
-[743] Utils.pm:169> WARN - Duplicate entry key: 'gindulyte2016pubchem' in file 'bibliography.bib', skipping ...
-[747] Utils.pm:169> WARN - Duplicate entry key: 'irwin2005zinc' in file 'bibliography.bib', skipping ...
-[756] Utils.pm:169> WARN - Duplicate entry key: 'ramakrishnan2014qm9' in file 'bibliography.bib', skipping ...
-[841] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
-[853] Utils.pm:169> WARN - month field 'April' in entry 'wolpert1997freelunchtheorem' is not an integer - this will probably not sort properly.
-[2128] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
-[2853] Utils.pm:169> WARN - month field 'Apr' in entry 'maggiora2014molecularsimilarity' is not an integer - this will probably not sort properly.
-[2867] Utils.pm:169> WARN - month field 'May' in entry 'rogers2010ecfp' is not an integer - this will probably not sort properly.
-[2883] Utils.pm:169> WARN - month field 'May' in entry 'weininger1989smiles2' is not an integer - this will probably not sort properly.
-[2887] Utils.pm:169> WARN - month field 'dec' in entry 'segler2017moleculelibrariesrnn' is not an integer - this will probably not sort properly.
-[3202] Utils.pm:169> WARN - month field 'Apr.' in entry 'fu2020core' is not an integer - this will probably not sort properly.
-[3418] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[3418] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
-[3425] Utils.pm:169> WARN - I didn't find a database entry for '?' (section 0)
-[4067] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[4068] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[4068] Biber.pm:3809> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[4068] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[4716] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[4943] bbl.pm:720> INFO - Output to main.bbl
-[4944] Biber.pm:110> INFO - WARNINGS: 18
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[39] biber:313> INFO - === Tue Dec 29, 2020, 09:06:58
+[81] Biber.pm:371> INFO - Reading 'main.bcf'
+[144] Biber.pm:857> INFO - Found 167 citekeys in bib section 0
+[157] Biber.pm:3981> INFO - Processing section 0
+[172] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[186] bibtex.pm:1468> INFO - LaTeX decoding ...
+[510] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
+[513] Utils.pm:169> WARN - Duplicate entry key: 'bickerton2012qed' in file 'bibliography.bib', skipping ...
+[515] Utils.pm:169> WARN - Duplicate entry key: 'bowman2016sentencescontinuousspace' in file 'bibliography.bib', skipping ...
+[517] Utils.pm:169> WARN - Duplicate entry key: 'degen2008brics' in file 'bibliography.bib', skipping ...
+[519] Utils.pm:169> WARN - Duplicate entry key: 'ertl2009sas' in file 'bibliography.bib', skipping ...
+[521] Utils.pm:169> WARN - Duplicate entry key: 'gindulyte2016pubchem' in file 'bibliography.bib', skipping ...
+[525] Utils.pm:169> WARN - Duplicate entry key: 'irwin2005zinc' in file 'bibliography.bib', skipping ...
+[533] Utils.pm:169> WARN - Duplicate entry key: 'ramakrishnan2014qm9' in file 'bibliography.bib', skipping ...
+[652] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
+[686] Utils.pm:169> WARN - month field 'April' in entry 'wolpert1997freelunchtheorem' is not an integer - this will probably not sort properly.
+[1608] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
+[2179] Utils.pm:169> WARN - month field 'Apr' in entry 'maggiora2014molecularsimilarity' is not an integer - this will probably not sort properly.
+[2193] Utils.pm:169> WARN - month field 'May' in entry 'rogers2010ecfp' is not an integer - this will probably not sort properly.
+[2212] Utils.pm:169> WARN - month field 'May' in entry 'weininger1989smiles2' is not an integer - this will probably not sort properly.
+[2216] Utils.pm:169> WARN - month field 'dec' in entry 'segler2017moleculelibrariesrnn' is not an integer - this will probably not sort properly.
+[2454] Utils.pm:169> WARN - month field 'Apr.' in entry 'fu2020core' is not an integer - this will probably not sort properly.
+[2658] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[2659] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[2662] Utils.pm:169> WARN - I didn't find a database entry for '?' (section 0)
+[3160] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[3161] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[3161] Biber.pm:3809> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[3161] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[3534] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[3724] bbl.pm:720> INFO - Output to main.bbl
+[3725] Biber.pm:110> INFO - WARNINGS: 18

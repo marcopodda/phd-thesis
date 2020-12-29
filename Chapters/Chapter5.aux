@@ -1,84 +1,84 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Prediction of Dynamical Properties of Biochemical Pathways using Deep Graph Networks}{63}{chapter.119}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Prediction of Dynamical Properties of Biochemical Pathways using Deep Graph Networks}{63}{chapter.116}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:prediction-biochemical-dgn}{{5}{63}{Prediction of Dynamical Properties of Biochemical Pathways using Deep Graph Networks}{chapter.119}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction and Motivation}{63}{section.120}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Background}{65}{section.122}}
-\newlabel{sect:background}{{5.2}{65}{Background}{section.122}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Pathway Petri Nets}{65}{subsection.123}}
-\newlabel{sec:ppn}{{5.2.1}{65}{Pathway Petri Nets}{subsection.123}{}}
-\newlabel{subfig:example-reactions}{{5.1a}{66}{Reactions\relax }{figure.caption.124}{}}
-\newlabel{sub@subfig:example-reactions}{{a}{66}{Reactions\relax }{figure.caption.124}{}}
-\newlabel{subfig:example-odes}{{5.1b}{66}{ODEs\relax }{figure.caption.124}{}}
-\newlabel{sub@subfig:example-odes}{{b}{66}{ODEs\relax }{figure.caption.124}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces An example of biochemical pathway. ({\relax \fontsize  {8}{9.5}\selectfont  A}) list of reactions with information on modifiers and kinetic formulas. ({\relax \fontsize  {8}{9.5}\selectfont  B}) the corresponding system of ODEs.\relax }}{66}{figure.caption.124}}
-\newlabel{fig:example-pathway}{{5.1}{66}{An example of biochemical pathway. ({\scriptsize A}) list of reactions with information on modifiers and kinetic formulas. ({\scriptsize B}) the corresponding system of ODEs.\relax }{figure.caption.124}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces The Pathway Petri Net corresponding to the reactions described in Figure \ref  {subfig:example-reactions}.\relax }}{68}{figure.caption.125}}
-\newlabel{subfig:pathway-petri-net}{{5.2}{68}{The Pathway Petri Net corresponding to the reactions described in Figure \ref {subfig:example-reactions}.\relax }{figure.caption.125}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces The pathway graph obtained by omitting kinetic formulas and edge labels from the one in Figure \ref  {subfig:pathway-petri-net}. Notice that the names of the molecules are displayed for visual aid, but are not included of the pathway graph.\relax }}{68}{figure.caption.126}}
-\newlabel{fig:pathway-graph}{{5.3}{68}{The pathway graph obtained by omitting kinetic formulas and edge labels from the one in Figure \ref {subfig:pathway-petri-net}. Notice that the names of the molecules are displayed for visual aid, but are not included of the pathway graph.\relax }{figure.caption.126}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Concentration Robustness}{69}{subsection.127}}
-\newlabel{sec:robustness}{{5.2.2}{69}{Concentration Robustness}{subsection.127}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Methods}{70}{section.128}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Subgraphs Extraction}{70}{subsection.129}}
-\newlabel{sec:subgraphs-extraction}{{5.3.1}{70}{Subgraphs Extraction}{subsection.129}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces The enriched pathway graph obtained from the pathway graph of Figure \ref  {fig:pathway-graph}. The edges added with respect to the original graph are shown in black.\relax }}{71}{figure.caption.130}}
-\newlabel{fig:pathway-graph-enriched}{{5.4}{71}{The enriched pathway graph obtained from the pathway graph of Figure \ref {fig:pathway-graph}. The edges added with respect to the original graph are shown in black.\relax }{figure.caption.130}{}}
-\newlabel{subfig:subgraph1}{{5.5a}{71}{$v_I=\mathsf {B},\, v_O=\mathsf {A}$\relax }{figure.caption.131}{}}
-\newlabel{sub@subfig:subgraph1}{{a}{71}{$v_I=\mathsf {B},\, v_O=\mathsf {A}$\relax }{figure.caption.131}{}}
-\newlabel{subfig:subgraph2}{{5.5b}{71}{$v_I=\mathsf {C},\, v_O=\mathsf {F}$\relax }{figure.caption.131}{}}
-\newlabel{sub@subfig:subgraph2}{{b}{71}{$v_I=\mathsf {C},\, v_O=\mathsf {F}$\relax }{figure.caption.131}{}}
-\newlabel{subfig:subgraph3}{{5.5c}{71}{$v_I=\mathsf {A},\, v_O=\mathsf {H}$\relax }{figure.caption.131}{}}
-\newlabel{sub@subfig:subgraph3}{{c}{71}{$v_I=\mathsf {A},\, v_O=\mathsf {H}$\relax }{figure.caption.131}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Examples of subgraphs of the pathway graph in Figure \ref  {fig:pathway-graph} induced by different input/output node pairs $(v_I,v_O)$.\relax }}{71}{figure.caption.131}}
-\newlabel{fig:subgraphs}{{5.5}{71}{Examples of subgraphs of the pathway graph in Figure \ref {fig:pathway-graph} induced by different input/output node pairs $(v_I,v_O)$.\relax }{figure.caption.131}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Robustness Computation}{71}{subsection.132}}
-\newlabel{sec:robustness-computation}{{5.3.2}{71}{Robustness Computation}{subsection.132}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{72}{subsection.134}}
-\newlabel{subsec:data-collection}{{5.3.3}{72}{Data Preprocessing}{subsection.134}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Subgraph Features}{73}{subsection.137}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces A representation of the node and edge feature vectors of the induced subgraph shown in Figure \ref  {subfig:subgraph3}. Each node is represented as a 3-dimensional binary vector, where 1 is indicated with dark grey and 0 with white. To avoid visual cluttering, we only show one example of edge feature vector per edge type (the column vectors inside the dashed circles).\relax }}{73}{figure.caption.138}}
-\newlabel{fig:pathway-graph-features}{{5.6}{73}{A representation of the node and edge feature vectors of the induced subgraph shown in Figure \ref {subfig:subgraph3}. Each node is represented as a 3-dimensional binary vector, where 1 is indicated with dark grey and 0 with white. To avoid visual cluttering, we only show one example of edge feature vector per edge type (the column vectors inside the dashed circles).\relax }{figure.caption.138}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Experiments}{73}{section.139}}
-\newlabel{sec:pathway-experiments}{{5.4}{73}{Experiments}{section.139}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Model Architecture.\relax }}{74}{figure.caption.140}}
-\newlabel{fig:architecture}{{5.7}{74}{Model Architecture.\relax }{figure.caption.140}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}E1 Setup}{75}{subsection.141}}
-\@writefile{toc}{\contentsline {paragraph}{Evaluation Metrics}{76}{section*.142}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}E2 Setup}{76}{subsection.143}}
-\@writefile{toc}{\contentsline {paragraph}{Evaluation Metrics}{76}{section*.144}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces An example of ROC curve. The dashed line is the ROC curve of a random classifier.\relax }}{77}{figure.caption.145}}
-\newlabel{fig:roc}{{5.8}{77}{An example of ROC curve. The dashed line is the ROC curve of a random classifier.\relax }{figure.caption.145}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Results}{78}{section.149}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Results on the E1 Experiment}{78}{subsection.150}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Results of the 5-fold CV evaluation of different \gls {dgn} architectures on the \textbf  {E1} experiment, as explained in Section \ref  {sec:pathway-experiments}. The suffix ``-vanilla'' indicates that the corresponding graph convolutional layer does not handle different edge contributions.\relax }}{78}{table.caption.151}}
-\newlabel{tab:e1-results}{{5.1}{78}{Results of the 5-fold CV evaluation of different \gls {dgn} architectures on the \textbf {E1} experiment, as explained in Section \ref {sec:pathway-experiments}. The suffix \quotes {-vanilla} indicates that the corresponding graph convolutional layer does not handle different edge contributions.\relax }{table.caption.151}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces The effect of the number of \gls {dgn} layers to the performances of the models.\relax }}{79}{figure.caption.152}}
-\newlabel{fig:e1-layering}{{5.9}{79}{The effect of the number of \gls {dgn} layers to the performances of the models.\relax }{figure.caption.152}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Results on the E2 Experiments}{79}{subsection.153}}
-\newlabel{sec:e2-results}{{5.5.2}{79}{Results on the E2 Experiments}{subsection.153}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Results of the 5-fold CV evaluation on various performance metrics. We report the global results (on the last row) as well as the results stratified by number of nodes per subgraph. For each stratification, we also report the related support (\textit  {i.e.~}the average number of graphs in the strata).\relax }}{80}{table.caption.154}}
-\newlabel{tab:e2-results}{{5.2}{80}{Results of the 5-fold CV evaluation on various performance metrics. We report the global results (on the last row) as well as the results stratified by number of nodes per subgraph. For each stratification, we also report the related support (\ie the average number of graphs in the strata).\relax }{table.caption.154}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces ROC curves for each of the five test folds. The black dashed line shows the performance of a baseline (``Null'') classifier that always predicts one class.\relax }}{81}{figure.caption.155}}
-\newlabel{fig:e2-roc-curve}{{5.10}{81}{ROC curves for each of the five test folds. The black dashed line shows the performance of a baseline (\quotes {Null}) classifier that always predicts one class.\relax }{figure.caption.155}{}}
-\newlabel{fig:e2-rolling-acc}{{5.11a}{81}{\relax }{figure.caption.156}{}}
-\newlabel{sub@fig:e2-rolling-acc}{{a}{81}{\relax }{figure.caption.156}{}}
-\newlabel{fig:e2-conf-matrix}{{5.11b}{81}{\relax }{figure.caption.156}{}}
-\newlabel{sub@fig:e2-conf-matrix}{{b}{81}{\relax }{figure.caption.156}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}) Rolling mean accuracy (with a window of size 20), averaged over the 5 test folds, showing an increasing trend in performance as the number of graph nodes grows. ({\relax \fontsize  {8}{9.5}\selectfont  B}) Confusion Matrix of the predictions computed by the model. Each entry of the matrix is the average of the corresponding entries in the five different confusion matrices of the test folds.\relax }}{81}{figure.caption.156}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Case Studies}{82}{section.157}}
-\@writefile{toc}{\contentsline {paragraph}{Application on Synthetic Data}{82}{section*.158}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}) Robustness values computed by numerical simulation of the ODEs in Figure \ref  {fig:example-pathway}. Input molecules with initial concentration equal to 0 are omitted. Output molecules with identical robustness values are merged. ({\relax \fontsize  {8}{9.5}\selectfont  B}) Probabilities of robustness obtained from the model for some relevant input/output combinations.\relax }}{83}{table.caption.159}}
-\newlabel{tab:uc1-odes}{{5.3a}{83}{\relax }{table.caption.159}{}}
-\newlabel{sub@tab:uc1-odes}{{a}{83}{\relax }{table.caption.159}{}}
-\newlabel{tab:uc1-predictions}{{5.3b}{83}{\relax }{table.caption.159}{}}
-\newlabel{sub@tab:uc1-predictions}{{b}{83}{\relax }{table.caption.159}{}}
-\@writefile{toc}{\contentsline {paragraph}{Application on a model of the EGF Pathway}{83}{section*.160}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}Conclusion and Further Work}{84}{section.162}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces A model of the EGF pathway by Sivakumar et al. \citep {sivakumar2011systems}.Image generated form the SMBL file in the BioModels database using the CellDesigner tool.\relax }}{86}{figure.caption.161}}
-\newlabel{fig:EGF}{{5.12}{86}{A model of the EGF pathway by Sivakumar et al. \citep {sivakumar2011systems}.Image generated form the SMBL file in the BioModels database using the CellDesigner tool.\relax }{figure.caption.161}{}}
+\newlabel{ch:prediction-biochemical-dgn}{{5}{63}{Prediction of Dynamical Properties of Biochemical Pathways using Deep Graph Networks}{chapter.116}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction and Motivation}{63}{section.117}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Background}{65}{section.119}}
+\newlabel{sect:background}{{5.2}{65}{Background}{section.119}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Pathway Petri Nets}{65}{subsection.120}}
+\newlabel{sec:ppn}{{5.2.1}{65}{Pathway Petri Nets}{subsection.120}{}}
+\newlabel{subfig:example-reactions}{{5.1a}{66}{Reactions\relax }{figure.caption.121}{}}
+\newlabel{sub@subfig:example-reactions}{{a}{66}{Reactions\relax }{figure.caption.121}{}}
+\newlabel{subfig:example-odes}{{5.1b}{66}{ODEs\relax }{figure.caption.121}{}}
+\newlabel{sub@subfig:example-odes}{{b}{66}{ODEs\relax }{figure.caption.121}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces An example of biochemical pathway. ({\relax \fontsize  {8}{9.5}\selectfont  A}) list of reactions with information on modifiers and kinetic formulas. ({\relax \fontsize  {8}{9.5}\selectfont  B}) the corresponding system of ODEs.\relax }}{66}{figure.caption.121}}
+\newlabel{fig:example-pathway}{{5.1}{66}{An example of biochemical pathway. ({\scriptsize A}) list of reactions with information on modifiers and kinetic formulas. ({\scriptsize B}) the corresponding system of ODEs.\relax }{figure.caption.121}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces The Pathway Petri Net corresponding to the reactions described in Figure \ref  {subfig:example-reactions}.\relax }}{68}{figure.caption.122}}
+\newlabel{subfig:pathway-petri-net}{{5.2}{68}{The Pathway Petri Net corresponding to the reactions described in Figure \ref {subfig:example-reactions}.\relax }{figure.caption.122}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces The pathway graph obtained by omitting kinetic formulas and edge labels from the one in Figure \ref  {subfig:pathway-petri-net}. Notice that the names of the molecules are displayed for visual aid, but are not included of the pathway graph.\relax }}{68}{figure.caption.123}}
+\newlabel{fig:pathway-graph}{{5.3}{68}{The pathway graph obtained by omitting kinetic formulas and edge labels from the one in Figure \ref {subfig:pathway-petri-net}. Notice that the names of the molecules are displayed for visual aid, but are not included of the pathway graph.\relax }{figure.caption.123}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Concentration Robustness}{69}{subsection.124}}
+\newlabel{sec:robustness}{{5.2.2}{69}{Concentration Robustness}{subsection.124}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Methods}{70}{section.125}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Subgraphs Extraction}{70}{subsection.126}}
+\newlabel{sec:subgraphs-extraction}{{5.3.1}{70}{Subgraphs Extraction}{subsection.126}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces The enriched pathway graph obtained from the pathway graph of Figure \ref  {fig:pathway-graph}. The edges added with respect to the original graph are shown in black.\relax }}{71}{figure.caption.127}}
+\newlabel{fig:pathway-graph-enriched}{{5.4}{71}{The enriched pathway graph obtained from the pathway graph of Figure \ref {fig:pathway-graph}. The edges added with respect to the original graph are shown in black.\relax }{figure.caption.127}{}}
+\newlabel{subfig:subgraph1}{{5.5a}{71}{$v_I=\mathsf {B},\, v_O=\mathsf {A}$\relax }{figure.caption.128}{}}
+\newlabel{sub@subfig:subgraph1}{{a}{71}{$v_I=\mathsf {B},\, v_O=\mathsf {A}$\relax }{figure.caption.128}{}}
+\newlabel{subfig:subgraph2}{{5.5b}{71}{$v_I=\mathsf {C},\, v_O=\mathsf {F}$\relax }{figure.caption.128}{}}
+\newlabel{sub@subfig:subgraph2}{{b}{71}{$v_I=\mathsf {C},\, v_O=\mathsf {F}$\relax }{figure.caption.128}{}}
+\newlabel{subfig:subgraph3}{{5.5c}{71}{$v_I=\mathsf {A},\, v_O=\mathsf {H}$\relax }{figure.caption.128}{}}
+\newlabel{sub@subfig:subgraph3}{{c}{71}{$v_I=\mathsf {A},\, v_O=\mathsf {H}$\relax }{figure.caption.128}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Examples of subgraphs of the pathway graph in Figure \ref  {fig:pathway-graph} induced by different input/output node pairs $(v_I,v_O)$.\relax }}{71}{figure.caption.128}}
+\newlabel{fig:subgraphs}{{5.5}{71}{Examples of subgraphs of the pathway graph in Figure \ref {fig:pathway-graph} induced by different input/output node pairs $(v_I,v_O)$.\relax }{figure.caption.128}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Robustness Computation}{71}{subsection.129}}
+\newlabel{sec:robustness-computation}{{5.3.2}{71}{Robustness Computation}{subsection.129}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{72}{subsection.131}}
+\newlabel{subsec:data-collection}{{5.3.3}{72}{Data Preprocessing}{subsection.131}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Subgraph Features}{73}{subsection.134}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces A representation of the node and edge feature vectors of the induced subgraph shown in Figure \ref  {subfig:subgraph3}. Each node is represented as a 3-dimensional binary vector, where 1 is indicated with dark grey and 0 with white. To avoid visual cluttering, we only show one example of edge feature vector per edge type (the column vectors inside the dashed circles).\relax }}{73}{figure.caption.135}}
+\newlabel{fig:pathway-graph-features}{{5.6}{73}{A representation of the node and edge feature vectors of the induced subgraph shown in Figure \ref {subfig:subgraph3}. Each node is represented as a 3-dimensional binary vector, where 1 is indicated with dark grey and 0 with white. To avoid visual cluttering, we only show one example of edge feature vector per edge type (the column vectors inside the dashed circles).\relax }{figure.caption.135}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Experiments}{73}{section.136}}
+\newlabel{sec:pathway-experiments}{{5.4}{73}{Experiments}{section.136}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Model Architecture.\relax }}{74}{figure.caption.137}}
+\newlabel{fig:architecture}{{5.7}{74}{Model Architecture.\relax }{figure.caption.137}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}E1 Setup}{75}{subsection.138}}
+\@writefile{toc}{\contentsline {paragraph}{Evaluation Metrics}{76}{section*.139}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}E2 Setup}{76}{subsection.140}}
+\@writefile{toc}{\contentsline {paragraph}{Evaluation Metrics}{76}{section*.141}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces An example of ROC curve. The dashed line is the ROC curve of a random classifier.\relax }}{77}{figure.caption.142}}
+\newlabel{fig:roc}{{5.8}{77}{An example of ROC curve. The dashed line is the ROC curve of a random classifier.\relax }{figure.caption.142}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Results}{78}{section.146}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Results on the E1 Experiment}{78}{subsection.147}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Results of the 5-fold CV evaluation of different \gls {dgn} architectures on the \textbf  {E1} experiment, as explained in Section \ref  {sec:pathway-experiments}. The suffix ``-vanilla'' indicates that the corresponding graph convolutional layer does not handle different edge contributions.\relax }}{78}{table.caption.148}}
+\newlabel{tab:e1-results}{{5.1}{78}{Results of the 5-fold CV evaluation of different \gls {dgn} architectures on the \textbf {E1} experiment, as explained in Section \ref {sec:pathway-experiments}. The suffix \quotes {-vanilla} indicates that the corresponding graph convolutional layer does not handle different edge contributions.\relax }{table.caption.148}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces The effect of the number of \gls {dgn} layers to the performances of the models.\relax }}{79}{figure.caption.149}}
+\newlabel{fig:e1-layering}{{5.9}{79}{The effect of the number of \gls {dgn} layers to the performances of the models.\relax }{figure.caption.149}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Results on the E2 Experiments}{79}{subsection.150}}
+\newlabel{sec:e2-results}{{5.5.2}{79}{Results on the E2 Experiments}{subsection.150}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Results of the 5-fold CV evaluation on various performance metrics. We report the global results (on the last row) as well as the results stratified by number of nodes per subgraph. For each stratification, we also report the related support (\textit  {i.e.~}the average number of graphs in the strata).\relax }}{80}{table.caption.151}}
+\newlabel{tab:e2-results}{{5.2}{80}{Results of the 5-fold CV evaluation on various performance metrics. We report the global results (on the last row) as well as the results stratified by number of nodes per subgraph. For each stratification, we also report the related support (\ie the average number of graphs in the strata).\relax }{table.caption.151}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces ROC curves for each of the five test folds. The black dashed line shows the performance of a baseline (``Null'') classifier that always predicts one class.\relax }}{81}{figure.caption.152}}
+\newlabel{fig:e2-roc-curve}{{5.10}{81}{ROC curves for each of the five test folds. The black dashed line shows the performance of a baseline (\quotes {Null}) classifier that always predicts one class.\relax }{figure.caption.152}{}}
+\newlabel{fig:e2-rolling-acc}{{5.11a}{81}{\relax }{figure.caption.153}{}}
+\newlabel{sub@fig:e2-rolling-acc}{{a}{81}{\relax }{figure.caption.153}{}}
+\newlabel{fig:e2-conf-matrix}{{5.11b}{81}{\relax }{figure.caption.153}{}}
+\newlabel{sub@fig:e2-conf-matrix}{{b}{81}{\relax }{figure.caption.153}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}) Rolling mean accuracy (with a window of size 20), averaged over the 5 test folds, showing an increasing trend in performance as the number of graph nodes grows. ({\relax \fontsize  {8}{9.5}\selectfont  B}) Confusion Matrix of the predictions computed by the model. Each entry of the matrix is the average of the corresponding entries in the five different confusion matrices of the test folds.\relax }}{81}{figure.caption.153}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Case Studies}{82}{section.154}}
+\@writefile{toc}{\contentsline {paragraph}{Application on Synthetic Data}{82}{section*.155}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}) Robustness values computed by numerical simulation of the ODEs in Figure \ref  {fig:example-pathway}. Input molecules with initial concentration equal to 0 are omitted. Output molecules with identical robustness values are merged. ({\relax \fontsize  {8}{9.5}\selectfont  B}) Probabilities of robustness obtained from the model for some relevant input/output combinations.\relax }}{83}{table.caption.156}}
+\newlabel{tab:uc1-odes}{{5.3a}{83}{\relax }{table.caption.156}{}}
+\newlabel{sub@tab:uc1-odes}{{a}{83}{\relax }{table.caption.156}{}}
+\newlabel{tab:uc1-predictions}{{5.3b}{83}{\relax }{table.caption.156}{}}
+\newlabel{sub@tab:uc1-predictions}{{b}{83}{\relax }{table.caption.156}{}}
+\@writefile{toc}{\contentsline {paragraph}{Application on a model of the EGF Pathway}{83}{section*.157}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Conclusion and Further Work}{84}{section.159}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces A model of the EGF pathway by Sivakumar et al. \citep {sivakumar2011systems}.Image generated form the SMBL file in the BioModels database using the CellDesigner tool.\relax }}{86}{figure.caption.158}}
+\newlabel{fig:EGF}{{5.12}{86}{A model of the EGF pathway by Sivakumar et al. \citep {sivakumar2011systems}.Image generated form the SMBL file in the BioModels database using the CellDesigner tool.\relax }{figure.caption.158}{}}
 \@setckpt{Chapters/Chapter5}{
 \setcounter{page}{87}
 \setcounter{equation}{0}

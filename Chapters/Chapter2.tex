@@ -95,8 +95,6 @@ The number of layers and the dimension of their parameter matrices constitute th
     Notice that, even though the \gls{relu} function is not differentiable at $x = 0$, it can be used in practical settings with some adaptation.
 \end{itemize}
 These three activation functions, and their derivaties, are shown in Figure \ref{fig:activations}.
-
-$x = 0$, it can be used in practical settings with some adaptation.
 \begin{figure*}[h!]
     \begin{subfigure}[b]{0.32\linewidth}
         \centering
@@ -132,7 +130,7 @@ $$\argmin_{\Param} \frac{1}{n} \sum_{i=1}^n -\log p(\Pattern{y}{i} \given \Patte
 where $\Param$ are the parameters of the network as usual. Below, we detail about three of the most common output layers, and the loss functions by which the corresponding networks can be trained. Following, we assume a dataset $\Data$ defined as above, and a neural network with parameters $\Param$ and $L$ layers for simplicity.
 
 \paragraph{Linear Output Layer}
-A linear output layer is used to solve regression tasks, \ie tasks where the output space is continuous. Assuming a neural network with $L$ layers, a linear output layer is defined as:
+A linear output layer is used to solve regression tasks, \ie tasks where the output space is continuous. It is defined as:
 
 $$\Layer{f}{L}(\LayerVector{h}{L-1}) = \LayerMatrix{W}{L} \LayerVector{h}{L-1} + \LayerVector{b}{L}.$$
 Notice that a linear output layer does not have an activation function; equivalently, one can think that the activation function is the identity. The model assumed for the true conditional is the following:

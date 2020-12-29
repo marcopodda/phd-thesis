@@ -2086,7 +2086,7 @@
       \field{pages}{2672\bibrangedash 2680}
       \range{pages}{9}
     \endentry
-    \entry{gretton2012mmdkernel}{arcticle}{}
+    \entry{gretton2012mmdkernel}{article}{}
       \name{author}{5}{}{%
         {{hash=1f42dc1a2d390bd84511cbccb6397013}{%
            family={Gretton},
