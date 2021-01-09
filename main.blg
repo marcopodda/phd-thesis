@@ -1,36 +1,29 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'main.blg'
-[24] biber:313> INFO - === Tue Dec 29, 2020, 20:21:04
-[55] Biber.pm:371> INFO - Reading 'main.bcf'
-[130] Biber.pm:857> INFO - Found 184 citekeys in bib section 0
-[145] Biber.pm:3981> INFO - Processing section 0
-[162] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[179] bibtex.pm:1468> INFO - LaTeX decoding ...
-[511] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
-[514] Utils.pm:169> WARN - Duplicate entry key: 'bickerton2012qed' in file 'bibliography.bib', skipping ...
-[516] Utils.pm:169> WARN - Duplicate entry key: 'bowman2016sentencescontinuousspace' in file 'bibliography.bib', skipping ...
-[518] Utils.pm:169> WARN - Duplicate entry key: 'degen2008brics' in file 'bibliography.bib', skipping ...
-[520] Utils.pm:169> WARN - Duplicate entry key: 'ertl2009sas' in file 'bibliography.bib', skipping ...
-[522] Utils.pm:169> WARN - Duplicate entry key: 'gindulyte2016pubchem' in file 'bibliography.bib', skipping ...
-[525] Utils.pm:169> WARN - Duplicate entry key: 'irwin2005zinc' in file 'bibliography.bib', skipping ...
-[534] Utils.pm:169> WARN - Duplicate entry key: 'ramakrishnan2014qm9' in file 'bibliography.bib', skipping ...
-[615] Utils.pm:169> WARN - month field 'Nov' in entry 'poplin2018deepvariant' is not an integer - this will probably not sort properly.
-[695] Utils.pm:169> WARN - month field 'Jul' in entry 'baldi2013recursiveneuralnets' is not an integer - this will probably not sort properly.
-[801] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
-[812] Utils.pm:169> WARN - month field 'April' in entry 'wolpert1997freelunchtheorem' is not an integer - this will probably not sort properly.
-[1289] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
-[1514] Utils.pm:169> WARN - month field 'Apr' in entry 'maggiora2014molecularsimilarity' is not an integer - this will probably not sort properly.
-[1520] Utils.pm:169> WARN - month field 'May' in entry 'rogers2010ecfp' is not an integer - this will probably not sort properly.
-[1526] Utils.pm:169> WARN - month field 'May' in entry 'weininger1989smiles2' is not an integer - this will probably not sort properly.
-[1528] Utils.pm:169> WARN - month field 'dec' in entry 'segler2017moleculelibrariesrnn' is not an integer - this will probably not sort properly.
-[1643] Utils.pm:169> WARN - month field 'Apr.' in entry 'fu2020core' is not an integer - this will probably not sort properly.
-[1811] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[1811] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
-[1815] Utils.pm:169> WARN - I didn't find a database entry for '?' (section 0)
-[2331] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2332] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2332] Biber.pm:3809> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[2332] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[2742] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[2984] bbl.pm:720> INFO - Output to main.bbl
-[2986] Biber.pm:110> INFO - WARNINGS: 20
+[44] biber:313> INFO - === Thu Jan  7, 2021, 11:24:36
+[92] Biber.pm:371> INFO - Reading 'main.bcf'
+[198] Biber.pm:857> INFO - Found 196 citekeys in bib section 0
+[222] Biber.pm:3981> INFO - Processing section 0
+[242] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[259] bibtex.pm:1468> INFO - LaTeX decoding ...
+[645] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
+[748] Utils.pm:169> WARN - month field 'Nov' in entry 'poplin2018deepvariant' is not an integer - this will probably not sort properly.
+[838] Utils.pm:169> WARN - month field 'Jul' in entry 'baldi2013recursiveneuralnets' is not an integer - this will probably not sort properly.
+[993] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
+[1005] Utils.pm:169> WARN - month field 'April' in entry 'wolpert1997freelunchtheorem' is not an integer - this will probably not sort properly.
+[1655] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
+[1947] Utils.pm:169> WARN - month field 'Apr' in entry 'maggiora2014molecularsimilarity' is not an integer - this will probably not sort properly.
+[1952] Utils.pm:169> WARN - month field 'May' in entry 'rogers2010ecfp' is not an integer - this will probably not sort properly.
+[1957] Utils.pm:169> WARN - month field 'May' in entry 'weininger1989smiles2' is not an integer - this will probably not sort properly.
+[1959] Utils.pm:169> WARN - month field 'dec' in entry 'segler2017moleculelibrariesrnn' is not an integer - this will probably not sort properly.
+[2085] Utils.pm:169> WARN - month field 'Apr.' in entry 'fu2020core' is not an integer - this will probably not sort properly.
+[2200] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[2201] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[2202] Utils.pm:169> WARN - I didn't find a database entry for '?' (section 0)
+[2452] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2452] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2453] Biber.pm:3809> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[2453] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[2675] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[2784] bbl.pm:720> INFO - Output to main.bbl
+[2785] Biber.pm:110> INFO - WARNINGS: 13

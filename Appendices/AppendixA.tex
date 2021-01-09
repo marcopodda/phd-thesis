@@ -1,25 +1,46 @@
 % Appendix A
 
-\chapter{Frequently Asked Questions} % Main appendix title
+\chapter{Hyper-Parameters Table} % Main appendix title
 
 \label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+We report the grid of the hyper-parameters used in the experiments of Section \ref{sec:comparison-exp-setup}.
+The hyper-parameters are the following:
+\begin{itemize}
+    \item \emph{layers}: number of DGN layers;
+    \item \emph{convs per layer}: number of GCL layers for DGN layer;
+    \item \emph{batch size}: size of the SGD minibatch;
+    \item \emph{learning rate}: SGD learning rate;
+    \item \emph{hidden size}: hidden state dimension of the GCL;
+    \item \emph{epochs}: number of training epochs;
+    \item \emph{l2}: L2 regularization parameter;
+    \item \emph{dropout}: dropout rate;
+    \item \emph{patience}: early stopping patience;
+    \item \emph{optimizer}: type of optimizer;
+    \item \emph{scheduler}: learning rate annealing scheduler;
+    \item \emph{dense dim.}: output layer dimension;
+    \item \emph{embed dim.}: size of the graph representation;
+    \item \emph{neighborhood aggregation}: size of neighborhood aggregation.
+\end{itemize}
+\begin{landscape}
+\tiny
+\begin{tabular}{lcccccccccccccc}
+\toprule
+                                                            & Layers                                                       & \begin{tabular}[c]{@{}c@{}}Convs\\ per\\ layer\end{tabular} & Batch size                                                   & \begin{tabular}[c]{@{}c@{}}Learning \\ rate\end{tabular}   & \begin{tabular}[c]{@{}c@{}}Hidden \\ units\end{tabular}                                               & Epochs & L2                                                         & Dropout                                             & Patience                                                       & Optimizer & Scheduler                                                                  & \begin{tabular}[c]{@{}c@{}}Dense\\ dim\end{tabular} & \begin{tabular}[c]{@{}c@{}}Embed.\\ dim\end{tabular} & \begin{tabular}[c]{@{}c@{}}Neighbors \\ Aggregation\end{tabular}                                              \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Baseline\\ chemical\end{tabular} & -                                                            & -                                                            & \begin{tabular}[c]{@{}c@{}}32\\ 128\end{tabular}             & \begin{tabular}[c]{@{}c@{}}1e-1\\ 1e-3\\ 1e-6\end{tabular} & \begin{tabular}[c]{@{}c@{}}32\\ 128\\ 256\end{tabular}                                                & 5000   & \begin{tabular}[c]{@{}c@{}}1e-2\\ 1e-3\\ 1e-4\end{tabular} & -                                                   & \begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & Adam      & -                                                                          & -                                                   & -                                                    & sum                                                      \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Baseline IMDB\end{tabular}   & -                                                            & -                                                            & \begin{tabular}[c]{@{}c@{}}32\\ 128\end{tabular}             & \begin{tabular}[c]{@{}c@{}}1e-1\\ 1e-3\\ 1e-6\end{tabular} & \begin{tabular}[c]{@{}c@{}}32\\ 128\\ 256\end{tabular}                                                & 3000   & \begin{tabular}[c]{@{}c@{}}1e-2\\ 1e-3\\ 1e-4\end{tabular} & -                                                   &
 
-\section{How do I change the colors of links?}
+\begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & Adam      & -                                                                          & -                                                   & -                                                    & sum                                                      \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Base. COLLAB \\ and REDDIT\end{tabular}   & -                                                            & -                                                            & \begin{tabular}[c]{@{}c@{}}32\\ 128\end{tabular}             & \begin{tabular}[c]{@{}c@{}}1e-1\\ 1e-3\end{tabular} & \begin{tabular}[c]{@{}c@{}}32\\ 128\end{tabular}                                                & 3000   & \begin{tabular}[c]{@{}c@{}}1e-2\\ 1e-3\\ 1e-4\end{tabular} & -                                                   &
 
-The color of links can be changed to your liking using:
+\begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & Adam      & -                                                                          & -                                                   & -                                                    & sum                                                      \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Baseline\\ ENZYMES\end{tabular}  & -                                                            & -                                                            & 32                                                           & \begin{tabular}[c]{@{}c@{}}1e-1\\ 1e-3\\ 1e-6\end{tabular} & \begin{tabular}[c]{@{}c@{}}32\\ 64\\ 128\\ 256\end{tabular}                                           & 5000   & \begin{tabular}[c]{@{}c@{}}1e-2\\ 1e-3\\ 1e-4\end{tabular} & -                                                   & \begin{tabular}[c]{@{}c@{}}1000, loss\\ 1000, acc\end{tabular} & Adam      & -                                                                          & -                                                   & -                                                    & sum                                                      \\ \midrule
+DGCNN                                                       & \begin{tabular}[c]{@{}c@{}}2\\ 3\\ 4\end{tabular}            & 1                                                            & \begin{tabular}[c]{@{}c@{}}50 (cpu)\\ 16 (gpu)\end{tabular}  & \begin{tabular}[c]{@{}c@{}}1e-4\\ 1e-5\end{tabular}        & \begin{tabular}[c]{@{}c@{}}32\\ 64\end{tabular}                                                       & 1000   & -                                                          & 0.5                                                 & \begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & Adam      & -                                                                          & 128                                                 & -                                                    & mean                                                    \\ \midrule
+DiffPool                                                    & \begin{tabular}[c]{@{}c@{}}1\\ 2\end{tabular}                & 3                                                            & \begin{tabular}[c]{@{}c@{}}20 (cpu)\\ 8 (gpu)\end{tabular}   & \begin{tabular}[c]{@{}c@{}}1e-3\\ 1e-4\\ 1e-5\end{tabular} & \begin{tabular}[c]{@{}c@{}}32\\ 64\end{tabular}                                                       & 3000   & -                                                          & -                                                   & \begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & Adam      & -                                                                          & 50                                                  & \begin{tabular}[c]{@{}c@{}}64\\ 128\end{tabular}     & mean                                                      \\ \midrule
+ECC                                                         & \begin{tabular}[c]{@{}c@{}}1\\ 2\end{tabular}                & 3                                                            & \begin{tabular}[c]{@{}c@{}}32 (cpu)\\ 8 (gpu)\end{tabular}   & \begin{tabular}[c]{@{}c@{}}1e-1\\ 1e-2\end{tabular}        & \begin{tabular}[c]{@{}c@{}}32\\ 64\end{tabular}                                                       & 1000   & -                                                          & \begin{tabular}[c]{@{}c@{}}0.05\\ 0.25\end{tabular} & \begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & SGD       & ECC-LR                                                                     & -                                                   & -                                                    & sum                                                      \\ \midrule
+GIN                                                         & \begin{tabular}[c]{@{}c@{}}see\\ hidden\\ units\end{tabular} & 1                                                            & \begin{tabular}[c]{@{}c@{}}32\\ 128\end{tabular}             & 1e-2                                                       & \begin{tabular}[c]{@{}c@{}}32 (5 layers)\\ 64 (5 layers)\\ 64 (2 layers)\\ 32 (3 layers)\end{tabular} & 1000   & -                                                          & \begin{tabular}[c]{@{}c@{}}0\\ 0.5\end{tabular}     & \begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & Adam      & \begin{tabular}[c]{@{}c@{}}Step-LR\\ (step: 50,\\ gamma: 0.5)\end{tabular} & -                                                   & -                                                    & sum                                                      \\ \midrule
+GraphSAGE                                                   & \begin{tabular}[c]{@{}c@{}}3\\ 5\end{tabular}                & 1                                                            & \begin{tabular}[c]{@{}c@{}}32 (cpu)\\ 16 (cuda)\end{tabular} & \begin{tabular}[c]{@{}c@{}}1e-2\\ 1e-3\\ 1e-4\end{tabular} & \begin{tabular}[c]{@{}c@{}}32\\ 64\end{tabular}                                                       & 1000   & -                                                          & -                                                   & \begin{tabular}[c]{@{}c@{}}500, loss\\ 500, acc\end{tabular}   & Adam      & -                                                                          & -                                                   & -                                                    & \begin{tabular}[c]{@{}c@{}}mean\\ max\\ sum\end{tabular} \\
+\bottomrule
+\end{tabular}
+\end{landscape}
 
-{\small\verb!\hypersetup{urlcolor=red}!}, or
-
-{\small\verb!\hypersetup{citecolor=green}!}, or
-
-{\small\verb!\hypersetup{allcolor=blue}!}.
-
-\noindent If you want to completely hide the links, you can use:
-
-{\small\verb!\hypersetup{allcolors=.}!}, or even better: 
-
-{\small\verb!\hypersetup{hidelinks}!}.
-
-\noindent If you want to have obvious links in the PDF but not the printed text, use:
-
-{\small\verb!\hypersetup{colorlinks=false}!}.
+\afterpage{\blankpage}

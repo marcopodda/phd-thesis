@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Masters/Doctoral Thesis 
+% Masters/Doctoral Thesis
 % Class File
 % Version 1.6 (27/8/17)
 %
@@ -55,7 +55,7 @@
 
 \LoadClass{\baseclass}
 
-%  Simple interface for the user  to customize the chapter titles 
+%  Simple interface for the user  to customize the chapter titles
 \ProvideDocumentCommand{\abovechapterskip}{}{\vspace*{20pt}}
 \ProvideDocumentCommand{\chapterbelowskip}{}{\vspace*{40pt}}
 \ProvideDocumentCommand{\chapterinbetweenskip}{}{\vspace*{20pt}}
@@ -131,7 +131,7 @@
 %	CLASS OPTIONS
 %----------------------------------------------------------------------------------------
 
-\ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package 
+\ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package
 
 
 \ifbool{listtoc}{% If the liststotoc option has been passed to the class, add the lists to the table of contents
@@ -224,7 +224,7 @@
 \NewDocumentCommand{\subject}{m}{\newcommand{\subjectname}{#1}}
 \NewDocumentCommand{\keywords}{m}{\newcommand{\keywordnames}{#1}}
 
-\newcommand{\checktoopen}{% New command to move content to the next page which prints to the next odd page if twosided mode is active  
+\newcommand{\checktoopen}{% New command to move content to the next page which prints to the next odd page if twosided mode is active
 	\if@openright\cleardoublepage\else\clearpage\fi
 	\ifdef{\phantomsection}{\phantomsection}{}% The \phantomsection command is necessary for hyperref to jump to the correct page
 }
@@ -295,8 +295,8 @@
 \pagestyle{thesis}
 \ifbool{headsepline}{\KOMAoption{headsepline}{true}}{}
 \PreventPackageFromLoading[\ClassError{\classname}{Package `fancyhdr' is
-incompatible\MessageBreak with this class}{The pagesyles are defined 
-	using package `scrlayer-scrpage', please consult the\MessageBreak 
+incompatible\MessageBreak with this class}{The pagesyles are defined
+	using package `scrlayer-scrpage', please consult the\MessageBreak
 KOMA-script documentation for details.}]{fancyhdr}
 
 
@@ -363,7 +363,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 			\bigskip
 			{\huge\textit{\abstractname} \par}
 			\bigskip
-			{\normalsize \facname \par}% Faculty name
+			% {\normalsize \facname \par}% Faculty name
 			{\normalsize \deptname \par}% Department name
 			\bigskip
 			{\normalsize \degreename\par}% Degree name
@@ -521,10 +521,10 @@ KOMA-script documentation for details.}]{fancyhdr}
 \hypersetup{pdfpagemode={UseOutlines},
 bookmarksopen=true,
 bookmarksopenlevel=0,
-hypertexnames=false,
+hypertexnames=true,
 colorlinks=true,% Set to false to disable coloring links
 citecolor=magenta,% The color of citations
-linkcolor=red,% The color of references to document elements (sections, figures, etc)
+linkcolor=mdtRed,% The color of references to document elements (sections, figures, etc)
 urlcolor=mdtRed,% The color of hyperlinks (URLs)
 pdfstartview={FitV},
 unicode,

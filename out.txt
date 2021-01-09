@@ -22,10 +22,6 @@
 
 
 
- 
-
- 
- 
 
 
 
@@ -33,11 +29,13 @@
 
 
 
- 
 
-bibliography.bib 
 
- 
+
+
+
+
+bibliography.bib
 
 
 
@@ -53,38 +51,40 @@ bibliography.bib
 
 
 
-	paper=a4paper, 
-	inner=2.5cm, 
-	outer=3.8cm, 
-	bindingoffset=.5cm, 
-	top=1.5cm, 
-	bottom=1.5cm, 
-	
+
+
+	paper=a4paper,
+	inner=2.5cm,
+	outer=3.8cm,
+	bindingoffset=.5cm,
+	top=1.5cm,
+	bottom=1.5cm,
 
 
 
 
 
 
-Deep Learning on Graphs with Applications to the Life Sciences 
+
+Deep Learning on Graphs with Applications to the Life Sciences
 Dr. Davide Bacciu
-Prof. Alessio Micheli 
- 
-Doctor of Philosophy 
-Marco Podda 
- 
+Prof. Alessio Micheli
 
-Computer Science 
- 
-http://www.university.comUniversity of Pisa 
-http://department.university.comDepartment of Computer Science 
-http://researchgroup.university.comComputational Intelligence and Machine Learning Group 
-http://faculty.university.comFaculty Name 
+Doctor of Philosophy
+Marco Podda
 
 
-pdftitle= 
-pdfauthor= 
-pdfkeywords= 
+Computer Science
+
+http://www.university.comUniversity of Pisa
+http://department.university.comDepartment of Computer Science
+http://researchgroup.university.comComputational Intelligence and Machine Learning Group
+http://faculty.university.comFaculty Name
+
+
+pdftitle=
+pdfauthor=
+pdfkeywords=
 
 
 
@@ -117,7 +117,7 @@ definitionDefinition[chapter]
 
 
 
- 
+
 
 
 
@@ -127,28 +127,28 @@ definitionDefinition[chapter]
 
 
 *.06
- 
+
 Doctoral Thesis
- 
 
 
- 
- 
 
- 
+
+
+
+
 
 [t]0.4
- 
+
 Author:
 
- 
+
 
 
 [t]0.4
- 
-Supervisor: 
 
- 
+Supervisor:
+
+
 
 
 
@@ -156,18 +156,12 @@ Supervisor:
 
 
 A thesis submitted in fulfillment of the requirements
- for the degree of 
- 
+ for the degree of
+
 in the
 
 
 
- 
-
-
-
-
- 
 
 
 
@@ -215,7 +209,13 @@ in the
 
 
 
- 
+
+
+
+
+
+
+
 The application of Deep Learning models to complex biological problems has recently revolutionized the field of life sciences, leading to advancements that could potentially change the quality and length of human life for the better. A major contribution to this success comes from the ability of deep neural networks to well approximate non-linear biological functions, as well as the flexibility to learn from structured biological data directly. This thesis presents two relevant applications where Deep Learning is used on biological graphs to learn complex tasks. The first concerns the prediction of dynamical properties of chemical reactions at the cellular level, represented as Petri graphs. Our contribution is a Deep Learning model that can learn the task solely relying on the structure of such graphs, which is orders of magnitude faster than running expensive simulations. The second application is about accelerating the drug design process by discovering novel drug candidates. We present a deep and generative framework in which novel graphs, corresponding to molecules with desired characteristics, can be obtained by combining chemically meaningful molecular fragments. Our work suggests that coupling the power of Deep Learning with the ability to handle structured data remains one of the preferred avenues to pursue towards solving well-known biological problems, as well as an effective methodology to tackle new ones.
 
 
@@ -295,7 +295,7 @@ The application of Deep Learning models to complex biological problems has recen
 
 
 
- 
+
 
 
 
@@ -317,7 +317,7 @@ Applied Contribution in Computational Biology
 We address a newly formulated predictive problem in the context of biological pathways. A biochemical pathway is a dynamical system in which molecules interact with each other through chemical reactions. Each molecule can take different roles in a biochemical pathway: it can be a reactant, a product of some chemical reaction, and it can act as inhibitor or promoter of other reactions. The state of the system  corresponds to some function being performed or not (for example, cell replication). Biochemical pathways can be conveniently represented as Petri networks, allowing researchers to study dynamical properties of the system such as reachability of steady states, causality between species, and robustness. Specifically, we focus on the property of robustness, which can be described informally as the resilience of the pathway to maintain its function against external perturbations. Robustness is usually assessed with extensive numerical simulations, which are usually expensive in terms of computational time. We present an application of Deep Graph Networks to predict robustness indicators on pathways represented as Petri nets, without resorting to costly simulations. The assumption at the basis of this work is that the structure of the pathway (and not other factors such as kinetic and chemical constants) is sufficient to be effective in this task. We show experimentally for the first time that this is indeed possible to a good extent. Furthermore, we study how different architectural choices of the Deep Graph Network influence performances.
 
 Methodological Contribution on Generative Deep Learning on Graphs
-Graph generation is a challenging problem with applications in various research fields. We first propose a general-purpose recurrent model to generate arbitrary unlabelled graphs, whose structure resembles that of the training sample. Despite its simplicity, we experimentally demonstrate its effectiveness on a wide range of graph datasets. The experimental results show that the model outperforms canonical baselines from graph theory, and perform comparably to the current state of the art on unlabelled graph generation.
+Graph generation is a challenging problem with applications in various research fields. We first propose a general-purpose recurrent model to generate arbitrary unlabeled graphs, whose structure resembles that of the training sample. Despite its simplicity, we experimentally demonstrate its effectiveness on a wide range of graph datasets. The experimental results show that the model outperforms canonical baselines from graph theory, and perform comparably to the current state of the art on unlabeled graph generation.
 
 Applied Contribution in Computational Chemistry
 We study the molecular generation problem in the context of drug design. Currently, deep generative approaches on this task belong to two broad categories, differing in how molecules are represented. One approach is based on encoding molecular graphs as strings of text, and learning a character-based language model on such strings. Another, more expressive, approach works directly with the molecular graph. The work addresses two limitations of the former generative framework, namely the generation of invalid or duplicate molecules. To improve validity rates, we develop a language model for small molecular substructures called fragments, loosely inspired by the well-known paradigm of Fragment-Based Drug Design. The proposed architecture generates molecules fragment by fragment, instead of atom by atom. To improve uniqueness rates, we present a frequency-based masking strategy that helps generate molecules with infrequent fragments. We show experimentally that our model largely outperforms other language model-based competitors, reaching performances comparable to the state of the art at the task. Moreover, we show how the generated molecules display molecular properties similar to those in the training sample, even in absence of explicit task-specific supervision.
@@ -385,7 +385,7 @@ Regardless of the learning paradigm, the central issue in ml is generalization, 
 Learning and Generalization
 Informally, learning can be thought of as finding a good approximation of the target function in some space of candidate functions. The search process is often referred to as training. During training, several candidates are evaluated until one that best approximates the target function is found. A program that implements this learning process is called learning algorithm.
 
-The training process is driven by the data. Given a task, the learning algorithm has access to a dataset , a set of  iid samples drawn from some data domain  according to a fixed but unknown distribution . The nature of  depends on the learning paradigm. In the supervised case, we have , where  is called input space and  output space. The output space  is tightly coupled to the task to be learned; for example, in classification tasks,  is a discrete set and its elements are called labels; in regression tasks, , and its elements are called targets. In unsupervised learning,  is just the input space . For this reason, data used in unsupervised tasks is often called unlabelled. For the moment, we assume that the input space  is the set of -dimensional real-valued vectors . We call elements   feature vectors, and their elements features. Given a vector , we use the notation  to indicate its -th feature. Later on, we shall generalize the notion of input space to more complex spaces than just vectors, to apply ml to more structured data.
+The training process is driven by the data. Given a task, the learning algorithm has access to a dataset , a set of  iid samples drawn from some data domain  according to a fixed but unknown distribution . The nature of  depends on the learning paradigm. In the supervised case, we have , where  is called input space and  output space. The output space  is tightly coupled to the task to be learned; for example, in classification tasks,  is a discrete set and its elements are called labels; in regression tasks, , and its elements are called targets. In unsupervised learning,  is just the input space . For this reason, data used in unsupervised tasks is often called unlabeled. For the moment, we assume that the input space  is the set of -dimensional real-valued vectors . We call elements   feature vectors, and their elements features. Given a vector , we use the notation  to indicate its -th feature. Later on, we shall generalize the notion of input space to more complex spaces than just vectors, to apply ml to more structured data.
 
 The space of candidate functions explored by the learning algorithm is called hypotheses space. Formally, a hypotheses space is a set of functions  whose members are called hypotheses. The hypotheses space is used indirectly by the learning algorithm, which rather operates in parameter space . The elements of the parameter space are called parameters, and each parameter  uniquely identifies a hypotheses . Usually, the parameters  correspond to a set of real-valued vectors.
 
@@ -453,11 +453,11 @@ where ,  is the output of the previous layer (with ), and . In other words, a ne
 The number of layers and the dimension of their parameter matrices constitute the architecture of the network. Network architecture, and the nature of the activation function of the hidden layers, play a major role in determining the kinds of functions a nn can learn. Specifically, nn with at least one hidden layer with non-linear activation function (also called mlp, such as the one shown in Figure ) are universal approximators, meaning that they can approximate arbitrarily well any computable function cybenko1998approximationuniversal. However, no guarantees as to which kinds of architectures work best can be given, according to the no free lungh theorem wolpert1997freelunchtheorem; thus, network architecture is task-dependent and must be optimized with model selection. As regards the activation functions, modern neural networks are commonly trained with three non-linear activation functions (or variations thereof)for which universal approximation capabilities have been proved:
 
     the sigmoid function, defined as:
-    
+
     the hyperbolic tangent function, defined as:
-    
+
     the relu function glorot2011relu, defined as:
-    
+
     Notice that, even though the relu function is not differentiable at , it can be used in practical settings with some adaptation.
 
 These three activation functions, and their derivaties, are shown in Figure .
@@ -520,11 +520,11 @@ Softmax Output Layer
 The softmax output layer is used in multi-class classification tasks, tasks where the output space is a discrete set  of  mutually exclusive classes. In this cases, the targets  are expressed as one-hot vectors . In practice, each position of the one-hot vector corresponds to a specific class, and its entries are defined as follows:
 *
     y_i=
-    
+
         1 & if y = c_i
 
         0 & otherwise.
-    
+
 
 In words, a one-hot vector encodes the target as a discrete probability distribution over the possible classes, where all the mass is put on the class corresponding to the label . The layer is defined as:
 
@@ -624,7 +624,7 @@ Prescribed models are trained under the mle principle, by minimizing the kld bet
 
 Notice that the setup is slightly different from Section : there, the neural network was estimating the parameters of a conditional distribution; here, it is approximating the distribution itself. Similarly as we have seen, the term  does not depend on the parameters of the model; thus, the following quantity can be minimized equivalently:
 
-In practice, applying mle on a (generally unlabelled) dataset , prescribed dgm learn the data distribution by minimizing the negative log-likelihood of the observed data using sgd:
+In practice, applying mle on a (generally unlabeled) dataset , prescribed dgm learn the data distribution by minimizing the negative log-likelihood of the observed data using sgd:
 
 Two prescribed dgm of relevance to this thesis is are described in the following. Besides those mentioned above, other prescribed dgm include for example Sigmoid Belief Networks neal1992sigmoidbeliefnet, and Flow-based models rezende2015normalizingflows.
 
@@ -673,11 +673,11 @@ Figure  shows a schematic representation of a gan.
 
 *
 Notice that, in order to train the architecture of the model, the samples taken from the generator of a gan must differentiable.
-Deep Learning in Structured Domains 
+Deep Learning in Structured Domains
 A structured domain is a data domain whose elements are formed by a set of atomic entities, and the relations between them. Structured data is common in several fields, such as biology, chemistry, finance, social networks, and many more. Typical examples are sequences such as time-series data, or graphs representing molecular structures. One distinctive characteristic of structured data is that it has variable size, meaning that the number of entities composing the datum is not fixed in general. This constitutes a serious limitation for traditional ml models, which are designed to work with flat data, collections of fixed-size vectors. In principle, they can be adapted to work with variable-sized data by incorporating the structure of the data to the input vectors as additional features. While useful to some extent, this approach requires to decide which features are needed to solve a task. This, in turn, requires a level of domain expertise that is not always available for many interesting problems. In contrast, nn (and Deep Learning models more so) are able to learn which features are useful to solve a task adaptively from data, without the need of feature engineering. Thus, the general idea is to provide the structured data directly as an input to the network, which automatically learns the needed features and the task, guided by the learning process. In this chapter, we present a class of nn that are able to handle variable-sized inputs for learning in structured domains.
 
 Graphs
-The elements of structured domains can be described in a compact and convenient notation using the general formalism of graphs bondy1976graph. Informally, a graph is a collection of vertices (the entities) connected through a collection of edges (the relations). In literature, vertices are sometimes called nodes, while edges are also referred to as arcs or links. Formally, a graph with  vertices is a pair
+The elements of structured domains can be described in a compact and convenient notation using the general formalism of graphs bondy1976graph. Informally, a graph is a collection of vertices (the entities) connected through a collection of edges (the relations). In the literature, vertices are sometimes called nodes, while edges are also referred to as arcs or links. Formally, a graph with  vertices is a pair
 
 where  is its set of vertices, and  is its set of edges. In a graph,   specifies the graph structure, that is, the way vertices are interconnected. Notice that the pair  is unordered: in this case, the graph is called undirected. Figure  shows a visual representation of an undirected graph.
 Given an edge ,  and  are called its endpoints, and are said to be adjacent. Alternatively, we say that  is incident to  and . Edges of the form  that connect a vertex to itself are called self-loops.
@@ -737,13 +737,13 @@ A graph  with  vertices is called a sequential graph, or sequence of length , if
 Subgraphs and Induced Subgraphs A subgraph
  of a graph  is any graph for which  and  . If , or equivalently, if  contains only vertices that are endpoints in , the resulting subgraph is called induced subgraph.
 
-Attributed Graphs 
+Attributed Graphs
 Real-world instances of graphs usually carry out other information besides structure, generally attached to their vertices or edges. As an example, consider the graph representation of a molecule, in which vertices are usually annotated with an atom type, and edges are annotated with a chemical bond type. Given a graph  with  vertices and  edges, we define the associated graph with additional information content, and we call it an attributed graph, as a triplet  where  is a mapping from the space of vertices to a space of -dimensional vertex features, and , is a mapping from the space of edges to a space of -dimensional edge features. The values of these features can be either discrete (in which case the features are called labels and encoded as one-hot vectors) or continuous vectors. In most cases, we omit to define  and  explicitly, and provide the vertex and edge features directly as sets,  for the vertex features, and  for the edge features. In this case, an attributed graph is a tuple:
 
 If some ordering of the vertices and edges is assumed, we can represent equivalently  as a matrix  where the -th row contains the vertex features of the -th vertex; analogously, we can define  as a matrix of edge features . In this case, an attributed graph is a triple:
 
 
-Isomorphisms, Automorphisms, and Canonization 
+Isomorphisms, Automorphisms, and Canonization
 An isomorphism between two graphs  and  is a bijection  such that  if and only if . Intuitively, graph isomorphism formalizes the notion of structural equivalence between graphs, in the sense that two isomorphic graphs are structurally equivalent, regardless of the information they contain. Figure  shows two isomorphic graphs and their corresponding  bijection. An automorphism  is an isomorphism between  and itself. Since  is essentially a permutation of the vertex set, it follows that a graph always has at most  possible automorphisms. Intuitively, and similarly to graph isomorphism, graph automorphisms convey the notion that the structure of a graph is invariant to permutation of the vertices and edges. An automorphism  on an example graph is shown
 in Figure . Related to isomorphisms and automorphisms is the problem of graph canonization, where a canonical ordering (or form) of the graph vertices is sought, such that every graph  isomorph to a given graph  has the same canonical form. As we shall see, (approximate) graph canonization plays a role in the usage of graph within practical contexts; conversely, many techniques described in this work try to avoid representing graphs in canonical form, in favor of permutation-invariant representations.
 
@@ -763,7 +763,7 @@ in Figure . Related to isomorphisms and automorphisms is the problem of graph ca
 
 *
 
-Graphs Matrices 
+Graphs Matrices
 One compact way to represent the structure of a graph is through its  adjacency matrix. Given a graph  with  vertices and  edges, the entries  of its corresponding  adjacency matrix  are defined as follows:
 
 
@@ -772,7 +772,7 @@ One compact way to represent the structure of a graph is through its  adjacency 
 
 
 
-Note that the diagonal entries  of the adjacency matrix specify the presence  (or absence) of self-loops. Another interesting property of the adjacency matrix is that  it is symmetric for undirected graphs, which implies  . Adjacency matrices make some calculations of graph properties particularly convenient: for example, the in-degree and out-degree of a vertex 
+Note that the diagonal entries  of the adjacency matrix specify the presence  (or absence) of self-loops. Another interesting property of the adjacency matrix is that  it is symmetric for undirected graphs, which implies  . Adjacency matrices make some calculations of graph properties particularly convenient: for example, the in-degree and out-degree of a vertex
 can be obtained by performing row-wise and column-wise sums on :
 
 
@@ -788,9 +788,9 @@ The processing of structured data for learning purposes is carried out by a stru
 The output function of the structural transduction is task-dependent. Considering a supervised setting and a generic graph dataset  consisting of  training pairs, we distinguish two learning problems:
 
     in structure-to-structure tasks, the dataset is composed of pairs of attributed graphs , where  is an input graph,  is an output graph, and the two underlying unattributed graphs  and  are isomorphic under a bijection . The task is to predict the target associated to an output graph vertex, given the corresponding features of its isomorphic vertex. The objective function minimized in these tasks is the following:
-    
+
     in structure-to-element tasks, the dataset has the form  , where  is an input graph and  is an output vector. The task is to predict a single output vector (or scalar) from the structure and the features of . The  objective function minimized in these tasks is the following:
-    
+
     To learn structure-to-element tasks, the output function must compress the states of each element of the structure into a global output vector representing the entire structure, which is compared to the target . To do so, there are several strategies; in general, one could pick a single state vector as a representative for the whole structure, or compute a summary of the entire structure using all the available state vectors. The function that implements the latter strategy is usually termed readout.
 
 
@@ -802,11 +802,11 @@ Recurrent Neural Networks
 A rnn is a nn architecture able to process sequences. Let  be an attributed sequence of length  with elements , and let  be its element features. Here, we slightly abuse the notation  in favor of , since sequence elements are ordered. In supervised settings, we also assume an isomorphic attributed sequence  with targets . The state transition function of a rnn, applied locally to each sequence element, has the following general form:
 *
     ht =
-    
+
         0 & if t = 0
 
         (xt, ht-1) & otherwise,
-    
+
 
 where  is a state vector, also known as hidden state, and  is a zero vector. The calculation of the hidden state performed by the state transition function  is recursive: to compute a hidden state for the -th element of the sequence, the hidden state of the previous element must be known in advance. Thus, the state computation is a sequential process, where the input sequence is traversed in order one element at a time, and the hidden state is updated as a function of the current sequence element and the hidden state at the previous step. To avoid infinite recursion, the hidden state is initialized with the zero vector . As the sequence is traversed, the hidden state maintains a memory of the past elements of the sequence. The presence of a memory mechanism makes rnn very powerful: in fact, it has been proved that finite-size rnn can compute any function computable with a Turing machine siegelmann1995rnnturing. As with cnn, the development of rnn started in the early '90s, and they have recently been rediscovered within the dl framework after their success, especially in nlp-related tasks.
 
@@ -895,18 +895,18 @@ During training, the sampling process breaks the differentiability of the model.
 
 *
 
-Recursive Neural Networks 
+Recursive Neural Networks
 A recnn sperduti1997generalizedneuron,frasconi1998general is a nn architecture that can adaptively process hierarchical data. Using trees as an example, let  be a tree with  nodes , and  be its set node of features. The state transition function of a recnn, applied locally to each node , is the following:
 *
     hv=
-    
-        0 & if ch(v) = 
+
+        0 & if ch(v) =
 
         (xv, ht_v) & otherwise,
-    
+
 
 where  is the hidden state of the sub-tree rooted at . As with rnn, the state transition function  is recursive, but this time the recursion is defined over the tree structure. Specifically, to compute the hidden state of a node, the hidden state of all its children must be known in advance. The state computation starts at the leaves of the tree (where the state is initialized beforehand to make the recursion well-defined), and proceeds bottom-up until the root node is reached.
-The development of recnn started in the middle '90s, with the introduction of the notion of generalized recursive neuron sperduti1997generalizedneuron and the development of a general framework for learning with tree-structured data frasconi1998general, which was later extended to more expressive classes of structures such as dag and dpag. Since then, they have applied fruitfully in several fields, including among others cheminformatics micheli2007introductionrecnncheminformatics, sentiment analysis socher2013recnnsentiment and scene parsing socher2011parsingscenes. Interestingly, recnn are also backed up by strong theoretical results, which support the generality of the structural transduction and characterize the kind of functions they can learn. Specifically, universal approximation theorems showing that recnn can approximate arbitrarily well any function from labeled trees to real values hammer1999recnn, and from labelled dpag to real values hammer2005universal have been proved.
+The development of recnn started in the middle '90s, with the introduction of the notion of generalized recursive neuron sperduti1997generalizedneuron and the development of a general framework for learning with tree-structured data frasconi1998general, which was later extended to more expressive classes of structures such as dag and dpag. Since then, they have applied fruitfully in several fields, including among others cheminformatics micheli2007introductionrecnncheminformatics, sentiment analysis socher2013recnnsentiment and scene parsing socher2011parsingscenes. Interestingly, recnn are also backed up by strong theoretical results, which support the generality of the structural transduction and characterize the kind of functions they can learn. Specifically, universal approximation theorems showing that recnn can approximate arbitrarily well any function from labeled trees to real values hammer1999recnn, and from labeled dpag to real values hammer2005universal have been proved.
 
 Training
 Using the binary tree of Figure  and a structure-to-element task as an example, one possible implementation of the state transition function of a recnn is the following:
@@ -926,15 +926,15 @@ Notably, the order by which the hidden states need to be calculated (the numbers
 *
 More in general, recnn are analogous to rnn as to how they can be trained with mle, and as what kinds of conditional distributions they can learn (even though in practical cases the structure-to-element scenario is more common).
 
-Deep Graph Networks 
+Deep Graph Networks
 The rnn and recnn models presented in Sections  and Section  share the idea that the state transition function is applied locally and recursively on the structure to compute the state vectors. Extending it to arbitrary graphs (which can have cycles) would require to apply the state transition function recursively to the neighbors of a vertex. However, this approach is not applicable to general graphs. In fact, the presence of cycles creates mutual dependencies, which are difficult to model recursively and may lead to infinite loops when computing the states of vertices in parallel. While this issue can be overcome by resorting to canonization techniques that provide an ordering between the vertices, it is not feasible in many practical cases. dgn are a class of nn which can process arbitrary graphs, even in presence of cycles. The solution adopted by dgn to the problem of modelling mutual dependencies is to update the state of the vertices according to an iterative scheme. Specifically, the hidden state of a vertex is updated as a function of the hidden state of the same vertex at the previous iteration. Given an attributed graph  with vertex features , the state transition function computed by a dgn, applied locally to each vertex of , has the following form:
 *
     v=
-    
+
         xv & if = 0
 
         ^()(xv, v& otherwise,
-    
+
 
 where  is now the state of vertex  at iteration , and . Notice how the value of the state vector does not depend on the value of the neighboring state vectors, but to the same state vector at the previous iteration. Following, we slightly change terminology and refer to the vertices of a graph as nodes, in accordance to the terminology currently used in the literature. For the same reason, we shall use the following terminology as regards the supervised tasks that can be learned with dgn:
 
@@ -972,7 +972,7 @@ dgn are built from several architectural components, which we cover in detail in
 Graph Convolutional Layers
 A gcl is essentially a neural network layer that performs message passing. The term convolutional is used to remark that the local processing performed by the state transition function is a generalization of the convolutional layer for images to graph domains with variable-size neighborhoods. Given an attributed graph  with  nodes, and its node attributes , one general formulation of a gcl is the following:
 
-    
+
     v = U vAT(uu (v),  v g,
 
 where  is the hidden state of the node at layer ,  is the hidden state of the node at the previous layer , and by convention . Notice that the neighborhood function  is also implicitly passed as input of the layer, so that the connectivity of each node is known. We can identify three key functions inside a gcl:
@@ -983,16 +983,16 @@ where  is the hidden state of the node at layer ,  is the hidden state of the no
 
 The usage of a permutation invariant function to compute the state of the neighbors is crucial, as it allows to acquire information from nearby nodes in a non-positional fashion, which is often the case with real-world graphs. From this general formulation, several implementations can be realized. As an example, we report the well-known formulation in kipf2017semisupervisedgcn, corresponding to the gcn model:
 
-    
+
     v =  w _u (v) luvu v g,
 
 where  is the entry of the symmetric normalized graph Laplacian  related to nodes  and , and:
 
-    
+
     T(u&= tv= luvu
-    
+
     Atvu (v) &= nv= _u (v) tv
-    
+
     U(vnv&= v =  w nv
 
 In this case, the aggregation function is the sum function. Other examples of permutation invariant functions used in practical contexts are the mean, the max, or other general functions which work on multisets zaheer2017deepsets. Notice that a gcl can be applied simultaneously to all the nodes in the graph, corresponding to visiting the graph nodes in parallel, with no predefined ordering. This contrasts with rnn and recnn, where parallelism in the state calculations is not possible or limited, respectively.
@@ -1091,7 +1091,7 @@ were  is a regularization function weighted by a regularization coefficient , th
 
 where the summation ranges over all possible combinations of nodes. Basically, when this loss is minimized, it biases the network towards producing node representations that are more similar for nodes connected by an edge. Notably, this loss can be also used in isolation to tackle link prediction tasks, tasks where the downstream network must predict unseen links between the nodes.
 The Evaluation of Deep Graph Networks and Applications to Computational Biology
-The Evaluation of Deep Graph Networks 
+The Evaluation of Deep Graph Networks
 Over the years, dgn have yielded strong performances on several predictive tasks, becoming the learning tool for graph-related problems. Given their appeal, several dgn architectures have been developed recently. These architectures require a thorough evaluation to understand which one is better suited for a certain task. The evaluation requires both an extensive model selection phase, to select appropriate hyper-parameters, as well as a model evaluation phase to obtain an estimation of the generalization ability of the network. In the literature, the evaluation of dgn is carried out on a variety of benchmark datasets, generally from the chemistry and social sciences domains, where graphs are used to represent molecules and social networks, respectively. However, as pointed out by researchers lipton2018troubling, the papers that introduce novel architectures often adopt not reproducible or unfair experimental setups, which make the comparisons among models unreliable. In this section, we present three contributions related to address this important issue. Specifically, we:
 
     provide a rigorous evaluation of existing dgn models in the context of graph classification, using a standardized and reproducible experimental environment. Specifically, we perform a large number of experiments within a rigorous model selection and assessment framework, in which all models are compared using the same node features and data splits;
@@ -1100,7 +1100,7 @@ Over the years, dgn have yielded strong performances on several predictive tasks
 
 
 Datasets
-All  graph  datasets  are  publicly  available kersting2016benchmark  and  represent  a  relevant subset of those most frequently used in literature to compare dgn. Some collect molecular graphs, while others contain social graphs. Specifically, we use the following chemical datasets:
+All  graph  datasets  are  publicly  available kersting2016benchmark  and  represent  a  relevant subset of those most frequently used in the literature to compare dgn. Some collect molecular graphs, while others contain social graphs. Specifically, we use the following chemical datasets:
 
     DD dobson2003dd is a graph dataset in which nodes are amino acids, and there is an edge between two nodes if they are they are neighbors in the amino-acid sequence or in 3D space. The task is a binary classification one, where the objective is to determine whether a graph represents an enzyme or non-enzyme;
     PROTEINS borgwardt2005proteins is a subset of DD where the largest graphs have been removed;
@@ -1348,7 +1348,7 @@ where  are molecules (reactants and products, respectively),  are stoichiometric
 
 
 
-A common way to represent biochemical pathways is through Petri nets. The formalism of Petri nets have been originally proposed for the description and analysis of concurrent systems peterson1977petri, but has been later adopted to model other kinds of systems, such as biological ones. Several variants of Petri nets have been proposed in the literature. In this work, we consider a version of continuous Petri nets gilbert2007petri with promotion and inhibition edges and general kinetic functions. We call this biologically inspired variant ppn. A ppn is essentially a bipartite graph with two types of nodes and three types of labelled edges. According to standard Petri nets terminology, the two types of nodes are called places and transitions. The semantics of a ppn in a continuous setting are described by a system of ODEs, with one equation for each place. In the case of pathways, such system corresponds exactly to the one obtained from the chemical reactions shown in Figure . The state of a ppn (called marking) is then defined as an assignment of positive real values to the variables of the ODEs. We denote with  the set of all possible markings.
+A common way to represent biochemical pathways is through Petri nets. The formalism of Petri nets have been originally proposed for the description and analysis of concurrent systems peterson1977petri, but has been later adopted to model other kinds of systems, such as biological ones. Several variants of Petri nets have been proposed in the literature. In this work, we consider a version of continuous Petri nets gilbert2007petri with promotion and inhibition edges and general kinetic functions. We call this biologically inspired variant ppn. A ppn is essentially a bipartite graph with two types of nodes and three types of labeled edges. According to standard Petri nets terminology, the two types of nodes are called places and transitions. The semantics of a ppn in a continuous setting are described by a system of ODEs, with one equation for each place. In the case of pathways, such system corresponds exactly to the one obtained from the chemical reactions shown in Figure . The state of a ppn (called marking) is then defined as an assignment of positive real values to the variables of the ODEs. We denote with  the set of all possible markings.
 
 More formally, a ppn can be defined as a tuple  where:
 
@@ -1454,29 +1454,29 @@ where  are robustness indicators used as the labels for the associated binary cl
 Subgraph Features
 We encoded information such as node type, edge type, and input/output pair of the induced subgraphs in their node and feature vectors. Specifically, for each subgraph node, we associate a binary 3-dimensional feature vector which encodes whether the node is a molecule or a reaction, whether the node is an input node or not, and whether a node. Given an induced subgraph  and one of its nodes , we define its 3-dimensional vector of node features  component by component as follows:
 *
-    xv, 1 = 
+    xv, 1 =
         1  & if v p
 
         0  & if v p,
-    
-    
-    xv, 2 = 
+
+
+    xv, 2 =
         1  & if v = v_I
 
         0  & otherwise,
-    
-    
-    xv, 3 = 
+
+
+    xv, 3 =
         1  & if v = v_O
 
         0  & otherwise,
-    
+
 
 where the notation  indicates the -th component of the node feature vector .
 Similarly, for each subgraph edge, we encode its edge type as a one-hot vector out of the three possibilities (standard, promoter or inhibitor). Given an edge , we define its 3-dimensional vector of edge features  component by component as follows:
 *
-    eu, v, 1 = (u,v) p, 
-    eu, v, 2 = (u,v) p, 
+    eu, v, 1 = (u,v) p,
+    eu, v, 2 = (u,v) p,
     eu, v, 3 = (u,v) p,
 
 where  is the indicator function, and the notation  identifies the -th component of the edge feature vector . In practice, the edge features encode the edge type as a one-hot vector. Figure  shows the induced subgraph of Figure  with the corresponding feature vectors in place of its nodes and edges.
@@ -1522,14 +1522,14 @@ Specifically to the third point, we evaluate the following gcl variants:
     Graph Convolutional Network (GCN), as described in Section ;
     Graph Isomorphism Network (GIN), as described in Section ;
     Weifeiler Lehman Graph Convolution (WLGCN), the gcl layer presented in morris2019weisfeilerlehmangoneural, whose implementation is the following:
-    
+
     where  is a learned scalar that weighs the connections between the current node and its neighbors.
 
 For each considered gcl, we evaluate a vanilla variant, which does not take into account the different edge types, as well as an edge-aware variant as described in Section , using three different weight matrices (one for each edge type) for the neighborhood aggregation. More specifically, given an induced subgraph  and one of its nodes , the edge-aware neighborhood function used to select neighbors of a certain type is the following:
 
 where .
 
-Evaluation Metrics As performances metric, we used accuracy on the predictions, defined as usual as the number of correct predictions out of the total number of predictions. We remark that the model outputs probabilities; hence, we round the prediction to the nearest integer (which is either 0 or 1) to compute a hard prediction, which is used in the accuracy calculations. Formally, if: 
+Evaluation Metrics As performances metric, we used accuracy on the predictions, defined as usual as the number of correct predictions out of the total number of predictions. We remark that the model outputs probabilities; hence, we round the prediction to the nearest integer (which is either 0 or 1) to compute a hard prediction, which is used in the accuracy calculations. Formally, if:
      is the number of true positives, the number of correctly predicted robust subgraphs;
      is the number of true negatives, the number of correctly predicted not robust subgraphs;
      is the number of false positive, the number of subgraphs wrongly predicted as robust;
@@ -1664,13 +1664,13 @@ Following, we present two application cases of the model: the first is on the sy
 Application on Synthetic Data
 The lower prediction accuracy in the case of small graphs (1-10 nodes) can be put into perspective, in light of the fact the fact we trained the model with subgraphs in which kinetic, stoichiometric and initial concentration parameters have been omitted (as explained in Section ). In general, the smaller the graph, the higher the influence on its dynamics these parameters exert. As an example, let us consider the synthetic example of biochemical pathway introduced in Figure  and the corresponding pathway graph of Figure . Let us now consider the following kinetic and initial concentration (marking) parameters:
 *
-  k1 = 1.0 
-  k3 = 0.01 
-  k5 = 0.01 
-  k7 = 0.3  
-  k2 = 5.0  
-  k4 = 0.1  
-  k6 = 5.0 
+  k1 = 1.0
+  k3 = 0.01
+  k5 = 0.01
+  k7 = 0.3
+  k2 = 5.0
+  k4 = 0.1
+  k6 = 5.0
 
   m_0(A) = 50
   m_0(B) = 50
@@ -1744,7 +1744,7 @@ One research direction to pursue in the immediate future concerns evaluating thi
 We also believe this work opens up fascinating research scenarios to pursue in the medium term. One important aspect that needs further investigation is model explainability. Even though their predictive result are very often excellent, neural networks are sometimes seen as black-box since the exact function (in this case, from pathway structure to robustness) they approximate is difficult to characterize. One possible research direction is to investigate generative models, to uncover the underlying structure of pathway space and help design better predictive models, as well as provide better explanations to the decisions they take.
 
 Deep Generative Learning on Graphs and Applications to Computational Chemistry
-Deep Generative Learning on Graphs 
+Deep Generative Learning on Graphs
 
 In this chapter, we discuss the graph generation problem. The term graph generation is purposedly kept broad, to include a variety of methodologies which learn processes that generate graphs from a set of training examples. This research field originates from generative models of graphs for the theoretical understanding of graph properties, which have been studied thoroughly since the '50s in the field of graph theory. The first known generative model is the  Erdos-Renyi (ER) model . The ER model studies random graphs, where the connectivity among graph nodes is modeled independently. This model is useful to study theoretical properties of graphs, such as how the global connectivity of the graph evolves as its size grows. Another historical model of graphs is the  Watts-Strogatz (WS)  model . The WS model concerns small world graphs, graphs where it is possible to reach any other node in the graph with very short paths, regardless of their ize. This property arises in several real-world graphs such as social and electrical networks. Lastly, the Barabasi-Albert (BA) model , which models the so-called preferential attachment property, where the connectivity potential of a node is directly proportional to its number of neighbors. While being useful to the study and understanding of graph properties, these models usually fail to generalize to real-world graph distributions, because they can only model one or a limited number of graph properties, and that their parameters cannot be learned from data in general. Other methods such as stochastic block models airoldi2008mixedstochasticblock, exponential random graphs robins2007exponentialrandomgraphs, and Kronecker graphs leskovec2010kronecker can approximate more complex graph distributions such as graphs with communities, but are still limited to specific kinds of graphs and scale poorly to large datasets.
 These limitations clearly highlight that, in order to generate graphs for practical applications, a more powerful class of learning models is needed. In this chapter, we review a variety of generative models of graphs based on Deep Learning approaches. The advantages of such models are the possibility to approximate complex distributions efficiently and effectively, and the flexibility to use different generative paradigms to adapt to the task at hand.
@@ -1776,10 +1776,10 @@ This class of graph decoders outputs a dense probabilistic adjacency matrix , wh
 
 
     graph-based decoders, which require a graph representation . In this case, the decoder models the conditional as follows:
-    
+
     where  is a neural network that predicts the matrix from the graph representation;
     node-based decoders, which require a matrix of node representations . In this case, the decoder models the conditional as follows:
-    
+
     where  and  range over the matrix rows. In this case,  is a neural network that takes as input pair of node representations, and applies a sigmoid function to their dot product. The idea is that nodes that are close in representation space should be more likely to be connected.
 
 One-shot approaches are usually fast to train and to take samples from. However, they are too simplistic, in that they assume the edges are generated independently (which is usually not the case for real-world graphs). Furthermore, the maximum number of nodes must be pre-specified, which makes them unable to generalize to larger graphs.
@@ -1824,7 +1824,7 @@ Quantitative metrics give only one side of the spectrum relatively to how a gene
 Once the graph properties are calculated for each graph in the sample, there are two options to measure the distance between the empirical distribution of the training sample versus the generated sample, based on their respective number of elements:
 
     if , one can compute their empirical kld as follows:
-    
+
     where  is one of the properties mentioned above;
     if , one can either concatenate all the values of the property for each each in the sample, and then fit a histogram with an equal number of bins to make their length match in order to apply the empirical kld. Another, more general, approach to compare distribution when the two samples have different lengths is to compute their mmd gretton2012mmdkernel. Intuitively, the mmd measures the distance between two distributions as the sum of the distances of between their matching moments. The computation of these distances can be generalized to an infinite space of moments by applying a kernel trick smola2008kernels.
 
@@ -1844,7 +1844,7 @@ where , and such that it is ordered lexicographically according to the IDs assig
     first, select a node  at random from its set of nodes , and set its node ID as ;
     then, traverse the graph in breadth-first order. Let  be the ordered sequence of nodes visited during the traversal, excluding . Assign node ID .
 
-Assuming graph  has the structure shown in Figure , and that node  is chosen as the root node for the visit, an example of how the graph nodes are labelled by  is shown in Figure . Notice that  is trivially bijective, since it assigns a different integer to each node. Once the nodes are labelled, the ordered edge sequence of  is , with  and . Notice that the graph can be readily reconstructed from its orderd edge sequence by first applying the inverse function  to each element of its pairs to obtain , which in turn gives  since we assumed that  is fully connected.
+Assuming graph  has the structure shown in Figure , and that node  is chosen as the root node for the visit, an example of how the graph nodes are labeled by  is shown in Figure . Notice that  is trivially bijective, since it assigns a different integer to each node. Once the nodes are labeled, the ordered edge sequence of  is , with  and . Notice that the graph can be readily reconstructed from its orderd edge sequence by first applying the inverse function  to each element of its pairs to obtain , which in turn gives  since we assumed that  is fully connected.
 
 
 
@@ -1984,7 +1984,7 @@ Lastly, we introduce a third baseline model, a recurrent neural network with GRU
 Evaluation Framework
 We assess our model against the baselines following the quantitative and qualitative evaluation principles described in Section . The experiments are described as follows:
 
-    our first experiment consists in evaluating the model quantitatively. To be sure to detect overfitting, we generate large samples. Specifically, we generate two samples of size 1000 and 5000 from all the candidates. For each of sample, we measure the novelty and uniqueness of the generated graphs. Despite using chemical datasets (ENZYMES and PROTEINS), we do not evaluate chemical validity because we are concerned about generating unlabelled graphs; thus, chemical validity cannot be assessed in our case. Finally, we also measure the time that each model takes to generate the 5000 graph sample;
+    our first experiment consists in evaluating the model quantitatively. To be sure to detect overfitting, we generate large samples. Specifically, we generate two samples of size 1000 and 5000 from all the candidates. For each of sample, we measure the novelty and uniqueness of the generated graphs. Despite using chemical datasets (ENZYMES and PROTEINS), we do not evaluate chemical validity because we are concerned about generating unlabeled graphs; thus, chemical validity cannot be assessed in our case. Finally, we also measure the time that each model takes to generate the 5000 graph sample;
     the second experiment is of qualitative nature. In practice, we assess how much the generated samples resemble a random sample from the graph distribution of reference. To do so, we first generate from all the models a sample of equal size to the held-out test set. Then, on each sample, we evaluate the kld on a set of graph statistics, collected in the generated sample and in the test sample. Specifically, we evaluate Average Degree Distribution (ADD), Average Clustering Coefficient (ACC), and Average Orbit Count (AOC). Note that, since each graph can have a different number of nodes, the vectors of statistics for each graph have different lengths in general. Therefore, for each of the two samples, we concatenate the graph statistics vectors into a unique vector, on which we fit an histogram of 100 bins. The kld is calculated on the two resulting histograms. This process is repeated 10 times, each time drawing a novel sample from the models.
 
 Lastly, we provide a study on how using different node orderings affects performances. To do so, we compare our proposed model with variants where graphs are preprocessed used different node orderings. The five analyzed variants are:
@@ -2200,7 +2200,7 @@ The proposed model has also limitations. Even if it works empirically, the const
 
 As for other research directions, we mention the possibility to extend the model by adopting attention mechanisms bahdanau2015attention, instead of conditioning the second network only on the last hidden state of the first. Another easily implementable extension of our approach is to model the generative process using a Variational Auto-Encoder in between the two recurrent neural networks, in order to constrain the latent space where the encoding of the first sequence is mapped to be normally distributed. This would have the advantage of cutting sampling time by approximately half, since the inference phase would only require to sample a point from latent space, and decode it using the second network. Lastly, a challenge for the near future is to test whether our approach is capable to scale to larger graphs, which would strengthen our positive results further, as well as expand its applicability to a broader class of problems.
 
-Deep Generative Learning for Drug Discovery 
+Deep Generative Learning for Drug Discovery
 
 The term de novo Drug Design (DD) refers to a plethora of methods for the production of novel chemical compounds endowed with desired pharmaceutical properties. It is an important step of the drug discovery pipeline, the process that goes from the identification of a biological target for which treatment is needed, to a novel drug hitting the markets. The cost of producing a new drug is now over 1 billion USD, and the average time taken to develop one is approximately 12 years ?. In this scenario, computational (or in-silico) methodologies are gradually substituting more traditional in-vitro solutions, as they allow to expedite almost every aspect of the discovery process, while also being ethically more sustainable (for example, avoiding experimenting on animals). In this chapter, we focus on Deep Learning-based generative methods for de-novo drug design.
 
@@ -2209,7 +2209,7 @@ Background
 Molecules and their representation
 A key concept in chemistry is the notion of compound, a group of atoms held together by the electrostatic attraction among the electrons surrounding the nuclei of the atoms. Depending on how this attraction is originated, we distinguish ionic and covalent bonds. An ionic bond between two neutrally charged atoms is formed whenever one loses an electron, and the other acquires it. The resulting charge imbalance creates attraction. Covalent bonds are instead formed whenever one or more pairs of electrons are shared between the two atoms. Compounds formed only by covalent bonds are called molecules. In our treatment of the subject, the focus will be on molecules rather than compounds; however, for colloquial reasons only, we will sometimes slightly abuse their definitions and refer to molecules using both terms.
 
-Chemical Formulae 
+Chemical Formulae
 To convey information about the composition of a molecule, often its chemical formula is given. A chemical formula concisely reports the number of atoms constituting the molecule. For example, the chemical formula of aspirin is , indicating that it contains nine Carbon (C) atoms, eight Hydrogen (H) atoms, and four Oxygen (O) atoms.
 
 Molecular Fingerprints
@@ -2251,7 +2251,7 @@ We identify three, different but connected, generative tasks in de-novo drug des
     molecular translation is in some sense a supervised task of conditional generation. Here, the dataset is composed of pairs of attributed molecular graphs , where the targets  are structurally similar to the inputs , but with enhanced pharmaceutical properties. The task is to learn their relationship such that, when given an unseen compound , the model generates a similar and chemically enhanced compound .
 
 
-Deep Generative Models of Molecules 
+Deep Generative Models of Molecules
 Broadly speaking, there are two major lines of research as regards de novo drug design with dgm, which are distinguished by the type of decoder they use to generate a molecule
 
     SMILES-based approaches generate molecules through their SMILES strings with autoregressive decoders. In this case, the architecture learns a language model of SMILES strings, a model that predicts the next SMILES character, given the previous characters;
@@ -2278,7 +2278,7 @@ There are several metrics under which the molecular generators can be evaluated.
 Thus, besides chemical validity, novelty and uniqueness, the diversity of the generated samples plays a major role. One measure of diversity requires to evaluate the average distance between all the possible pairs of generated molecules. This is called internal diversity. Conversely, external diversity measures the distance of each molecule in the generated sample against its nearest neighbor molecule in the training sample. The distance function usually employed to calculate diversity is the Tanimoto distance, which is a bit-wise distance function defined over the molecular fingerprints associated with a molecule. Another, more recent, diversity metric is the Frechét ChemNet Distance , which evaluates the distance between the training and generated samples by first feeding them to a pre-trained Deep Neural Network (ChemNet ) for property prediction, and then comparing several statistics computed on the respective activations at the penultimate layer.
 For molecular generation tasks, other useful metrics to evaluate the generative performance are based on comparing the distributions of chemical properties between the training sample and the generated sample, as shown in Section . Typical properties evaluated to this aim are number of atoms, number of bonds, number of rings of the generated molecules (compared to the training sample). To evaluate performances on the optimization tasks, one intuitive metric to compute is the improvement, which measures the average increase (or decrease) of the property obtained in the generated sample, with respect to the training sample. In molecular translation tasks, often success is measured. It is the ratio of molecules in the generated sample that were correctly translated, meaning that their molecular properties are above some predefined threshold. Notice that success and improvement should be evaluated after having cleaned the generated sample from duplicates, to avoid biased results. In general, improvement and success cannot be calculated directly, as the ground truth value of the property may be not known or hardly computable for the generated molecule. This is often the case, for example, when the target is biological activity. In these cases, it is often useful to compare against an already trained predictor, to obtain an approximation of the ground truth property.
 
-A Deep Generative Model for Fragment-Based Molecule Generation 
+A Deep Generative Model for Fragment-Based Molecule Generation
 In this section, we present an original contribution in the context of SMILES-based Deep Generative Models of molecules.
 
 
@@ -2287,7 +2287,7 @@ Fragments are very-small-weight compounds, typically composed of  non-hydrogen a
 Since its inception in 1996, FBDD accounts for two clinically approved drugs, and more than thirty undergoing clinical trials at various stages davis2017fbdd.
 
 Methods
-Here, we present the methodologies adopted in our study. Specifically, how the molecules have been broken into sequences of fragments, how these fragments have been embedded in vectorial form, and the architecture used during training and generation. Finally, we describe Low-Frequency Masking, the technique we use to boost the number of unique molecules produced by the model. We start off with a set  of molecular graphs, where each node is labeled with its atom type, and each edge is labelled with its bond type.
+Here, we present the methodologies adopted in our study. Specifically, how the molecules have been broken into sequences of fragments, how these fragments have been embedded in vectorial form, and the architecture used during training and generation. Finally, we describe Low-Frequency Masking, the technique we use to boost the number of unique molecules produced by the model. We start off with a set  of molecular graphs, where each node is labeled with its atom type, and each edge is labeled with its bond type.
 
 Molecule Fragmentation
 Given a dataset of molecules, the first step of our approach entails breaking them into an ordered sequence of fragments. To do so, we leverage the Breaking of Retrosynthetically Interesting Chemical Substructures (BRICS) algorithm degen2008brics, which breaks strategic bonds in a molecule that match a set of chemical reactions. "Dummy" atoms (with atomic number 0) are attached to each end of the cleavage sites, marking the position where two fragments can be joined together. BRICS cleavage rules are designed to retain molecular components with valuable structural and functional content, e.g. aromatic rings and side-chains, breaking only single bonds that connect among them. Our fragmentation algorithm works by scanning atoms in the order imposed by the SMILES encoding. As soon as a breakable bond (according to the BRICS rules) is encountered during the scan, the molecule is broken in two at that bond, applying a matching chemical reaction. After the cleavage, we collect the leftmost fragment, and repeat the process on the rightmost fragment in a recursive fashion. Note that fragment extraction is ordered from left to right according to the SMILES representation; this makes the process fully reversible, i.e. it is possible to reconstruct the original molecule from a sequence of fragments. In Figure , we show a practical example of the fragmentation process on the molecule of aspirin.
@@ -2400,7 +2400,7 @@ Following the standards to evaluate molecular generators, we compare our model w
 
 In both cases, we remove duplicates before the valuation, to ensure
 Baselines
-We compare to baselines found in literature, representing both SMILES and graph-based generative models described in Section . As regards SMILES-based approaches, we consider ChemVAE gomez2018vaemolecule, GrammarVAE kusner2017grammarvae and SD-VAE dai2018sdvae, whereas as regards graph-based models, we compare against GraphVAE simonovsky2018graphvae, CGVAE liu2018cgvae and NeVAE samanta2019nevae.
+We compare to baselines found in the literature, representing both SMILES and graph-based generative models described in Section . As regards SMILES-based approaches, we consider ChemVAE gomez2018vaemolecule, GrammarVAE kusner2017grammarvae and SD-VAE dai2018sdvae, whereas as regards graph-based models, we compare against GraphVAE simonovsky2018graphvae, CGVAE liu2018cgvae and NeVAE samanta2019nevae.
 
 Hyper-Parameters
 We evaluate our model using the same hyper-parameters for both variants, in order to isolate the effect of our contribution from improvements due to hyper-parameter tuning. We set the embedding dimension to 64, the number of recurrent layers to 2, the number of GRU units per layer to 128 and the latent space size to 100. We used the Adam optimizer with an initial learning rate of 0.00001, annealed every epoch by a multiplicative factor of 0.9, a batch size of 128, and a dropout rate of 0.3 applied to the recurrent layers to prevent overfitting. Training required only 4 epochs: after that, we found empirically that the model started to severely overfit the training set. We used  as LFM threshold. The stopping criteria for training is the following: after each epoch, we sample 1000 molecules and measure validity, novelty and uniqueness rates of the sample, stopping whenever the uniqueness rate starts to drop (we found out empirically that samples were stable in terms of validity and novelty rates). After training, we sample 20k molecules for evaluation. We publicly release code and samples for reproducibility . Baseline results are taken from literature .
@@ -2464,7 +2464,7 @@ Finally, Figure  shows two random samples of 30 molecules taken from the ZINC da
 
 
 Conclusions
-Conclusions, Opportunities and Future Works 
+Conclusions, Opportunities and Future Works
 
 
 
@@ -2485,7 +2485,3 @@ Conclusions, Opportunities and Future Works
 
 
 [heading=bibintoc]
-
-
-
-

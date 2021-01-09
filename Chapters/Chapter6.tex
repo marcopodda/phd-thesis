@@ -98,7 +98,7 @@ where $(\gamma^{-1}(s_i), \gamma^{-1}(e_i)) \in \Edges{g}$, and such that it is 
     \item first, select a node $v_1$ at random from its set of nodes $\Nodes{g}$, and set its node ID as $\gamma(v_1) = \SF{1}$;
     \item then, traverse the graph in breadth-first order. Let $V = (v_2, v_3, \ldots, v_{n})$ be the ordered sequence of nodes visited during the traversal, excluding $v_s$. Assign node ID $\gamma(v_i) = \SF{i},\, \forall v_i \in V,\, i=2, \ldots, n$.
 \end{itemize}
-Assuming graph $\Graph{g}$ has the structure shown in Figure \ref{fig:example-graph}, and that node $v_1$ is chosen as the root node for the visit, an example of how the graph nodes are labelled by $\gamma$ is shown in Figure \ref{fig:labelled-graph}. Notice that $\gamma$ is trivially bijective, since it assigns a different integer to each node. Once the nodes are labelled, the ordered edge sequence of $\Graph{g}$ is $\OES{S} = (\OElem{1}{2},\OElem{1}{3},\OElem{1}{4},\OElem{3}{4},\OElem{3}{5})$, with $\tau_S = (\SF{1},\SF{1},\SF{1},\SF{3},\SF{3})$ and $\tau_E = (\SF{2},\SF{3},\SF{4},\SF{4},\SF{5})$. Notice that the graph can be readily reconstructed from its orderd edge sequence by first applying the inverse function $\gamma^{-1}$ to each element of its pairs to obtain $\Edges{g}$, which in turn gives $\Nodes{g}$ since we assumed that $\Graph{g}$ is fully connected.
+Assuming graph $\Graph{g}$ has the structure shown in Figure \ref{fig:example-graph}, and that node $v_1$ is chosen as the root node for the visit, an example of how the graph nodes are labeled by $\gamma$ is shown in Figure \ref{fig:labeled-graph}. Notice that $\gamma$ is trivially bijective, since it assigns a different integer to each node. Once the nodes are labeled, the ordered edge sequence of $\Graph{g}$ is $\OES{S} = (\OElem{1}{2},\OElem{1}{3},\OElem{1}{4},\OElem{3}{4},\OElem{3}{5})$, with $\tau_S = (\SF{1},\SF{1},\SF{1},\SF{3},\SF{3})$ and $\tau_E = (\SF{2},\SF{3},\SF{4},\SF{4},\SF{5})$. Notice that the graph can be readily reconstructed from its orderd edge sequence by first applying the inverse function $\gamma^{-1}$ to each element of its pairs to obtain $\Edges{g}$, which in turn gives $\Nodes{g}$ since we assumed that $\Graph{g}$ is fully connected.
 
 \begin{figure*}[h!]
     \begin{subfigure}[b]{0.48\linewidth}
@@ -109,11 +109,11 @@ Assuming graph $\Graph{g}$ has the structure shown in Figure \ref{fig:example-gr
     \end{subfigure}
     \begin{subfigure}[b]{0.48\linewidth}
         \centering
-        \resizebox{.8\textwidth}{!}{\input{Figures/Chapter6/labelled-graph.tex}}
+        \resizebox{.8\textwidth}{!}{\input{Figures/Chapter6/labeled-graph.tex}}
         \caption{}
-        \label{fig:labelled-graph}
+        \label{fig:labeled-graph}
     \end{subfigure}
-    \caption{({\scriptsize A}): an example graph, where the starting node $v_1$ of the labelling algorithm is marked with a thicker border. ({\scriptsize B}): the same graph, where nodes are labelled according to a breadth-first visit of the graph rooted at $v_1$.}
+    \caption{({\scriptsize A}): an example graph, where the starting node $v_1$ of the labelling algorithm is marked with a thicker border. ({\scriptsize B}): the same graph, where nodes are labeled according to a breadth-first visit of the graph rooted at $v_1$.}
     \label{fig:labelling-example}
 \end{figure*}
 
@@ -163,7 +163,7 @@ To generate an ordered edge sequence, one first generates a starting sequence $\
 \end{figure*}
 
 \subsubsection*{Implementation details}\label{sec:implementation}
-The model is implemented using the \texttt{PyTorch}\footnote{\url{https://github.com/marcopodda/grapher}} \cite{paszke2017pytorch} library; after an initial exploratory phase (not reported), some hyper-parameters (such as the number of recurrent layers) were fixed in advance. We use model selection with a 80\%-20\% splits to select the other hyper-parameters. We choose among 32 and 64 for the embedding dimension $d$, 128 and 256 for the recurrent state size $h$. We apply a dropout layer to the embedding layer, whose rate $p_{\mathrm{keep}}$ is chosen between 0.25 and 0.35. As recurrent cells, we use 2 layers of Gated Recurrent Units (GRU) \cite{cho2014gru}. As regards the learning parameters, we use the Adam \cite{kingma2015adam} optimizer with learning rate of 0.001, halved every 200 epochs. We train all models for a maximum of 2000 epochs, applying early stopping whenever the loss starts to plateau (we found a suitable empirical threshold after running a number of exploratory training instances).
+The model is implemented using the \texttt{PyTorch}\footnote{\url{https://github.com/marcopodda/grapher}} \cite{paszke2017pytorch} library; after an initial exploratory phase (not reported), some hyper-parameters (such as the number of recurrent layers) were fixed in advance. We use model selection with a 80\%-20\% splits to select the other hyper-parameters. We choose among 32 and 64 for the embedding dimension $d$, 128 and 256 for the recurrent state size $h$. We apply a dropout layer to the embedding layer, whose rate is chosen between 0.25 and 0.35. As recurrent cells, we use 2 layers of Gated Recurrent Units (GRU) \cite{cho2014gru}. As regards the learning parameters, we use the Adam \cite{kingma2015adam} optimizer with learning rate of 0.001, halved every 200 epochs. We train all models for a maximum of 2000 epochs, applying early stopping whenever the loss starts to plateau (we found a suitable empirical threshold after running a number of exploratory training instances).
 
 \subsection{Experiments}
 Following, we detail the experiments to assess our model, describing the datasets used for learning, the baselines we compared to, and the framework used for evaluation.
@@ -219,7 +219,7 @@ Lastly, we introduce a third baseline model, a recurrent neural network with GRU
 \subsubsection*{Evaluation Framework}
 We assess our model against the baselines following the quantitative and qualitative evaluation principles described in Section \ref{sec:evaluation-generative-graphs}. The experiments are described as follows:
 \begin{itemize}
-    \item our first experiment consists in evaluating the model quantitatively. To be sure to detect overfitting, we generate large samples. Specifically, we generate two samples of size 1000 and 5000 from all the candidates. For each of sample, we measure the novelty and uniqueness of the generated graphs. Despite using chemical datasets (ENZYMES and PROTEINS), we do not evaluate chemical validity because we are concerned about generating unlabelled graphs; thus, chemical validity cannot be assessed in our case. Finally, we also measure the time that each model takes to generate the 5000 graph sample;
+    \item our first experiment consists in evaluating the model quantitatively. To be sure to detect overfitting, we generate large samples. Specifically, we generate two samples of size 1000 and 5000 from all the candidates. For each of sample, we measure the novelty and uniqueness of the generated graphs. Despite using chemical datasets (ENZYMES and PROTEINS), we do not evaluate chemical validity because we are concerned about generating unlabeled graphs; thus, chemical validity cannot be assessed in our case. Finally, we also measure the time that each model takes to generate the 5000 graph sample;
     \item the second experiment is of qualitative nature. In practice, we assess how much the generated samples resemble a random sample from the graph distribution of reference. To do so, we first generate from all the models a sample of equal size to the held-out test set. Then, on each sample, we evaluate the \gls{kld} on a set of graph statistics, collected in the generated sample and in the test sample. Specifically, we evaluate Average Degree Distribution (ADD), Average Clustering Coefficient (ACC), and Average Orbit Count (AOC). Note that, since each graph can have a different number of nodes, the vectors of statistics for each graph have different lengths in general. Therefore, for each of the two samples, we concatenate the graph statistics vectors into a unique vector, on which we fit an histogram of 100 bins. The \gls{kld} is calculated on the two resulting histograms. This process is repeated 10 times, each time drawing a novel sample from the models.
 \end{itemize}
 Lastly, we provide a study on how using different node orderings affects performances. To do so, we compare our proposed model with variants where graphs are preprocessed used different node orderings. The five analyzed variants are:
@@ -286,7 +286,9 @@ As explained before, our first experiment to assess the effect of the different 
 \label{fig:loss}
 \end{figure}
 We complement the discussion about node ordering with a qualitative analysis, whose results are detailed in Table \ref{tab:graph-ordering-qualitative}. It can be easily noticed that the our node ordering strategy yields superior results in every chosen metric, with respect to every other variant. The only competitive node ordering strategy is DF, which basically differs from ours in the way graph nodes are visited. However, despite being able to this strategy seems to underperform in some cases, for example the clustering coefficient in the COMMUNITY dataset and the orbit count in the EGO dataset. We hypothesize this is due to using DF traversal instead of BF, which is less suited to capture local dependencies. In conclusion, these results further extend the evidences supporting the robustness of our approach.
+\begin{landscape}
 \input{Tables/Chapter6/graph-ordering-qualitative.tex}
+\end{landscape}
 
 
 \subsection{Conclusions}

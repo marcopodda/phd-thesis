@@ -7,7 +7,7 @@ Over the years, \glspl{dgn} have yielded strong performances on several predicti
 \end{itemize}
 
 \section{Datasets}
-All  graph  datasets  are  publicly  available \citep{kersting2016benchmark}  and  represent  a  relevant subset of those most frequently used in literature to compare \glspl{dgn}. Some collect molecular graphs, while others contain social graphs. Specifically, we use the following chemical datasets:
+All  graph  datasets  are  publicly  available \citep{kersting2016benchmark}  and  represent  a  relevant subset of those most frequently used in the literature to compare \glspl{dgn}. Some collect molecular graphs, while others contain social graphs. Specifically, we use the following chemical datasets:
 \begin{itemize}
     \item D\&D \citep{dobson2003dd} is a graph dataset in which nodes are amino acids, and there is an edge between two nodes if they are they are neighbors in the amino-acid sequence or in 3D space. The task is a binary classification one, where the objective is to determine whether a graph represents an enzyme or non-enzyme;
     \item PROTEINS \citep{borgwardt2005proteins} is a subset of D\&D where the largest graphs have been removed;
@@ -49,10 +49,10 @@ $$\StateVector{v}{\ell} = \Fun{tanh} \Par{\LayerMatrix{w}{\ell} \sum_{u \in \Nei
 where $\Matrix{D}^{-1}$ is the inverse degree matrix. After all the convolutional layers are applied, the computation is followed by SortPool layer, which performs graph pooling, and a final 1-D \gls{cnn}.
 
 \section{Baselines}
-We compare the proposed architectures with two structure-agnostic baselines, one for molecular graphs, and one for social graphs. For molecular graphs, with the exception of graphs in the ENZYMES dataset, we use an \gls{mlp}-based model \citep{ralaivola2005graphkernels}, applied as follows to a generic graph $\GraphU{g}$:
+We compare the proposed architectures with two structure-agnostic baselines, one for molecular graphs, and one for social graphs. For molecular graphs, with the exception of graphs in the ENZYMES dataset, we use an \gls{mlp}-based model \citep{ralaivola2005graphkernels}, applied as follows to a generic graph $\AttrGraph{g}$:
 $$\GraphRepr{g} = \Fun{MLP}\Par{\sum_{v \in \Nodes{g}} \Elem{x}{v}}.$$
 This architecture corresponds to summing the node features together (which are one-hot encoded vectors representing the atom types), and applying an \gls{mlp} with 2 hidden layers with \gls{relu} non-linearities on top of them. In practice, the network counts the atom occurrences for each atom type, and computes non-linear transformation of this sum. Notice that the graph connectivity is not taken into account by the model.
-For the social graphs, and for the graphs in the ENZYMES dataset (which uses 18 additional node features with respect to the other molecular datasets), we use the following architecture, applied to a generic graph $\GraphU{g}$ as follows:
+For the social graphs, and for the graphs in the ENZYMES dataset (which uses 18 additional node features with respect to the other molecular datasets), we use the following architecture, applied to a generic graph $\AttrGraph{g}$ as follows:
 $$\GraphRepr{g} = \Fun{MLP}_2\Par{\sum_{v \in \Nodes{g}} \Fun{MLP}_1(\Elem{x}{v})},$$
 where $\Fun{MLP}_1$ is a linear layer plus a \gls{relu} non-linearity, and $\Fun{MLP}_2$ is a two hidden layer \gls{mlp} with \gls{relu} non linearities \citep{zaheer2017deepsets}. Notice that even in this case we do not take into account the graph connectivity. The role of these baselines is to provide feedback on the effectiveness of \glspl{dgn} on a specific dataset. Specifically, if a \gls{dgn} performs similarly to a structure-agnostic baseline, one can draw two possible conclusions: either the task does not need structural information to be effectively solved, or the \gls{dgn} is not exploiting graph structure adequately. While the former can be verified through domain-specific human expertise, the second is more difficult to assess, as multiple factors come into play such as the size of the training dataset, the structural inductive bias imposed by the architecture and the selected hyper-parameters. Nevertheless, a significant improvement with respect to a baseline is a strong indicator that graph structure has been exploited.
 

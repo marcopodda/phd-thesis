@@ -1,62 +1,62 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Deep Generative Learning on Graphs}{93}{chapter.168}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Deep Generative Learning on Graphs}{93}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:deep-generative-learning-graphs}{{6}{93}{Deep Generative Learning on Graphs}{chapter.168}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}The Challenges of Graph Generation}{94}{section.169}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Generative Tasks}{94}{section.170}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Graph Decoders}{95}{section.171}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Performance Evaluation}{98}{section.174}}
-\newlabel{sec:evaluation-generative-graphs}{{6.4}{98}{Performance Evaluation}{section.174}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Quantitative Metrics}{98}{subsection.176}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Qualitative Metrics}{99}{subsection.177}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}A Model for Edge-Based Graph Generation}{100}{section.178}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Introduction}{100}{subsection.179}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Methods}{101}{subsection.180}}
-\newlabel{fig:example-graph}{{6.1a}{102}{\relax }{figure.caption.182}{}}
-\newlabel{sub@fig:example-graph}{{a}{102}{\relax }{figure.caption.182}{}}
-\newlabel{fig:labelled-graph}{{6.1b}{102}{\relax }{figure.caption.182}{}}
-\newlabel{sub@fig:labelled-graph}{{b}{102}{\relax }{figure.caption.182}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}): an example graph, where the starting node $v_1$ of the labelling algorithm is marked with a thicker border. ({\relax \fontsize  {8}{9.5}\selectfont  B}): the same graph, where nodes are labelled according to a breadth-first visit of the graph rooted at $v_1$.\relax }}{102}{figure.caption.182}}
-\newlabel{fig:labelling-example}{{6.1}{102}{({\scriptsize A}): an example graph, where the starting node $v_1$ of the labelling algorithm is marked with a thicker border. ({\scriptsize B}): the same graph, where nodes are labelled according to a breadth-first visit of the graph rooted at $v_1$.\relax }{figure.caption.182}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces A depiction of the proposed architecture during training. We set $|\tau _S| = |\tau _E| = m$ to avoid cluttering. Notice that the embedding matrix is shared between the two networks.\relax }}{104}{figure.caption.185}}
-\newlabel{fig:model-training}{{6.2}{104}{A depiction of the proposed architecture during training. We set $|\tau _S| = |\tau _E| = m$ to avoid cluttering. Notice that the embedding matrix is shared between the two networks.\relax }{figure.caption.185}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Graph generation. The output of the network are two sequences: one is a stochastic sequence $\ensuremath  {\boldsymbol  {\lowercase {\mathaccentV {tilde}07E{s}}}}$ representing the starting sequence of the graph. The other is a an ending sequence $\ensuremath  {\boldsymbol  {\lowercase {\mathaccentV {hat}05E{e}}}}$, predicted using $\ensuremath  {\boldsymbol  {\lowercase {\mathaccentV {tilde}07E{s}}}}$ as input. The two sequences are ultimately combined to produce the ordered edge sequence of a novel graph.\relax }}{105}{figure.caption.187}}
-\newlabel{fig:model-sampling}{{6.3}{105}{Graph generation. The output of the network are two sequences: one is a stochastic sequence $\Vector {\tilde {s}}$ representing the starting sequence of the graph. The other is a an ending sequence $\Vector {\hat {e}}$, predicted using $\Vector {\tilde {s}}$ as input. The two sequences are ultimately combined to produce the ordered edge sequence of a novel graph.\relax }{figure.caption.187}{}}
-\newlabel{sec:implementation}{{6.5.2}{105}{Implementation details}{section*.188}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.3}Experiments}{106}{subsection.190}}
-\newlabel{sec:datasets}{{6.5.3}{106}{Datasets}{section*.191}{}}
-\newlabel{fig:ladder}{{6.4a}{107}{Ladder graph.\relax }{figure.caption.192}{}}
-\newlabel{sub@fig:ladder}{{a}{107}{Ladder graph.\relax }{figure.caption.192}{}}
-\newlabel{fig:community}{{6.4b}{107}{Community graph.\relax }{figure.caption.192}{}}
-\newlabel{sub@fig:community}{{b}{107}{Community graph.\relax }{figure.caption.192}{}}
-\newlabel{fig:ego}{{6.4c}{107}{Ego graph.\relax }{figure.caption.192}{}}
-\newlabel{sub@fig:ego}{{c}{107}{Ego graph.\relax }{figure.caption.192}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Three examples of synthetic graphs from the datasets used during the evaluation.\relax }}{107}{figure.caption.192}}
-\newlabel{fig:synthetic-graphs}{{6.4}{107}{Three examples of synthetic graphs from the datasets used during the evaluation.\relax }{figure.caption.192}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Statistics of datasets used in the experiments.\relax }}{108}{table.caption.193}}
-\newlabel{tab:generation-datasets}{{6.1}{108}{Statistics of datasets used in the experiments.\relax }{table.caption.193}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.4}Results}{110}{subsection.196}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Results of the quantitative analysis of the generated samples. In the leftmost column, both the metric of interest as well as the sample size (either 1000 or 5000) is specified. Best performances of models based on RNNs are bolded.\relax }}{111}{table.caption.198}}
-\newlabel{tab:graph-quantitative}{{6.2}{111}{Results of the quantitative analysis of the generated samples. In the leftmost column, both the metric of interest as well as the sample size (either 1000 or 5000) is specified. Best performances of models based on RNNs are bolded.\relax }{table.caption.198}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Mean ranks on all considered quantitative metrics except time, obtained by the examined models over all datasets. Best performances are bolded.\relax }}{112}{table.caption.199}}
-\newlabel{tab:graph-quantitative-rank}{{6.3}{112}{Mean ranks on all considered quantitative metrics except time, obtained by the examined models over all datasets. Best performances are bolded.\relax }{table.caption.199}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Results of the qualitative analysis of the generated samples. The three metrics considered are KLDs calculated on Average Degree Distribution (ADD), Average Clustering Coefficient (ACC), and Average Orbit Count (AOD). Best performances are bolded.\relax }}{113}{table.caption.201}}
-\newlabel{tab:graph-qualitative}{{6.4}{113}{Results of the qualitative analysis of the generated samples. The three metrics considered are KLDs calculated on Average Degree Distribution (ADD), Average Clustering Coefficient (ACC), and Average Orbit Count (AOD). Best performances are bolded.\relax }{table.caption.201}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces Mean ranks obtained on the evaluated qualitative metrics by the examined models over all datasets. Best performances are bolded.\relax }}{114}{table.caption.202}}
-\newlabel{tab:graph-qualitative-rank}{{6.5}{114}{Mean ranks obtained on the evaluated qualitative metrics by the examined models over all datasets. Best performances are bolded.\relax }{table.caption.202}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Plot of the three qualitative statistics of test samples compared to samples generated by our model. Metrics are displayed by column, dataset by rows. The distribution of the test sample is shown in blue, while the distribution of samples drawn from our model is shown in orange. Scales are omitted since they are normalized, hence not informative.\relax }}{115}{figure.caption.203}}
-\newlabel{fig:distributions}{{6.5}{115}{Plot of the three qualitative statistics of test samples compared to samples generated by our model. Metrics are displayed by column, dataset by rows. The distribution of the test sample is shown in blue, while the distribution of samples drawn from our model is shown in orange. Scales are omitted since they are normalized, hence not informative.\relax }{figure.caption.203}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.5}Conclusions}{115}{subsection.208}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Five randomly chosen graphs, both from the training sample (left) and generated by our model (right), on each considered dataset (displayed by row). Notice how our generative model has picked up all the characterizing connectivity patterns.\relax }}{116}{figure.caption.204}}
-\newlabel{fig:samples}{{6.6}{116}{Five randomly chosen graphs, both from the training sample (left) and generated by our model (right), on each considered dataset (displayed by row). Notice how our generative model has picked up all the characterizing connectivity patterns.\relax }{figure.caption.204}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Plot of the loss on dataset Protein of variants of our approach trained under different node orderings. Notice how the models trained with our proposed node ordering (blue), and SMILES (orange) are able to reach a lower training loss in a smaller number of epochs, compared to variants trained with random ordering (red) and BF random ordering (green).\relax }}{117}{figure.caption.206}}
-\newlabel{fig:loss}{{6.7}{117}{Plot of the loss on dataset Protein of variants of our approach trained under different node orderings. Notice how the models trained with our proposed node ordering (blue), and SMILES (orange) are able to reach a lower training loss in a smaller number of epochs, compared to variants trained with random ordering (red) and BF random ordering (green).\relax }{figure.caption.206}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.6}{\ignorespaces Results of the effect of node ordering on the performances of our model. The variants considered are random ordering, Breadth-First (BF) random ordering as proposed in \cite {you2018graphrnn}, SMILES ordering (only for molecular datasets), ordering of the proposed approach. Best performances are bolded.\relax }}{118}{table.caption.207}}
-\newlabel{tab:graph-ordering-qualitative}{{6.6}{118}{Results of the effect of node ordering on the performances of our model. The variants considered are random ordering, Breadth-First (BF) random ordering as proposed in \cite {you2018graphrnn}, SMILES ordering (only for molecular datasets), ordering of the proposed approach. Best performances are bolded.\relax }{table.caption.207}{}}
+\newlabel{ch:deep-generative-learning-graphs}{{6}{93}{Deep Generative Learning on Graphs}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}The Challenges of Graph Generation}{94}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Generative Tasks}{94}{section.6.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Graph Decoders}{95}{section.6.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Performance Evaluation}{98}{section.6.4}}
+\newlabel{sec:evaluation-generative-graphs}{{6.4}{98}{Performance Evaluation}{section.6.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Quantitative Metrics}{98}{subsection.6.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Qualitative Metrics}{99}{subsection.6.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}A Model for Edge-Based Graph Generation}{100}{section.6.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Introduction}{100}{subsection.6.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Methods}{101}{subsection.6.5.2}}
+\newlabel{fig:example-graph}{{6.1a}{102}{\relax }{figure.caption.87}{}}
+\newlabel{sub@fig:example-graph}{{a}{102}{\relax }{figure.caption.87}{}}
+\newlabel{fig:labeled-graph}{{6.1b}{102}{\relax }{figure.caption.87}{}}
+\newlabel{sub@fig:labeled-graph}{{b}{102}{\relax }{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces ({\relax \fontsize  {8}{9.5}\selectfont  A}): an example graph, where the starting node $v_1$ of the labelling algorithm is marked with a thicker border. ({\relax \fontsize  {8}{9.5}\selectfont  B}): the same graph, where nodes are labeled according to a breadth-first visit of the graph rooted at $v_1$.\relax }}{102}{figure.caption.87}}
+\newlabel{fig:labelling-example}{{6.1}{102}{({\scriptsize A}): an example graph, where the starting node $v_1$ of the labelling algorithm is marked with a thicker border. ({\scriptsize B}): the same graph, where nodes are labeled according to a breadth-first visit of the graph rooted at $v_1$.\relax }{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces A depiction of the proposed architecture during training. We set $|\tau _S| = |\tau _E| = m$ to avoid cluttering. Notice that the embedding matrix is shared between the two networks.\relax }}{104}{figure.caption.90}}
+\newlabel{fig:model-training}{{6.2}{104}{A depiction of the proposed architecture during training. We set $|\tau _S| = |\tau _E| = m$ to avoid cluttering. Notice that the embedding matrix is shared between the two networks.\relax }{figure.caption.90}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Graph generation. The output of the network are two sequences: one is a stochastic sequence $\ensuremath  {\boldsymbol  {\lowercase {\mathaccentV {tilde}07E{s}}}}$ representing the starting sequence of the graph. The other is a an ending sequence $\ensuremath  {\boldsymbol  {\lowercase {\mathaccentV {hat}05E{e}}}}$, predicted using $\ensuremath  {\boldsymbol  {\lowercase {\mathaccentV {tilde}07E{s}}}}$ as input. The two sequences are ultimately combined to produce the ordered edge sequence of a novel graph.\relax }}{105}{figure.caption.92}}
+\newlabel{fig:model-sampling}{{6.3}{105}{Graph generation. The output of the network are two sequences: one is a stochastic sequence $\Vector {\tilde {s}}$ representing the starting sequence of the graph. The other is a an ending sequence $\Vector {\hat {e}}$, predicted using $\Vector {\tilde {s}}$ as input. The two sequences are ultimately combined to produce the ordered edge sequence of a novel graph.\relax }{figure.caption.92}{}}
+\newlabel{sec:implementation}{{6.5.2}{105}{Implementation details}{section*.93}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.3}Experiments}{106}{subsection.6.5.3}}
+\newlabel{sec:datasets}{{6.5.3}{106}{Datasets}{section*.94}{}}
+\newlabel{fig:ladder}{{6.4a}{107}{Ladder graph.\relax }{figure.caption.95}{}}
+\newlabel{sub@fig:ladder}{{a}{107}{Ladder graph.\relax }{figure.caption.95}{}}
+\newlabel{fig:community}{{6.4b}{107}{Community graph.\relax }{figure.caption.95}{}}
+\newlabel{sub@fig:community}{{b}{107}{Community graph.\relax }{figure.caption.95}{}}
+\newlabel{fig:ego}{{6.4c}{107}{Ego graph.\relax }{figure.caption.95}{}}
+\newlabel{sub@fig:ego}{{c}{107}{Ego graph.\relax }{figure.caption.95}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Three examples of synthetic graphs from the datasets used during the evaluation.\relax }}{107}{figure.caption.95}}
+\newlabel{fig:synthetic-graphs}{{6.4}{107}{Three examples of synthetic graphs from the datasets used during the evaluation.\relax }{figure.caption.95}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Statistics of datasets used in the experiments.\relax }}{108}{table.caption.96}}
+\newlabel{tab:generation-datasets}{{6.1}{108}{Statistics of datasets used in the experiments.\relax }{table.caption.96}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.4}Results}{110}{subsection.6.5.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Results of the quantitative analysis of the generated samples. In the leftmost column, both the metric of interest as well as the sample size (either 1000 or 5000) is specified. Best performances of models based on RNNs are bolded.\relax }}{111}{table.caption.100}}
+\newlabel{tab:graph-quantitative}{{6.2}{111}{Results of the quantitative analysis of the generated samples. In the leftmost column, both the metric of interest as well as the sample size (either 1000 or 5000) is specified. Best performances of models based on RNNs are bolded.\relax }{table.caption.100}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Mean ranks on all considered quantitative metrics except time, obtained by the examined models over all datasets. Best performances are bolded.\relax }}{112}{table.caption.101}}
+\newlabel{tab:graph-quantitative-rank}{{6.3}{112}{Mean ranks on all considered quantitative metrics except time, obtained by the examined models over all datasets. Best performances are bolded.\relax }{table.caption.101}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Results of the qualitative analysis of the generated samples. The three metrics considered are KLDs calculated on Average Degree Distribution (ADD), Average Clustering Coefficient (ACC), and Average Orbit Count (AOD). Best performances are bolded.\relax }}{113}{table.caption.103}}
+\newlabel{tab:graph-qualitative}{{6.4}{113}{Results of the qualitative analysis of the generated samples. The three metrics considered are KLDs calculated on Average Degree Distribution (ADD), Average Clustering Coefficient (ACC), and Average Orbit Count (AOD). Best performances are bolded.\relax }{table.caption.103}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces Mean ranks obtained on the evaluated qualitative metrics by the examined models over all datasets. Best performances are bolded.\relax }}{114}{table.caption.104}}
+\newlabel{tab:graph-qualitative-rank}{{6.5}{114}{Mean ranks obtained on the evaluated qualitative metrics by the examined models over all datasets. Best performances are bolded.\relax }{table.caption.104}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Plot of the three qualitative statistics of test samples compared to samples generated by our model. Metrics are displayed by column, dataset by rows. The distribution of the test sample is shown in blue, while the distribution of samples drawn from our model is shown in orange. Scales are omitted since they are normalized, hence not informative.\relax }}{115}{figure.caption.105}}
+\newlabel{fig:distributions}{{6.5}{115}{Plot of the three qualitative statistics of test samples compared to samples generated by our model. Metrics are displayed by column, dataset by rows. The distribution of the test sample is shown in blue, while the distribution of samples drawn from our model is shown in orange. Scales are omitted since they are normalized, hence not informative.\relax }{figure.caption.105}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Five randomly chosen graphs, both from the training sample (left) and generated by our model (right), on each considered dataset (displayed by row). Notice how our generative model has picked up all the characterizing connectivity patterns.\relax }}{116}{figure.caption.106}}
+\newlabel{fig:samples}{{6.6}{116}{Five randomly chosen graphs, both from the training sample (left) and generated by our model (right), on each considered dataset (displayed by row). Notice how our generative model has picked up all the characterizing connectivity patterns.\relax }{figure.caption.106}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Plot of the loss on dataset Protein of variants of our approach trained under different node orderings. Notice how the models trained with our proposed node ordering (blue), and SMILES (orange) are able to reach a lower training loss in a smaller number of epochs, compared to variants trained with random ordering (red) and BF random ordering (green).\relax }}{117}{figure.caption.108}}
+\newlabel{fig:loss}{{6.7}{117}{Plot of the loss on dataset Protein of variants of our approach trained under different node orderings. Notice how the models trained with our proposed node ordering (blue), and SMILES (orange) are able to reach a lower training loss in a smaller number of epochs, compared to variants trained with random ordering (red) and BF random ordering (green).\relax }{figure.caption.108}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.6}{\ignorespaces Results of the effect of node ordering on the performances of our model. The variants considered are random ordering, Breadth-First (BF) random ordering as proposed in \cite {you2018graphrnn}, SMILES ordering (only for molecular datasets), ordering of the proposed approach. Best performances are bolded.\relax }}{118}{table.caption.109}}
+\newlabel{tab:graph-ordering-qualitative}{{6.6}{118}{Results of the effect of node ordering on the performances of our model. The variants considered are random ordering, Breadth-First (BF) random ordering as proposed in \cite {you2018graphrnn}, SMILES ordering (only for molecular datasets), ordering of the proposed approach. Best performances are bolded.\relax }{table.caption.109}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.5}Conclusions}{119}{subsection.6.5.5}}
 \@setckpt{Chapters/Chapter6}{
-\setcounter{page}{119}
+\setcounter{page}{121}
 \setcounter{equation}{0}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
@@ -85,7 +85,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{213}
+\setcounter{instcount}{230}
 \setcounter{maxnames}{1}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -188,7 +188,7 @@
 \setcounter{parentequation}{0}
 \setcounter{su@anzahl}{0}
 \setcounter{Item}{3}
-\setcounter{Hfootnote}{11}
+\setcounter{Hfootnote}{12}
 \setcounter{bookmark@seq@number}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}

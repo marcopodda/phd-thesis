@@ -1,9 +1,7 @@
 \begin{table}
-    \scriptsize
     \caption{Results of the effect of node ordering on the performances of our model. The variants considered are random ordering, Breadth-First (BF) random ordering as proposed in \cite{you2018graphrnn}, SMILES ordering (only for molecular datasets), ordering of the proposed approach. Best performances are bolded.}
     \label{tab:graph-ordering-qualitative}
     \renewcommand{\arraystretch}{1.2}
-    \makebox[\textwidth]{
     \begin{tabular}{lccccccc}
         \toprule
          \textbf{Dataset} & \textbf{Metric} & \textbf{Random} & \textbf{BF Random} & \textbf{DF Random} & \textbf{DF} & \textbf{SMILES} & \textbf{Ours (BF)}\\
@@ -28,6 +26,5 @@
           PROTEINS & ACC  & $0.817 \pm 0.058$ & $0.670 \pm 0.042$ & $0.925 \pm 0.056$ & $0.171 \pm 0.020$ & $0.402 \pm 0.040$          & $\textbf{0.064} \pm 0.017$\\
           & AOC           & $0.594 \pm 0.045$ & $0.202 \pm 0.014$ & $0.319 \pm 0.015$ & $0.069 \pm 0.010$ & $0.217 \pm 0.027$          & $\textbf{0.048} \pm 0.008$\\
          \bottomrule
-
-    \end{tabular}}
+    \end{tabular}
 \end{table}

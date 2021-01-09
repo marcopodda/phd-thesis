@@ -7,10 +7,22 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{afterpage}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.8}
 
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 \newcommand{\atoc}[1]{\addtocontents{toc}{#1\par}}
+
+\newcommand{\longfullcite}{%
+  \AtNextCite{\defcounter{maxnames}{99}}%
+  \fullcite}
 
 % ---- OPERATORS (requires amsmath) ----
 \def\given{\,|\,}
@@ -44,8 +56,6 @@
 \let\eps\varepsilon
 
 % ---- DATA TYPES ---
-\def\Graph#1{\mathtt{#1}}
-\def\AttrGraph#1{\mathtt{\uppercase{#1}}}
 \def\Tree#1{\mathtt{#1}}
 \def\Seq#1{\mathtt{#1}}
 \def\TrainingSample{\mathbb{T}}
@@ -79,6 +89,8 @@
 
 % ---- NNET -------
 \def\Param{\boldsymbol{\theta}}
+\def\HatParam{\boldsymbol{\hat{\theta}}}
+\def\StarParam{\boldsymbol{\theta}^{*}}
 \def\EncParam{\boldsymbol{\psi}}
 \def\DecParam{\boldsymbol{\phi}}
 \def\Network{f_{\Param}}
@@ -110,6 +122,8 @@
 \def\StdVec{\boldsymbol{\sigma}^2}
 
 % ---- GRAPHS -----
+\def\Graph#1{\mathtt{#1}}
+\def\AttrGraph#1{\mathtt{\uppercase{#1}}}
 \def\Nodes#1{\ensuremath{\Cal{V}_{\Graph#1}}}
 \def\Edges#1{\ensuremath{\Cal{E}_{\Graph#1}}}
 \def\Neigh{\ensuremath{\Cal{N}}}
@@ -118,8 +132,7 @@
 \def\GraphFeatures#1#2{\Vector{#1}_{\Graph{#2}}}
 \def\VectorGraph#1#2{\Tuple{\Vector{#1}_{\Graph{#2}},\Vector{e}_{\Graph{#2}}}}
 \def\MatrixGraph#1#2{\Tuple{\Matrix{#1}_{\Graph{#2}},\Matrix{e}_{\Graph{#2}}}}
-\def\GraphU#1{\mathtt{\uppercase{#1}}}
-\def\PatternGraph#1#2{\GraphU{#1}_{(#2)}}
+\def\PatternGraph#1#2{\AttrGraph{#1}_{(#2)}}
 \def\Subgraph#1#2{\Graph{#1}_{[\Graph{#2}]}}
 \def\Isomorph{\vartheta}
 \def\Path#1#2#3{#1 \xrightarrow[]{\Graph{#2}} #3}
@@ -127,6 +140,7 @@
 \def\GenStateVector#1#2#3{\Elem{#1}{#2}^{(#3)}}
 \def\GraphRepr#1{\Vector{h}_{\Graph{#1}}}
 \def\GraphReadout#1{\Op{R}_{\Graph{#1}}}
+\def\InducedSubgraph#1#2{\Graph{#1}_{[#2]}}
 
 % ---- GRAPH MATRICES ----
 \def\AdjMatrix#1{\Matrix{a}_{\Graph{#1}}}
@@ -147,14 +161,12 @@
 \def\Start#1{\tau_S(#1)}
 \def\End#1{\tau_E(#1)}
 
-
 % ---- PETRI NETS ----
 \def\MolNodes#1{\Nodes{#1}^{\Fun{mol}}}
 \def\RxNodes#1{\Nodes{#1}^{\Fun{rx}}}
 \def\StdEdges#1{\Edges{#1}^{\Fun{std}}}
 \def\ProEdges#1{\Edges{#1}^{\Fun{pro}}}
 \def\InhEdges#1{\Edges{#1}^{\Fun{inh}}}
-\def\IndSubgraph{\Graph{p}_{\Graph{g}, (v_I,v_O)}}
 \def\Robustness{\overline{r}_{(v_I,v_O)}}
 
 % ---- OTHER
@@ -167,9 +179,7 @@
 \def\Transduction{\mathfrak{T}}
 \def\EncTrans{\Transduction_{\Fun{enc}}}
 \def\OutTrans{\Transduction_{\Fun{out}}}
-\def\HypSpace{\Cal{H}_{\Omega}}
-\def\PData{p_{\mathrm{data}}}
-\def\PDataset{p_{\Data_n}}
+\def\HSpace{\Cal{H}_{\Theta}}
 
 % ---- FUNCTIONS
 \def\Indicator#1{\mathbb{I}\Brack{#1}}
@@ -177,11 +187,9 @@
 \def\KLD#1#2{\Fun{KLD}(#1 \;\Vert\; #2)}
 \def\EKLD#1#2{\overline{\Fun{KLD}}(#1 \;\Vert\; #2)}
 
-
 % ---- TOKENS ----
 \def\SOS{\ensuremath{\mathtt{\Tuple{S}}}}
 \def\EOS{\ensuremath{\mathtt{\Tuple{E}}}}
-\def\PAD{\ensuremath{\mathtt{\Tuple{P}}}}
 
 % --- Cheap displaystyle operators ---
 \def\Frac#1#2{{\displaystyle\frac{#1}{#2}}}
