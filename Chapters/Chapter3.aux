@@ -61,7 +61,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Context diffusion through message passing. Directed edges represent messages (\textit  {e.g.~}from node $u$ to $v$ at iteration $\ell =2$). Dashed arrows represent the implicit contextual information received by a node (in dark grey) through the messages from its neighbors (in light grey). Focusing on node $v$, its context at iteration $\ell =2$ is composed all the dark grey nodes (including $v$ itself).\relax }}{46}{figure.caption.35}}
 \newlabel{fig:context-diffusion}{{3.8}{46}{Context diffusion through message passing. Directed edges represent messages (\eg from node $u$ to $v$ at iteration $\ell =2$). Dashed arrows represent the implicit contextual information received by a node (in dark grey) through the messages from its neighbors (in light grey). Focusing on node $v$, its context at iteration $\ell =2$ is composed all the dark grey nodes (including $v$ itself).\relax }{figure.caption.35}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Building Blocks of Deep Graph Networks}{47}{subsection.3.5.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Graph Convolutional Layers}{47}{section*.39}}
 \newlabel{sec:graph-conv-layers}{{3.5.2}{47}{Graph Convolutional Layers}{section*.39}{}}
 \newlabel{eq:simple-aggregation}{{3.1}{47}{Graph Convolutional Layers}{equation.3.5.1}{}}
 \newlabel{eq:convolutional}{{3.2}{48}{Graph Convolutional Layers}{equation.3.5.2}{}}
@@ -69,35 +68,39 @@
 \newlabel{eq:aggregate}{{3.4}{48}{Graph Convolutional Layers}{equation.3.5.4}{}}
 \newlabel{eq:update}{{3.5}{48}{Graph Convolutional Layers}{equation.3.5.5}{}}
 \@writefile{toc}{\contentsline {paragraph}{Handling Edges}{49}{section*.40}}
-\@writefile{toc}{\contentsline {paragraph}{Node Attention}{49}{section*.41}}
+\@writefile{toc}{\contentsline {paragraph}{Node Attention}{50}{section*.41}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces An example of node attention. Note that edge thickness is not related to the strength of the connection between node $v$ (in dark grey) and its neighbors (in light grey), but it represents the degree of similarity between the node states, quantified in a probabilistic sense by the attention score. Dashed edges connect nodes that are not involved in the attention score computation.\relax }}{50}{figure.caption.42}}
 \newlabel{fig:attention}{{3.9}{50}{An example of node attention. Note that edge thickness is not related to the strength of the connection between node $v$ (in dark grey) and its neighbors (in light grey), but it represents the degree of similarity between the node states, quantified in a probabilistic sense by the attention score. Dashed edges connect nodes that are not involved in the attention score computation.\relax }{figure.caption.42}{}}
 \@writefile{toc}{\contentsline {paragraph}{Node Sampling}{50}{section*.43}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces An example of node sampling. We focus on a node $v$ (in dark grey), and its neighbors (in light grey). Dashed edges connect nodes that are not involved in the neighborhood aggregation; notice how nodes $u_1$ and $u_2$ are excluded from the neighborhood aggregation, even though they are effectively neighbors of $v$.\relax }}{51}{figure.caption.44}}
 \newlabel{fig:sampling}{{3.10}{51}{An example of node sampling. We focus on a node $v$ (in dark grey), and its neighbors (in light grey). Dashed edges connect nodes that are not involved in the neighborhood aggregation; notice how nodes $u_1$ and $u_2$ are excluded from the neighborhood aggregation, even though they are effectively neighbors of $v$.\relax }{figure.caption.44}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Readout Layers}{51}{section*.45}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces The role of hidden state readout function in a node classification/regression task. Here, we focus on a single node $\ensuremath  {\boldsymbol  {\lowercase {h}}}_{[v]}^{(\ell )}$, where we drop the subscripts to avoid visual cluttering. Grey nodes replace the $[v]$ subscript. The hidden state readout function creates a node representation $\ensuremath  {\boldsymbol  {\lowercase {h}}}_{[v]}^{(*)}$ by combining its three hidden states (one for each layer). Successively, the node representation is turned into an output by an output layer, and compared by the loss function to the same node $\ensuremath  {\boldsymbol  {\lowercase {y}}}_{[v]}$ in the isomorphic target graph. This operation is repeated for every node in the graph.\relax }}{52}{figure.caption.46}}
 \newlabel{fig:node-readout}{{3.11}{52}{The role of hidden state readout function in a node classification/regression task. Here, we focus on a single node $\StateVector {v}{\ell }$, where we drop the subscripts to avoid visual cluttering. Grey nodes replace the $[v]$ subscript. The hidden state readout function creates a node representation $\StateVector {v}{*}$ by combining its three hidden states (one for each layer). Successively, the node representation is turned into an output by an output layer, and compared by the loss function to the same node $\Elem {y}{v}$ in the isomorphic target graph. This operation is repeated for every node in the graph.\relax }{figure.caption.46}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Graph Pooling Layers}{52}{section*.48}}
-\newlabel{sec:pooling}{{3.5.2}{52}{Graph Pooling Layers}{section*.48}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces A graph readout on an example graph for a graph classification/regression task. Here, we assume the node representations $\ensuremath  {\boldsymbol  {\lowercase {h}}}_{[v]}^{(*)}$ have already been obtained by a node readout (not shown).\relax }}{53}{figure.caption.47}}
 \newlabel{fig:graph-readout}{{3.12}{53}{A graph readout on an example graph for a graph classification/regression task. Here, we assume the node representations $\StateVector {v}{*}$ have already been obtained by a node readout (not shown).\relax }{figure.caption.47}{}}
+\newlabel{sec:pooling}{{3.5.2}{53}{Graph Pooling Layers}{section*.48}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces A visual example of a graph pooling layer.\relax }}{54}{figure.caption.49}}
 \newlabel{fig:pooling}{{3.13}{54}{A visual example of a graph pooling layer.\relax }{figure.caption.49}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Regularization}{54}{subsection.3.5.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Deep Generative Learning on Graphs}{54}{section.3.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}The Challenges of Graph Generation}{55}{subsection.3.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Generative Tasks}{56}{subsection.3.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3}Graph Decoders}{57}{subsection.3.6.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.4}Performance Evaluation}{60}{subsection.3.6.4}}
+\newlabel{sec:evaluation-generative-graphs}{{3.6.4}{60}{Performance Evaluation}{subsection.3.6.4}{}}
 \@setckpt{Chapters/Chapter3}{
-\setcounter{page}{55}
+\setcounter{page}{63}
 \setcounter{equation}{6}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{3}
+\setcounter{footnote}{4}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{1}
 \setcounter{chapter}{3}
-\setcounter{section}{5}
-\setcounter{subsection}{3}
+\setcounter{section}{6}
+\setcounter{subsection}{4}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
@@ -115,7 +118,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{136}
+\setcounter{instcount}{160}
 \setcounter{maxnames}{1}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{3}
@@ -206,8 +209,8 @@
 \setcounter{savedoriglanguage}{0}
 \setcounter{pageref}{0}
 \setcounter{savedpageref}{0}
-\setcounter{textcitecount}{2}
-\setcounter{textcitetotal}{2}
+\setcounter{textcitecount}{1}
+\setcounter{textcitetotal}{1}
 \setcounter{textcitemaxnames}{0}
 \setcounter{biburlnumpenalty}{0}
 \setcounter{biburlucpenalty}{0}
@@ -218,7 +221,7 @@
 \setcounter{parentequation}{0}
 \setcounter{su@anzahl}{0}
 \setcounter{Item}{0}
-\setcounter{Hfootnote}{5}
+\setcounter{Hfootnote}{6}
 \setcounter{bookmark@seq@number}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}
