@@ -84,8 +84,8 @@
 \def\Vector#1{\ensuremath{\boldsymbol{\lowercase{#1}}}}
 \def\Feature#1#2{\Vector{#1}_{#2}}
 \def\Entry#1#2{\Matrix{#1}_{#2}}
-\def\Pattern#1#2{#1_{(#2)}}
-\def\PatternVector#1#2{\Vector{#1}_{(#2)}}
+\def\Pattern#1#2{#1^{(#2)}}
+\def\PatternVector#1#2{\Vector{#1}^{(#2)}}
 
 % ---- NNET -------
 \def\Param{\boldsymbol{\theta}}
@@ -130,8 +130,8 @@
 \def\Pred{\ensuremath{\Cal{N}_{\shortrightarrow}}}
 \def\Succ{\ensuremath{\Cal{N}_{\shortleftarrow}}}
 \def\GraphFeatures#1#2{\Vector{#1}_{\Graph{#2}}}
-\def\VectorGraph#1#2{\Tuple{\Vector{#1}_{\Graph{#2}},\Vector{e}_{\Graph{#2}}}}
-\def\MatrixGraph#1#2{\Tuple{\Matrix{#1}_{\Graph{#2}},\Matrix{e}_{\Graph{#2}}}}
+\def\VectorGraph#1#2{\Tuple{\Graph{#2},\Vector{#1}_{\Graph{#2}},\Vector{e}_{\Graph{#2}}}}
+\def\MatrixGraph#1#2{\Tuple{\Graph{#2},\Matrix{#1}_{\Graph{#2}},\Matrix{e}_{\Graph{#2}}}}
 \def\PatternGraph#1#2{\AttrGraph{#1}_{(#2)}}
 \def\Subgraph#1#2{\Graph{#1}_{[\Graph{#2}]}}
 \def\Isomorph{\vartheta}
@@ -151,15 +151,15 @@
 \def\NormLaplacianMatrix#1{\Matrix{\tilde{L}}_{\Graph{#1}}}
 \def\DegreeMatrix#1{\Matrix{D}_{\Graph{#1}}}
 \def\LayerAdjMat#1{\Matrix{a}^{(#1)}}
-\def\LayerStateMat#1#2{\Matrix{h}_{\Graph{#1}}^{(#2)}}
+\def\LayerStateMat#1{\Matrix{h}^{(#1)}}
 \def\GenGraphLayerMat#1#2{\Matrix{#1}^{(#2)}}
 \def\GraphPattern#1#2{\Pattern{\Graph{#1}}{i}}
 
 % --- ORDERED EDGE SEQUENCES ---
 \def\OElem#1#2{(\SF{#1},\SF{#2})}
 \def\OES#1{\Cal{#1}}
-\def\Start#1{\tau_S(#1)}
-\def\End#1{\tau_E(#1)}
+\def\Start#1{\tau_s(#1)}
+\def\End#1{\tau_e(#1)}
 
 % ---- PETRI NETS ----
 \def\MolNodes#1{\Nodes{#1}^{\Fun{mol}}}

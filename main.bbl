@@ -19,40 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
-    \entry{auer2008fingerprints}{article}{}
-      \name{author}{2}{}{%
-        {{hash=b91b2809476f222e955078b9d6727dd9}{%
-           family={Auer},
-           familyi={A\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=c5be93e8eb2b164aae016c41a9b40b3c}{%
-           family={Bajorath},
-           familyi={B\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{cb1d94b3b628a94b26163a15a145f60a}
-      \strng{fullhash}{a6fdfa02ddb60af34dff8bc3b4d2f85c}
-      \strng{bibnamehash}{a6fdfa02ddb60af34dff8bc3b4d2f85c}
-      \strng{authorbibnamehash}{a6fdfa02ddb60af34dff8bc3b4d2f85c}
-      \strng{authornamehash}{cb1d94b3b628a94b26163a15a145f60a}
-      \strng{authorfullhash}{a6fdfa02ddb60af34dff8bc3b4d2f85c}
-      \field{labelalpha}{AB08}
-      \field{sortinit}{A}
-      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Methods in molecular biology (Clifton, N.J.)}
-      \field{title}{{Molecular similarity concepts and search calculations}}
-      \field{volume}{453}
-      \field{year}{2008}
-      \field{pages}{327\bibrangedash 47}
-      \range{pages}{21}
-      \verb{doi}
-      \verb 10.1007/978-1-60327-429-6_17
-      \endverb
-    \endentry
     \entry{abadi2016tensorflow}{inproceedings}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -1383,6 +1349,42 @@
       \field{pages}{771\bibrangedash 783}
       \range{pages}{13}
     \endentry
+    \entry{dimasi2016drugdiscoverycost}{article}{}
+      \name{author}{3}{}{%
+        {{hash=cb6b4283397fe7744c8cadb103fb7406}{%
+           family={DiMasi},
+           familyi={D\bibinitperiod},
+           given={Joseph\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=57a24712ce19854c226b547520525954}{%
+           family={Grabowski},
+           familyi={G\bibinitperiod},
+           given={Henry\bibnamedelima G.},
+           giveni={H\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=474398663a589444679624d523bade17}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Ronald\bibnamedelima W.},
+           giveni={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec052fd7a0e1790658a965339bbb42a2}
+      \strng{fullhash}{67cc19e066420f89b6c58e8fac363056}
+      \strng{bibnamehash}{67cc19e066420f89b6c58e8fac363056}
+      \strng{authorbibnamehash}{67cc19e066420f89b6c58e8fac363056}
+      \strng{authornamehash}{ec052fd7a0e1790658a965339bbb42a2}
+      \strng{authorfullhash}{67cc19e066420f89b6c58e8fac363056}
+      \field{labelalpha}{DGH16}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Health Economics}
+      \field{title}{Innovation in the pharmaceutical industry: New estimates of R\&D costs}
+      \field{volume}{47}
+      \field{year}{2016}
+      \field{pages}{20\bibrangedash 33}
+      \range{pages}{14}
+    \endentry
     \entry{dhillon2007weightedgraphcuts}{article}{}
       \name{author}{3}{}{%
         {{hash=913edd1ed6d39dab27744f7c19b0b18e}{%
@@ -2411,6 +2413,40 @@
       \verb https://doi.org/10.1145/3366423.3380201
       \endverb
     \endentry
+    \entry{goller1996backpropstructure}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=2d516f0da713fd3db463341107c089a5}{%
+           family={Goller},
+           familyi={G\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b33dc29e3d920925d0cbd2141cfe2c9f}{%
+           family={Kuchler},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6f57d9bee5c12940338fbff980989702}
+      \strng{fullhash}{6ad6b53ce4714a2de99cdf7978f528d9}
+      \strng{bibnamehash}{6ad6b53ce4714a2de99cdf7978f528d9}
+      \strng{authorbibnamehash}{6ad6b53ce4714a2de99cdf7978f528d9}
+      \strng{authornamehash}{6f57d9bee5c12940338fbff980989702}
+      \strng{authorfullhash}{6ad6b53ce4714a2de99cdf7978f528d9}
+      \field{labelalpha}{GK96}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the {International} {Conference} on {Neural} {Networks} ({ICNN})}
+      \field{title}{Learning task-dependent distributed representations by backpropagation through structure}
+      \field{volume}{1}
+      \field{year}{1996}
+      \field{pages}{347\bibrangedash 352}
+      \range{pages}{6}
+    \endentry
     \entry{gallicchio2010graphesn}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=5e8325c1bacf95876d112f109fb7c349}{%
@@ -2544,6 +2580,44 @@
       \field{year}{2002}
       \field{pages}{7821\bibrangedash 7826}
       \range{pages}{6}
+    \endentry
+    \entry{goh2017chemnet}{article}{}
+      \name{author}{4}{}{%
+        {{hash=df2c608e43c0d587f64ba568a4e51f67}{%
+           family={Goh},
+           familyi={G\bibinitperiod},
+           given={G.B.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4f498b9d3cd9cbb94c8915d7cf3f3360}{%
+           family={Siegel},
+           familyi={S\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d00634312e2f56f56d7a233cc01145c7}{%
+           family={Vishnu},
+           familyi={V\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=218df56c09d2e3ff06e8d2cd4a7e1ea4}{%
+           family={Hodas},
+           familyi={H\bibinitperiod},
+           given={N.O.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca9e63f18d7a012627e4d6a2309b8d1b}
+      \strng{fullhash}{613c412ef91b714108af29945ec42e4d}
+      \strng{bibnamehash}{ca9e63f18d7a012627e4d6a2309b8d1b}
+      \strng{authorbibnamehash}{ca9e63f18d7a012627e4d6a2309b8d1b}
+      \strng{authornamehash}{ca9e63f18d7a012627e4d6a2309b8d1b}
+      \strng{authorfullhash}{613c412ef91b714108af29945ec42e4d}
+      \field{labelalpha}{Goh+17}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1712.02734}
+      \field{title}{{ChemNet: A Transferable and Generalizable Deep Neural Network for Small-Molecule Property Prediction}}
+      \field{year}{2017}
     \endentry
     \entry{gomez2018vaemolecule}{article}{}
       \name{author}{10}{}{%
@@ -4602,52 +4676,6 @@
       \field{title}{Gated Graph Sequence Neural Networks}
       \field{year}{2016}
     \endentry
-    \entry{maggiora2014molecularsimilarity}{article}{}
-      \name{author}{4}{}{%
-        {{hash=6098e14cd3da810a78734c5a56c80f0f}{%
-           family={Maggiora},
-           familyi={M\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=2eaf124a5296dbc22673254b366ce4a9}{%
-           family={Vogt},
-           familyi={V\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=bdb1c75e657442942991ef70f131ab4a}{%
-           family={Stumpfe},
-           familyi={S\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=c5be93e8eb2b164aae016c41a9b40b3c}{%
-           family={Bajorath},
-           familyi={B\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{229ef202d903a47ca40798f2eec690de}
-      \strng{fullhash}{201886c1cfbe1bec4159b16255b8ddc1}
-      \strng{bibnamehash}{229ef202d903a47ca40798f2eec690de}
-      \strng{authorbibnamehash}{229ef202d903a47ca40798f2eec690de}
-      \strng{authornamehash}{229ef202d903a47ca40798f2eec690de}
-      \strng{authorfullhash}{201886c1cfbe1bec4159b16255b8ddc1}
-      \field{labelalpha}{Mag+14}
-      \field{sortinit}{M}
-      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of medicinal chemistry}
-      \field{month}{4}
-      \field{number}{8}
-      \field{title}{{Molecular similarity in medicinal chemistry}}
-      \field{volume}{57}
-      \field{year}{2014}
-      \field{pages}{3186\bibrangedash 204}
-      \range{pages}{99}
-      \verb{doi}
-      \verb 10.1021/jm401411z
-      \endverb
-    \endentry
     \entry{maragakis2020desmiles}{article}{}
       \name{author}{4}{}{%
         {{hash=6c849ec1ddf390f4dcba8649ac1b9c02}{%
@@ -5614,6 +5642,56 @@
       \field{title}{{MolecularRNN: Generating realistic molecular graphs with optimized properties}}
       \field{year}{2019}
     \endentry
+    \entry{preuer2018frechetdistance}{article}{}
+      \name{author}{5}{}{%
+        {{hash=af2ec37f31141a92628ec2127997a1c1}{%
+           family={Preuer},
+           familyi={P\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a6c8ec7304e449e02e666e0467a02259}{%
+           family={Renz},
+           familyi={R\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=07d10bd58fdb8b4555e8eb2ff86ecbbd}{%
+           family={Unterthiner},
+           familyi={U\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=61ae218acb0f2e99e765281997fd01b6}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=010aadba0dc8da5a01ad86215622818d}{%
+           family={Klambauer},
+           familyi={K\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Chemical Society}%
+      }
+      \strng{namehash}{cb6b423244e739606a12b3d7fc30db04}
+      \strng{fullhash}{1d5c57c830b70acbe49273ed7867918c}
+      \strng{bibnamehash}{cb6b423244e739606a12b3d7fc30db04}
+      \strng{authorbibnamehash}{cb6b423244e739606a12b3d7fc30db04}
+      \strng{authornamehash}{cb6b423244e739606a12b3d7fc30db04}
+      \strng{authorfullhash}{1d5c57c830b70acbe49273ed7867918c}
+      \field{labelalpha}{Pre+18}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chemical Information and Modeling}
+      \field{number}{9}
+      \field{title}{Fr{é}chet ChemNet Distance: A Metric for Generative Models for Molecules in Drug Discovery}
+      \field{volume}{58}
+      \field{year}{2018}
+      \field{pages}{1736\bibrangedash 1741}
+      \range{pages}{6}
+    \endentry
     \entry{prechelt1998earlystopping}{incollection}{}
       \name{author}{1}{}{%
         {{hash=c33e375f7c45363931f7e4ffe01192cc}{%
@@ -5722,42 +5800,6 @@
       \field{title}{{Quantum chemistry structures and properties of 134 kilo molecules}}
       \field{volume}{1}
       \field{year}{2014}
-    \endentry
-    \entry{rogers2010ecfp}{article}{}
-      \name{author}{2}{}{%
-        {{hash=bd666e9bda3367ed1a22c11278c63995}{%
-           family={Rogers},
-           familyi={R\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=32f3c13e667f8a9b3e6e22c343d21428}{%
-           family={Hahn},
-           familyi={H\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{ff6c88936081508c93c171f8ac002cca}
-      \strng{fullhash}{b4ec785556330519e88dabfd0dc27c96}
-      \strng{bibnamehash}{b4ec785556330519e88dabfd0dc27c96}
-      \strng{authorbibnamehash}{b4ec785556330519e88dabfd0dc27c96}
-      \strng{authornamehash}{ff6c88936081508c93c171f8ac002cca}
-      \strng{authorfullhash}{b4ec785556330519e88dabfd0dc27c96}
-      \field{labelalpha}{RH10}
-      \field{sortinit}{R}
-      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of chemical information and modeling}
-      \field{month}{5}
-      \field{number}{5}
-      \field{title}{{Extended-connectivity fingerprints}}
-      \field{volume}{50}
-      \field{year}{2010}
-      \field{pages}{742\bibrangedash 54}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.1021/ci100050t
-      \endverb
     \endentry
     \entry{rifai2011contractiveautoenc}{inproceedings}{}
       \name{author}{5}{}{%
@@ -6652,6 +6694,44 @@
       \field{pages}{1389\bibrangedash 1391}
       \range{pages}{3}
     \endentry
+    \entry{shchur2018pitfalls}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c695e4e0319891565c3a85e483d80f31}{%
+           family={Shchur},
+           familyi={S\bibinitperiod},
+           given={Oleksandr},
+           giveni={O\bibinitperiod}}}%
+        {{hash=f0a6fddb4b14a349e863aa0ac33c5bd1}{%
+           family={Mumme},
+           familyi={M\bibinitperiod},
+           given={Maximilian},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6575c6481abc68aa5dd9df3c69b929a7}{%
+           family={Bojchevski},
+           familyi={B\bibinitperiod},
+           given={Aleksandar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=01886209aaf69f612c8141a41591565e}{%
+           family={G{ü}nnemann},
+           familyi={G\bibinitperiod},
+           given={Stephan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{91dc6a8026824d0148a75222f559c72b}
+      \strng{fullhash}{dd4f0584790ac31c06e9da43ddd2e39b}
+      \strng{bibnamehash}{91dc6a8026824d0148a75222f559c72b}
+      \strng{authorbibnamehash}{91dc6a8026824d0148a75222f559c72b}
+      \strng{authornamehash}{91dc6a8026824d0148a75222f559c72b}
+      \strng{authorfullhash}{dd4f0584790ac31c06e9da43ddd2e39b}
+      \field{labelalpha}{Shc+18}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Relational Representation Learning Workshop, Advances in Neural Information Processing Systems (Neur{IPS})}
+      \field{title}{Pitfalls of graph neural network evaluation}
+      \field{year}{2018}
+    \endentry
     \entry{sivakumar2011systems}{article}{}
       \name{author}{5}{}{%
         {{hash=f91e2084541b2eff948f4c5fb3444e39}{%
@@ -7414,6 +7494,54 @@
       \field{pages}{5998\bibrangedash 6008}
       \range{pages}{11}
     \endentry
+    \entry{velickovic2018gat}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=f67895f351a1964153a455b6672b7a28}{%
+           family={Velickovic},
+           familyi={V\bibinitperiod},
+           given={Petar},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c30bc5878e196747275a7ff581c6ed22}{%
+           family={Cucurull},
+           familyi={C\bibinitperiod},
+           given={Guillem},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5a0765951987db22af274a31732111fa}{%
+           family={Casanova},
+           familyi={C\bibinitperiod},
+           given={Arantxa},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8e0f06556535de7b7d9d04d390dc4ac3}{%
+           family={Romero},
+           familyi={R\bibinitperiod},
+           given={Adriana},
+           giveni={A\bibinitperiod}}}%
+        {{hash=428d424e2bc446d7420e2cf047380cf0}{%
+           family={Lio},
+           familyi={L\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e54f32cfc80b218f9d67b5b392aea9d}
+      \strng{fullhash}{19937c8555e05e4cd741518b9891b465}
+      \strng{bibnamehash}{5e54f32cfc80b218f9d67b5b392aea9d}
+      \strng{authorbibnamehash}{5e54f32cfc80b218f9d67b5b392aea9d}
+      \strng{authornamehash}{5e54f32cfc80b218f9d67b5b392aea9d}
+      \strng{authorfullhash}{19937c8555e05e4cd741518b9891b465}
+      \field{labelalpha}{Vel+18}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 6th {International} {Conference} on {Learning} {Representations} ({ICLR})}
+      \field{title}{Graph attention networks}
+      \field{year}{2018}
+    \endentry
     \entry{vincent2010denoisingautoenc}{article}{}
       \name{author}{5}{}{%
         {{hash=da21e966c02c3cfd33d74369c7435c1a}{%
@@ -8141,7 +8269,6 @@
       \range{pages}{11}
     \endentry
   \enddatalist
-  \missing{?}
 \endrefsection
 \endinput
 

@@ -1,29 +1,26 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
-[1] Config.pm:305> INFO - Logfile is 'main.blg'
-[67] biber:313> INFO - === Tue Jan 26, 2021, 10:32:31
-[102] Biber.pm:371> INFO - Reading 'main.bcf'
-[164] Biber.pm:857> INFO - Found 196 citekeys in bib section 0
-[176] Biber.pm:3981> INFO - Processing section 0
-[189] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[206] bibtex.pm:1468> INFO - LaTeX decoding ...
-[636] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
-[733] Utils.pm:169> WARN - month field 'Nov' in entry 'poplin2018deepvariant' is not an integer - this will probably not sort properly.
-[812] Utils.pm:169> WARN - month field 'Jul' in entry 'baldi2013recursiveneuralnets' is not an integer - this will probably not sort properly.
-[992] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
-[1003] Utils.pm:169> WARN - month field 'April' in entry 'wolpert1997freelunchtheorem' is not an integer - this will probably not sort properly.
-[1663] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
-[1799] Utils.pm:169> WARN - month field 'Apr' in entry 'maggiora2014molecularsimilarity' is not an integer - this will probably not sort properly.
-[1805] Utils.pm:169> WARN - month field 'May' in entry 'rogers2010ecfp' is not an integer - this will probably not sort properly.
-[1813] Utils.pm:169> WARN - month field 'May' in entry 'weininger1989smiles2' is not an integer - this will probably not sort properly.
-[1815] Utils.pm:169> WARN - month field 'dec' in entry 'segler2017moleculelibrariesrnn' is not an integer - this will probably not sort properly.
-[1920] Utils.pm:169> WARN - month field 'Apr.' in entry 'fu2020core' is not an integer - this will probably not sort properly.
-[2001] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[2001] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
-[2003] Utils.pm:169> WARN - I didn't find a database entry for '?' (section 0)
-[2236] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2237] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2237] Biber.pm:3809> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
-[2237] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[2460] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[2571] bbl.pm:720> INFO - Output to main.bbl
-[2572] Biber.pm:110> INFO - WARNINGS: 13
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[27] biber:313> INFO - === Sun Jan 31, 2021, 05:03:54
+[59] Biber.pm:371> INFO - Reading 'main.bcf'
+[141] Biber.pm:857> INFO - Found 198 citekeys in bib section 0
+[157] Biber.pm:3981> INFO - Processing section 0
+[170] Biber.pm:4154> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[197] bibtex.pm:1468> INFO - LaTeX decoding ...
+[589] bibtex.pm:1294> INFO - Found BibTeX data source 'bibliography.bib'
+[683] Utils.pm:169> WARN - month field 'Nov' in entry 'poplin2018deepvariant' is not an integer - this will probably not sort properly.
+[755] Utils.pm:169> WARN - month field 'Jul' in entry 'baldi2013recursiveneuralnets' is not an integer - this will probably not sort properly.
+[893] Utils.pm:169> WARN - ISBN '0262035618, 9780262035613' in entry 'goodfellow2016dl' is invalid - run biber with '--validate_datamodel' for details.
+[905] Utils.pm:169> WARN - month field 'April' in entry 'wolpert1997freelunchtheorem' is not an integer - this will probably not sort properly.
+[1958] Utils.pm:169> WARN - month field 'Jun' in entry 'li2010biomodels' is not an integer - this will probably not sort properly.
+[2135] Utils.pm:169> WARN - month field 'May' in entry 'weininger1989smiles2' is not an integer - this will probably not sort properly.
+[2137] Utils.pm:169> WARN - month field 'dec' in entry 'segler2017moleculelibrariesrnn' is not an integer - this will probably not sort properly.
+[2280] Utils.pm:169> WARN - month field 'Apr.' in entry 'fu2020core' is not an integer - this will probably not sort properly.
+[2450] Utils.pm:169> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[2450] Utils.pm:169> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[2828] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2828] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2828] Biber.pm:3809> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[2828] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[3042] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[3164] bbl.pm:720> INFO - Output to main.bbl
+[3165] Biber.pm:110> INFO - WARNINGS: 10
