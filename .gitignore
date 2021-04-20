@@ -2,6 +2,7 @@
 *.aux
 *.bbl
 *.blg
+*.bcf
 *.fls
 *.glo
 *.ist
