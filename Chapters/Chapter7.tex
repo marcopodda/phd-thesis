@@ -100,6 +100,7 @@ where $\Matrix{E} \in \Real^{d \times |V|}$ is an embedding matrix and $\Matrix{
 \subsection{Model}
 Here, we describe the proposed model, detailing how it is trained, and how it can be used for inference and molecular generation.
 
+
 \subsubsection*{Training}
 The model architecture is a standard \gls{vae} \gls{s2s} model for graph generation, composed of an encoder $\Encoder(\Vector{z} \given s)$ and an autoregressive graph decoder $\Decoder(s \given \Vector{z})$, where $s = (\Graph{f}_{[1]}, \Graph{f}_{[2]}, \ldots, \Graph{f}_{[|s|]})$ is a generic input fragment sequence. The encoder is a \gls{rnn} that operates at fragment level and computes the following:
 \begin{align*}

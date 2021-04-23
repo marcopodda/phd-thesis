@@ -11,3 +11,4 @@
 *.xml
 *.gz
 *.fdb_latexmk
+*.synctex(busy)

@@ -90,3 +90,70 @@ Figure \ref{fig:comparison-plot} compares the average values of our test results
     \caption{Results.}
     \label{fig:comparison-plot}
 \end{figure}
+
+\subsection{Insights from Hyperparameter Analysis}
+As a follow-up study, we analyze how sensitive the \glspl{dgn} are to changes in the hyperparameters. In other words, we study how drastically, and if at all, performances vary when varying some relevant hyperparameters. This would give insights on several practical matters such as which network one can train in the initial phases of an experimental study, in order to get a sensible baseline to build from. To do so, we use validation accuracy as a proxy for test accuracy. First, we collect \emph{post-hoc} all the validation scores obtained by the different models; then, we group the model performances obtained with a fixed choice of a hyperparameter. We focus on two hyperparameters that are of relevance for \glspl{dgn}: number of \glspl{gcl}, and dimension of the representation obtained by the network. Figure \ref{fig:nci1-layer} shows a violin plot displaying how the validation performance changes while fixing the number of \glspl{gcl} and optimizing the rest of the hyperparameters. well can be observed how the performances of GIN are relatively stable with respect to the change in number of layers, while obtaining the highest performances. The figure shows that GIN obtains better performances when the number of \glspl{gcl} is higher than one. The other model performances are fairly stable to the change in number of layers, but we notice an extreme variability in performances (such as with GraphSAGE) which indicates that proper hyper-parameter tuning is essential to get good performances. Figure \ref{fig:nci1-layer} displays the change in performance while fixing the embedding dimension.  From the figure, it appears that GIN performs better with a smaller embedding dimension. This might be partially explained by the theoretical powerfulness of GIN, which however makes it prone to overfitting.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Chapter4/nci1-embedding.eps}
+        \caption{Embedding dimension.}
+        \label{fig:nci1-layer}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Chapter4/nci1-layers.eps}
+        \caption{Number of layers.}
+        \label{fig:nci1-emb}
+    \end{subfigure}
+       \caption{The change in validation performances observed on the NCI1 dataset, while optimizing with a fixed number of layers \textsc{(a)} or fixed graph embedding dimension.}
+       \label{fig:nci1-posthoc}
+\end{figure}
+
+In Figure \ref{fig:collab-layer} and Figure \ref{fig:collab-layer}, we repeat a similar analysis on the COLLAB dataset without using degree information. We notice the same trend with GIN, which requires at least two \glspl{gcl} to obtain good performances. However, there seems not to be a relevant change in performance when using four instead of two \glspl{gcl}. On the contrary, increasing the number of DiffPool layers from one to two has the effect of boosting the accuracy by approximately 10 percentage points on average. However, we also notice from the elongation of the violin that DiffPool is extremely challenging to optimize on this dataset. In Figure \ref{fig:collab-emb}, we show the same analysis but focusing on the embedding dimension. Once again, the trend of Figure \ref{fig:nci1-emb} appears from GIN, where a larger embedding dimension results in a decreased performance. As regards the other models, it seems that there is no effect obtained by varying the embedding dimension, as the violin for the different choices look specular.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Chapter4/collab-embedding.eps}
+        \caption{Embedding dimension.}
+        \label{fig:collab-layer}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Chapter4/collab-layers.eps}
+        \caption{Number of layers.}
+        \label{fig:collab-emb}
+    \end{subfigure}
+       \caption{The change in validation performances observed on the COLLAB dataset, while optimizing with a fixed number of layers \textsc{(a)} or fixed graph embedding dimension.}
+       \label{fig:collab-posthoc}
+\end{figure}
+
+Figure \ref{fig:collab-degree-layer} and Figure \ref{fig:collab-degree-emb} show the same results when the degree features is added to the training graphs. In particular, in Figure \ref{fig:collab-degree-layer} we see that adding the degree might allow GIN to use a higher number of layers to increase performance. For the other models, it appears like changing the number of layers does not provide and substantial change in performance.
+Finally, the plot  of Figure \ref{fig:collab-degree-emb} looks very similar to that of Figure \ref{fig:collab-emb}, but the effect of the embedding dimension for GIN is less noticeable.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Chapter4/collab-degree-embedding.eps}
+        \caption{Embedding dimension.}
+        \label{fig:collab-degree-layer}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Chapter4/collab-degree-layers.eps}
+        \caption{Number of layers.}
+        \label{fig:collab-degree-emb}
+    \end{subfigure}
+       \caption{The change in validation performances observed on the COLLAB dataset (using the degree feature), while optimizing with a fixed number of layers \textsc{(a)} or fixed graph embedding dimension.}
+       \label{fig:collab-degree-posthoc}
+\end{figure}
+
+These results show once again how it is easy to reason about the behavior of \glspl{dgn} once the experimental setup is transparent and the models are evaluated fairly.
