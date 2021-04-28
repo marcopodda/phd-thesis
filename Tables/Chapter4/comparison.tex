@@ -1,0 +1,46 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+
+    \caption{We compare the best scoring models to all the others on each dataset. Tale entries represent the probability that the best model performs better than the competitor, while the width of the region of equivalence is reported in brackets. Bold entries highlight cases where the two models are considered equally performant by the Bayesian test.}
+    \label{tab:classifier-comparison}
+    \centering
+    \begin{tabular}{@{}llcccccc@{}}
+    \toprule
+    \textbf{Dataset}        & \textbf{Best Model} & \multicolumn{1}{c}{\textbf{Baseline}} & \multicolumn{1}{c}{\textbf{DGCNN}} & \multicolumn{1}{c}{\textbf{DiffPool}} & \multicolumn{1}{c}{\textbf{ECC}} & \multicolumn{1}{c}{\textbf{GIN}} & \multicolumn{1}{c}{\textbf{GraphSAGE}} \\
+    \midrule
+    \textbf{DD} & \textbf{Baseline}              & -    & \textbf{0.05 {\scriptsize (0.95)}}  & \textbf{0.27 {\scriptsize (0.73)}}  & 0.72 {\scriptsize (0.28)}  & \textbf{0.17 {\scriptsize (0.83)}} & 0.74 {\scriptsize (0.26)} \\
+
+    \textbf{NCI1} & \textbf{GIN}                 & 1.00 {\scriptsize (0.00)} & 0.96 {\scriptsize (0.04)} & 0.91 {\scriptsize (0.09)} & 0.98 {\scriptsize (0.02)}  & -     & 0.99 {\scriptsize (0.01)} \\
+
+    \textbf{PROTEINS} & \textbf{Baseline}        & -    & \textbf{0.26 {\scriptsize (0.74)}}  & \textbf{0.17 {\scriptsize (0.83)}}  & \textbf{0.4 {\scriptsize (0.56)}}  & \textbf{0.25 {\scriptsize (0.75)}}  & \textbf{0.35 {\scriptsize (0.64)}} \\
+
+    \textbf{ENZYMES} & \textbf{Baseline}         & -    & 1.00 {\scriptsize (0.00)}  & \textbf{0.38 {\scriptsize (0.62)}}  & 1.00 {\scriptsize (0.00)}  & \textbf{0.32 {\scriptsize (0.68)}}  & \textbf{0.58 {\scriptsize (0.42)}} \\
+
+    \midrule
+
+    \textbf{IMDB-B} & \textbf{GraphSAGE}         & 1.00 {\scriptsize (0.00)} & 1.00 {\scriptsize (0.00)}  & \textbf{0.07 {\scriptsize (0.93)}}  & \textbf{0.16 {\scriptsize (0.683)}}  & \textbf{0.02 {\scriptsize (0.95)}}  & -    \\
+
+    \textbf{IMDB-M} & \textbf{GraphSAGE}         & 1.00 {\scriptsize (0.00)} & 0.99 {\scriptsize (0.01)}  & \textbf{0.16 {\scriptsize (0.84)}}  & \textbf{0.25 {\scriptsize (0.75)}}  & \textbf{0.00 {\scriptsize (0.90)}}  & -    \\
+
+    \textbf{REDDIT-B} & \textbf{GIN}             & 0.97 {\scriptsize (0.03)} & 0.98 {\scriptsize (0.02)}  & 1.00 {\scriptsize (0.00)}  & 1.00 {\scriptsize (0.00)}  & -     & \textbf{0.00 {\scriptsize (0.99)}} \\
+
+    \textbf{REDDIT-5K} & \textbf{GIN}            & 1.00 {\scriptsize (0.00)} & 1.00 {\scriptsize (0.00)}  & 1.00 {\scriptsize (0.00)}  & 1.00 {\scriptsize (0.00)}  & -     & \textbf{0.00 {\scriptsize (0.97)}} \\
+
+    \textbf{COLLAB} & \textbf{GIN}               & 1.00 {\scriptsize (0.00)} & 1.00 {\scriptsize (0.00)}  & 0.81 {\scriptsize (0.00)}  & 1.00 {\scriptsize (0.00)}  & -     & \textbf{0.00 {\scriptsize (0.99)}} \\
+
+    \midrule
+
+    \textbf{IMBD-B} & \textbf{GIN + Degree}      & \textbf{0.17 {\scriptsize (0.73)}} & \textbf{0.20 {\scriptsize (0.79)}}  & \textbf{0.29 {\scriptsize (0.71)}}  &\textbf{0.46 {\scriptsize (0.54)}}  & -     & \textbf{0.01 {\scriptsize (0.70)}} \\
+
+    \textbf{IMDB-M} & \textbf{Baseline + Degree} & -    & 0.50 {\scriptsize (0.49)}  & \textbf{0.49 {\scriptsize (0.51)}}  & 0.78 {\scriptsize (0.21)}  & \textbf{0.22 {\scriptsize (0.74)}}  & \textbf{0.20 {\scriptsize (0.77)}} \\
+
+    \textbf{REDDIT-B} & \textbf{GIN + Degree}    & \textbf{0.20 {\scriptsize (0.58)}} & 0.00 {\scriptsize (0.01)}  & 0.00 {\scriptsize (0.00)}  & 1.00 {\scriptsize (0.00)}  & -     & 1.00 {\scriptsize (0.00)} \\
+
+    \textbf{REDDIT-5K} & \textbf{GIN + Degree}   & 0.00 {\scriptsize (0.03)} & 0.04 {\scriptsize (0.35)}  & 0.33 {\scriptsize (0.18)}  & 1.00 {\scriptsize (0.00)}  & -     & 0.74 {\scriptsize (0.24)} \\
+
+    \textbf{COLLAB} & \textbf{GIN + Degree}      & \textbf{0.07 {\scriptsize (0.92)}} & \textbf{0.01 {\scriptsize (0.96)}}  & \textbf{0.41 {\scriptsize (0.59)}}  & 1.00 {\scriptsize (0.00)}  & -     & 0.79 {\scriptsize (0.21)} \\
+
+    \bottomrule
+    \end{tabular}
+    \end{table}

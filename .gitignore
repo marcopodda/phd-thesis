@@ -12,3 +12,4 @@
 *.gz
 *.fdb_latexmk
 *.synctex(busy)
+.vscode
