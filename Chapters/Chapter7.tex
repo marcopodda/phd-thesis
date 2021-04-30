@@ -5,7 +5,7 @@ The term \emph{de novo} Drug Design (DD) refers to a plethora of methods for the
 \section{Background}
 Here, we provide the necessary background to understand our contribution. We start with a brief primer on molecules and how they are represented for generative tasks. We follow by explaining the typical generative tasks in the context of drug discovery. Then, we briefly review current approaches for modeling molecule generation and how they are evaluated. Lastly, we provide a primer on chemical fragments and \gls{fbdd}, which is the main paradigm that inspired this work.
 
-\subsection{Molecules and their representation}
+\subsection{Molecules and their Representation}
 For generative tasks involving molecules, two kinds of data representations are usually employed. Below, we review both in more detail.
 
 \subsubsection*{SMILES}\label{subsec:smiles}
@@ -34,7 +34,7 @@ As regards molecular bonds, the features added are:
     \item stereochemistry information.
 \end{itemize}
 
-\subsection{Generative Tasks of Drug Design}
+\subsection{Generative Tasks for Drug Design}
 We identify three, different but connected, generative tasks in the context of \emph{de novo} drug design where \glspl{dgm} can be used:
 \begin{itemize}
     \item \emph{molecular generation} corresponds to the usual unconditional generation task. Given a dataset $\Data = \{\PatternGraph{g}{i}\}_{i=1}^n$, where $\PatternGraph{g}{i}$ are attributed molecular graphs, the objective is to approximate $p(\Graph{G})$, their underlying probability, or a mechanism to sample from it;
@@ -60,7 +60,7 @@ Among graph-based approaches that generate the molecule in one shot, one of the 
 \subsubsection*{Substructure-based Approaches}
 One of the first work that used substructure generation is that of \citet{jin2018jtvae}, called Junction Tree (JT)-VAE. In the work, a junction tree of the molecule is built by considering some substructures such as rings as a single component. The model learns to generate junction trees, which guide the generation of the molecular graph. Thus, the model generates valid molecules by design. Optimization in latent space is achieved with Bayesian optimization. The model has been extended by the same authors in \citep{jin2019multimodalmoltranslation} to a hierarchical model, where different levels of coarseness of the molecular graph are used to connect the different substructures. This work is also the first to introduce the molecular translation problem. Similarly, \citet{fu2020core} proposed CoRe, a JT-VAE enhanced with a Copy and Refine mechanism that learns how to copy some substructures from the input molecule, rather than sample them. Molecule Chef, by \citet{bradshaw2019moleculechef}, operates under a different paradigm: the architecture is still a VAE (with Wasserstrain distance regularization instead of KLD), but trained to generate a sequence of reactants, rather than proper substructures of the desired molecule. A novel molecule is then synthesized by mapping the predicted reactants to a desired compound through a reaction predictor. The model is also extended to allow retro-synthesis, \ie mapping a molecule to the most probably reactants that generated it. The model has later been extended by \citet{bradshaw2020barking}, where the procedure has been modified to synthesize molecule through DAGs in a multi-step fashion, similarly to the actual procedure used in laboratories. Finally, the model by \citet{bostrom2019fragments} works on chemical fragments, similarly to the contribution we present in Section \ref{sec:aistats-methods}. Specifically, they encode each fragment using a balanced binary tree, where similar fragments are placed in nearby leaves. The model is then trained to learn to replace fragments in an input molecule, to produce an optimized one.
 
-\subsection{Evaluation of Generative Models of Molecules}
+\subsection{The Evaluation of Deep Generative Models of Molecules}
 There are several metrics under which the molecular generators can be evaluated. Ideally, generated molecules should be at the same time:
 \begin{itemize}
     \item structurally \quotes{different} enough from training molecules to span the largest possible chemical subspace;

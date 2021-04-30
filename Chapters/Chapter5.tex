@@ -247,7 +247,7 @@ An AUROC value of 0.5 describes a completely random classifier (case 2), while a
 \section{Results}
 Here, we present the results obtained on the two experiments, \textbf{E1} and \textbf{E2}. Subsequently, we present an analysis of the performances obtained by the model on two use cases: one on synthetic data, and one on a real-world pathway.
 
-\subsection{Results on the E1 Experiment}
+\subsection{Results of the E1 Experiment}
 Table \ref{tab:e1-results} shows the average accuracy on the 5 test folds obtained by each of the examined architectures on the \textbf{E1} experiment. Even though these results are obtained on a dataset approximately 15\% the size of the original one (consisting of 7036 induced subgraphs), we can already make some interesting observations about the task and the models:
 \begin{itemize}
     \item the task can be learned, as evidenced by the gap between the \textsc{Dummy} baseline and all the examined models, which is approximately 13\% on average. This result verifies our initial assumption that it is indeed possible to predict robustness using only pathway structure;
@@ -267,7 +267,7 @@ In a second experiment, we assess whether depth (intended as number of \gls{dgn}
     \label{fig:e1-layering}
 \end{figure}
 
-\subsection{Results on the E2 Experiments}\label{sec:e2-results}
+\subsection{Results of the E2 Experiments}\label{sec:e2-results}
 For the second round of experiments, we fix the \gls{gcl} to the \gls{gcn} model with edge-handling capabilities, since it is the model that obtains the highest accuracy in \textbf{E1}.
 The results of our experiments are reported in Table \ref{tab:e2-results}, where we average the computed metrics across the 5 test folds as usual.
 \input{Tables/Chapter5/e2-results.tex}
@@ -321,7 +321,7 @@ We used these parameters to simulate the ODEs of Figure \ref{subfig:example-odes
 \input{Tables/Chapter5/uc1}
 We remark that values in these two tables are not directly comparable: those in Table \ref{tab:uc1-odes} are exact robustness values, while those in Table \ref{tab:uc1-predictions} are probabilities of the robustness values being greater than 0.5. In this specific case, the prediction turns out to be accurate in the case of input/output pairs corresponding to big induced subgraphs. This happens in the cases of the input/output pairs $\SF{A}/\SF{F}$ and $\SF{A}/\SF{H}$, whose induced subgraphs are among the largest ones. In contrast, the prediction is incorrect for $\SF{C}/\SF{F}$: in this case, the models predicts a small robustness probability, while the simulations give 0.99. We observe that the robustness value of this input/output combination is sensitive to the perturbation of parameters that have been discarded when constructing the dataset. In particular, if the initial (omitted) concentration of $\SF{C}$ was $80$ instead of $100$, the robustness value of the pair $\SF{C}/\SF{F}$ would become $0.5$ rather than $0.99$. Another case when the model prediction is wrong is that of the pair $\SF{B}/\SF{A}$. In this case, the probability given by the network is under $0.50$, which contrasts to a value of $1$ obtained by the ODEs simulation. Even in this case, we notice that the parameters that have been omitted in the dataset might have a strong influence on the robustness, such as kinetic formulas and the multiplicity of the edge directed to node $\SF{B}$ (see Figure \ref{fig:example-pathway}). Finally, in the case of the pair $\SF{G}/\SF{H}$, the prediction gives a small probability of robustness and indeed the actual measured value is borderline ($0.50$). More in general, we observe that smaller subgraphs are less frequent than medium-sized subgraphs in the dataset. Thus, it is possible that the model has learned to be more accurate on the latter subgraphs (to maximize the accuracy), at the expense of making more errors when predicting the former.
 
-\paragraph{Application on a model of the EGF Pathway}
+\paragraph{Application on a Model of the EGF Pathway}
 As a second use case, we consider the SBML model of the Epidermal Growth Factor (EGF) pathway proposed by Sivakumar et al. in \citep{sivakumar2011systems}. This model corresponds to model \texttt{BIOMD0000000394} of the BioModels database, and is shown in Figure \ref{fig:EGF} as represented by the CellDesigner tool \citep{funahashi2003celldesigner}. We adopt this visual representation style for this case study for readability, but the pathway can can be trivially translated into a \gls{ppn}.
 \begin{figure}[t]
     \centering

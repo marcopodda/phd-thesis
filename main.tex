@@ -99,19 +99,17 @@ headsepline, % Uncomment to get a line under the header
 
 \subject{Computer Science} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
 \keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
-\university{\href{http://www.university.com}{University of Pisa}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
-\department{\href{http://department.university.com}{Department of Computer Science}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
-\group{\href{http://researchgroup.university.com}{Computational Intelligence and Machine Learning Group}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-\faculty{\href{http://faculty.university.com}{Faculty Name}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+\university{\href{http://www.unipi.it}{University of Pisa}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{http://di.unipi.it}{Department of Computer Science}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{\href{http://ciml.di.unipi.it}{Computational Intelligence and Machine Learning Group}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{\href{http://www.unipi.it}{Faculty Name}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
 
 \AtBeginDocument{
-\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
-\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
-% \hypersetup{colorlinks=false}
-
-
-
+ \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+ \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+ \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+ \hypersetup{allcolors=[rgb]{0, 0.234, 0.44}}
+ %\hypersetup{hidelinks}
 }
 
 %%%%%%%%%%%%%%%%%% MATH OPERATOR %%%%%%%%%%%%%%%%%%%%%
@@ -123,20 +121,6 @@ headsepline, % Uncomment to get a line under the header
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
 \newcommand{\rulesep}{\unskip\ \vrule\ }
-
-% % definition new command for notations of tensors, vectors and matrices
-% % command for tensors
-% \newcommand{\Tensor}[1]{\ensuremath{\mathbf{\underline{#1}}}}
-% \newcommand{\Matrix}[1]{\ensuremath{\mathbf{\uppercase{#1}}}}
-% \newcommand{\Vector}[1]{\ensuremath{\mathbf{\lowercase{#1}}}}
-% % real
-% \newcommand{\Real}{\mathbb{R}}
-% % two points wihtout space in math
-% \newcommand{\twop}{{:}}
-% % transpose
-% \newcommand{\tran}{\mathsf{T}}
-% % conditional independence
-% \newcommand*{\condInd}{\mathrel{\text{\scalebox{1.07}{$\perp\mkern-10mu\perp$}}}}
 
 
 \begin{document}

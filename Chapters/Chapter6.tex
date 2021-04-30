@@ -77,7 +77,7 @@ To generate an ordered edge sequence, one first generates a starting sequence $\
     \label{fig:model-sampling}
 \end{figure*}
 
-\subsection{Implementation details}\label{sec:implementation}
+\subsection{Implementation Details}\label{sec:implementation}
 The model is implemented using the \texttt{PyTorch}\footnote{\url{https://github.com/marcopodda/grapher}} \cite{paszke2017pytorch} library; after an initial exploratory phase (not reported), some hyper-parameters (such as the number of recurrent layers) were fixed in advance. The other hyper-parameters are selected with an 80\%-20\% internal model selection. We choose among 32 and 64 for the embedding dimension $d$, 128 and 256 for the recurrent state size $h$. We apply a dropout layer to the embedding layer, whose rate is chosen between 0.25 and 0.35. As recurrent cells, we use 2 layers of Gated Recurrent Units (GRU) \cite{cho2014gru}. As regards the learning parameters, we use the Adam \cite{kingma2015adam} optimizer with learning rate of 0.001, halved every 200 epochs. We train all models for a maximum of 2000 epochs, applying early stopping whenever the loss starts to plateau (we found a suitable empirical threshold after running a number of exploratory training instances).
 
 \section{Experiments}
