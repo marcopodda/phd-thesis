@@ -1,9 +1,8 @@
 \begin{table}
-    \scriptsize
+    \footnotesize
     \centering
     \caption{We show the results of training the model with different node ordering strategies. Best performances are bolded.}
     \label{tab:graph-ordering-qualitative}
-    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{lccccccc}
         \toprule
         \textbf{Dataset} & \textbf{Metric} & \textbf{Random} & \textbf{Rand. BFS} & \textbf{Rand. DFS} & \textbf{DFS} & \textbf{SMILES} & \textbf{Ours}\\
@@ -29,7 +28,7 @@ EGO       & OC             & 0.109 (0.002) & 0.055 (0.002) & 0.039 (0.000) & \te
           & DD             & 0.819 (0.004) & 0.320 (0.010) & 0.261 (0.007) & 0.143 (0.008) & - & \textbf{0.078} (0.002)\\
           & CC             & 0.065 (0.001) & 0.004 (0.001) & 0.003 (0.000) & 0.004 (0.001) & - & \textbf{0.000} (0.000)\\
 TREES     & OC             & 0.028 (0.001) & 0.005 (0.001) & 0.004 (0.000) & 0.003 (0.000) & - & \textbf{0.001} (0.000)\\
-          & BC             & 0.416 (0.008) & 0.075 (0.002) & 0.067 (0.002) & 0.056 (0.003) & - & \textbf{0.056} (0.008)\\
+          & BC             & 0.416 (0.008) & 0.075 (0.002) & 0.067 (0.002) & \textbf{0.056} (0.003) & - & \textbf{0.056} (0.008)\\
           & NSPDK          & 0.653 (0.003) & 0.328 (0.004) & 0.240 (0.005) & 0.142 (0.009) & - & \textbf{0.042} (0.004)\\
         \midrule
           & DD             & 0.499 (0.014) & 0.140 (0.005) & 0.135 (0.007) & 0.064 (0.004) & 0.077 (0.007) & \textbf{0.040} (0.002)\\

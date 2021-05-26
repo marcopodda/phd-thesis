@@ -207,4 +207,6 @@ In Figure \ref{fig:loss}, we plot the loss obtained by the different ablations a
 \end{figure}
 The results of the qualitative analysis are detailed in Table \ref{tab:graph-ordering-qualitative}. It can be easily noticed that the proposed node ordering strategy yields superior results in every chosen metric, compared to the ablations. The only competitive node ordering strategy is DFS, which basically differs from ours in the way graph nodes are visited. However, despite its similarity to our choice, this strategy seems to underperform in some cases, for example in all the local metrics in the COMMUNITY dataset. To explain this phenomenon, we hypothesize that the choice of DFS traversal instead of BFS is less suited to capture local dependencies. In conclusion, these results further extend the evidences supporting the robustness of our approach.
 
+\begin{landscape}
 \input{Tables/Chapter6/graph-ordering-qualitative.tex}
+\end{landscape}
